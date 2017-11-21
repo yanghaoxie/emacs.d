@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: cplex.linea_constraints.add
+# key: cla
+# --
+prob.linear_constraints.add(lin_expr $>= [$1],
+							  sensed $>= [$2],
+							     rhs $>= [$3])$0

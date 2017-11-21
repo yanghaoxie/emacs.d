@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: load
+# key: ld
+# --
+load("$1")$0

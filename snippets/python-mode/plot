@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: plot
+# key: plot
+# --
+plt.plot($1)
+$0

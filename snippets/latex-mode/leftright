@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: leftright
+# key: lr
+# --
+\biggl$1 $3  \biggr$2 $0
