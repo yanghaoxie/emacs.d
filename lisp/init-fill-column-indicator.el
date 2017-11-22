@@ -2,6 +2,9 @@
 (add-hook 'prog-mode-hook 'fci-mode)
 (setq fci-rule-column 79)
 (setq fci-rule-width 1)
+(setq fci-rule-use-dashes t)
+(setq fci-dash-pattern 0.4)
+(setq fci-rule-color "lightgray")
 ;; solve fci mode conflicts with company mode
 (defvar-local company-fci-mode-on-p nil)
 
