@@ -48,6 +48,7 @@
 
 (require 'fill-column-indicator);; packages in "site-lisp"
 
+(require 'custom);; file added by Custom
 (require 'init-preload-local)
 (require 'init-fill-column-indicator)
 (require 'init-window-numbering)
