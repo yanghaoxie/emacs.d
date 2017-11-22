@@ -66,6 +66,7 @@
 (require 'init-org)
 (require 'init-golden-ratio-scroll-screen)
 (require 'init-electric-pair-mode)
+(require 'init-magit)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
