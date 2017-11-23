@@ -1,10 +1,11 @@
 ;;(require 'fill-column-indicator)
-(add-hook 'prog-mode-hook 'fci-mode)
 (setq fci-rule-column 79)
-(setq fci-rule-width 1)
+(setq fci-rule-color "lightgray")
+(Setq fci-rule-width 1)
 (setq fci-rule-use-dashes t)
 (setq fci-dash-pattern 0.4)
-(setq fci-rule-color "lightgray")
+
+(add-hook 'prog-mode-hook 'fci-mode)
 ;; solve fci mode conflicts with company mode
 (defvar-local company-fci-mode-on-p nil)
 
