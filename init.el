@@ -61,7 +61,7 @@
 (require 'init-elpy)
 (require 'init-helm)
 (require 'init-sudo-edit)
-;;(require 'init-jedi)
+(require 'init-jedi)
 (require 'init-flyspell)
 (require 'init-org)
 (require 'init-golden-ratio-scroll-screen)
