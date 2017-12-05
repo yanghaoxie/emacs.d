@@ -5,7 +5,7 @@
 		    "eb" 'eval-buffer
 		    "pf" 'elpy-yapf-fix-code
 		    "lt" 'load-theme
-		    "ad" 'ace-delete-other-windows
+		    "wo" 'delete-other-windows
 		    "xf" 'helm-find-files
 		    "xs" 'save-buffer
 		    "xk" 'kill-buffer
@@ -19,17 +19,35 @@
 		    "fcn" 'flycheck-next-error
 		    "ci" 'evilnc-comment-or-uncomment-lines ;; evil-nerd-commenter
 		    "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
-		    "cc" 'evilnc-copy-and-comment-lines
 		    "cp" 'evilnc-comment-or-uncomment-paragraphs
 		    "cr" 'comment-or-uncomment-region
 		    "cv" 'evilnc-toggle-invert-comment-line-by-line
 		    "."  'evilnc-copy-and-comment-operator
 		    "\\" 'evilnc-comment-operator
-		    "cz" 'elpy-shell-switch-to-shell ;; elpy
-		    "cc" 'elpy-shell-send-region-or-buffer
 		    "ck" 'elpy-shell-kill
 		    "nb" 'next-buffer ;; switch buffer
 		    "pb" 'previous-buffer
-		    "xg" 'magit-status)
+		    "bb" 'mode-line-other-buffer
+		    "xg" 'magit-status ;; magit
+		    "ho" 'helm-occur
+		    "bf" 'beginning-of-defun ;; nav function
+		    "ef" 'end-of-defun
+		    "sd" 'sudo-edit
+		    )
+(general-define-key
+ "gl" 'evil-goto-line
+ "s" 'avy-goto-char-2)
+;; elpy mode
+(general-evil-define-key 'normal elpy-mode-map
+  :prefix "SPC"
+  "cc" 'elpy-shell-send-region-or-buffer
+  "cz" 'elpy-shell-switch-to-shell 
+  )
+;; LaTeX mode
+(general-evil-define-key 'normal LaTeX-mode-map
+  :prefix "SPC"
+  "cc" 'TeX-command-master
+  "ca" 'TeX-command-run-all 
+  )
 (provide 'init-general)
 
