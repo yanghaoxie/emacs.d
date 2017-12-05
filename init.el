@@ -77,6 +77,8 @@
 (require 'init-rainbow-delimiters)
 (require 'init-auctex)
 (require 'init-evil-escape)
+(require 'init-avy)
+(require 'init-anzu)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
