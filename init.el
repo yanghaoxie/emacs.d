@@ -64,21 +64,20 @@
 (require 'init-flyspell)
 (require 'init-org)
 (require 'init-golden-ratio-scroll-screen)
-(require 'init-electric-pair-mode)
+;; (require 'init-electric-pair-mode)
 (require 'init-magit)
 (require 'init-ace-window)
 (require 'init-evil)
 (require 'init-general)
 (require 'init-powerline)
 (require 'init-airline-themes)
-;;(require 'init-diminish)
-;;(require 'init-rich-minority)
 (require 'init-evil-nerd-commenter)
 (require 'init-rainbow-delimiters)
 (require 'init-auctex)
 (require 'init-evil-escape)
 (require 'init-avy)
 (require 'init-anzu)
+(require 'init-smartparens)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
