@@ -2,6 +2,7 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
+(show-paren-mode 1)
 ;; solve company yasnippet conflicts
 (defun company-yasnippet-or-completion ()
   "Solve company yasnippet conflicts."
