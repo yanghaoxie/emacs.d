@@ -7,7 +7,8 @@
 (setq helm-autoresize-max-height 0)
 (setq helm-autoresize-min-height 20)
 (setq helm-split-window-in-side-p t
-      helm-echo-input-in-header-line t)
+      helm-echo-input-in-header-line t
+      helm-ff-file-name-history-use-recentf t)
 
 (defun spacemacs//helm-hide-minibuffer-maybe ()
   "Hide minibuffer in Helm session if we use the header line as input field."
