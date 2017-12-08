@@ -1,7 +1,8 @@
 (require 'general)
 (setq general-default-keymaps 'evil-normal-state-map);; key bindings in evil NORMAL mode
 (general-define-key :prefix "SPC"
-		    "rs" 'replace-string
+		    "qrs" 'query-replace
+		    "qrr" 'query-replace-regexp
 		    "eb" 'eval-buffer
 		    "pf" 'elpy-yapf-fix-code
 		    "lt" 'load-theme
@@ -42,6 +43,7 @@
   :prefix "SPC"
   "cc" 'elpy-shell-send-region-or-buffer
   "cz" 'elpy-shell-switch-to-shell 
+  "ed" 'elpy-doc
   )
 ;; LaTeX mode
 (general-evil-define-key 'normal LaTeX-mode-map
