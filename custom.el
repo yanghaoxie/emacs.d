@@ -12,6 +12,13 @@
  '(elpy-modules
    (quote
     (elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-django elpy-module-sane-defaults)))
+ '(safe-local-variable-values
+   (quote
+    ((eval when
+	   (require
+	    (quote rainbow-mode)
+	    nil t)
+	   (rainbow-mode 1))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
