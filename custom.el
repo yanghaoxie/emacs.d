@@ -24,3 +24,5 @@
  ;; If there is more than one, they won't work right.
  '(flycheck-error ((t (:slant italic))))
  '(flycheck-warning ((t (:slant italic))))
+ '(flymake-errline ((t nil))))
+(provide 'custom)
