@@ -1,6 +1,7 @@
 (setq TeX-save-query nil)
 (setq TeX-source-correlate-method (quote synctex))
 (setq TeX-source-correlate-mode t)
+(add-hook 'latex-mode-hook (lambda () (setq truncate-lines nil))) 
 (setq TeX-view-program-selection
    (quote
     (((output-dvi has-no-display-manager)
