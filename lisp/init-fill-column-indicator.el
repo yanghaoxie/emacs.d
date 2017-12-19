@@ -1,6 +1,6 @@
 ;;(require 'fill-column-indicator)
 (setq fci-rule-column 79)
-(setq fci-rule-color "lightgray")
+(setq fci-rule-color "gray90")
 (setq fci-rule-width 1)
 (setq fci-rule-use-dashes t)
 (setq fci-dash-pattern 0.4)
