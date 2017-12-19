@@ -3,6 +3,7 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 (show-paren-mode 1)
+(set-face-attribute 'fringe nil :background "gray100" :foreground "gray100")
 ;; solve company yasnippet conflicts
 (defun company-yasnippet-or-completion ()
   "Solve company yasnippet conflicts."
