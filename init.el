@@ -66,7 +66,7 @@
 (require 'init-golden-ratio-scroll-screen)
 ;; (require 'init-electric-pair-mode)
 (require 'init-magit)
-(require 'init-ace-window)
+;; (require 'init-ace-window)
 (require 'init-evil)
 (require 'init-general)
 (require 'init-powerline)
@@ -78,6 +78,17 @@
 (require 'init-avy)
 (require 'init-anzu)
 (require 'init-smartparens)
+(require 'init-evil-smartparens)
+(require 'init-highlight-indent-guides)
+(require 'init-evil-surround)
+(require 'init-expand-region)
+(require 'init-highlight-indentation)
+;; (require 'init-gnus)
+(require 'init-neotree)
+;; (require 'init-diminish)
+(require 'init-rich-minority)
+(require 'init-evil-snipe)
+(require 'init-eshell)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
