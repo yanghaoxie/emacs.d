@@ -1,0 +1,6 @@
+(add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+(defun my-evil-smartparens-mode-hook ()
+  (evil-define-key 'normal evil-smartparens-mode-map "s" nil)
+  (evil-define-key 'normal evil-smartparens-mode-map "S" nil))
+(add-hook 'evil-smartparens-mode-hook 'my-evil-smartparens-mode-hook)
+(provide 'init-evil-smartparens)
