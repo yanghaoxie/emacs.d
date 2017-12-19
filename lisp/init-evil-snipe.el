@@ -1,0 +1,5 @@
+(require 'evil-snipe)
+(evil-snipe-mode +1)
+(evil-snipe-override-mode +1)
+(setq evil-snipe-show-prompt nil)
+(provide 'init-evil-snipe)
