@@ -1,3 +1,5 @@
 (require 'smartparens-config)
-(add-hook 'prog-mode-hook #'smartparens-mode)
+;; (add-hook 'prog-mode-hook #'smartparens-strict-mode)
+(smartparens-mode 1)
+(smartparens-strict-mode 1)
 (provide 'init-smartparens)
