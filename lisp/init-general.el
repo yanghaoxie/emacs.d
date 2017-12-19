@@ -34,10 +34,23 @@
 		    "bf" 'beginning-of-defun ;; nav function
 		    "ef" 'end-of-defun
 		    "sd" 'sudo-edit
+		    "xx" 'er/expand-region
+		    "hs" 'helm-swoop
+		    "ce" 'LaTeX-environment
+		    "nt" 'neotree-toggle
+		    "ktb" 'kill-this-buffer
+		    "nr" 'neotree-refresh
+		    "utv" 'undo-tree-visualize
+		    "es" 'eshell
+		    "rp" 'run-python
 		    )
 (general-define-key
  "gl" 'evil-goto-line
- "s" 'avy-goto-char-2)
+ ;; "s" 'avy-goto-char-2
+ )
+(general-define-key :prefix ";"
+		    "s" 'avy-goto-char-2
+		    )
 ;; elpy mode
 (general-evil-define-key 'normal elpy-mode-map
   :prefix "SPC"
@@ -51,5 +64,10 @@
   "cc" 'TeX-command-master
   "ca" 'TeX-command-run-all 
   )
+;; expand-region
+;; press ",xx" to expand region
+;; then press "z" to contract, "x" to expand
+(eval-after-load "evil"
+  '(progn
+(setq expand-region-contract-fast-key "z")))
 (provide 'init-general)
-
