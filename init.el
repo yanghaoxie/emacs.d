@@ -66,7 +66,7 @@
 (require 'init-golden-ratio-scroll-screen)
 ;; (require 'init-electric-pair-mode)
 (require 'init-magit)
-;; (require 'init-ace-window)
+(require 'init-ace-window)
 (require 'init-evil)
 (require 'init-general)
 (require 'init-powerline)
