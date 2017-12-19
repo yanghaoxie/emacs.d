@@ -1,9 +1,9 @@
 (require 'helm-config)
 (helm-mode t)
-(setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-xopen
+(setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x open
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t);; fuzzy matching for helm-mini
-(helm-autoresize-mode t)  ;; autoresize mode
+(helm-autoresize-mode 1)  ;; autoresize mode
 (setq helm-autoresize-max-height 0)
 (setq helm-autoresize-min-height 20)
 (setq helm-split-window-in-side-p t
