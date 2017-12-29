@@ -1,5 +1,12 @@
 ;;(require 'fill-column-indicator)
-(setq fci-rule-column 79)
+;; set different value for different mode
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (set-fill-column 70)))
+(add-hook 'prog-mode-hook
+	  (lambda ()
+	    (set-fill-column 79)))
+;; (setq fci-rule-column 70)
 (setq fci-rule-color "gray90")
 (setq fci-rule-width 1)
 (setq fci-rule-use-dashes t)
