@@ -1,5 +1,6 @@
 (require 'smartparens-config)
-;; (add-hook 'prog-mode-hook #'smartparens-strict-mode)
-(smartparens-mode 1)
-(smartparens-strict-mode 1)
+;; add new pairs
+(sp-pair "<" ">")
+(add-hook 'prog-mode-hook #'smartparens-strict-mode)
+(add-hook 'LaTeX-mode-hook #'smartparens-strict-mode)
 (provide 'init-smartparens)
