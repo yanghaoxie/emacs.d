@@ -79,7 +79,7 @@
 (require 'init-anzu)
 (require 'init-smartparens)
 (require 'init-evil-smartparens)
-(require 'init-highlight-indent-guides)
+;; (require 'init-highlight-indent-guides)
 (require 'init-evil-surround)
 (require 'init-expand-region)
 (require 'init-highlight-indentation)
@@ -89,6 +89,8 @@
 (require 'init-rich-minority)
 (require 'init-evil-snipe)
 (require 'init-eshell)
+(require 'init-company)
+(require 'init-org-ref)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
