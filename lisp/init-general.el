@@ -43,6 +43,9 @@
 		    "utv" 'undo-tree-visualize
 		    "es" 'eshell
 		    "rp" 'run-python
+		    "kmb" 'kill-matching-buffers
+		    "sk" 'save-buffers-kill-terminal
+		    "pl" 'package-list-packages
 		    )
 (general-define-key
  "gl" 'evil-goto-line
@@ -50,7 +53,25 @@
  )
 (general-define-key :prefix ";"
 		    "s" 'avy-goto-char-2
+		    "pb" 'preview-buffer
+		    "pap" 'preview-at-point
+		    "pca" 'preview-clearout
+		    "pcb" 'preview-clearout-buffer
 		    )
+;; org mode
+(general-evil-define-key 'normal org-mode-map
+  :prefix "SPC"
+  "oe" 'org-export-dispatch
+  "oap" 'org-open-at-point
+  "op" 'my/org-ref-open-pdf-at-point 
+  "ic" 'org-ref-helm-insert-cite-link
+  ;; navagation
+  "nh" 'org-next-visible-heading
+  "ph" 'org-previous-visible-heading
+  "ni" 'org-next-item
+  "pi" 'org-previous-item
+  )
+
 ;; elpy mode
 (general-evil-define-key 'normal elpy-mode-map
   :prefix "SPC"
