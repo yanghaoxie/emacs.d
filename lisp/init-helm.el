@@ -27,4 +27,13 @@
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
+
+;; helm interface for eshell
+;;helm complete for pcomplete
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (eshell-cmpl-initialize)
+            (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
+             (define-key eshell-mode-map (kbd "M-p") 'helm-eshell-history)))
+
 (provide 'init-helm)
