@@ -1,6 +1,11 @@
 (require 'general)
-(setq general-default-keymaps 'evil-normal-state-map);; key bindings in evil NORMAL mode
-(general-define-key :prefix "SPC"
+(setq general-default-states '(normal visual insert emacs))
+;; (setq general-default-keymaps 'evil-normal-state-map);; key bindings in evil NORMAL mode
+(general-define-key
+ ;; :states '(normal visual insert emacs)
+ ;; :keymaps 'text-mode-map
+		    :prefix "SPC"
+		    :non-normal-prefix "M-SPC"
 		    "qrs" 'query-replace
 		    "qrr" 'query-replace-regexp
 		    "eb" 'eval-buffer
@@ -9,9 +14,9 @@
 		    "wo" 'delete-other-windows
 		    "xf" 'helm-find-files
 		    "xs" 'save-buffer
-		    "xk" 'kill-buffer
+		    "kb" 'kill-buffer
 		    "xb" 'helm-mini
-		    "xc" 'save-buffers-kill-terminal
+		    ;; "xc" 'save-buffers-kill-terminal
 		    "x0" 'delete-window;; windows
 		    "x2" 'split-window-below
 		    "x3" 'split-window-right
@@ -33,7 +38,7 @@
 		    "ho" 'helm-occur
 		    "bf" 'beginning-of-defun ;; nav function
 		    "ef" 'end-of-defun
-		    "sd" 'sudo-edit
+		    "se" 'sudo-edit
 		    "xx" 'er/expand-region
 		    "hs" 'helm-swoop
 		    "ce" 'LaTeX-environment
@@ -46,12 +51,21 @@
 		    "kmb" 'kill-matching-buffers
 		    "sk" 'save-buffers-kill-terminal
 		    "pl" 'package-list-packages
+		    "fm" 'fci-mode
+		    "gl" 'evil-goto-line
+		    "ssm" 'smartparens-strict-mode
+		    "de" 'dired
+		    "rb" 'revert-buffer
+		    "sc" 'shell-command
+		    "sh" 'shell
 		    )
-(general-define-key
+(general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
- ;; "s" 'avy-goto-char-2
+ ;;
+ ;;"s" 'avy-goto-char-2
  )
 (general-define-key :prefix ";"
+		    :non-normal-prefix "M-;"
 		    "s" 'avy-goto-char-2
 		    "pb" 'preview-buffer
 		    "pap" 'preview-at-point
@@ -59,8 +73,11 @@
 		    "pcb" 'preview-clearout-buffer
 		    )
 ;; org mode
-(general-evil-define-key 'normal org-mode-map
+(general-define-key
+    ;; 'normal org-mode-map
+  :keymaps 'org-mode-map
   :prefix "SPC"
+  :non-normal-prefix "M-SPC"
   "oe" 'org-export-dispatch
   "oap" 'org-open-at-point
   "op" 'my/org-ref-open-pdf-at-point 
@@ -70,20 +87,41 @@
   "ph" 'org-previous-visible-heading
   "ni" 'org-next-item
   "pi" 'org-previous-item
+  "nk" 'org-ref-next-key
+  "pk" 'org-ref-previous-key
+  ;; move things
+  "mu" 'org-metaup
+  "md" 'org-metadown
+  "ml" 'org-metaleft
+  "mr" 'org-metaright
+  ;; insert headings
+  "ih" 'org-insert-heading
+  "ish" 'org-insert-subheading
+  ;; other
+  "tl" 'org-toggle-latex-fragment
+  ;; "mr" 'org-meta-return
+  "le" 'org-edit-latex-environment
   )
 
 ;; elpy mode
-(general-evil-define-key 'normal elpy-mode-map
+(general-define-key
+    ;; 'normal elpy-mode-map
+ :keymaps 'elpy-mode-map
   :prefix "SPC"
+  :non-normal-prefix "M-SPC"
   "cc" 'elpy-shell-send-region-or-buffer
   "cz" 'elpy-shell-switch-to-shell 
   "ed" 'elpy-doc
   )
 ;; LaTeX mode
-(general-evil-define-key 'normal LaTeX-mode-map
+(general-define-key
+    ;; 'normal LaTeX-mode-map
+  :keymaps 'LaTeX-mode-map
   :prefix "SPC"
+  :non-normal-prefix "M-SPC"
   "cc" 'TeX-command-master
   "ca" 'TeX-command-run-all 
+  "sq" 'org-edit-src-exit
   )
 ;; expand-region
 ;; press ",xx" to expand region
@@ -91,4 +129,7 @@
 (eval-after-load "evil"
   '(progn
 (setq expand-region-contract-fast-key "z")))
+
+
+
 (provide 'init-general)
