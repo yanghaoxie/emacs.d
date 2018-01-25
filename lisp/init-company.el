@@ -22,4 +22,5 @@ In that case, insert the number."
 			(self-insert-command 1)))
   (define-key map (kbd "<return>") nil))
 (setq company-show-numbers t)
+(add-hook 'after-init-hook 'global-company-mode)
 (provide 'init-company)
