@@ -1,6 +1,7 @@
-(global-set-key (kbd "C-c o") 
-                (lambda () (interactive) (find-file "~/Dropbox/document/org/main.org")))
+;; (global-set-key (kbd "C-c o") 
+;;                 (lambda () (interactive) (find-file "~/Dropbox/document/org/main.org")))
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil))) 
+(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 (require 'org)
 (require 'ox-bibtex)
 (setq org-latex-pdf-process
