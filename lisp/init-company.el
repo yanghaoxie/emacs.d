@@ -1,3 +1,4 @@
+(require 'company)
 (defun ora-company-number ()
   "Forward to `company-complete-number'.
 
