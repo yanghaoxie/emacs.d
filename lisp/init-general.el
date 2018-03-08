@@ -58,6 +58,9 @@
 		    "rb" 'revert-buffer
 		    "sc" 'shell-command
 		    "sh" 'shell
+		    "af" 'auto-fill-mode
+		    "oo" '(lambda () (interactive) (find-file "~/Dropbox/document/org/main.org"))
+		    "cy" 'clipboard-yank
 		    )
 (general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
@@ -79,7 +82,7 @@
   :prefix "SPC"
   :non-normal-prefix "M-SPC"
   "oe" 'org-export-dispatch
-  "oap" 'org-open-at-point
+  "oa" 'org-open-at-point
   "op" 'my/org-ref-open-pdf-at-point 
   "ic" 'org-ref-helm-insert-cite-link
   ;; navagation
