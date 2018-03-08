@@ -26,5 +26,6 @@
  ;; If there is more than one, they won't work right.
  '(flycheck-error ((t (:slant italic))))
  '(flycheck-warning ((t (:slant italic))))
- '(flymake-errline ((t nil))))
+ '(flymake-errline ((t nil)))
+ '(secondary-selection ((t (:background "gray95")))))
 (provide 'custom)
