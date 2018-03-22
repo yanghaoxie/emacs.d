@@ -48,9 +48,10 @@
 ;; packages in "site-lisp"
 (require 'fill-column-indicator)
 (require 'evil-textobj-line)
-(require 'fish-completion)
+;;(require 'fish-completion)
 
 (require 'custom);; file added by Custom
+(require 'init-evil)
 (require 'init-ace-window)
 (require 'init-airline-themes)
 (require 'init-anzu)
@@ -63,8 +64,7 @@
 (require 'init-desktop-save)
 (require 'init-elpy)
 (require 'init-eshell)
-(require 'init-eshell-z)
-(require 'init-evil)
+;;(require 'init-eshell-z)
 (require 'init-evil-anzu)
 (require 'init-evil-escape)
 (require 'init-evil-nerd-commenter)
@@ -91,7 +91,7 @@
 (require 'init-smartparens)
 (require 'init-sudo-edit)
 (require 'init-window-numbering)
-(require 'init-yagist)
+;; (require 'init-yagist)
 (require 'init-yasnippet)
 ;; (require 'init-diminish)
 ;; (require 'init-electric-pair-mode)
