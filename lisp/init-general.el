@@ -9,7 +9,6 @@
 		    "qrs" 'query-replace
 		    "qrr" 'query-replace-regexp
 		    "eb" 'eval-buffer
-		    "pf" 'elpy-yapf-fix-code
 		    "lt" 'load-theme
 		    "wo" 'delete-other-windows
 		    "xf" 'helm-find-files
@@ -30,7 +29,6 @@
 		    "cv" 'evilnc-toggle-invert-comment-line-by-line
 		    "."  'evilnc-copy-and-comment-operator
 		    "\\" 'evilnc-comment-operator
-		    "ck" 'elpy-shell-kill
 		    "nb" 'next-buffer ;; switch buffer
 		    "pb" 'previous-buffer
 		    "bb" 'mode-line-other-buffer
@@ -115,6 +113,8 @@
   "cc" 'elpy-shell-send-region-or-buffer
   "cz" 'elpy-shell-switch-to-shell 
   "ed" 'elpy-doc
+  "pf" 'elpy-yapf-fix-code
+  "ck" 'elpy-shell-kill
   )
 ;; LaTeX mode
 (general-define-key
