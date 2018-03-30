@@ -6,6 +6,8 @@
 (set-face-attribute 'fringe nil :background "gray98" :foreground "gray100")
 (setq tab-stop-list (number-sequence 4 200 4))
 (setq tab-width 4)
+;; push clipboard onto the killring
+(setq save-interprogram-paste-before-kill t)
 ;; replace yes and no with y and n
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; solve company yasnippet conflicts
