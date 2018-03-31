@@ -13,6 +13,7 @@
     :ensure t)
 (use-package auctex
   :ensure t
+  :defer t
   :pin gnu)
 (use-package avy
     :ensure t)
