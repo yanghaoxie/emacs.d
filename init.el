@@ -50,6 +50,7 @@
 (require 'evil-textobj-line)
 ;;(require 'fish-completion)
 
+(require 'init-use-package.el)
 (require 'custom);; file added by Custom
 (require 'init-evil)
 (require 'init-ace-window)
