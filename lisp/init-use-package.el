@@ -11,10 +11,10 @@
     :ensure t)
 (use-package anzu
     :ensure t)
-(use-package auctex
-  :ensure t
-  :defer t
-  :pin gnu)
+;; (use-package auctex
+;;   :ensure t
+;;   :defer t
+;;   :pin gnu)
 (use-package avy
     :ensure t)
 (use-package bash-completion
