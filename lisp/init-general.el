@@ -116,7 +116,9 @@
   "pf" 'elpy-yapf-fix-code
   "ck" 'elpy-shell-kill
   "gd" 'elpy-goto-definition
+  "ga" 'elpy-goto-assignment
   "ogd" 'elpy-goto-definition-other-window
+  "oga" 'elpy-goto-assignment-other-window
   )
 ;; LaTeX mode
 (general-define-key
