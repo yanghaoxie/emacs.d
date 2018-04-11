@@ -66,6 +66,7 @@
 (require 'init-elpy)
 (require 'init-eshell)
 ;;(require 'init-eshell-z)
+(require 'init-pdf-tools)
 (require 'init-evil-anzu)
 (require 'init-evil-escape)
 (require 'init-evil-nerd-commenter)
