@@ -15,6 +15,7 @@
 		    "xs" 'save-buffer
 		    "kb" 'kill-buffer
 		    "xb" 'helm-mini
+		    "hb" 'helm-bibtex
 		    ;; "xc" 'save-buffers-kill-terminal
 		    "x0" 'delete-window;; windows
 		    "x2" 'split-window-below
@@ -59,6 +60,10 @@
 		    "af" 'auto-fill-mode
 		    "oo" '(lambda () (interactive) (find-file "~/Dropbox/document/org/main.org"))
 		    "cy" 'clipboard-yank
+		    "us" 'sp-unwrap-sexp
+		    "[" 'shrink-window-horizontally
+		    "]" 'enlarge-window-horizontally
+		    "bw" 'balance-windows
 		    )
 (general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
@@ -100,6 +105,7 @@
   "ish" 'org-insert-subheading
   ;; other
   "tl" 'org-toggle-latex-fragment
+  "olp" 'org-latex-export-to-pdf
   ;; "mr" 'org-meta-return
   "le" 'org-edit-latex-environment
   )
@@ -136,7 +142,60 @@
 (eval-after-load "evil"
   '(progn
 (setq expand-region-contract-fast-key "z")))
-
+;; pdf view mode
+(general-define-key
+ :states '(normal visual)
+ :keymaps 'pdf-view-mode-map
+ ;; Navigation
+ "j" 'pdf-view-next-line-or-next-page
+ "k" 'pdf-view-previous-line-or-previous-page
+ "h" 'pdf-view-previous-page
+ "l" 'pdf-view-next-page
+ "d" 'pdf-view-scroll-up-or-next-page
+ "u" 'pdf-view-scroll-down-or-previous-page
+ ;; Scale/Fit
+ "W"  'pdf-view-fit-width-to-window
+ "H"  'pdf-view-fit-height-to-window
+ "P"  'pdf-view-fit-page-to-window
+ "m"  'pdf-view-set-slice-using-mouse
+ "b"  'pdf-view-set-slice-from-bounding-box
+ "R"  'pdf-view-reset-slice
+ "zr" 'pdf-view-scale-reset 
+ "-" 'pdf-view-shrink
+ "=" 'pdf-view-enlarge
+;; Annotations
+ "aD" 'pdf-annot-delete
+ "at" 'pdf-annot-attachment-dired 
+ "al" 'pdf-annot-list-annotations 
+ "am" 'pdf-annot-add-markup-annotation
+ ;; Actions
+ "o" 'pdf-occur 
+ "O" 'pdf-outline 
+ "p" 'pdf-misc-print-document 
+ "l" 'pdf-links-action-perform 
+ "r" 'pdf-view-revert-buffer
+ "t" 'pdf-annot-attachment-dired 
+ "n" 'pdf-view-midnight-minor-mode
+ ;; search
+ "/" 'isearch-forward
+ "?" 'isearch-backward
+ ;; Other
+ "q" 'image-kill-buffer 
+ )
+;; pdf-occur-buffer-mode
+(general-define-key
+ :states '(normal visual)
+ :keymaps 'pdf-occur-buffer-mode-map
+ "RET" 'pdf-occur-goto-occurrence
+) 
+;; pdf-outline-mode
+(general-define-key
+ :states '(normal visual)
+ :keymaps 'pdf-outline-buffer-mode-map
+ "RET" 'pdf-outline-follow-link
+ "M-RET" 'pdf-outline-follow-link-and-quit
+ "TAB" 'pdf-outline-toggle-subtree
+ )
 
 
 (provide 'init-general)
