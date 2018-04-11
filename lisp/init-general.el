@@ -147,8 +147,8 @@
  :states '(normal visual)
  :keymaps 'pdf-view-mode-map
  ;; Navigation
- "j" 'pdf-view-next-line-or-next-page
- "k" 'pdf-view-previous-line-or-previous-page
+ "j" '(lambda() (interactive) (pdf-view-next-line-or-next-page 30))
+ "k" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 30))
  "h" 'pdf-view-previous-page
  "l" 'pdf-view-next-page
  "d" 'pdf-view-scroll-up-or-next-page
