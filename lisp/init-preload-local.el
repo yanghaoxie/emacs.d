@@ -3,6 +3,7 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 (show-paren-mode 1)
+(blink-cursor-mode 0)
 (set-face-attribute 'fringe nil :background "gray98" :foreground "gray100")
 (setq tab-stop-list (number-sequence 4 200 4))
 (setq tab-width 4)
