@@ -42,7 +42,7 @@
 		    "hs" 'helm-swoop
 		    "ce" 'LaTeX-environment
 		    "nt" 'neotree-toggle
-		    "ktb" 'kill-this-buffer
+		    "ktb" '(lambda () (interactive) (kill-buffer (current-buffer)))
 		    "nr" 'neotree-refresh
 		    "utv" 'undo-tree-visualize
 		    "es" 'eshell
@@ -61,9 +61,10 @@
 		    "oo" '(lambda () (interactive) (find-file "~/Dropbox/document/org/main.org"))
 		    "cy" 'clipboard-yank
 		    "us" 'sp-unwrap-sexp
-		    "[" 'shrink-window-horizontally
-		    "]" 'enlarge-window-horizontally
+		    "[" '(lambda () (interactive) (shrink-window-horizontally 30))
+		    "]" '(lambda () (interactive) (enlarge-window-horizontally 30))
 		    "bw" 'balance-windows
+		    "pi" 'package-install
 		    )
 (general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
@@ -153,13 +154,18 @@
  "l" 'pdf-view-next-page
  "d" 'pdf-view-scroll-up-or-next-page
  "u" 'pdf-view-scroll-down-or-previous-page
+ "gg" 'pdf-view-first-page
+ "G" 'pdf-view-last-page
+ ;; Register
+ "m" 'pdf-view-position-to-register
+ "'" 'pdf-view-jump-to-register
  ;; Scale/Fit
  "W"  'pdf-view-fit-width-to-window
  "H"  'pdf-view-fit-height-to-window
  "P"  'pdf-view-fit-page-to-window
- "m"  'pdf-view-set-slice-using-mouse
+ ;; "m"  'pdf-view-set-slice-using-mouse
  "b"  'pdf-view-set-slice-from-bounding-box
- "R"  'pdf-view-reset-slice
+ "r"  'pdf-view-reset-slice
  "zr" 'pdf-view-scale-reset 
  "-" 'pdf-view-shrink
  "=" 'pdf-view-enlarge
@@ -173,7 +179,7 @@
  "O" 'pdf-outline 
  "p" 'pdf-misc-print-document 
  "l" 'pdf-links-action-perform 
- "r" 'pdf-view-revert-buffer
+ "R" 'pdf-view-revert-buffer
  "t" 'pdf-annot-attachment-dired 
  "n" 'pdf-view-midnight-minor-mode
  ;; search
@@ -181,6 +187,7 @@
  "?" 'isearch-backward
  ;; Other
  "q" 'image-kill-buffer 
+ "f" 'pdf-links-action-perform
  )
 ;; pdf-occur-buffer-mode
 (general-define-key
