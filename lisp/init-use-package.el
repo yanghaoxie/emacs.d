@@ -73,4 +73,8 @@
     :ensure t)
 (use-package yasnippet
     :ensure t)
+(use-package pdf-tools
+  :ensure t)
+(use-package ggtags
+  :ensure t)
 (provide 'init-use-package)
