@@ -12,4 +12,13 @@
         "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
 	))
 (setq org-log-done t)
+'(org-agenda-files
+  (quote
+   ("~/Dropbox/document/org/Dynamic_VNF_placement/Dynamic_VNF_placement.org")))
+'(org-html-with-latex (quote dvipng))
+(add-to-list 'org-latex-classes
+	     '("IEEEtran" "\\documentclass{IEEEtran}"
+      ("\\section{%s}" . "\\section*{%s}")
+      ("\\subsection{%s}" . "\\subsection*{%s}")
+      ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
 (provide 'init-org)
