@@ -65,6 +65,8 @@
 		    "]" '(lambda () (interactive) (enlarge-window-horizontally 30))
 		    "bw" 'balance-windows
 		    "pi" 'package-install
+		    "nf" 'new-frame
+		    "df" 'delete-frame
 		    )
 (general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
@@ -149,7 +151,9 @@
  :keymaps 'pdf-view-mode-map
  ;; Navigation
  "j" '(lambda() (interactive) (pdf-view-next-line-or-next-page 30))
+ "J" 'pdf-view-next-line-or-next-page
  "k" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 30))
+ "K" 'pdf-view-previous-line-or-previous-page
  "h" 'pdf-view-previous-page
  "l" 'pdf-view-next-page
  "d" 'pdf-view-scroll-up-or-next-page
