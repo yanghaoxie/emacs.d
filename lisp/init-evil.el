@@ -1,11 +1,12 @@
 (require 'evil)
+(evil-mode 1)
 (setq evil-default-state 'normal)
 (evil-set-initial-state 'pdf-view-mode 'normal)
 (evil-set-initial-state 'pdf-outline-buffer-mode 'normal)
-(loop for (mode . state) in
-      '(
-	(magit-mode . emacs)
-	)
-      do (evil-set-initial-state mode state))
-(evil-mode 1)
+(evil-set-initial-state 'custom-mode 'normal)
+;; (loop for (mode . state) in
+;;       '(
+;; 	(magit-mode . normal)
+;; 	)
+;;       do (evil-set-initial-state mode state))
 (provide 'init-evil)
