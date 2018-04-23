@@ -207,6 +207,28 @@
  "M-RET" 'pdf-outline-follow-link-and-quit
  "TAB" 'pdf-outline-toggle-subtree
  )
-
-
+;; package-menu-mode
+(general-define-key
+ :states '(normal visual)
+ :keymaps 'package-menu-mode-map
+ "i" 'package-menu-mark-install
+ "d" 'package-menu-mark-delete
+ "u" 'package-menu-mark-unmark
+ "x" 'package-menu-execute
+ )
+;; eshell-mode 
+;; this is a work around, explained in general issue #80
+(add-hook 'eshell-mode-hook
+	  '(lambda () (general-define-key
+		       :states 'insert
+		       :keymaps 'eshell-mode-map
+		       "C-n" 'eshell-next-input
+		       "C-p" 'eshell-previous-input
+		       "M-p" 'helm-eshell-history
+		       )))
+;; dired-by-name-mode
+;; (general-define-key
+;;  :states 'normal
+;;  :keymaps 'dired-mode-map
+;;  "SPC" 'space)
 (provide 'init-general)
