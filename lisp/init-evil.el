@@ -4,6 +4,8 @@
 (evil-set-initial-state 'pdf-view-mode 'normal)
 (evil-set-initial-state 'pdf-outline-buffer-mode 'normal)
 (evil-set-initial-state 'custom-mode 'normal)
+(evil-set-initial-state 'package-menu-mode 'normal)
+(evil-set-initial-state 'custom-mode 'normal)
 ;; (loop for (mode . state) in
 ;;       '(
 ;; 	(magit-mode . normal)
