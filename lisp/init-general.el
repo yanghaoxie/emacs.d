@@ -67,6 +67,8 @@
 		    "pi" 'package-install
 		    "nf" 'new-frame
 		    "df" 'delete-frame
+		    "gf" 'grep-find
+		    "rg" 'ranger
 		    )
 (general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
@@ -151,9 +153,9 @@
  :keymaps 'pdf-view-mode-map
  ;; Navigation
  "j" '(lambda() (interactive) (pdf-view-next-line-or-next-page 30))
- "J" 'pdf-view-next-line-or-next-page
+ "J" '(lambda() (interactive) (pdf-view-next-line-or-next-page 10))
  "k" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 30))
- "K" 'pdf-view-previous-line-or-previous-page
+ "K" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 10))
  "h" 'pdf-view-previous-page
  "l" 'pdf-view-next-page
  "d" 'pdf-view-scroll-up-or-next-page
