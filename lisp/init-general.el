@@ -3,7 +3,7 @@
 ;; (setq general-default-keymaps 'evil-normal-state-map);; key bindings in evil NORMAL mode
 (general-define-key
  ;; :states '(normal visual insert emacs)
- ;; :keymaps 'text-mode-map
+ :keymaps 'override
 		    :prefix "SPC"
 		    :non-normal-prefix "M-SPC"
 		    "qrs" 'query-replace
