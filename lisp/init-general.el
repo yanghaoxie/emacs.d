@@ -4,75 +4,75 @@
 (general-define-key
  ;; :states '(normal visual insert emacs)
  :keymaps 'override
-		    :prefix "SPC"
-		    :non-normal-prefix "M-SPC"
-		    "qrs" 'query-replace
-		    "qrr" 'query-replace-regexp
-		    "eb" 'eval-buffer
-		    "lt" 'load-theme
-		    "wo" 'delete-other-windows
-		    "xf" 'helm-find-files
-		    "xs" 'save-buffer
-		    "kb" 'kill-buffer
-		    "xb" 'helm-mini
-		    "hb" 'helm-bibtex
-		    ;; "xc" 'save-buffers-kill-terminal
-		    "x0" 'delete-window;; windows
-		    "x2" 'split-window-below
-		    "x3" 'split-window-right
-		    "fcl" 'flycheck-list-errors;; flycheck
-		    "fcp" 'flycheck-previous-error
-		    "fcn" 'flycheck-next-error
-		    "ci" 'evilnc-comment-or-uncomment-lines ;; evil-nerd-commenter
-		    "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
-		    "cp" 'evilnc-comment-or-uncomment-paragraphs
-		    "cr" 'comment-or-uncomment-region
-		    "cv" 'evilnc-toggle-invert-comment-line-by-line
-		    "."  'evilnc-copy-and-comment-operator
-		    "\\" 'evilnc-comment-operator
-		    "nb" 'next-buffer ;; switch buffer
-		    "pb" 'previous-buffer
-		    "bb" 'mode-line-other-buffer
-		    "xg" 'magit-status ;; magit
-		    "ho" 'helm-occur
-		    "bf" 'beginning-of-defun ;; nav function
-		    "ef" 'end-of-defun
-		    "se" 'sudo-edit
-		    "xx" 'er/expand-region
-		    "hs" 'helm-swoop
-		    "ce" 'LaTeX-environment
-		    "nt" 'neotree-toggle
-		    "ktb" '(lambda () (interactive) (kill-buffer (current-buffer)))
-		    "nr" 'neotree-refresh
-		    "utv" 'undo-tree-visualize
-		    "es" 'eshell
-		    "rp" 'run-python
-		    "kmb" 'kill-matching-buffers
-		    "sk" 'save-buffers-kill-terminal
-		    "pl" 'package-list-packages
-		    "fm" 'fci-mode
-		    "gl" 'evil-goto-line
-		    "ssm" 'smartparens-strict-mode
-		    "de" 'dired
-		    "rb" 'revert-buffer
-		    "sc" 'shell-command
-		    "sh" 'shell
-		    "af" 'auto-fill-mode
-		    "oo" '(lambda () (interactive) (find-file "~/Dropbox/document/org/main.org"))
-		    "cy" 'clipboard-yank
-		    "us" 'sp-unwrap-sexp
-		    "[" '(lambda () (interactive) (shrink-window-horizontally 30))
-		    "]" '(lambda () (interactive) (enlarge-window-horizontally 30))
-		    "bw" 'balance-windows
-		    "pi" 'package-install
-		    "nf" 'new-frame
-		    "df" 'delete-frame
-		    "gf" 'grep-find
-		    "rg" 'ranger
-		    "bs" 'bookmark-set
-		    "bj" 'bookmark-jump
-		    "bd" 'bookmark-delete
-		    )
+ :prefix "SPC"
+ :non-normal-prefix "M-SPC"
+ "qrs" 'query-replace
+ "qrr" 'query-replace-regexp
+ "eb" 'eval-buffer
+ "lt" 'load-theme
+ "wo" 'delete-other-windows
+ "xf" 'helm-find-files
+ "xs" 'save-buffer
+ "kb" 'kill-buffer
+ "xb" 'helm-mini
+ "hb" 'helm-bibtex
+ ;; "xc" 'save-buffers-kill-terminal
+ "x0" 'delete-window;; windows
+ "x2" 'split-window-below
+ "x3" 'split-window-right
+ "fcl" 'flycheck-list-errors;; flycheck
+ "fcp" 'flycheck-previous-error
+ "fcn" 'flycheck-next-error
+ "ci" 'evilnc-comment-or-uncomment-lines ;; evil-nerd-commenter
+ "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+ "cp" 'evilnc-comment-or-uncomment-paragraphs
+ "cr" 'comment-or-uncomment-region
+ "cv" 'evilnc-toggle-invert-comment-line-by-line
+ "."  'evilnc-copy-and-comment-operator
+ "\\" 'evilnc-comment-operator
+ "nb" 'next-buffer ;; switch buffer
+ "pb" 'previous-buffer
+ "bb" 'mode-line-other-buffer
+ "xg" 'magit-status ;; magit
+ "ho" 'helm-occur
+ "bf" 'beginning-of-defun ;; nav function
+ "ef" 'end-of-defun
+ "se" 'sudo-edit
+ "xx" 'er/expand-region
+ "hs" 'helm-swoop
+ "ce" 'LaTeX-environment
+ "nt" 'neotree-toggle
+ "ktb" '(lambda () (interactive) (kill-buffer (current-buffer)))
+ "nr" 'neotree-refresh
+ "utv" 'undo-tree-visualize
+ "es" 'eshell
+ "rp" 'run-python
+ "kmb" 'kill-matching-buffers
+ "sk" 'save-buffers-kill-terminal
+ "pl" 'package-list-packages
+ "fm" 'fci-mode
+ "gl" 'evil-goto-line
+ "ssm" 'smartparens-strict-mode
+ "de" 'dired
+ "rb" 'revert-buffer
+ "sc" 'shell-command
+ "sh" 'shell
+ "af" 'auto-fill-mode
+ "oo" '(lambda () (interactive) (find-file "~/Dropbox/document/org/main.org"))
+ "cy" 'clipboard-yank
+ "us" 'sp-unwrap-sexp
+ "[" '(lambda () (interactive) (shrink-window-horizontally 30))
+ "]" '(lambda () (interactive) (enlarge-window-horizontally 30))
+ "bw" 'balance-windows
+ "pi" 'package-install
+ "nf" 'new-frame
+ "df" 'delete-frame
+ "gf" 'grep-find
+ "rg" 'ranger
+ "bs" 'bookmark-set
+ "bj" 'bookmark-jump
+ "bd" 'bookmark-delete
+ )
 (general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
  ;;
