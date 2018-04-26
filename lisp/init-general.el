@@ -69,6 +69,9 @@
 		    "df" 'delete-frame
 		    "gf" 'grep-find
 		    "rg" 'ranger
+		    "bs" 'bookmark-set
+		    "bj" 'bookmark-jump
+		    "bd" 'bookmark-delete
 		    )
 (general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
