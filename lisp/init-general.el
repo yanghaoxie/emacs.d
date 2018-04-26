@@ -231,9 +231,4 @@
 		       "C-p" 'eshell-previous-input
 		       "M-p" 'helm-eshell-history
 		       )))
-;; dired-by-name-mode
-;; (general-define-key
-;;  :states 'normal
-;;  :keymaps 'dired-mode-map
-;;  "SPC" 'space)
 (provide 'init-general)
