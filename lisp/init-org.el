@@ -1,5 +1,3 @@
-;; (global-set-key (kbd "C-c o") 
-;;                 (lambda () (interactive) (find-file "~/Dropbox/document/org/main.org")))
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil))) 
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 (require 'org)
@@ -21,4 +19,6 @@
       ("\\section{%s}" . "\\section*{%s}")
       ("\\subsection{%s}" . "\\subsection*{%s}")
       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+;; latex highlight in org mode
+(setq org-highlight-latex-and-related '(latex script entities))
 (provide 'init-org)
