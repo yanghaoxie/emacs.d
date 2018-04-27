@@ -6,6 +6,7 @@
 (evil-set-initial-state 'custom-mode 'normal)
 (evil-set-initial-state 'package-menu-mode 'normal)
 (evil-set-initial-state 'custom-mode 'normal)
+(evil-set-initial-state 'bookmark-bmenu-mode 'normal)
 ;; (loop for (mode . state) in
 ;;       '(
 ;; 	(magit-mode . normal)
