@@ -2,7 +2,10 @@
 (setq general-default-states '(normal visual insert emacs))
 ;; (setq general-default-keymaps 'evil-normal-state-map);; key bindings in evil NORMAL mode
 (general-define-key
- ;; :states '(normal visual insert emacs)
+ ;; pyim
+ "M-i" 'pyim-convert-code-at-point)
+(general-define-key
+ :states '(normal visual insert)
  :keymaps 'override
  :prefix "SPC"
  :non-normal-prefix "M-SPC"
@@ -10,6 +13,7 @@
  "qrr" 'query-replace-regexp
  "eb" 'eval-buffer
  "lt" 'load-theme
+ "dt" 'disable-theme
  "wo" 'delete-other-windows
  "xf" 'helm-find-files
  "xs" 'save-buffer
@@ -231,4 +235,11 @@
 		       "C-p" 'eshell-previous-input
 		       "M-p" 'helm-eshell-history
 		       )))
+;; company-quickhelp-mode
+(add-hook 'company-mode-hook
+	  '(lambda () (general-define-key
+			:states '(insert normal)
+			:keymaps 'override
+			"M-h" 'company-quickhelp-manual-begin
+			)))
 (provide 'init-general)
