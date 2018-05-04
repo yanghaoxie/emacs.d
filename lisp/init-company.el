@@ -1,6 +1,6 @@
 (require 'company)
-(setq company-idle-delay 0
- )
+(global-company-mode 1)
+(setq company-idle-delay 0)
 (defun ora-company-number ()
   "Forward to `company-complete-number'.
 
