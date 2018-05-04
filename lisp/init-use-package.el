@@ -77,4 +77,12 @@
   :ensure t)
 (use-package ggtags
   :ensure t)
+(use-package pcomplete-extension
+  :ensure t)
+(use-package ranger
+  :ensure t)
+(use-package company-quickhelp
+  :ensure t)
+(use-package fish-completion
+  :ensure t)
 (provide 'init-use-package)
