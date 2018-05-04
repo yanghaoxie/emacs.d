@@ -85,4 +85,10 @@
   :ensure t)
 (use-package fish-completion
   :ensure t)
+(use-package pyim
+  :ensure t)
+(use-package posframe
+  :ensure t)
+(use-package langtool
+  :ensure t)
 (provide 'init-use-package)
