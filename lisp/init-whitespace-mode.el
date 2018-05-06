@@ -1,4 +1,6 @@
 (require 'whitespace)
 (global-whitespace-mode)
-(setq whitespace-style '(lines-tail trailing))
+(setq whitespace-line-column 80)
+(setq fill-column 80)
+(setq whitespace-style '(face lines-tail trailing))
 (provide 'init-whitespace-mode)
