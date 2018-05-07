@@ -76,6 +76,7 @@
  "bs" 'bookmark-set
  "bj" 'bookmark-jump
  "bd" 'bookmark-delete
+ "rt" 'redtick
  )
 (general-define-key :states '(normal visual)
  "gl" 'evil-goto-line
