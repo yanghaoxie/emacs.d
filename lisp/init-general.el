@@ -99,7 +99,7 @@
   :non-normal-prefix "M-SPC"
   "oe" 'org-export-dispatch
   "oa" 'org-open-at-point
-  "op" 'my/org-ref-open-pdf-at-point 
+  "op" 'my/org-ref-open-pdf-at-point
   "ic" 'org-ref-helm-insert-cite-link
   ;; navagation
   "nh" 'org-next-visible-heading
@@ -130,7 +130,7 @@
   :prefix "SPC"
   :non-normal-prefix "M-SPC"
   "cc" 'elpy-shell-send-region-or-buffer
-  "cz" 'elpy-shell-switch-to-shell 
+  "cz" 'elpy-shell-switch-to-shell
   "ed" 'elpy-doc
   "pf" 'elpy-yapf-fix-code
   "ck" 'elpy-shell-kill
@@ -146,7 +146,7 @@
   :prefix "SPC"
   :non-normal-prefix "M-SPC"
   "cc" 'TeX-command-master
-  "ca" 'TeX-command-run-all 
+  "ca" 'TeX-command-run-all
   "sq" 'org-edit-src-exit
   )
 ;; expand-region
@@ -180,27 +180,27 @@
  ;; "m"  'pdf-view-set-slice-using-mouse
  "b"  'pdf-view-set-slice-from-bounding-box
  "r"  'pdf-view-reset-slice
- "zr" 'pdf-view-scale-reset 
+ "zr" 'pdf-view-scale-reset
  "-" 'pdf-view-shrink
  "=" 'pdf-view-enlarge
 ;; Annotations
  "aD" 'pdf-annot-delete
- "at" 'pdf-annot-attachment-dired 
- "al" 'pdf-annot-list-annotations 
+ "at" 'pdf-annot-attachment-dired
+ "al" 'pdf-annot-list-annotations
  "am" 'pdf-annot-add-markup-annotation
  ;; Actions
- "o" 'pdf-occur 
- "O" 'pdf-outline 
- "p" 'pdf-misc-print-document 
- "l" 'pdf-links-action-perform 
+ "o" 'pdf-occur
+ "O" 'pdf-outline
+ "p" 'pdf-misc-print-document
+ "l" 'pdf-links-action-perform
  "R" 'pdf-view-revert-buffer
- "t" 'pdf-annot-attachment-dired 
+ "t" 'pdf-annot-attachment-dired
  "n" 'pdf-view-midnight-minor-mode
  ;; search
  "/" 'isearch-forward
  "?" 'isearch-backward
  ;; Other
- "q" 'image-kill-buffer 
+ "q" 'image-kill-buffer
  "f" 'pdf-links-action-perform
  )
 ;; pdf-occur-buffer-mode
@@ -208,7 +208,7 @@
  :states '(normal visual)
  :keymaps 'pdf-occur-buffer-mode-map
  "RET" 'pdf-occur-goto-occurrence
-) 
+)
 ;; pdf-outline-mode
 (general-define-key
  :states '(normal visual)
@@ -226,7 +226,7 @@
  "u" 'package-menu-mark-unmark
  "x" 'package-menu-execute
  )
-;; eshell-mode 
+;; eshell-mode
 ;; this is a work around, explained in general issue #80
 (add-hook 'eshell-mode-hook
 	  '(lambda () (general-define-key
