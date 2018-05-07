@@ -26,4 +26,21 @@ In that case, insert the number."
   (define-key map (kbd "<return>") nil))
 (setq company-show-numbers t)
 (add-hook 'after-init-hook 'global-company-mode)
+
+
+;; solve company yasnippet conflicts
+(defun company-yasnippet-or-completion ()
+  "Solve company yasnippet conflicts."
+  (interactive)
+  (let ((yas-fallback-behavior
+         (apply 'company-complete-common nil)))
+    (yas-expand)))
+
+(add-hook 'company-mode-hook
+          (lambda ()
+            (substitute-key-definition
+             'company-complete-common
+             'company-yasnippet-or-completion
+             company-active-map)))
+
 (provide 'init-company)
