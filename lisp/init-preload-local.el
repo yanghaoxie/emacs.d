@@ -14,18 +14,4 @@
 (setq save-interprogram-paste-before-kill t)
 ;; replace yes and no with y and n
 (defalias 'yes-or-no-p 'y-or-n-p)
-;; solve company yasnippet conflicts
-(defun company-yasnippet-or-completion ()
-  "Solve company yasnippet conflicts."
-  (interactive)
-  (let ((yas-fallback-behavior
-         (apply 'company-complete-common nil)))
-    (yas-expand)))
-
-(add-hook 'company-mode-hook
-          (lambda ()
-            (substitute-key-definition
-             'company-complete-common
-             'company-yasnippet-or-completion
-             company-active-map)))
 (provide 'init-preload-local)
