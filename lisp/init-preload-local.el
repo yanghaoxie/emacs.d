@@ -14,4 +14,5 @@
 (setq save-interprogram-paste-before-kill t)
 ;; replace yes and no with y and n
 (defalias 'yes-or-no-p 'y-or-n-p)
+(add-hook 'tex-mode-hook 'auto-fill-mode)
 (provide 'init-preload-local)
