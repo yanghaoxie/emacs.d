@@ -193,7 +193,7 @@
  "o" 'pdf-occur
  "O" 'pdf-outline
  "p" 'pdf-misc-print-document
- "l" 'pdf-links-action-perform
+ ;; "l" 'pdf-links-action-perform
  "R" 'pdf-view-revert-buffer
  "t" 'pdf-annot-attachment-dired
  "n" 'pdf-view-midnight-minor-mode
