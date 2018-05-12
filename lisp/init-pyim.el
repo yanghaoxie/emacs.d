@@ -1,6 +1,9 @@
-
+(require 'pyim)
   (setq default-input-method "pyim")
-
+;; added by me
+;; (setq pyim-dicts "~/Dropbox/software/emacs/pyim/pyim-bigdict.pyim")
+;; (setq pyim-dcache-directory "~/Dropbox/software/emacs/pyim/dcache")
+(pyim-basedict-enable)
   ;; 我使用全拼
   (setq pyim-default-scheme 'quanpin)
 
