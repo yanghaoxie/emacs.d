@@ -2,7 +2,6 @@
 *~
 ido.last
 /auto-save-list
-/.*
 /url
 /games
 /elpa*
@@ -12,3 +11,6 @@ tramp
 emacs.d
 ac-comphist.dat
 recentf
+*.elc
+/.uptimes.el
+/.*
