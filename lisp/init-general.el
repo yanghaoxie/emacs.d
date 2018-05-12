@@ -148,6 +148,7 @@
   "cc" 'TeX-command-master
   "ca" 'TeX-command-run-all
   "sq" 'org-edit-src-exit
+  "lfb" 'LaTeX-fill-buffer
   )
 ;; expand-region
 ;; press ",xx" to expand region
