@@ -30,7 +30,7 @@
 (use-package evil-nerd-commenter
     :ensure t)
 (use-package evil-snipe
-    :ensure t)
+   :ensure t)
 (use-package evil-surround
     :ensure t)
 (use-package expand-region
@@ -90,5 +90,7 @@
 (use-package posframe
   :ensure t)
 (use-package langtool
+  :ensure t)
+(use-package eshell-z
   :ensure t)
 (provide 'init-use-package)
