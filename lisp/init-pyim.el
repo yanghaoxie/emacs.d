@@ -28,12 +28,14 @@
   ;; 使用 pupup-el 来绘制选词框, 如果用 emacs26, 建议设置
   ;; 为 'posframe, 速度很快并且菜单不会变形，不过需要用户
   ;; 手动安装 posframe 包。
-  (setq pyim-page-tooltip 'popup)
+  ;; (setq pyim-page-tooltip 'popup)
+(setq pyim-page-tooltip 'posframe)
 
   ;; 选词框显示5个候选词
   (setq pyim-page-length 5)
 
-  ;; 让 Emacs 启动时自动加载 pyim 词库
+;; 让 Emacs 启动时自动加载 pyim 词库 
+
   (add-hook 'emacs-startup-hook
             #'(lambda () (pyim-restart-1 t)))
   ;; (("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
