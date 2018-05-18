@@ -2,6 +2,7 @@
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 (require 'org)
 (require 'ox-bibtex)
+(setq org-directory "~/Dropbox/document/org")
 (setq org-latex-pdf-process
       '(
 	"xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
