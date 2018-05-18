@@ -162,9 +162,9 @@
  :states '(normal visual)
  :keymaps 'pdf-view-mode-map
  ;; Navigation
- "j" '(lambda() (interactive) (pdf-view-next-line-or-next-page 30))
+ "j" '(lambda() (interactive) (pdf-view-next-line-or-next-page 35))
  "J" '(lambda() (interactive) (pdf-view-next-line-or-next-page 10))
- "k" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 30))
+ "k" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 35))
  "K" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 10))
  "h" 'pdf-view-previous-page
  "l" 'pdf-view-next-page
