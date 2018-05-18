@@ -3,4 +3,5 @@
 ;; (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 ;; (setq aw-dispatch-always t)
 ;; (ace-window-display-mode 1)
+(setq aw-scope 'frame)
 (provide 'init-ace-window)
