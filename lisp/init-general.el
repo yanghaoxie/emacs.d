@@ -63,6 +63,7 @@
  "sh" 'shell
  "af" 'auto-fill-mode
  "oo" '(lambda () (interactive) (find-file "~/Dropbox/document/org/main.org"))
+ "rn" '(lambda () (interactive) (find-file "~/Dropbox/document/org/references/ref_notes.org"))
  "cy" 'clipboard-yank
  "us" 'sp-unwrap-sexp
  "[" '(lambda () (interactive) (shrink-window-horizontally 30))
