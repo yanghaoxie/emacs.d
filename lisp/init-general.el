@@ -2,8 +2,20 @@
 (setq general-default-states '(normal visual insert emacs))
 ;; (setq general-default-keymaps 'evil-normal-state-map);; key bindings in evil NORMAL mode
 (general-define-key
+ :states '(normal visual)
  ;; pyim
- "M-i" 'pyim-convert-code-at-point)
+ "M-i" 'pyim-convert-code-at-point
+ ;; eyebrowse
+ "gt" 'eyebrowse-next-window-config
+ "gT" 'eyebrowse-prev-window-config
+ "gc" 'eyebrowse-close-window-config
+ "gr" 'eyebrowse-create-window-config
+ "gl" 'eyebrowse-last-window-config
+ "g0" 'eyebrowse-switch-to-window-config-0
+ "g1" 'eyebrowse-switch-to-window-config-1
+ "g2" 'eyebrowse-switch-to-window-config-2
+ "g3" 'eyebrowse-switch-to-window-config-3
+ )
 (general-define-key
  :states '(normal visual insert)
  :keymaps 'override
