@@ -1,4 +1,5 @@
 (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
+(setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref_notes.org")
 ;; (setq org-ref-pdf-directory "~/Dropbox/software/Zotero/storage")
 ;; (setq bibtex-completion-pdf-open-function
 ;;   (lambda (fpath)
