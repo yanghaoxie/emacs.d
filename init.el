@@ -45,15 +45,16 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
-
+(require 'init-use-package)
+(require 'init-evil)
 ;; packages in "site-lisp"
-(require 'fill-column-indicator)
+;; (require 'fill-column-indicator)
 (require 'evil-textobj-line)
 ;;(require 'fish-completion)
 
-(require 'init-use-package)
+;;(require 'init-use-package)
 (require 'custom);; file added by Custom
-(require 'init-evil)
+;;(require 'init-evil)
 (require 'init-ace-window)
 (require 'init-airline-themes)
 (require 'init-anzu)
@@ -102,6 +103,25 @@
 ;; (require 'init-gnus)
 ;; (require 'init-highlight-indent-guides)
 ;;(require 'init-jedi)
+(require 'init-ggtags)
+;; (require 'init-helm-gtags)
+;; (require 'init-evil-magit)
+(require 'init-fish-completion)
+(require 'init-bookmark-plus)
+(require 'init-company-quickhelp)
+(require 'init-pyim)
+;; (require 'init-ivy-posframe)
+(require 'init-langtool)
+(require 'init-redtick)
+(require 'init-whitespace-mode)
+(require 'init-paradox)
+(require 'init-artbollocks)
+(require 'init-helm-bibtex)
+(require 'init-elfeed)
+(require 'init-evil-exchange)
+;; (require 'init-company-flx)
+;; (require 'init-helm-flx)
+(require 'init-eyebrowse)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
