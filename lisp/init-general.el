@@ -67,7 +67,7 @@
  "sk" 'save-buffers-kill-terminal
  "pl" 'package-list-packages
  "fm" 'fci-mode
- "gl" 'evil-goto-line
+ ;; "gl" 'evil-goto-line
  "ssm" 'smartparens-strict-mode
  "de" 'dired
  "rb" 'revert-buffer
