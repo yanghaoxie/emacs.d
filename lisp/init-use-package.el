@@ -93,4 +93,18 @@
   :ensure t)
 (use-package eshell-z
   :ensure t)
+(use-package paradox
+  :ensure t)
+(use-package atomic-chrome
+  :ensure t)
+(use-package artbollocks-mode
+  :ensure t)
+(use-package interleave
+  :ensure t)
+(use-package evil-matchit
+  :ensure t)
+(use-package evil-exchange
+  :ensure t)
+(use-package company-flx
+  :ensure)
 (provide 'init-use-package)
