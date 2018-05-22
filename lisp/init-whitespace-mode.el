@@ -1,5 +1,5 @@
 (require 'whitespace)
-(global-whitespace-mode)
+(add-hook 'prog-mode-hook 'whitespace-mode)
 (setq whitespace-line-column 80)
 (setq fill-column 80)
 (setq whitespace-style '(face lines-tail))
