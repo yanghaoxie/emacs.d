@@ -4,10 +4,6 @@
 ;; (setq bibtex-completion-pdf-open-function
 ;;   (lambda (fpath)
 ;;     (start-process "open" "*open*" "open" fpath)))
-(setq bibtex-completion-pdf-field "file")
-;; (setq bibtex-completion-pdf-extenaion '(".pdf" ".html"))
-(setq bibtex-completion-find-additional-pdfs t)
-(setq bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib")
 (defun my/org-ref-open-pdf-at-point ( )
    "Open the pdf for bibtex key under point if it exists."
    (interactive)
