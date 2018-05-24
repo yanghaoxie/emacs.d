@@ -15,4 +15,5 @@
 ;; replace yes and no with y and n
 (defalias 'yes-or-no-p 'y-or-n-p)
 (add-hook 'tex-mode-hook 'auto-fill-mode)
+(set-face-attribute 'secondary-selection nil :background "gray95")
 (provide 'init-preload-local)
