@@ -16,4 +16,6 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (add-hook 'tex-mode-hook 'auto-fill-mode)
 (set-face-attribute 'secondary-selection nil :background "gray95")
+;; truncate file name
+(setq-default mode-line-buffer-identification (list -40 (propertized-buffer-identification "%12b")))
 (provide 'init-preload-local)
