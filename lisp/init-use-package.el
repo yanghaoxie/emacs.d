@@ -107,4 +107,8 @@
   :ensure t)
 (use-package company-flx
   :ensure t)
+(use-package flyspell-correct
+  :ensure t)
+(use-package flyspell-correct-popup
+  :ensure t)
 (provide 'init-use-package)
