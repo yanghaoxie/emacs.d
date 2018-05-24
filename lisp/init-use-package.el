@@ -106,5 +106,5 @@
 (use-package evil-exchange
   :ensure t)
 (use-package company-flx
-  :ensure)
+  :ensure t)
 (provide 'init-use-package)
