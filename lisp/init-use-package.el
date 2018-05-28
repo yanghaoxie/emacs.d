@@ -51,6 +51,8 @@
     :ensure t)
 (use-package magit
     :ensure t)
+(use-package evil-magit
+  :ensure t)
 (use-package neotree
     :ensure t)
 (use-package org
@@ -110,5 +112,7 @@
 (use-package flyspell-correct
   :ensure t)
 (use-package flyspell-correct-popup
+  :ensure t)
+(use-package winum
   :ensure t)
 (provide 'init-use-package)
