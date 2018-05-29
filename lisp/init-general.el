@@ -259,6 +259,20 @@
 			:keymaps 'override
 			"M-h" 'company-quickhelp-manual-begin
 			)))
+;; elfeed-search-mode
+(general-define-key
+ :states 'normal
+ :keymaps 'elfeed-search-mode-map
+ "RET" 'elfeed-search-show-entry
+ "g" 'elfeed-update
+ "G" 'elfeed-search-fetch
+ "q" 'elfeed-goodies/delete-pane
+ )
+;; elfeed-show-mode
+(general-define-key
+ :states 'normal
+ :keymaps 'elfeed-show-mode-map
+ "q" 'elfeed-goodies/delete-pane)
 ;; winum
 (general-define-key
  :states '(normal insert visual)
