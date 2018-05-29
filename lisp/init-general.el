@@ -259,4 +259,15 @@
 			:keymaps 'override
 			"M-h" 'company-quickhelp-manual-begin
 			)))
+;; winum
+(general-define-key
+ :states '(normal insert visual)
+ :keymaps 'override
+ "M-1" 'winum-select-window-1
+ "M-2" 'winum-select-window-2
+ "M-3" 'winum-select-window-3
+ "M-4" 'winum-select-window-4
+ "M-5" 'winum-select-window-5
+ "M-6" 'winum-select-window-6
+ )
 (provide 'init-general)
