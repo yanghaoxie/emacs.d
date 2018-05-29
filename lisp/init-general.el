@@ -254,6 +254,11 @@
 			:keymaps 'override
 			"M-h" 'company-quickhelp-manual-begin
 			)))
+;; flyspell-mode
+(general-define-key
+ :states '(normal visual insert)
+ :keymaps 'flyspell-mode-map
+ "C-;" 'flyspell-correct-previous-word-generic)
 ;; elfeed-search-mode
 (general-define-key
  :states 'normal
