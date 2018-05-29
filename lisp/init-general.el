@@ -15,6 +15,8 @@
  "g1" 'eyebrowse-switch-to-window-config-1
  "g2" 'eyebrowse-switch-to-window-config-2
  "g3" 'eyebrowse-switch-to-window-config-3
+ "g4" 'eyebrowse-switch-to-window-config-4
+ "g5" 'eyebrowse-switch-to-window-config-5
  )
 (general-define-key
  :states '(normal visual insert)
