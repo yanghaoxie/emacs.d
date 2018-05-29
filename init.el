@@ -94,7 +94,7 @@
 (require 'init-rich-minority)
 (require 'init-smartparens)
 (require 'init-sudo-edit)
-(require 'init-window-numbering)
+;; (require 'init-window-numbering)
 ;; (require 'init-yagist)
 (require 'init-yasnippet)
 ;; (require 'init-diminish)
@@ -122,6 +122,7 @@
 ;; (require 'init-company-flx)
 ;; (require 'init-helm-flx)
 (require 'init-eyebrowse)
+(require 'init-winum)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
