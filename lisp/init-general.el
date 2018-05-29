@@ -254,6 +254,18 @@
 			:keymaps 'override
 			"M-h" 'company-quickhelp-manual-begin
 			)))
+;; interleave-pdf-mode
+(general-define-key
+ :states '(normal visual)
+ :keymaps 'interleave-pdf-mode-map
+ :prefix "SPC"
+ "an" 'interleave-add-note)
+;; (add-hook 'flyspell-mode-hook
+;; 	  '(lambda () (general-define-key
+;; 		       :states '(normal visual insert)
+;; 		       :keymaps 'flyspell-mode-map
+;; 		       "C-;" 'flyspell-correct-previous-word-generic
+;; 		       )))
 ;; flyspell-mode
 (general-define-key
  :states '(normal visual insert)
