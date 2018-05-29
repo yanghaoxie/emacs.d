@@ -93,11 +93,6 @@
  "bd" 'bookmark-delete
  "rt" 'redtick
  )
-(general-define-key :states '(normal visual)
- "gl" 'evil-goto-line
- ;;
- ;;"s" 'avy-goto-char-2
- )
 (general-define-key :prefix ";"
 		    :non-normal-prefix "M-;"
 		    "s" 'avy-goto-char-2
