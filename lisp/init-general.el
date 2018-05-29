@@ -92,6 +92,14 @@
  "bj" 'bookmark-jump
  "bd" 'bookmark-delete
  "rt" 'redtick
+ "il" 'interleave-mode
+ "oc" 'org-capture
+ "wr" 'window-configuration-to-register
+ "jr" 'jump-to-register
+ "fe" 'elfeed
+ "-" 'text-scale-decrease
+ "=" 'text-scale-increase
+ "sa" 'text-scale-adjust
  )
 (general-define-key :prefix ";"
 		    :non-normal-prefix "M-;"
