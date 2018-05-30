@@ -14,3 +14,4 @@ recentf
 *.elc
 /.uptimes.el
 /.*
+/bookmarks
