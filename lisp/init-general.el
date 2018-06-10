@@ -2,9 +2,10 @@
 (setq general-default-states '(normal visual insert emacs))
 ;; (setq general-default-keymaps 'evil-normal-state-map);; key bindings in evil NORMAL mode
 (general-define-key
- :states '(normal visual)
+ :states '(insert)
  ;; pyim
  "M-i" 'pyim-convert-code-at-point
+)
  ;; eyebrowse
  "gt" 'eyebrowse-next-window-config
  "gT" 'eyebrowse-prev-window-config
