@@ -113,8 +113,8 @@
   :ensure t)
 (use-package flyspell-correct-popup
   :ensure t)
-(use-package winum
-  :ensure t)
+;; (use-package winum
+;;   :ensure t)
 (use-package define-word
   :ensure t)
 (use-package powerthesaurus
