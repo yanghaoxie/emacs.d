@@ -6,6 +6,8 @@
  ;; pyim
  "M-i" 'pyim-convert-code-at-point
 )
+(general-define-key
+ :states '(normal visual)
  ;; eyebrowse
  "gt" 'eyebrowse-next-window-config
  "gT" 'eyebrowse-prev-window-config
@@ -18,6 +20,7 @@
  "g3" 'eyebrowse-switch-to-window-config-3
  "g4" 'eyebrowse-switch-to-window-config-4
  "g5" 'eyebrowse-switch-to-window-config-5
+  )
 (general-define-key
  :states '(normal insert visual)
  :keymaps 'override
