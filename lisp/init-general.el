@@ -101,6 +101,7 @@
  "-" 'text-scale-decrease
  "=" 'text-scale-increase
  "sa" 'text-scale-adjust
+ "sp" 'spotify-playpause
  )
 (general-define-key :prefix ";"
 		    :non-normal-prefix "M-;"
