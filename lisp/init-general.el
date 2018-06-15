@@ -18,6 +18,15 @@
  "g3" 'eyebrowse-switch-to-window-config-3
  "g4" 'eyebrowse-switch-to-window-config-4
  "g5" 'eyebrowse-switch-to-window-config-5
+(general-define-key
+ :states '(normal insert visual)
+ :keymaps 'override
+ ;; window-numbering
+ "M-1" 'select-window-1
+ "M-2" 'select-window-2
+ "M-3" 'select-window-3
+ "M-4" 'select-window-4
+ "M-5" 'select-window-5
  )
 (general-define-key
  :states '(normal visual insert)
