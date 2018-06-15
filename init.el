@@ -105,7 +105,7 @@
 ;;(require 'init-jedi)
 (require 'init-ggtags)
 ;; (require 'init-helm-gtags)
-;; (require 'init-evil-magit)
+(require 'init-evil-magit)
 (require 'init-fish-completion)
 (require 'init-bookmark-plus)
 (require 'init-company-quickhelp)
