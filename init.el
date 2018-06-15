@@ -75,7 +75,7 @@
 (require 'init-evil-snipe)
 (require 'init-evil-surround)
 (require 'init-expand-region)
-(require 'init-fill-column-indicator) 
+;; (require 'init-fill-column-indicator) 
 (require 'init-flycheck)
 (require 'init-flyspell)
 (require 'init-general)
