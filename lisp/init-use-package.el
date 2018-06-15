@@ -115,4 +115,8 @@
   :ensure t)
 (use-package winum
   :ensure t)
+(use-package define-word
+  :ensure t)
+(use-package powerthesaurus
+  :ensure t)
 (provide 'init-use-package)
