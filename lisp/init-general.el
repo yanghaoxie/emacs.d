@@ -72,7 +72,8 @@
  "fm" 'fci-mode
  ;; "gl" 'evil-goto-line
  "ssm" 'smartparens-strict-mode
- "de" 'dired
+ ;; "de" 'dired
+ "de" 'deer
  "rb" 'revert-buffer
  "sc" 'shell-command
  "sh" 'shell
