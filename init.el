@@ -122,8 +122,8 @@
 ;; (require 'init-company-flx)
 ;; (require 'init-helm-flx)
 (require 'init-eyebrowse)
-(require 'init-smart-mode-line)
-(require 'init-winum)
+;; (require 'init-smart-mode-line)
+;; (require 'init-winum)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
