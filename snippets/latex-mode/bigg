@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: bigg
+# key: bg
+# --
+\biggl$1 $0 \biggr$2
