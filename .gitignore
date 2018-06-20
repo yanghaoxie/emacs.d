@@ -15,3 +15,7 @@ recentf
 /.uptimes.el
 /.*
 /bookmarks
+newsticker/
+pyim/
+request/
+/projectile-bookmarks.eld
