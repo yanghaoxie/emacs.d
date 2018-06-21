@@ -23,4 +23,6 @@
 ;; (setq socks-server '("Default server" "127.0.0.1" 1080 5))
 ;; (setq url-gateway-local-host-regexp
 ;;       (concat "\\`" (regexp-opt '("localhost" "127.0.0.1")) "\\'"))
+;; show file size on mode line
+(size-indication-mode 1)
 (provide 'init-preload-local)
