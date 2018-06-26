@@ -2,9 +2,14 @@
 (setq general-default-states '(normal visual insert emacs))
 ;; (setq general-default-keymaps 'evil-normal-state-map);; key bindings in evil NORMAL mode
 (general-define-key
- :states '(insert)
+ ;; :keymaps 'override
+ :states '(insert emacs)
  ;; pyim
  "M-i" 'pyim-convert-code-at-point
+ ;; for edit
+ ;; "C-h" 'evil-delete-backward-char
+ "C-a" 'evil-beginning-of-line
+ "C-e" 'evil-end-of-line
 )
 (general-define-key
  :states '(normal visual)
