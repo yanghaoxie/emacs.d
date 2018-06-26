@@ -262,6 +262,7 @@
  "RET" 'pdf-outline-follow-link
  "M-RET" 'pdf-outline-follow-link-and-quit
  "TAB" 'pdf-outline-toggle-subtree
+ "q" 'pdf-outline-quit
  )
 ;; package-menu-mode
 (general-define-key
