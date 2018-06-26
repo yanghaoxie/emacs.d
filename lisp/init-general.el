@@ -159,7 +159,15 @@
   ;; "mr" 'org-meta-return
   "le" 'org-edit-latex-environment
   )
-
+;;org mode in normal state
+(general-define-key
+ :keymaps 'org-mode-map
+ :states 'normal
+ "gb" 'org-backward-heading-same-level
+ "gn" 'org-next-visible-heading
+ "gp" 'org-previous-visible-heading
+ "gf" 'org-forward-heading-same-level
+ )
 ;; elpy mode
 (general-define-key
     ;; 'normal elpy-mode-map
