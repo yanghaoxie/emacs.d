@@ -20,6 +20,10 @@
  "g3" 'eyebrowse-switch-to-window-config-3
  "g4" 'eyebrowse-switch-to-window-config-4
  "g5" 'eyebrowse-switch-to-window-config-5
+ "g6" 'eyebrowse-switch-to-window-config-6
+ "g7" 'eyebrowse-switch-to-window-config-7
+ "g8" 'eyebrowse-switch-to-window-config-8
+ "g9" 'eyebrowse-switch-to-window-config-9
   )
 (general-define-key
  :states '(normal insert visual)
