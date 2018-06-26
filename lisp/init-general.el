@@ -116,8 +116,8 @@
  "sa" 'text-scale-adjust
  "sp" 'spotify-playpause
  )
-(general-define-key :prefix ";"
-		    :non-normal-prefix "M-;"
+(general-define-key :prefix ","
+		    :non-normal-prefix "M-,"
 		    "s" 'avy-goto-char-2
 		    "pb" 'preview-buffer
 		    "pap" 'preview-at-point
