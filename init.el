@@ -124,6 +124,10 @@
 (require 'init-eyebrowse)
 ;; (require 'init-smart-mode-line)
 ;; (require 'init-winum)
+(require 'init-ranger)
+(require 'init-cdlatex)
+;; (require 'init-el-get)
+(require 'init-mu4e)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
