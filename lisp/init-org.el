@@ -22,4 +22,10 @@
       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
 ;; latex highlight in org mode
 (setq org-highlight-latex-and-related '(latex script entities))
+
+;;setting up capture
+(setq org-default-notes-file (concat org-directory "/capture/capture.org"))
+ ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9)))) 
 (provide 'init-org)
