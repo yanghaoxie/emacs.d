@@ -124,6 +124,7 @@
  "=" 'text-scale-increase
  "sa" 'text-scale-adjust
  "sp" 'spotify-playpause
+ "re" 'restart-emacs
  )
 (general-define-key :prefix ","
 		    :non-normal-prefix "M-,"
