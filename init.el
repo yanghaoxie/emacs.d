@@ -128,6 +128,7 @@
 (require 'init-cdlatex)
 ;; (require 'init-el-get)
 (require 'init-mu4e)
+(require 'init-display-line-numbers)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------

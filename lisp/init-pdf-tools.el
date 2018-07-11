@@ -1,6 +1,6 @@
 (pdf-tools-install)
 ;; diable linum-mode in pdf-view-mode
-(add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
+(add-hook 'pdf-view-mode-hook (lambda() (display-line-numbers-mode -1)))
 ;;turn off cua so copy works
 (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
 ;; more fine-grained zooming
