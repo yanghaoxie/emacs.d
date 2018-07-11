@@ -119,4 +119,10 @@
   :ensure t)
 (use-package powerthesaurus
   :ensure t)
+(use-package elfeed
+  :ensure t)
+(use-package elfeed-goodies
+  :ensure t)
+(use-package restart-emacs
+  :ensure t)
 (provide 'init-use-package)
