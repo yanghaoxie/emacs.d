@@ -125,4 +125,8 @@
   :ensure t)
 (use-package restart-emacs
   :ensure t)
+(use-package eyebrowse
+  :ensure t)
+(use-package spaceline
+  :ensure t)
 (provide 'init-use-package)
