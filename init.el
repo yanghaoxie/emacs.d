@@ -56,7 +56,7 @@
 (require 'custom);; file added by Custom
 ;;(require 'init-evil)
 (require 'init-ace-window)
-(require 'init-airline-themes)
+;; (require 'init-airline-themes)
 (require 'init-anzu)
 (require 'init-auctex)
 ;;(require 'init-auto-install-packages)
@@ -91,7 +91,7 @@
 (require 'init-preload-local)
 (require 'init-rainbow-delimiters)
 (require 'init-reftex)
-(require 'init-rich-minority)
+;; (require 'init-rich-minority)
 (require 'init-smartparens)
 (require 'init-sudo-edit)
 (require 'init-window-numbering)
