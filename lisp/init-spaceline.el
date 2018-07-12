@@ -10,12 +10,12 @@
 (setq powerline-height 18)
 (set-face-attribute 'spaceline-evil-visual nil :inherit 'mode-line :foreground "#3E3D31" :background "DeepSkyBlue")
 ;; (set-face-background 'powerline-active2 "gray")
-;; (set-face-background 'powerline-inactive2 "gray"
+;; (set-face-background 'powerline-inactive2 "gray"
 (set-face-attribute 'powerline-inactive1 nil :background "gray90" :foreground "black")
 (set-face-attribute 'powerline-inactive2 nil :background "gray" :foreground "black")
-;; (set-face-attribute 'mode-line-inactive nil :background "gray" :foreground "black")
-;; (set-face-attribute 'mode-line nil :background "gray" :foreground "gray")
+(set-face-attribute 'mode-line-inactive nil :background "darkgray" :foreground "black")
 (set-face-attribute 'powerline-active1 nil :background "gray90" :foreground "black")
 (set-face-attribute 'powerline-active2 nil :background "gray" :foreground "black")
-(powerline-reset)
+(set-face-attribute 'mode-line nil :background "darkgray" :foreground "black")
+(spaceline-compile)
 (provide 'init-spaceline)
