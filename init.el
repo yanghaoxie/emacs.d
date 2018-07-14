@@ -50,7 +50,7 @@
 ;; packages in "site-lisp"
 ;; (require 'fill-column-indicator)
 (require 'evil-textobj-line)
-;;(require 'fish-completion)
+(require 'fish-completion)
 
 ;;(require 'init-use-package)
 (require 'custom);; file added by Custom
@@ -66,7 +66,7 @@
 (require 'init-company)
 (require 'init-desktop-save)
 (require 'init-elpy)
-(require 'init-eshell)
+;; (require 'init-eshell)
 ;;(require 'init-eshell-z)
 (require 'init-eshell-prompt-extras)
 (require 'init-pdf-tools)
