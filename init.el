@@ -128,7 +128,7 @@
 (require 'init-ranger)
 (require 'init-cdlatex)
 ;; (require 'init-el-get)
-(require 'init-mu4e)
+;; (require 'init-mu4e)
 (require 'init-spaceline)
 (require 'init-display-line-numbers)
 ;;----------------------------------------------------------------------------
