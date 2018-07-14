@@ -12,6 +12,7 @@
  "C-e" 'evil-end-of-line
 )
 (general-define-key
+ :keymaps 'override
  :states '(normal visual)
  ;; eyebrowse
  "gt" 'eyebrowse-next-window-config
