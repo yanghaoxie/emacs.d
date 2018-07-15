@@ -228,9 +228,9 @@
  "m" 'pdf-view-position-to-register
  "'" 'pdf-view-jump-to-register
  ;; Scale/Fit
- "W"  'pdf-view-fit-width-to-window
+ "w"  'pdf-view-fit-width-to-window
  "H"  'pdf-view-fit-height-to-window
- "P"  'pdf-view-fit-page-to-window
+ "p"  'pdf-view-fit-page-to-window
  ;; "m"  'pdf-view-set-slice-using-mouse
  "b"  'pdf-view-set-slice-from-bounding-box
  "r"  'pdf-view-reset-slice
@@ -243,9 +243,9 @@
  "al" 'pdf-annot-list-annotations
  "am" 'pdf-annot-add-markup-annotation
  ;; Actions
- "o" 'pdf-occur
- "O" 'pdf-outline
- "p" 'pdf-misc-print-document
+ "O" 'pdf-occur
+ "o" 'pdf-outline
+ "P" 'pdf-misc-print-document
  ;; "l" 'pdf-links-action-perform
  "R" 'pdf-view-revert-buffer
  "t" 'pdf-annot-attachment-dired
