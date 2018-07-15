@@ -129,4 +129,6 @@
   :ensure t)
 (use-package spaceline
   :ensure t)
+(use-package eshell-prompt-extras
+  :ensure t)
 (provide 'init-use-package)
