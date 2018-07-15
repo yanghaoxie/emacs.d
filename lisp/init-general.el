@@ -118,7 +118,7 @@
  "rt" 'redtick
  "il" 'interleave-mode
  "oc" 'org-capture
- "wr" 'window-configuration-to-register
+ ;; "wr" 'window-configuration-to-register
  "jr" 'jump-to-register
  "fe" 'elfeed
  "-" 'text-scale-decrease
@@ -126,6 +126,8 @@
  "sa" 'text-scale-adjust
  "sp" 'spotify-playpause
  "re" 'restart-emacs
+ "wu" 'winner-undo
+ "wr" 'winner-redo
  )
 (general-define-key :prefix ","
 		    :non-normal-prefix "M-,"

@@ -25,4 +25,5 @@
 ;;       (concat "\\`" (regexp-opt '("localhost" "127.0.0.1")) "\\'"))
 ;; show file size on mode line
 (size-indication-mode 1)
+(winner-mode 1)
 (provide 'init-preload-local)
