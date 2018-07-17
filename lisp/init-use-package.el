@@ -6,7 +6,7 @@
 (use-package evil
     :ensure t)
 ;; (use-package airline-themes
-  :ensure t)
+  ;; :ensure t)
 (use-package ace-window
     :ensure t)
 (use-package anzu
@@ -130,5 +130,7 @@
 (use-package spaceline
   :ensure t)
 (use-package eshell-prompt-extras
+  :ensure t)
+(use-package beacon
   :ensure t)
 (provide 'init-use-package)

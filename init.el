@@ -131,6 +131,7 @@
 ;; (require 'init-mu4e)
 (require 'init-spaceline)
 (require 'init-display-line-numbers)
+(require 'init-beacon)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
