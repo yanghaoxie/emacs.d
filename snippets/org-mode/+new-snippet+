@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: localtion-of-paper
-# key: lo
-# --
-Page$1, column$2, line$3: $0
