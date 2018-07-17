@@ -5,7 +5,7 @@
   :ensure t)
 (use-package evil
     :ensure t)
-(use-package airline-themes
+;; (use-package airline-themes
   :ensure t)
 (use-package ace-window
     :ensure t)
