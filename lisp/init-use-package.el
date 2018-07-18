@@ -285,4 +285,6 @@
   :defer t
   :config
   (require 'init-beacon))
+(use-package esup
+  :ensure t)
 (provide 'init-use-package)
