@@ -8,7 +8,7 @@
 '(browse-url-browser-function (quote browse-url-generic))
 '(browse-url-generic-program "firefox")
 (set-face-attribute 'fringe nil :background "gray98" :foreground "gray")
-(set-fringe-mode 0)
+;; (set-fringe-mode 0)
 (setq tab-stop-list (number-sequence 4 200 4))
 (setq tab-width 4)
 ;; push clipboard onto the killring
