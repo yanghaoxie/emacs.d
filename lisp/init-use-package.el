@@ -116,12 +116,12 @@
   (require 'init-highlight-indentation))
 (use-package magit
   :ensure t
-  :defer t
+  ;; :defer 5
   :config
   (require 'init-magit))
 (use-package evil-magit
   :ensure t
-  :defer 5
+  ;; :defer 5
   :config
   (require 'init-evil-magit))
 (use-package neotree
