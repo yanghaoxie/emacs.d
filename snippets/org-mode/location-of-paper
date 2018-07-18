@@ -2,4 +2,4 @@
 # name: location-of-paper
 # key: lo
 # --
-Paper$1, column$2, line$3: $0
+Page$1, column$2, line$3: $0
