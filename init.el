@@ -58,7 +58,7 @@
 ;; (require 'init-ace-window)
 ;; (require 'init-airline-themes)
 ;; (require 'init-anzu)
-(require 'init-auctex)
+;; (require 'init-auctex)
 ;;(require 'init-auto-install-packages)
 ;; (require 'init-avy)
 ;; (require 'init-bash-completion)
