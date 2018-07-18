@@ -225,8 +225,6 @@
   :defer t
   :config
   (require 'init-paradox))
-(use-package atomic-chrome
-  :ensure t)
 (use-package artbollocks-mode
   :ensure t
   :defer t
