@@ -4,10 +4,10 @@
 (setq powerline-default-separator 'wave)
 (setq anzu-cons-mode-line-p nil)
 (setq spaceline-minor-modes-p nil)
-(setq spaceline-helm-mode 1)
 (setq spaceline-window-numbers-unicode 1)
 (setq spaceline-workspace-numbers-unicode 1)
 (setq powerline-height 18)
+(spaceline-helm-mode 1)
 (set-face-attribute 'spaceline-evil-visual nil :inherit 'mode-line :foreground "#3E3D31" :background "DeepSkyBlue")
 ;; (set-face-background 'powerline-active2 "gray")
 ;; (set-face-background 'powerline-inactive2 "gray"
