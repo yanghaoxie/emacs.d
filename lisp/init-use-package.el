@@ -56,7 +56,7 @@
   (require 'init-evil-anzu))
 (use-package evil-escape
   :ensure t
-  ;; :defer t
+  :defer 5
   :config
   (require 'init-evil-escape))
 (use-package evil-nerd-commenter
@@ -116,12 +116,14 @@
   (require 'init-highlight-indentation))
 (use-package magit
   :ensure t
-  ;; :defer 5
+  :defer 5
+  ;; :magic ("Magit" . magit-status-mode)
   :config
   (require 'init-magit))
 (use-package evil-magit
   :ensure t
-  ;; :defer 5
+  :defer 5
+  ;; :magic ("Magit" . magit-status-mode)
   :config
   (require 'init-evil-magit))
 (use-package neotree
@@ -175,7 +177,8 @@
   (require 'init-yasnippet))
 (use-package pdf-tools
   :ensure t
-  :defer t
+  ;; :defer 5
+  :magic ("%PDF" . pdf-view-mode)
   :config
   (require 'init-pdf-tools))
 (use-package ggtags
