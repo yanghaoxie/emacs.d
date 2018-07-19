@@ -140,7 +140,8 @@
   (require 'init-org))
 (use-package org-ref
   :ensure t
-  :magic ("\\.org\\'" . org-mode)
+  ;; :magic ("\\.org\\'" . org-mode)
+  :defer 5
   :config
   (require 'init-org-ref))
 ;; (use-package powerline
