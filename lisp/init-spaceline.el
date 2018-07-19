@@ -6,9 +6,9 @@
 (setq spaceline-minor-modes-p nil)
 (setq spaceline-buffer-encoding-abbrev-p nil)
 (spaceline-helm-mode 1)
-;; (setq spaceline-window-numbers-unicode 1)
-;; (setq spaceline-workspace-numbers-unicode 1)
-(setq powerline-height 16)
+(setq spaceline-window-numbers-unicode 1)
+(setq spaceline-workspace-numbers-unicode 1)
+(setq powerline-height 17)
 (set-face-attribute 'spaceline-evil-visual nil :inherit 'mode-line :foreground "#3E3D31" :background "DeepSkyBlue")
 ;; (set-face-background 'powerline-active2 "gray")
 ;; (set-face-background 'powerline-inactive2 "gray"
