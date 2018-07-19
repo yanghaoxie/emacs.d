@@ -132,14 +132,14 @@
   :defer t
   :config
   (require 'init-neotree))
-;; (use-package org
-;;   :ensure t
-;;   :defer t
-;;   :config
-  ;; (require 'init-org))
+(use-package org
+  :ensure t
+  :magic ("\\.org\\'" . org-mode)
+  :config
+  (require 'init-org))
 (use-package org-ref
   :ensure t
-  :defer t
+  :magic ("\\.org\\'" . org-mode)
   :config
   (require 'init-org-ref))
 ;; (use-package powerline
