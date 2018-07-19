@@ -132,6 +132,7 @@
 (general-define-key :prefix ","
 		    :non-normal-prefix "M-,"
 		    "s" 'avy-goto-char-2
+		    "t" 'avy-goto-char-timer
 		    "gl" 'avy-goto-line
 		    "pb" 'preview-buffer
 		    "pap" 'preview-at-point
