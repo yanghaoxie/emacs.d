@@ -26,7 +26,7 @@
   (require 'init-anzu))
 (use-package auctex
   :ensure t
-  :defer t
+  :mode ("\\.tex\\'" . TeX-latex-mode)
   :config
   (require 'init-auctex))
 (use-package avy
