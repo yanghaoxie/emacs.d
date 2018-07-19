@@ -90,7 +90,7 @@
  "rp" 'run-python
  "kmb" 'kill-matching-buffers
  "sk" 'save-buffers-kill-terminal
- "pl" 'package-list-packages
+ "pl" 'paradox-list-packages
  "fm" 'fci-mode
  ;; "gl" 'evil-goto-line
  "ssm" 'smartparens-strict-mode
