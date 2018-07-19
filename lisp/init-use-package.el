@@ -223,7 +223,7 @@
 ;;   (require 'init-eshell-z))
 (use-package paradox
   :ensure t
-  :defer t
+  :commands paradox-list-package
   :config
   (require 'init-paradox))
 (use-package artbollocks-mode
