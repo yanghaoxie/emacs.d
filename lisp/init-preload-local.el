@@ -27,4 +27,5 @@
 ;; show file size on mode line
 (size-indication-mode 1)
 (winner-mode 1)
+(add-to-list 'default-frame-alist '(font . "Hack"))
 (provide 'init-preload-local)
