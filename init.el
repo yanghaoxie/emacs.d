@@ -55,6 +55,7 @@
 (require 'init-helm-bibtex)
 (require 'init-cdlatex)
 (require 'init-display-line-numbers)
+(require 'init-auctex)
 ;; (require 'init-evil)
 ;; packages in "site-lisp"
 ;; (require 'fill-column-indicator)

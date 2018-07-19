@@ -24,11 +24,11 @@
   ;; :defer t
   :config
   (require 'init-anzu))
-(use-package auctex
-  :ensure t
-  :mode ("\\.tex\\'" . TeX-latex-mode)
-  :config
-  (require 'init-auctex))
+;; (use-package auctex
+;;   :ensure t
+;;   :mode ("\\.tex\\'" . TeX-latex-mode)
+;;   :config
+;;   (require 'init-auctex))
 (use-package avy
   :ensure t
   :defer t
