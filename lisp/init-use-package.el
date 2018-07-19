@@ -42,6 +42,7 @@
 (use-package company
   :ensure t
   :defer t
+  :commands (company-mode company-indent-or-complete-common)
   :config
   (require 'init-company))
 (use-package elpy
