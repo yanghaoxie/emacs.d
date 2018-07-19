@@ -46,7 +46,8 @@
   (require 'init-company))
 (use-package elpy
   :ensure t
-  :defer t
+  ;; :defer t
+  :magic ("\\.py\\'" . python-mode)
   :config
   (require 'init-elpy))
 (use-package evil-anzu
