@@ -72,7 +72,7 @@
   (require 'init-evil-snipe))
 (use-package evil-surround
   :ensure t
-  :defer t
+  :defer 5
   :config
   (require 'init-evil-surround))
 (use-package expand-region
