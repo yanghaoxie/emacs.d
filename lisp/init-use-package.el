@@ -24,6 +24,8 @@
   ;; :defer t
   :config
   (require 'init-anzu))
+(use-package cdlatex
+  :ensure t)
 ;; (use-package auctex
 ;;   :ensure t
 ;;   :mode ("\\.tex\\'" . TeX-latex-mode)
