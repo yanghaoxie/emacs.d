@@ -28,4 +28,5 @@
 (size-indication-mode 1)
 (winner-mode 1)
 (add-to-list 'default-frame-alist '(font . "Hack"))
+(setq text-scale-mode-step 1.1)
 (provide 'init-preload-local)
