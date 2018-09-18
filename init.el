@@ -93,6 +93,7 @@
   (require-init 'init-undo-tree)
   (require-init 'init-expand-region)
   ;; theme
+  (require-init 'init-theme)
   ;; vim
   (require-init 'init-evil)
   ;; workspaces
