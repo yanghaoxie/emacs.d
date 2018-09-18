@@ -81,6 +81,7 @@
   ;; autoload
   (require-init 'init-autoload)
   ;; defaults
+  (require-init 'init-defaults)
   ;; start up profiler
   (require-init 'init-esup)
   ;; ui
