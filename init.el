@@ -72,9 +72,6 @@
 
 
 (let ((file-name-handler-alist nil))
-  ;; ui
-  (require-init 'init-gui-frames)
-  ;; general
   ;; package
   (require-init 'init-elpa)
   (require-init 'init-pre-load)
@@ -85,6 +82,7 @@
   ;; start up profiler
   (require-init 'init-esup)
   ;; ui
+  (require-init 'init-gui-frames)
   (require-init 'init-beacon)
   (require-init 'init-rainbow-delimiters)
   (require-init 'init-highlight-parentheses)
