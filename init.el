@@ -91,6 +91,7 @@
   (require-init 'init-expand-region)
   ;; theme
   ;; vim
+  (require-init 'init-evil)
   ;; workspaces
   (require-init 'init-eyebrowse)
   ;; project
