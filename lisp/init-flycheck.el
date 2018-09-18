@@ -19,7 +19,6 @@
      "el" 'flycheck-list-errors
      ;; toggle
      "ts" 'my/toggle-syntax-checking)
-    ;; :config
     )
 
 (use-package flycheck-posframe
