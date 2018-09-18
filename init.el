@@ -82,7 +82,7 @@
   ;; defaults
   (require-init 'init-defaults)
   ;; start up profiler
-  (require-init 'init-esup)
+  (require-init 'init-benchmark)
   ;; ui
   (require-init 'init-gui-frames)
   (require-init 'init-beacon)
