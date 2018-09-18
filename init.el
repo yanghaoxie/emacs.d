@@ -82,6 +82,7 @@
   (require-init 'init-autoload)
   ;; defaults
   (require-init 'init-rainbow-delimiters)
+  (require-init 'init-highlight-parentheses)
   (require-init 'init-which-key)
   ;; universal
   (require-init 'init-restart-emacs)
