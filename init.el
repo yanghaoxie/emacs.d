@@ -85,6 +85,8 @@
   ;; theme
   ;; vim
   ;; workspaces
+  ;; project
+  (require-init 'init-project)
   ;; navigation
   ;; completion
   ;; source control
