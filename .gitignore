@@ -1,2 +1,7 @@
 *~
 elpa*
+/.emacs.desktop
+/.emacs.desktop.lock
+/TAGS
+/projectile-bookmarks.eld
+/recentf
