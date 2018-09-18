@@ -1,8 +1,5 @@
 (use-package flycheck
     :ensure t
-    :init
-    (progn
-      (add-hook 'prog-mode-hook (lambda () (global-flycheck-mode 1))))
     :general
     (my/leader-keys
      "eb" 'flycheck-buffer
