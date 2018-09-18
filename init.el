@@ -85,6 +85,8 @@
   ;; source control
   ;; checkers
   ;; languages
+  ;; writting
+  (require-init 'init-academic-phrases)
   ;; tools
   ;; chinese
 
