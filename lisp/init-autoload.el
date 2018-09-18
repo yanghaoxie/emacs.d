@@ -21,3 +21,10 @@ If the universal prefix argument is used then kill also the window."
     (progn
       (window-configuration-to-register ?_)
       (delete-other-windows))))
+
+;;;###autoload
+(defun my/toggle-syntax-checking ()
+  (interactive)
+  (if (bound-and-true-p flycheck-mode)
+      (flycheck-mode -1)
+    (flycheck-mode 1)))
