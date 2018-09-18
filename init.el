@@ -77,6 +77,7 @@
   ;; general
   ;; package
   (require-init 'init-elpa)
+  (require-init 'init-rainbow-delimiters)
   (require-init 'init-which-key)
   ;; universal
   (require-init 'init-restart-emacs)
