@@ -101,6 +101,7 @@
   (require-init 'init-project)
   ;; navigation
   (require-init 'init-avy)
+  (require-init 'init-winum)
   (require-init 'init-golden-scroll-screen)
   ;; completion
   (require-init 'init-ivy)
