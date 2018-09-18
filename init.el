@@ -100,6 +100,7 @@
   ;; source control
   (require-init 'init-git)
   ;; checkers
+  (require-init 'init-flycheck)
   ;; languages
   ;; writting
   (require-init 'init-academic-phrases)
