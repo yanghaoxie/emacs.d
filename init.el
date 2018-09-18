@@ -105,6 +105,7 @@
   (require-init 'init-golden-scroll-screen)
   ;; completion
   (require-init 'init-ivy)
+  (require-init 'init-company)
   ;; source control
   (require-init 'init-git)
   ;; checkers
