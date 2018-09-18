@@ -94,6 +94,7 @@
   ;; project
   (require-init 'init-project)
   ;; navigation
+  (require-init 'init-golden-scroll-screen)
   ;; completion
   (require-init 'init-ivy)
   ;; source control
