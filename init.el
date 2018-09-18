@@ -98,6 +98,7 @@
   ;; completion
   (require-init 'init-ivy)
   ;; source control
+  (require-init 'init-git)
   ;; checkers
   ;; languages
   ;; writting
