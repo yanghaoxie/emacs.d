@@ -28,3 +28,9 @@ If the universal prefix argument is used then kill also the window."
   (if (bound-and-true-p flycheck-mode)
       (flycheck-mode -1)
     (flycheck-mode 1)))
+
+;;;###autoload
+(defun my/byte-compile-init-dir ()
+  "Byte-compile all your dotfiles."
+  (interactive)
+  (byte-recompile-directory user-emacs-directory 0))
