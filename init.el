@@ -78,6 +78,8 @@
   ;; package
   (require-init 'init-elpa)
   (require-init 'init-which-key)
+  ;; universal
+  (require-init 'init-restart-emacs)
   (require-init 'init-undo-tree)
   ;; theme
   ;; vim
