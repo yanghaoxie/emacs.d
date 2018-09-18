@@ -78,6 +78,7 @@
   ;; package
   (require-init 'init-elpa)
   (require-init 'init-which-key)
+  (require-init 'init-undo-tree)
   ;; theme
   ;; vim
   ;; workspaces
