@@ -8,12 +8,12 @@
   :config
   (progn
     (general-create-definer my/leader-keys
-      :states '(normal visual insert)
+      :states '(normal visual motion emacs insert)
       :keymaps 'override
       :prefix "SPC"
       :non-normal-prefix "M-SPC")
     (general-create-definer my/leader-keys-major-mode
-      :states '(normal visual insert)
+      :states '(normal visual motion emacs insert)
       :keymaps 'override
       :prefix ","
       :non-normal-prefix "M-,")))
