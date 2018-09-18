@@ -102,6 +102,7 @@
   ;; project
   (require-init 'init-project)
   ;; navigation
+  ;; (require-init 'init-window-numbering)
   (require-init 'init-avy)
   (require-init 'init-winum)
   (require-init 'init-golden-scroll-screen)
