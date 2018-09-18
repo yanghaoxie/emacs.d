@@ -77,6 +77,7 @@
   ;; general
   ;; package
   (require-init 'init-elpa)
+  (require-init 'init-which-key)
   ;; theme
   ;; vim
   ;; workspaces
