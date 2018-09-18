@@ -81,6 +81,9 @@
   ;; autoload
   (require-init 'init-autoload)
   ;; defaults
+  ;; start up profiler
+  (require-init 'init-esup)
+  ;; ui
   (require-init 'init-rainbow-delimiters)
   (require-init 'init-highlight-parentheses)
   (require-init 'init-highlight-indentation)
