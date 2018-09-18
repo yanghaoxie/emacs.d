@@ -78,6 +78,9 @@
   ;; package
   (require-init 'init-elpa)
   (require-init 'init-pre-load)
+  ;; autoload
+  (require-init 'init-autoload)
+  ;; defaults
   (require-init 'init-rainbow-delimiters)
   (require-init 'init-which-key)
   ;; universal
