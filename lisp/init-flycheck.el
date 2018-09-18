@@ -16,7 +16,11 @@
      ;; navigation
      "en" 'flycheck-next-error
      "ep" 'flycheck-previous-error
-     "el" 'flycheck-list-errors))
+     "el" 'flycheck-list-errors
+     ;; toggle
+     "ts" 'my/toggle-syntax-checking)
+    ;; :config
+    )
 
 (use-package flycheck-posframe
     :ensure t
