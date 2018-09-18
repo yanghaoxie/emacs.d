@@ -75,6 +75,8 @@
   ;; package
   (require-init 'init-elpa)
   (require-init 'init-pre-load)
+  ;; auto-compile
+  (require-init 'init-auto-compile)
   ;; autoload
   (require-init 'init-autoload)
   ;; defaults
