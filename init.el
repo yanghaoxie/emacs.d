@@ -91,6 +91,7 @@
   ;; theme
   ;; vim
   ;; workspaces
+  (require-init 'init-eyebrowse)
   ;; project
   (require-init 'init-project)
   ;; navigation
