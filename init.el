@@ -93,6 +93,7 @@
   (require-init 'init-project)
   ;; navigation
   ;; completion
+  (require-init 'init-ivy)
   ;; source control
   ;; checkers
   ;; languages
