@@ -88,6 +88,7 @@
   ;; universal
   (require-init 'init-restart-emacs)
   (require-init 'init-undo-tree)
+  (require-init 'init-expand-region)
   ;; theme
   ;; vim
   ;; workspaces
