@@ -97,6 +97,7 @@
   (require-init 'init-academic-phrases)
   ;; tools
   (require-init 'init-ranger)
+  (require-init 'init-pdf-tools)
   ;; chinese
 
 
