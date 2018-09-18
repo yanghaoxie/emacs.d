@@ -17,6 +17,7 @@
     :ensure t
     ;; :diminish evil-anzu-mode
     :init
+    (require 'evil-anzu)
     (global-anzu-mode)
     (diminish 'anzu-mode)
     :general
