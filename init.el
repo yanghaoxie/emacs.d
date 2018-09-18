@@ -92,6 +92,7 @@
   ;; writting
   (require-init 'init-academic-phrases)
   ;; tools
+  (require-init 'init-ranger)
   ;; chinese
 
 
