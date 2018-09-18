@@ -5,3 +5,4 @@ elpa*
 /TAGS
 /projectile-bookmarks.eld
 /recentf
+*.elc
