@@ -47,6 +47,7 @@
  "bd" 'my/kill-this-buffer
  "bn" 'next-buffer
  "bp" 'previous-buffer
+ "TAB" 'my/alternate-buffer
  "bx" 'kill-buffer-and-window
  )
 ;; file ----------------------------------------------------------------------
