@@ -26,6 +26,5 @@
      "t" '(:ignore t :which-key "toggles")
      "T" '(:ignore t :which-key "Themes")
      "w" '(:ignore t :which-key "windows")
-     "x" '(:ignore t :which-key "text"))
-    )
+     "x" '(:ignore t :which-key "text"))))
 (provide 'init-which-key)
