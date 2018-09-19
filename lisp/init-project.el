@@ -26,11 +26,6 @@
                projectile-vc)
     :general
     (my/leader-keys
-     ;; File path
-     "fyC" 'spacemacs/projectile-copy-file-path-with-line-column
-     "fyD" 'spacemacs/projectile-copy-directory-path
-     "fyL" 'spacemacs/projectile-copy-file-path-with-line
-     "fyY" 'spacemacs/projectile-copy-file-path
      ;; Project
      "p!" 'projectile-run-shell-command-in-root
      "p&" 'projectile-run-async-shell-command-in-root
