@@ -48,5 +48,10 @@
      "ti" '(:ignore t :which-key "insert")
      "tt" '(:ignore t :which-key "toggle")
      "x" '(:ignore t :which-key "text"))
+    ;;emacs-lisp-mode
+    (my/leader-keys-major-mode
+     :keymaps 'emacs-lisp-mode-map
+     "c" '(:ignore t :which-key "compile")
+     "e" '(:ignore t :which-key "eval"))
      ))
 (provide 'init-which-key)
