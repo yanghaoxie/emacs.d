@@ -66,4 +66,11 @@
   :defer t
   :config
   (company-auctex-init))
+
+(use-package cdlatex
+  :ensure t
+  :config
+  (setq cdlatex-simplify-sub-super-scripts nil)
+  (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
+  (add-hook 'org-mode-hook 'turn-on-cdlatex))
 (provide 'init-latex)
