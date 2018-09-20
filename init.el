@@ -118,6 +118,7 @@
   ;; checkers
   (require-init 'init-flycheck)
   ;; languages
+  (require-init 'init-org)
   ;; writting
   (require-init 'init-academic-phrases)
   ;; tools
