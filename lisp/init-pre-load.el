@@ -2,6 +2,12 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
+;; further reduce load time, from use-package official github page
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
+(require 'bind-key)
+
 ;; general
 (use-package general
   :ensure t
