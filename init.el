@@ -120,6 +120,7 @@
   ;; languages
   (require-init 'init-org)
   (require-init 'init-elisp)
+  (require-init 'init-latex)
   ;; writting
   (require-init 'init-academic-phrases)
   ;; tools
