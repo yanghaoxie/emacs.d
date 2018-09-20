@@ -119,6 +119,7 @@
   (require-init 'init-flycheck)
   ;; languages
   (require-init 'init-org)
+  (require-init 'init-elisp)
   ;; writting
   (require-init 'init-academic-phrases)
   ;; tools
