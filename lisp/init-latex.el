@@ -3,6 +3,7 @@
   :ensure auctex
   :init
   (progn
+    (setq TeX-save-query nil)
     (setq TeX-auto-save t
           TeX-parse-self t
           TeX-syntactic-comment t
