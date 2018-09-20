@@ -22,6 +22,7 @@
 
 (use-package auto-yasnippet
   :ensure t
+  :defer 5
   :init
   (progn
     (my/leader-keys
