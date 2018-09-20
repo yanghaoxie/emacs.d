@@ -4,6 +4,15 @@
   :init
   (progn
     (setq TeX-save-query nil)
+    (setq TeX-view-program-selection
+          (quote
+           (((output-dvi has-no-display-manager)
+             "dvi2tty")
+            ((output-dvi style-pstricks)
+             "dvips and gv")
+            (output-dvi "xdvi")
+            (output-pdf "PDF Tools")
+            (output-html "xdg-open"))))
     (setq TeX-auto-save t
           TeX-parse-self t
           TeX-syntactic-comment t
