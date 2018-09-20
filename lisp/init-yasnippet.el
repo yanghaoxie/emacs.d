@@ -20,6 +20,17 @@
     (my/leader-keys
      "is" 'ivy-yasnippet)))
 
+(use-package auto-yasnippet
+  :ensure t
+  :init
+  (progn
+    (my/leader-keys
+     "iSc" 'aya-create
+     "iSe" 'aya-expand
+     "iSw" 'aya-persist-snippet
+     ))
+  )
+
 (use-package hippie-expand
   :init
   (define-key evil-insert-state-map [remap evil-complete-previous] 'hippie-expand)
