@@ -33,7 +33,11 @@
     (global-display-line-numbers-mode 1))
     ;; (add-hook 'prog-mode-hook #'global-display-line-numbers-mode))
 
-
+(use-package prettify-symbols-mode
+  :defer t
+  :init
+  (setq prettify-symbols-unprettify-at-point 'right-edge)
+  (global-prettify-symbols-mode))
 
 
 
