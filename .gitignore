@@ -6,3 +6,4 @@ elpa*
 /projectile-bookmarks.eld
 /recentf
 *.elc
+*.el#
