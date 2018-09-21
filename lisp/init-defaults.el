@@ -39,6 +39,12 @@
   (setq prettify-symbols-unprettify-at-point 'right-edge)
   (global-prettify-symbols-mode))
 
+(use-package recentf
+  :commands recentf-mode
+  :config
+  (progn
+    (setq recentf-max-saved-items 25)
+    (recentf-mode 1)))
 
 
 ;; key bindings
