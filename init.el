@@ -117,6 +117,7 @@
   (require-init 'init-git)
   ;; checkers
   (require-init 'init-flycheck)
+  (require-init 'init-flyspell)
   ;; languages
   (require-init 'init-org)
   (require-init 'init-elisp)
