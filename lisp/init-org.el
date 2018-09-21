@@ -4,6 +4,44 @@
   ;; :mode org-mode
   :init
   (progn
+    (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+    (setq org-directory "~/Dropbox/document/org")
+    (setq org-agenda-files (apply 'append
+                                  (mapcar
+                                   (lambda (directory)
+                                     (directory-files-recursively
+                                      directory org-agenda-file-regexp))
+                                   '("~/Dropbox/document/org/" ))))
+    (setq org-latex-pdf-process
+          '(
+            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            "bibtex %b"
+            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            ))
+    (setq org-log-done t)
+    (with-eval-after-load 'ox-latex
+      (add-to-list 'org-latex-classes
+                   '("IEEEtran" "\\documentclass{IEEEtran}"
+                     ("\\section{%s}" . "\\section*{%s}")
+                     ("\\subsection{%s}" . "\\subsection*{%s}")
+                     ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+    ;; latex highlight in org mode
+    (setq org-highlight-latex-and-related '(latex script entities))
+
+    ;;setting up capture
+    (setq org-default-notes-file (concat org-directory "/capture/capture.org"))
+                                        ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+    (setq org-capture-templates
+          (quote (
+                  ("t" "todo" entry (file+headline "~/Dropbox/document/org/capture/capture.org" "Tasks")
+                   "* TODO %?\n%U\n%a\n")
+                  ("n" "note" entry (file+headline "~/Dropbox/document/org/capture/capture.org" "Notes")
+                   "* %?\n%U\n%a\n")
+                  )))
+    (setq org-refile-targets (quote ((nil :maxlevel . 2)
+                                     (org-agenda-files :maxlevel . 2))))
+
     ;; org-capture
     (with-eval-after-load 'org-capture
       (my/leader-keys-major-mode
@@ -13,12 +51,12 @@
        "k" 'org-capture-kill
        "r" 'org-capture-refile))
     ;; org-src
-    ;; (with-eval-after-load 'org-src
-    ;;   (my/leader-keys-major-mode
-    ;;    :keymaps org-src-mode-map
-    ;;    "c" 'org-edit-src-exit
-    ;;    "a" 'org-edit-src-abort
-    ;;    "k" 'org-edit-src-abort))
+    (with-eval-after-load 'org-src
+      (my/leader-keys-major-mode
+       :keymaps org-src-mode-map
+       "c" 'org-edit-src-exit
+       "a" 'org-edit-src-abort
+       "k" 'org-edit-src-abort))
     ;; org-mode
     (my/leader-keys-major-mode
      :keymaps 'org-mode-map
@@ -144,25 +182,35 @@
      "ip" 'org-set-property
      "is" 'org-insert-subheading
      "it" 'org-set-tags)
-     ;; org-agenda
-     (my/leader-keys
-      "ao#" 'org-agenda-list-stuck-projects
-      "ao/" 'org-occur-in-agenda-files
-      "aoa" 'org-agenda-list
-      "aoc" 'org-capture
-      "aoe" 'org-store-agenda-views
-      "aofi" 'org-feed-goto-inbox
-      "aofu" 'org-feed-update-all
-      "aokg" 'org-clock-goto
-      "aoki" 'org-clock-in-last
-      "aokj" 'org-clock-jump-to-current-clock
-      "aoko" 'org-clock-out
-      "aokr" 'org-resolve-clocks
-      "aol" 'org-store-link
-      "aom" 'org-tags-view
-      "aoo" 'org-agenda
-      "aos" 'org-search-view
-      "aot" 'org-todo-list
-      ;; SPC C- capture/colors
-      "Cc" 'org-capture)))
+    ;; org-agenda
+    (my/leader-keys
+     "ao#" 'org-agenda-list-stuck-projects
+     "ao/" 'org-occur-in-agenda-files
+     "aoa" 'org-agenda-list
+     "aoc" 'org-capture
+     "aoe" 'org-store-agenda-views
+     "aofi" 'org-feed-goto-inbox
+     "aofu" 'org-feed-update-all
+     "aokg" 'org-clock-goto
+     "aoki" 'org-clock-in-last
+     "aokj" 'org-clock-jump-to-current-clock
+     "aoko" 'org-clock-out
+     "aokr" 'org-resolve-clocks
+     "aol" 'org-store-link
+     "aom" 'org-tags-view
+     "aoo" 'org-agenda
+     "aos" 'org-search-view
+     "aot" 'org-todo-list
+     ;; SPC C- capture/colors
+     "Cc" 'org-capture)))
+
+(use-package org-ref
+  :ensure t
+  :defer 5
+  :init
+  (progn
+    (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
+    (setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref_notes.org")
+    (my/leader-keys-major-mode
+     "oo" 'my/org-ref-open-pdf-at-point)))
 (provide 'init-org)
