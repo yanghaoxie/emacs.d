@@ -35,6 +35,7 @@
 
 (use-package yapfify
   :ensure t
+  :diminish yapf-mode
   :defer t
   :init
   (progn
