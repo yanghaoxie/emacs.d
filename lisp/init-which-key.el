@@ -55,8 +55,14 @@
      "e" '(:ignore t :which-key "eval"))
     ;; benchmark
     (my/leader-keys
-     "ab" '(:ignore t :which-key "benchmark")
-      )
+     "ab" '(:ignore t :which-key "benchmark"))
+    ;; python-mode
+    (my/leader-keys-major-mode
+     :keymaps 'python-mode-map
+     "g" '(:ignore t :which-key "goto")
+     "h" '(:ignore t :which-key "help")
+     "s" '(:ignore t :which-key "REPL")
+     )
 
      ))
 (provide 'init-which-key)
