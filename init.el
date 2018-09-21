@@ -96,6 +96,7 @@
   (require-init 'init-restart-emacs)
   (require-init 'init-undo-tree)
   (require-init 'init-expand-region)
+  (require-init 'init-sudo-edit)
   ;; theme
   (require-init 'init-theme)
   ;; vim
