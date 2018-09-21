@@ -46,6 +46,13 @@
     (setq recentf-max-saved-items 25)
     (recentf-mode 1)))
 
+(use-package auto-revert
+  :defer t
+  :diminish auto-revert-mode
+  :init
+  (setq auto-revert-interval 0.5)
+  :config
+  (add-hook 'pdf-view-mode-hook 'auto-revert-mode))
 
 ;; key bindings
 
