@@ -53,5 +53,10 @@
      :keymaps 'emacs-lisp-mode-map
      "c" '(:ignore t :which-key "compile")
      "e" '(:ignore t :which-key "eval"))
+    ;; benchmark
+    (my/leader-keys
+     "ab" '(:ignore t :which-key "benchmark")
+      )
+
      ))
 (provide 'init-which-key)
