@@ -2,6 +2,9 @@
 (use-package ivy
   :ensure t
   :diminish ivy-mode
+  :init
+  (progn
+    (setq ivy-use-virtual-buffers t))
   ;; :config
   :general
   (ivy-minibuffer-map
