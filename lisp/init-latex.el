@@ -69,6 +69,7 @@
 
 (use-package cdlatex
   :ensure t
+  :diminish cdlatex-mode
   :config
   (setq cdlatex-simplify-sub-super-scripts nil)
   (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
