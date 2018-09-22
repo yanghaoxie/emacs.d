@@ -54,6 +54,11 @@
   :config
   (add-hook 'pdf-view-mode-hook 'auto-revert-mode))
 
+(use-package server
+  :commands server-running-p
+  :config
+  (unless (server-running-p)
+    (server-start)))
 ;; key bindings
 
 ;; applications --------------------------------------------------------------
