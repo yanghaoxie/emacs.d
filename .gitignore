@@ -7,3 +7,5 @@ elpa*
 /recentf
 *.elc
 *.el#
+anaconda-mode/
+/tramp
