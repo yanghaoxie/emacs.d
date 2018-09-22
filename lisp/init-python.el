@@ -14,6 +14,7 @@
 (use-package anaconda-mode
   :ensure t
   :defer t
+  :after python
   :init
   (progn
     (my/leader-keys-major-mode
