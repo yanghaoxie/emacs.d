@@ -91,6 +91,7 @@
   (require-init 'init-highlight-parentheses)
   (require-init 'init-highlight-indentation)
   (require-init 'init-which-key)
+  (require-init 'init-popwin)
   ;; (require-init 'init-smart-mode-line)
   (require-init 'init-spaceline)
   ;; universal
