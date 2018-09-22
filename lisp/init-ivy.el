@@ -4,7 +4,8 @@
   :diminish ivy-mode
   :init
   (progn
-    (setq ivy-use-virtual-buffers t))
+    (setq ivy-use-virtual-buffers t
+          ivy-re-builders-alist '((t . ivy--regex-ignore-order))))
   ;; :config
   :general
   (ivy-minibuffer-map
