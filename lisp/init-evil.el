@@ -2,6 +2,9 @@
   :ensure t
   :init
   (progn
+    (loop for (mode . state) in
+          '((pdf-view-mode . normal))
+          do (evil-set-initial-state mode state))
     (evil-mode 1)))
 
 (use-package evil-escape
