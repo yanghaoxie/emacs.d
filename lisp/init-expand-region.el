@@ -1,5 +1,6 @@
 (use-package expand-region
     :ensure t
+    :defer t
     :init
     (my/leader-keys
      "v" 'er/expand-region)
