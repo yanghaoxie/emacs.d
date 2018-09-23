@@ -30,7 +30,8 @@
      "t" '(:ignore t :which-key "toggles")
      "T" '(:ignore t :which-key "Themes")
      "w" '(:ignore t :which-key "windows")
-     "x" '(:ignore t :which-key "text"))
+     "x" '(:ignore t :which-key "text")
+     "z" '(:ignore t :which-key "zoom"))
     ;; org-mode
     (my/leader-keys-major-mode
      :keymaps 'org-mode-map
