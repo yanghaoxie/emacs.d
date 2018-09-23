@@ -129,6 +129,7 @@
   (require-init 'init-python)
   ;; writting
   (require-init 'init-academic-phrases)
+  (require-init 'init-artbollocks)
   ;; tools
   (require-init 'init-ranger)
   (require-init 'init-pdf-tools)
