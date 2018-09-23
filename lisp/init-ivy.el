@@ -46,4 +46,8 @@
   :defer t
   :config
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
+
+(use-package amx
+  :ensure t
+  :commands (counsel-M-X))
 (provide 'init-ivy)
