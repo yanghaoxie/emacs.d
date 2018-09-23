@@ -1,4 +1,5 @@
 (use-package flyspell
+  :defer t
   :diminish flyspell-mode
   :init
   (progn
