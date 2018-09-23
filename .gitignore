@@ -9,3 +9,4 @@ elpa*
 *.el#
 anaconda-mode/
 /tramp
+/amx-items
