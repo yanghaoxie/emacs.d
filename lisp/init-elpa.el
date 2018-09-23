@@ -31,6 +31,7 @@
 ;; use it.
 ;;(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))
+(add-to-list 'package-archives '("emacswiki" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/emacswiki/"))
 
 
 ;; ;;; Fire up package.el
