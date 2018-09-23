@@ -1,5 +1,6 @@
 (use-package flycheck
     :ensure t
+    :defer t
     :general
     (my/leader-keys
      "eb" 'flycheck-buffer
