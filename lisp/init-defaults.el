@@ -13,6 +13,15 @@
 (size-indication-mode t)
 (blink-cursor-mode 0)
 (diminish 'auto-revert-mode)
+;; text-scale
+(defhydra hydra-text-scale ()
+  "text-scale"
+  ("=" text-scale-increase "in")
+  ("-" text-scale-decrease "out")
+  ("0" (text-scale-set 0) "resert")
+  ("q" nil "quit"))
+(my/leader-keys
+ "zx" 'hydra-text-scale/body)
 
 ;; build-in modes
 (use-package eldoc
