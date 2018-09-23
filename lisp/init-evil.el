@@ -66,7 +66,7 @@
 (use-package evil-cleverparens
     :ensure t
     :diminish evil-cleverparens-mode
-    :defer 5
+    :defer t
     :config
     (evil-cleverparens-mode 1))
 (provide 'init-evil)
