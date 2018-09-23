@@ -1,5 +1,6 @@
 (use-package eyebrowse
     :ensure t
+    :defer t
     :init
     (eyebrowse-mode)
     :general
