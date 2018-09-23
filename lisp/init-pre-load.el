@@ -27,4 +27,8 @@
 ;; diminish
 (use-package diminish
   :ensure t)
+
+;; hydra
+(use-package hydra
+  :ensure t)
 (provide 'init-pre-load)
