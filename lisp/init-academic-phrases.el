@@ -1,5 +1,6 @@
 (use-package academic-phrases
   :ensure t
+  :defer t
   :init
   (progn
     (my/leader-keys-major-mode
