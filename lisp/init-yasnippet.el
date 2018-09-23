@@ -1,11 +1,12 @@
 (use-package yasnippet
   :ensure t
+  :defer t
   :commands (yas-global-mode yas-minor-mode yas-activate-extra-mode)
   :diminish yas-minor-mode
   :init
   (progn
     (dolist (hook '(prog-mode-hook org-mode-hook))
-      (add-hook hook '(lambda () (yas-global-mode 1))))))
+      (add-hook hook '(lambda () (yas-minor-mode 1))))))
 
 (use-package yasnippet-snippets
   :ensure t
