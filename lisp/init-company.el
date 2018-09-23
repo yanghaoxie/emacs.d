@@ -32,4 +32,10 @@ In that case, insert the number."
 			                        (self-insert-command 1)))
         (define-key map (kbd "<return>") nil))
       ))
+
+(use-package company-statistics
+  :ensure t
+  :defer t
+  :config
+  (company-statistics-mode))
 (provide 'init-company)
