@@ -133,6 +133,7 @@
   ;; tools
   (require-init 'init-ranger)
   (require-init 'init-pdf-tools)
+  (require-init 'init-keyfreq)
   ;; chinese
 
 
