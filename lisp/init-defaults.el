@@ -7,7 +7,8 @@
 (setq desktop-restore-eager 5)
 ;;display-time-mode
 (setq display-time-24hr-format t
-      display-time-default-load-average nil)
+      display-time-default-load-average nil
+      display-time-day-and-date t)
 (display-time-mode t)
 ;;
 (column-number-mode t)
