@@ -1,5 +1,6 @@
 (use-package magit
     :ensure t
+    :commands (magit-status magit-init)
     :init
     :general
     (my/leader-keys
