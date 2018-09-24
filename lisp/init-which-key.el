@@ -27,6 +27,7 @@
      "ps" '(:ignore t :which-key "search")
      "q" '(:ignore t :which-key "quit")
      "r" '(:ignore t :which-key "regs/rings/replace")
+     "s" '(:ignore t :which-key "search")
      "t" '(:ignore t :which-key "toggles")
      "T" '(:ignore t :which-key "Themes")
      "w" '(:ignore t :which-key "windows")
