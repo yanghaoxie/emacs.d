@@ -134,6 +134,7 @@
   (require-init 'init-ranger)
   (require-init 'init-pdf-tools)
   (require-init 'init-keyfreq)
+  (require-init 'init-elfeed)
   ;; chinese
 
 
