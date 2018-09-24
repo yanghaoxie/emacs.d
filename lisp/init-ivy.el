@@ -41,6 +41,12 @@
   :config
   (ivy-mode))
 
+(use-package swiper
+  :ensure t
+  :config
+  :general
+  ("C-s" 'swiper))
+
 (use-package ivy-xref
   :ensure t
   :defer t
