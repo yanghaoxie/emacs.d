@@ -45,7 +45,9 @@
   :ensure t
   :config
   :general
-  ("C-s" 'swiper))
+  ("C-s" 'swiper)
+  (my/leader-keys
+   "ss" 'swiper))
 
 (use-package ivy-xref
   :ensure t
