@@ -7,14 +7,15 @@
       (my/normal-keys
        :keymaps 'elfeed-search-mode-map
        "c"  'elfeed-db-compact
-       "gr" 'elfeed-update
-       "gR" 'elfeed-search-update--force
+       "u" 'elfeed-update
+       "U" 'elfeed-search-update--force
        "gu" 'elfeed-unjam
        "o"  'elfeed-load-opml
        "w"  'elfeed-web-start
        "W"  'elfeed-web-stop
        "q" 'elfeed-search-quit-window
-       "RET" 'elfeed-search-show-entry)
+       "RET" 'elfeed-search-show-entry
+       "f" 'elfeed-search-live-filter)
       (my/normal-keys
        :keymaps 'elfeed-show-mode-map
        "C-j" 'elfeed-show-next
