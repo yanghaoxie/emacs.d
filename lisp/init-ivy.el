@@ -6,6 +6,8 @@
   (progn
     (setq ivy-use-virtual-buffers t
           ivy-re-builders-alist '((t . ivy--regex-ignore-order))))
+    (my/leader-keys
+      "bb" 'ivy-switch-buffer))
   ;; :config
   :general
   (ivy-minibuffer-map
@@ -30,8 +32,6 @@
   (my/leader-keys
    ;; files
    "ff" 'counsel-find-file
-   ;; buffer
-   "bb" 'counsel-ibuffer
    ;; help
    "?"   'counsel-descbinds
    "hdf" 'counsel-describe-function
