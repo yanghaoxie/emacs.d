@@ -59,3 +59,10 @@ current window."
     (if (file-exists-p pdf-file)
         (org-open-file pdf-file)
       (message "No PDF found for %s" key))))
+
+;; restart emacs with --debut-init, copy from spacemacs
+;;;###autoload
+(defun my/restart-emacs-debug-init (&optional args)
+  "Restart emacs and enable debug-init."
+  (interactive)
+  (restart-emacs (cons "--debug-init" args)))
