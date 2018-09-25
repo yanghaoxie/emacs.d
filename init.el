@@ -137,6 +137,7 @@
   (require-init 'init-pdf-tools)
   (require-init 'init-keyfreq)
   (require-init 'init-elfeed)
+  (require-init 'init-shell)
   ;; chinese
 
 
