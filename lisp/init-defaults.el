@@ -81,6 +81,7 @@
  "bd" 'my/kill-this-buffer
  "bn" 'next-buffer
  "bp" 'previous-buffer
+ "br" 'revert-buffer
  "TAB" 'my/alternate-buffer
  "bx" 'kill-buffer-and-window
  )
