@@ -2,7 +2,7 @@
   :defer t
   :mode ("\\.org\\'" . org-mode)
   ;; :mode org-mode
-  :init
+  :config
   (progn
     (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
     (setq org-directory "~/Dropbox/document/org")
