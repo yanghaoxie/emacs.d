@@ -35,6 +35,9 @@
    ;; register/ring
    "ry"  'counsel-yank-pop
    "rm"  'counsel-mark-ring
+   ;; search
+   "sa" 'counsel-ag
+   "sp" 'counsel-projectile-ag
    ;; themes
    "Ts"  'counsel-load-theme
    )
