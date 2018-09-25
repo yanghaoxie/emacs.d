@@ -1,8 +1,7 @@
 (use-package magit
     :ensure t
     :commands (magit-status magit-init)
-    :init
-    :general
+    :config
     (my/leader-keys
      "gc"  'magit-clone
      "gff" 'magit-find-file
