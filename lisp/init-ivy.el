@@ -15,6 +15,12 @@
    "C-l" 'ivy-alt-done
             )
 )
+
+(use-package ivy-rich
+  :ensure t
+  :after (ivy counsel)
+  :config
+  (ivy-rich-mode 1))
 ;; counsel
 (use-package counsel
   :ensure t
