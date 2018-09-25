@@ -4,6 +4,7 @@
     :init (my/leader-keys "af" 'elfeed)
     :config
     (progn
+      (elfeed-goodies/setup)
       (my/normal-keys
        :keymaps 'elfeed-search-mode-map
        "c"  'elfeed-db-compact
@@ -33,9 +34,7 @@
 
 (use-package elfeed-goodies
     :ensure t
-    :commands elfeed
-    :init
-    (elfeed-goodies/setup)
+    :defer t
     :config
     (progn
       (my/normal-keys
