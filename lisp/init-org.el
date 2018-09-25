@@ -53,7 +53,7 @@
     ;; org-src
     (with-eval-after-load 'org-src
       (my/leader-keys-major-mode
-       :keymaps org-src-mode-map
+       :keymaps 'org-src-mode-map
        "c" 'org-edit-src-exit
        "a" 'org-edit-src-abort
        "k" 'org-edit-src-abort))
