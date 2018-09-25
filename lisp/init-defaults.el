@@ -105,7 +105,8 @@
 ;; quit ---------------------------------------------------------------------
 (my/leader-keys
  "qs" 'save-buffers-kill-emacs
- "qr" 'restart-emacs)
+ "qr" 'restart-emacs
+ "qd" 'my/restart-emacs-debug-init)
 ;; window -------------------------------------------------------------------
 (my/leader-keys
  "wv" 'split-window-right
