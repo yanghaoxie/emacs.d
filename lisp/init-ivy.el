@@ -5,7 +5,7 @@
   :init
   (progn
     (setq ivy-use-virtual-buffers t
-          ivy-re-builders-alist '((t . ivy--regex-ignore-order))))
+          ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
     (my/leader-keys
       "bb" 'ivy-switch-buffer))
   ;; :config
@@ -14,9 +14,7 @@
    "C-j" 'ivy-next-line
    "C-k" 'ivy-previous-line
    "C-h" (kbd "DEL")
-   "C-l" 'ivy-alt-done
-            )
-)
+   "C-l" 'ivy-alt-done))
 
 (use-package ivy-rich
   :ensure t
@@ -80,6 +78,5 @@
 	bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
 	bibtex-completion-notes-path "~/Dropbox/document/org/references/ref_notes.org"
 	bibtex-completion-notes-template-one-file
-	"\n* ${title} cite:${=key=}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n :INTERLEAVE_PDF: ${file}\n :END:\n\n")
-  )
+	"\n* ${title} cite:${=key=}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n :INTERLEAVE_PDF: ${file}\n :END:\n\n"))
 (provide 'init-ivy)
