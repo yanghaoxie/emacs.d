@@ -22,6 +22,8 @@
      "g" '(:ignore t :which-key "git/vc")
      "gf" '(:ignore t :which-key "files")
      "h" '(:ignore t :which-key "help")
+     "i" '(:ignore t :which-key "insert")
+     "iS" '(:ignore t :which-key "auto-yas")
      "j" '(:ignore t :which-key "jump")
      "p" '(:ignore t :which-key "projects")
      "ps" '(:ignore t :which-key "search")
