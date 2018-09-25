@@ -96,6 +96,7 @@
   ;; (require-init 'init-smart-mode-line)
   (require-init 'init-spaceline)
   ;; (require-init 'init-modeline)
+  (require-init 'init-doom-modeline)
   ;; universal
   (require-init 'init-restart-emacs)
   (require-init 'init-undo-tree)
