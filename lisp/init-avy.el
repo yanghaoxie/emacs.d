@@ -14,5 +14,5 @@
     ("tt" . evil-avy-goto-char-timer)
     ("ii" . evil-avy-goto-line)
     ("oo" . evil-avy-goto-word-or-subword-1)
-    ("cc" . evil-avy-goto-char-2))
+    ("aa" . evil-avy-goto-char-2))
 (provide 'init-avy)
