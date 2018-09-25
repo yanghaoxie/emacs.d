@@ -1,6 +1,9 @@
 (use-package flycheck
     :ensure t
     :defer t
+    :init
+    (my/leader-keys
+     "ts" 'my/toggle-syntax-checking)
     :config
     (my/leader-keys
      "eb" 'flycheck-buffer
@@ -14,9 +17,7 @@
      ;; navigation
      "en" 'flycheck-next-error
      "ep" 'flycheck-previous-error
-     "el" 'flycheck-list-errors
-     ;; toggle
-     "ts" 'my/toggle-syntax-checking)
+     "el" 'flycheck-list-errors)
     )
 
 (use-package flycheck-posframe
