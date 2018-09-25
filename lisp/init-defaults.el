@@ -4,7 +4,8 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; save desktop
 (desktop-save-mode t)
-(setq desktop-restore-eager 5)
+(setq desktop-restore-eager 5
+      desktop-lazy-verbose nil)
 ;;display-time-mode
 (setq display-time-24hr-format t
       display-time-default-load-average nil
