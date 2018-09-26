@@ -5,7 +5,10 @@
     (evil-mode 1))
   :config
   (progn
-    (evil-set-initial-state 'pdf-view-mode 'normal)))
+    (evil-set-initial-state 'pdf-view-mode 'normal)
+    (setq evil-insert-state-cursor '(bar "LimeGreen")
+          evil-normal-state-cursor '(box "darkorange")
+	  evil-visual-state-cursor '(box "LightGoldenrod"))))
 
 (use-package evil-escape
   :ensure t
