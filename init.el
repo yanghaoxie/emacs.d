@@ -140,6 +140,7 @@
   (require-init 'init-elfeed)
   (require-init 'init-shell)
   ;; chinese
+  (require-init 'init-pyim)
 
 
 
