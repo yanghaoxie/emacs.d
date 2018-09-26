@@ -61,7 +61,7 @@
 (use-package ivy-xref
   :ensure t
   :defer t
-  :config
+  :init
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
 
 (use-package amx
