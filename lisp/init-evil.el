@@ -67,10 +67,9 @@
     (evil-snipe-mode 1)
     (evil-snipe-override-mode 1))
 
-(use-package evil-cleverparens
-    :ensure t
-    :diminish evil-cleverparens-mode
-    :defer t
-    :config
-    (evil-cleverparens-mode 1))
+;; (use-package evil-cleverparens
+;;   :ensure t
+;;   :diminish evil-cleverparens-mode
+;;   :defer t
+;;   :hook emacs-lisp-mode)
 (provide 'init-evil)
