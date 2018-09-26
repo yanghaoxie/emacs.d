@@ -23,34 +23,7 @@
                ;; (propertize "%02l" 'face 'font-lock-type-face) ","
                ;; (propertize "%02c" 'face 'font-lock-type-face)
                ") "
-
-               ;; the current major mode for the buffer.
-               "["
-
-               '(:eval (propertize "%m" 'face nil
-                                   'help-echo buffer-file-coding-system))
-               ;; " "
-
-
-               ;; insert vs overwrite mode, input-method in a tooltip
-               ';; (:eval (propertize (if overwrite-mode "Ovr" "Ins")
-               ;;          'face nil
-               ;;          'help-echo (concat "Buffer is in "
-               ;;                       (if overwrite-mode "overwrite" "insert") " mode")))
-
-               ;; was this buffer modified since the last save?
-               '(:eval (when (buffer-modified-p)
-                         (concat ","  (propertize "Mod"
-                                                  'face nil
-                                                  'help-echo "Buffer has been modified"))))
-
-
-               ;; is this buffer read-only?
-               '(:eval (when buffer-read-only
-                         (concat ","  (propertize "RO"
-                                                  'face nil
-                                                  'help-echo "Buffer is read-only"))))
-               "] "
+	       '(:eval mode-line-modes)
                '(:eval vc-mode vc-mode)
                '(:eval evil-mode-line-tag)
 
