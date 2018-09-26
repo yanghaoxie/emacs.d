@@ -9,10 +9,5 @@
        "jj" 'evil-avy-goto-char-timer
        "jl" 'evil-avy-goto-line
        "jw" 'evil-avy-goto-word-or-subword-1
-       "jc" 'evil-avy-goto-char-2))
-    :chords
-    ("tt" . evil-avy-goto-char-timer)
-    ("ii" . evil-avy-goto-line)
-    ("oo" . evil-avy-goto-word-or-subword-1)
-    ("aa" . evil-avy-goto-char-2))
+       "jc" 'evil-avy-goto-char-2)))
 (provide 'init-avy)

@@ -35,10 +35,4 @@
 (use-package hydra
   :ensure t)
 
-;; key-chord
-(use-package use-package-chords
-  :ensure t
-  :config
-  (setq key-chord-two-keys-delay 0.2)
-  (key-chord-mode 1))
 (provide 'init-pre-load)
