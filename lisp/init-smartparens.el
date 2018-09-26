@@ -7,8 +7,12 @@
     (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
     (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode))
   :config
-  (smartparens-global-mode 1)
-  (smartparens-global-strict-mode 1))
+  (my/leader-keys
+    "k{" 'sp-wrap-curly
+    "k(" 'sp-wrap-round
+    "k[" 'sp-wrap-square
+    "ku" 'sp-unwrap-sexp
+    "kr" 'sp-rewrap-sexp))
 
 (use-package evil-smartparens
   :ensure t
