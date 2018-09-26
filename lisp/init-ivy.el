@@ -44,6 +44,8 @@
    "sp" 'counsel-projectile-ag
    ;; themes
    "Ts"  'counsel-load-theme
+   ;; insert color
+   "ic" 'counsel-colors-emacs
    )
   :config
   (ivy-mode))
