@@ -14,3 +14,4 @@ anaconda-mode/
 /url/
 /company-statistics-cache.el
 /pyim/*
+/projectile.cache
