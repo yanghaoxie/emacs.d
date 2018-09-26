@@ -22,8 +22,9 @@
      "hh" 'anaconda-mode-show-doc
      "ga" 'anaconda-mode-find-assignments
      "gb" 'anaconda-mode-go-back
-     "gu" 'anaconda-mode-find-references
-     )))
+     "gu" 'anaconda-mode-find-references))
+  :config
+  (anaconda-mode))
 
 (use-package company-anaconda
   :ensure t
