@@ -53,8 +53,8 @@
 
 (use-package counsel-projectile
     :ensure t
-    :after (counsel projectile)
-    :general
+    :defer t
+    :init
     (my/leader-keys
      "p SPC" 'counsel-projectile
      "pf" 'counsel-projectile-find-file
@@ -63,5 +63,7 @@
      "pp" 'counsel-projectile-switch-project
      "psg" 'counsel-projectile-grep
      "pss" 'counsel-projectile-ag
-     "psr" 'counsel-projectile-rg))
+     "psr" 'counsel-projectile-rg)
+    :config
+    (counsel-projectile-mode))
 (provide 'init-project)
