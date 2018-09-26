@@ -23,7 +23,9 @@
      "hh" 'anaconda-mode-show-doc
      "ga" 'anaconda-mode-find-assignments
      "gb" 'anaconda-mode-go-back
-     "gu" 'anaconda-mode-find-references))
+     "gu" 'anaconda-mode-find-references
+     "gd" 'anaconda-mode-find-definitions
+     "gD" 'anaconda-mode-find-definitions-other-window))
   :config
   (anaconda-mode))
 
