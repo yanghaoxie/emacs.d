@@ -102,6 +102,7 @@
   (require-init 'init-undo-tree)
   (require-init 'init-expand-region)
   (require-init 'init-sudo-edit)
+  (require-init 'init-smartparens)
   ;; theme
   (require-init 'init-theme)
   ;; vim
