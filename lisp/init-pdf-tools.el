@@ -7,10 +7,7 @@
       (pdf-tools-install)
       (add-hook 'pdf-view-mode-hook (lambda() (display-line-numbers-mode -1)))
       ;;turn off cua so copy works
-      (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
-      ;; enbale auto-revert-mode to auto revert pdf files
-      ;; (add-hook 'pdf-view-mode-hook 'auto-revert-mode)
-      (setq auto-revert-interval 0.5))
+      (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0))))
     :general
     (:states '(normal)
      :keymaps 'pdf-view-mode-map
