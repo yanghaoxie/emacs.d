@@ -212,5 +212,6 @@
     (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
     (setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref_notes.org")
     (my/leader-keys-major-mode
+      :keymaps 'org-mode-map
      "oo" 'my/org-ref-open-pdf-at-point)))
 (provide 'init-org)
