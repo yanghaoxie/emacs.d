@@ -13,6 +13,7 @@
 
 (use-package anaconda-mode
   :ensure t
+  :diminish anaconda-mode
   :defer t
   :after python
   :init
