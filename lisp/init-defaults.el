@@ -15,7 +15,6 @@
 (column-number-mode t)
 (size-indication-mode t)
 (blink-cursor-mode 0)
-(diminish 'auto-revert-mode)
 ;; text-scale
 (defhydra hydra-text-scale ()
   "text-scale"
