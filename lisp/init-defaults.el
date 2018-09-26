@@ -62,8 +62,7 @@
   :diminish auto-revert-mode
   :init
   (setq auto-revert-interval 0.5)
-  :config
-  (add-hook 'pdf-view-mode-hook 'auto-revert-mode))
+  :hook pdf-view-mode)
 
 (use-package server
   :commands server-running-p
