@@ -10,9 +10,7 @@
       (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
       ;; enbale auto-revert-mode to auto revert pdf files
       (add-hook 'pdf-view-mode-hook 'auto-revert-mode)
-      (setq auto-revert-interval 0.5)
-      (diminish 'auto-revert-mode)
-      )
+      (setq auto-revert-interval 0.5))
     :general
     (:states '(normal)
      :keymaps 'pdf-view-mode-map
