@@ -16,6 +16,8 @@
 
 (use-package evil-smartparens
   :ensure t
+  :defer t
   :diminish evil-smartparens-mode
-  :hook smartparens-enabled-hook)
+  :init
+  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
 (provide 'init-smartparens)
