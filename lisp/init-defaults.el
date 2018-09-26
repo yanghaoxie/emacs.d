@@ -57,7 +57,7 @@
     (setq recentf-max-saved-items 25)
     (recentf-mode 1)))
 
-(use-package auto-revert
+(use-package autorevert
   :defer t
   :diminish auto-revert-mode
   :init
