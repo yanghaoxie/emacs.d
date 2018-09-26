@@ -10,7 +10,7 @@
                ;; the buffer name; the file name as a tool tip
                '(:eval (propertize "%b" 'face nil
                                    'help-echo (buffer-file-name)))
-
+	       " "
                ;; '(:eval mode-line-frame-identification)
                '(:eval mode-line-modified)
                " "
