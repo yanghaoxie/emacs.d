@@ -16,6 +16,8 @@
                " "
                '(:eval mode-line-percent-position)
                ;; '(:eval mode-line-position)
+	       "%I"
+	       " "
 
                ;; line and column
                "(" ;; '%02' to set to 2 chars at least; prevents flickering
