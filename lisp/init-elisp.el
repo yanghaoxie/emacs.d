@@ -1,4 +1,7 @@
-(my/leader-keys-major-mode
+(use-package emacs-lisp
+  :mode ("\\.el\\'" . emacs-lisp-mode)
+  :init
+  (my/leader-keys-major-mode
   :keymaps 'emacs-lisp-mode-map
   "cc" 'emacs-lisp-byte-compile
   "ci"  'my/byte-compile-init-dir
