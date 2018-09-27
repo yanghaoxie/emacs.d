@@ -1,5 +1,6 @@
 (use-package pdf-tools
     :ensure t
+    :diminish pdf-view-midnight-minor-mode
     :defer t
     :mode (("\\.pdf\\'" . pdf-view-mode))
     :config
