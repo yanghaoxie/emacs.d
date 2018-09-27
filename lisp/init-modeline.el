@@ -14,17 +14,23 @@
                ;; '(:eval mode-line-frame-identification)
                '(:eval mode-line-modified)
                " "
-               '(:eval mode-line-percent-position)
-               ;; '(:eval mode-line-position)
 	       "%I"
 	       " "
 
-               ;; line and column
-               "(" ;; '%02' to set to 2 chars at least; prevents flickering
-               "%02l" "," "%02c"
-               ;; (propertize "%02l" 'face 'font-lock-type-face) ","
-               ;; (propertize "%02c" 'face 'font-lock-type-face)
-               ") "
+	       '(:eval (if (eq major-mode 'pdf-view-mode)
+			   (progn
+			     (format "(%d/%d)"
+				     (eval `(pdf-view-current-page))
+				     (pdf-cache-number-of-pages)))
+			 (progn
+			 ;; (:eval mode-line-percent-position)
+			   (list
+			    '(:eval mode-line-percent-position)
+			    (propertize "(")
+			    (propertize "%2l")
+			    (propertize ",")
+			    (propertize "%2c")
+			    (propertize ")")))))
 	       '(:eval mode-line-modes)
                '(:eval vc-mode vc-mode)
                ;; '(:eval evil-mode-line-tag)
