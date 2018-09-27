@@ -3,6 +3,8 @@
     :defer t
     :init
     (eyebrowse-mode)
+    (custom-set-faces
+     '(eyebrowse-mode-line-active ((t (:inherit bold-italic)))))
     :general
     (:keymaps 'override
      :states '(normal visual)
