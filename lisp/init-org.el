@@ -206,7 +206,7 @@
 
 (use-package org-ref
   :ensure t
-  :defer 5
+  :mode ("\\.org\\'" . org-mode)
   :init
   (progn
     (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
