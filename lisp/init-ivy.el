@@ -74,7 +74,6 @@
   :init
   (my/leader-keys
     "ib" 'ivy-bibtex)
-  :config
   (setq bibtex-completion-pdf-field "file"
 	bibtex-completion-find-additional-pdfs t
 	bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
