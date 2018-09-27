@@ -90,6 +90,7 @@
   (require-init 'init-rainbow-delimiters)
   (require-init 'init-highlight-parentheses)
   (require-init 'init-highlight-indentation)
+  (require-init 'init-highlight-numbers)
   (require-init 'init-which-key)
   (require-init 'init-popwin)
   (require-init 'init-zoom-frm)
