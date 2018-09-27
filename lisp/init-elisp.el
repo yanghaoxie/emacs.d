@@ -5,5 +5,5 @@
   "eb" 'eval-buffer
   "ee" 'eval-last-sexp
   "er" 'eval-region
-  "ef" 'eval-defun)
+  "ef" 'eval-defun))
 (provide 'init-elisp)
