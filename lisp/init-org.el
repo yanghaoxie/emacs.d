@@ -214,4 +214,10 @@
     (my/leader-keys-major-mode
       :keymaps 'org-mode-map
      "oo" 'my/org-ref-open-pdf-at-point)))
+
+(use-package org-bullets
+  :ensure t
+  :after (org)
+  :config
+  (add-hook 'org-mode-hook 'org-bullets-mode))
 (provide 'init-org)
