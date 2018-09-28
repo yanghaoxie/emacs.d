@@ -39,8 +39,8 @@
 ;; text-scale
 (defhydra hydra-text-scale ()
   "text-scale"
-  ("=" text-scale-increase "in")
-  ("-" text-scale-decrease "out")
+  ("i" text-scale-increase "in")
+  ("o" text-scale-decrease "out")
   ("0" (text-scale-set 0) "resert")
   ("q" nil "quit"))
 (my/leader-keys

@@ -7,8 +7,8 @@
   (progn
     (defhydra hydra-zoom-frm ()
        "zoom-frm"
-       ("=" zoom-frm-in "in")
-       ("-" zoom-frm-out "out")
+       ("i" zoom-frm-in "in")
+       ("o" zoom-frm-out "out")
        ("0" zoom-frm-unzoom "reset")
        ("q" nil "quit")
        )
