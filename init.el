@@ -91,6 +91,7 @@
   (require-init 'init-highlight-parentheses)
   (require-init 'init-highlight-indentation)
   (require-init 'init-highlight-numbers)
+  (require-init 'init-highlight-symbol)
   (require-init 'init-which-key)
   (require-init 'init-popwin)
   (require-init 'init-zoom-frm)
@@ -103,7 +104,7 @@
   (require-init 'init-undo-tree)
   (require-init 'init-expand-region)
   (require-init 'init-sudo-edit)
-  (require-init 'init-smartparens)
+  ;; (require-init 'init-smartparens)
   ;; theme
   (require-init 'init-theme)
   ;; vim
@@ -117,7 +118,7 @@
   (require-init 'init-avy)
   (require-init 'init-winum)
   (require-init 'init-golden-scroll-screen)
-  (require-init 'init-smartscan)
+  ;; (require-init 'init-smartscan)
   ;; completion
   (require-init 'init-ivy)
   (require-init 'init-company)
