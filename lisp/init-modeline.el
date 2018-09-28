@@ -34,6 +34,7 @@
 	       '(:eval mode-line-modes)
                '(:eval vc-mode vc-mode)
                ;; '(:eval evil-mode-line-tag)
+	       " "
 
                ;;global-mode-string, org-timer-set-timer in org-mode need this
                (propertize "%M" 'face nil)
