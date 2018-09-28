@@ -117,6 +117,7 @@
   (require-init 'init-avy)
   (require-init 'init-winum)
   (require-init 'init-golden-scroll-screen)
+  (require-init 'init-smartscan)
   ;; completion
   (require-init 'init-ivy)
   (require-init 'init-company)
