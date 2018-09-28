@@ -40,4 +40,10 @@
       (my/normal-keys
        :keymaps 'elfeed-show-mode-map
        "o" 'elfeed-goodies/show-ace-link)))
+
+(use-package elfeed-org
+  :ensure t
+  :config
+  (elfeed-org)
+  (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org")))
 (provide 'init-elfeed)
