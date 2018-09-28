@@ -28,6 +28,14 @@
 
 (setq auto-save-file-name-transforms
       `((".*" ,emacs-autosave-directory t)))
+;; backup
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups"))
+      kept-new-versions 10
+      kept-old-versions 0
+      delete-old-versions t
+      backup-by-copying t
+      vc-make-backup-files t)
+
 ;; text-scale
 (defhydra hydra-text-scale ()
   "text-scale"
