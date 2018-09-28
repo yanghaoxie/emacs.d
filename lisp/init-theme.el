@@ -5,8 +5,7 @@
 
 (use-package spacemacs-theme
   :ensure t
-  :defer t
-  )
+  :defer t)
 
 ;;;###autoload
 (defun my/switch-theme ()
