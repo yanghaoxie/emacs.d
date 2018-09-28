@@ -66,3 +66,13 @@ current window."
   "Restart emacs and enable debug-init."
   (interactive)
   (restart-emacs (cons "--debug-init" args)))
+
+;;;###autoload
+(defun my/toggle-next-theme (theme1 theme2)
+  (if (-contains? custom-enabled-themes theme1)
+      (progn
+	(disable-theme theme1)
+	(load-theme theme2 t))
+    (progn
+      (disable-theme theme2)
+      (load-theme theme1 t))))
