@@ -126,4 +126,9 @@
  "w=" 'balance-windows-area
  "wm" 'my/toggle-maximize-buffer
  "wd" 'delete-window)
+;; text
+(my/leader-keys
+  "xp" 'clipboard-yank
+  "xy" 'clipboard-kill-ring-save
+  "xc" 'clipboard-kill-region)
 (provide 'init-defaults)
