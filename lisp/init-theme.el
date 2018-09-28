@@ -8,4 +8,11 @@
   :defer t
   )
 
+;;;###autoload
+(defun my/switch-theme ()
+  (interactive)
+  (my/toggle-next-theme 'darktooth 'spacemacs-light))
+
+(my/leader-keys
+  "Tn" 'my/switch-theme)
 (provide 'init-theme)
