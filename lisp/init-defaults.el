@@ -15,6 +15,19 @@
 (column-number-mode t)
 (size-indication-mode t)
 (blink-cursor-mode 0)
+
+;; auto save
+(setq  auto-save-default t
+       auto-save-timeout 20
+       auto-save-interval 20)
+(defvar emacs-autosave-directory
+  (concat user-emacs-directory "autosaves/"))
+
+(unless (file-exists-p emacs-autosave-directory)
+    (make-directory emacs-autosave-directory))
+
+(setq auto-save-file-name-transforms
+      `((".*" ,emacs-autosave-directory t)))
 ;; text-scale
 (defhydra hydra-text-scale ()
   "text-scale"
