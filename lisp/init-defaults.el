@@ -70,6 +70,14 @@
   :config
   (unless (server-running-p)
     (server-start)))
+
+(use-package winner
+  :init
+  (my/leader-keys
+    "wu" 'winner-undo
+    "wU" 'winner-redo)
+  :config
+  (winner-mode))
 ;; key bindings
 
 ;; applications --------------------------------------------------------------
@@ -117,8 +125,5 @@
  "wS" 'split-window-below-and-focus
  "w=" 'balance-windows-area
  "wm" 'my/toggle-maximize-buffer
- "wd" 'delete-window
- ;; winner-mode
- "wu" 'winner-undo
- "wU" 'winner-redo)
+ "wd" 'delete-window)
 (provide 'init-defaults)
