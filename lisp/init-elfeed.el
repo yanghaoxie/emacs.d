@@ -29,8 +29,9 @@
        "-"  'elfeed-search-untag-all
        "b"  'elfeed-search-browse-url
        "y"  'elfeed-search-yank))
-    (setq elfeed-feeds
-          '(("http://nullprogram.com/feed/" blog emacs))))
+    ;; (setq elfeed-feeds
+    ;;       '(("http://nullprogram.com/feed/" blog emacs)))
+    )
 
 (use-package elfeed-goodies
     :ensure t
