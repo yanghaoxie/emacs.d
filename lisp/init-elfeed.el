@@ -38,6 +38,7 @@
     :defer t
     :config
     (progn
+      (setq elfeed-goodies/feed-source-column-width 40)
       (my/normal-keys
        :keymaps 'elfeed-show-mode-map
        "o" 'elfeed-goodies/show-ace-link)))
