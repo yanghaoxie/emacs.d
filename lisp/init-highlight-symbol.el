@@ -1,5 +1,6 @@
 (use-package highlight-symbol
   :ensure t
+  :diminish highlight-symbol-mode
   :init
   :general
   ("M-n" 'highlight-symbol-next
