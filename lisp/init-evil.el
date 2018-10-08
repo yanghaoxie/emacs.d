@@ -72,4 +72,11 @@
 ;;   :diminish evil-cleverparens-mode
 ;;   :defer t
 ;;   :hook emacs-lisp-mode)
+
+(use-package evil-goggles
+  :ensure t
+  :diminish evil-goggles-mode
+  :defer t
+  :config
+  (evil-goggles-mode))
 (provide 'init-evil)
