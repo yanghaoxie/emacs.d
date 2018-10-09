@@ -2,9 +2,8 @@
   :defer t
   :diminish flyspell-mode
   :init
-  (progn
-    (add-hook 'text-mode-hook 'flyspell-mode)
-    (add-hook 'prog-mode-hook 'flyspell-prog-mode)))
+  (my/leader-keys
+    "tS" 'my/toggle-flyspell))
 
 (use-package flyspell-correct
   :ensure t

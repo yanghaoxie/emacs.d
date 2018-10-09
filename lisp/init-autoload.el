@@ -83,3 +83,10 @@ current window."
   (if (bound-and-true-p highlight-symbol-mode)
       (highlight-symbol-mode -1)
     (highlight-symbol-mode 1)))
+
+;;;###autoload
+(defun my/toggle-flyspell()
+  (interactive)
+  (if (bound-and-true-p flyspell-mode)
+      (flyspell-mode -1)
+    (flyspell-mode 1)))
