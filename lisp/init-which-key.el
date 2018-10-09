@@ -31,6 +31,7 @@
      "r" '(:ignore t :which-key "regs/rings/replace")
      "s" '(:ignore t :which-key "search")
      "t" '(:ignore t :which-key "toggles")
+     "th" '(:ignore t :which-key "highlight")
      "T" '(:ignore t :which-key "Themes")
      "w" '(:ignore t :which-key "windows")
      "x" '(:ignore t :which-key "text")

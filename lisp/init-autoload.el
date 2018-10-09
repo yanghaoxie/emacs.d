@@ -76,3 +76,10 @@ current window."
     (progn
       (disable-theme theme2)
       (load-theme theme1 t))))
+
+;;;###autoload
+(defun my/toggle-highlight-symbol()
+  (interactive)
+  (if (bound-and-true-p highlight-symbol-mode)
+      (highlight-symbol-mode -1)
+    (highlight-symbol-mode 1)))
