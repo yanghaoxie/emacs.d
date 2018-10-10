@@ -92,6 +92,7 @@
   (require-init 'init-highlight-indentation)
   (require-init 'init-highlight-numbers)
   (require-init 'init-highlight-symbol)
+  (require-init 'init-color-identifiers-mode)
   (require-init 'init-which-key)
   (require-init 'init-popwin)
   (require-init 'init-zoom-frm)

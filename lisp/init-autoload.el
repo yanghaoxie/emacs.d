@@ -90,3 +90,10 @@ current window."
   (if (bound-and-true-p flyspell-mode)
       (flyspell-mode -1)
     (flyspell-mode 1)))
+
+;;;###autoload
+(defun my/toggle-color-identifiers ()
+  (interactive)
+  (if (bound-and-true-p color-identifiers-mode)
+      (color-identifiers-mode -1)
+    (color-identifiers-mode 1)))
