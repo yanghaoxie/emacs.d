@@ -32,4 +32,8 @@
   :config
   (setq evil-ledger-sort-key "S")
   (add-hook 'ledger-mode-hook #'evil-ledger-mode))
+
+(use-package flycheck-ledger
+  :ensure t
+  :after (ledger flycheck))
 (provide 'init-ledger)
