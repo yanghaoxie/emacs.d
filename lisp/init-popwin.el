@@ -22,5 +22,7 @@
       (push '("*nosetests*"            :dedicated t :position bottom :stick t :noselect nil            ) popwin:special-display-config)
       (push '("^\*WoMan.+\*$" :regexp t             :position bottom                                   ) popwin:special-display-config)
       (push '("*Google Translate*"     :dedicated t :position bottom :stick t :noselect t   :height 0.4) popwin:special-display-config)
-      (push '("*frequencies*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)))
+      (push '("*frequencies*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
+      (push '("*Synonyms List*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
+      ))
 (provide 'init-popwin)
