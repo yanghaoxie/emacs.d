@@ -111,6 +111,9 @@
   (winner-mode))
 ;; key bindings
 
+(my/leader-keys
+  "!" 'shell-command)
+
 ;; applications --------------------------------------------------------------
 (my/leader-keys
  "au" 'undo-tree-visualize)
