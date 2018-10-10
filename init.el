@@ -146,6 +146,7 @@
   (require-init 'init-keyfreq)
   (require-init 'init-elfeed)
   (require-init 'init-shell)
+  (require-init 'init-ledger)
   ;; chinese
   (require-init 'init-pyim)
 
