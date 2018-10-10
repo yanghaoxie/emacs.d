@@ -49,8 +49,8 @@
 ;; window-scale
 (defhydra hydra-window-scale ()
   "window-scale"
-  ("i" enlarge-window-horizontally "in")
-  ("o" shrink-window-horizontally "out")
+  ("i" (lambda () (interactive) (enlarge-window-horizontally 10)) "in")
+  ("o" (lambda () (interactive) (shrink-window-horizontally 10)) "out")
   ("0" balance-windows "resert")
   ("q" nil "quit"))
 (my/leader-keys
