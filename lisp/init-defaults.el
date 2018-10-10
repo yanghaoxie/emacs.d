@@ -46,6 +46,16 @@
 (my/leader-keys
  "zx" 'hydra-text-scale/body)
 
+;; window-scale
+(defhydra hydra-window-scale ()
+  "window-scale"
+  ("i" enlarge-window-horizontally "in")
+  ("o" shrink-window-horizontally "out")
+  ("0" balance-windows "resert")
+  ("q" nil "quit"))
+(my/leader-keys
+ "zw" 'hydra-window-scale/body)
+
 ;; build-in modes
 (use-package eldoc
     :diminish eldoc-mode)
