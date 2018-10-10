@@ -35,6 +35,12 @@
 	   "o"   'pdf-links-action-perform
 	   "O"   'pdf-outline
 	   "zr"  'pdf-view-scale-reset)
+  (:states '(normal visual)
+	   :keymaps 'pdf-outline-buffer-mode-map
+	   "RET" 'pdf-outline-follow-link
+	   "M-RET" 'pdf-outline-follow-link-and-quit
+	   "TAB" 'pdf-outline-toggle-subtree
+	   "q" 'pdf-outline-quit)
   (my/leader-keys-major-mode
     :states 'normal
     :keymaps 'pdf-view-mode-map
