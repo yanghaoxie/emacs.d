@@ -138,6 +138,7 @@
   ;; writting
   (require-init 'init-academic-phrases)
   (require-init 'init-artbollocks)
+  (require-init 'init-synosaurus)
   ;; tools
   (require-init 'init-ranger)
   (require-init 'init-pdf-tools)
