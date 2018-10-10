@@ -35,6 +35,7 @@
      "th" '(:ignore t :which-key "highlight")
      "T" '(:ignore t :which-key "Themes")
      "w" '(:ignore t :which-key "windows")
+     "wp" '(:ignore t :which-key "popwin")
      "x" '(:ignore t :which-key "text")
      "xS" '(:ignore t :which-key "Synosaurus")
      "z" '(:ignore t :which-key "zoom"))
