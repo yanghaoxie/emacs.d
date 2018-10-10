@@ -15,3 +15,5 @@ anaconda-mode/
 /company-statistics-cache.el
 /pyim/*
 /projectile.cache
+/autosaves/*
+/eshell/*
