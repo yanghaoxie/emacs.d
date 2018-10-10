@@ -46,6 +46,7 @@
    "Ts"  'counsel-load-theme
    ;; insert color
    "ic" 'counsel-colors-emacs
+   "iu" 'counsel-unicode-char
    )
   :config
   (ivy-mode))
