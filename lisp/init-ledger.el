@@ -3,6 +3,7 @@
 
 (use-package evil-ledger
   :ensure t
+  :diminish evil-ledger-mode
   :after ledger-mode
   :config
   (setq evil-ledger-sort-key "S")
