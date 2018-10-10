@@ -35,6 +35,7 @@
      "T" '(:ignore t :which-key "Themes")
      "w" '(:ignore t :which-key "windows")
      "x" '(:ignore t :which-key "text")
+     "xS" '(:ignore t :which-key "Synosaurus")
      "z" '(:ignore t :which-key "zoom"))
     ;; org-mode
     (my/leader-keys-major-mode
