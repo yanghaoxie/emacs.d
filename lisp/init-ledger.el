@@ -15,8 +15,8 @@
       "l" 'ledger-display-ledger-stats
       "p" 'ledger-display-balance-at-point
       "q" 'ledger-post-align-xact
-      "r" 'ledger-reconcile
-      "R" 'ledger-report
+      "R" 'ledger-reconcile
+      "r" 'ledger-report
       "t" 'ledger-insert-effective-date)
     (my/leader-keys-major-mode
       :keymaps 'ledger-reconcile-mode-map
