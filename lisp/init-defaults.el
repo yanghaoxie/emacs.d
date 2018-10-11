@@ -67,7 +67,6 @@
       (electric-pair-mode t)))
 
 (use-package display-line-numbers
-    :defer 5
     :init
     (setq display-line-numbers-type 'visual)
     :config
