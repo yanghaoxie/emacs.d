@@ -1,5 +1,6 @@
 (use-package langtool
   :ensure t
+  :defer t
   :init
   (my/leader-keys
     "Sc" 'langtool-check
