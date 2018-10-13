@@ -38,7 +38,5 @@
      "wp" '(:ignore t :which-key "popwin")
      "x" '(:ignore t :which-key "text")
      "xS" '(:ignore t :which-key "Synosaurus")
-     "z" '(:ignore t :which-key "zoom"))
-
-     ))
+     "z" '(:ignore t :which-key "zoom"))))
 (provide 'init-which-key)
