@@ -39,11 +39,6 @@
      "x" '(:ignore t :which-key "text")
      "xS" '(:ignore t :which-key "Synosaurus")
      "z" '(:ignore t :which-key "zoom"))
-    ;;emacs-lisp-mode
-    (my/leader-keys-major-mode
-     :keymaps 'emacs-lisp-mode-map
-     "c" '(:ignore t :which-key "compile")
-     "e" '(:ignore t :which-key "eval"))
     ;; benchmark
     (my/leader-keys
      "ab" '(:ignore t :which-key "benchmark"))
