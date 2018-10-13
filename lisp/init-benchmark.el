@@ -10,6 +10,7 @@
     :config
     (progn
       (my/leader-keys
+	"ab" '(:ignore t :which-key "benchmark")
 	"abt" 'benchmark-init/show-durations-tabulated
 	"abr" 'benchmark-init/show-durations-tree))
     :config
