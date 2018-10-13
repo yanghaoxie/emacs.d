@@ -202,7 +202,25 @@
      "aos" 'org-search-view
      "aot" 'org-todo-list
      ;; SPC C- capture/colors
-     "Cc" 'org-capture)))
+     "Cc" 'org-capture)
+    (my/leader-keys-major-mode
+      :keymaps 'org-mode-map
+      :major-modes t
+      "b" '(:ignore t :which-key "babel")
+      "C" '(:ignore t :which-key "Clocks")
+      ;; "c" '(:ignore t :which-key "org-capture")
+      "d" '(:ignore t :which-key "dates")
+      "e" '(:ignore t :which-key "export")
+      "f" '(:ignore t :which-key "feeds")
+      "i" '(:ignore t :which-key "insert")
+      "iD" '(:ignore t :which-key "download")
+      "s" '(:ignore t :which-key "trees/subtrees")
+      "T" '(:ignore t :which-key "toggles")
+      "t" '(:ignore t :which-key "tables")
+      "td" '(:ignore t :which-key "delete")
+      "ti" '(:ignore t :which-key "insert")
+      "tt" '(:ignore t :which-key "toggle")
+      "x" '(:ignore t :which-key "text"))))
 
 (use-package org-ref
   :ensure t

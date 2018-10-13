@@ -39,23 +39,6 @@
      "x" '(:ignore t :which-key "text")
      "xS" '(:ignore t :which-key "Synosaurus")
      "z" '(:ignore t :which-key "zoom"))
-    ;; org-mode
-    (my/leader-keys-major-mode
-     :keymaps 'org-mode-map
-     "b" '(:ignore t :which-key "babel")
-     "C" '(:ignore t :which-key "Clocks")
-     "d" '(:ignore t :which-key "dates")
-     "e" '(:ignore t :which-key "export")
-     "f" '(:ignore t :which-key "feeds")
-     "i" '(:ignore t :which-key "insert")
-     "iD" '(:ignore t :which-key "download")
-     "s" '(:ignore t :which-key "trees/subtrees")
-     "T" '(:ignore t :which-key "toggles")
-     "t" '(:ignore t :which-key "tables")
-     "td" '(:ignore t :which-key "delete")
-     "ti" '(:ignore t :which-key "insert")
-     "tt" '(:ignore t :which-key "toggle")
-     "x" '(:ignore t :which-key "text"))
     ;;emacs-lisp-mode
     (my/leader-keys-major-mode
      :keymaps 'emacs-lisp-mode-map
