@@ -6,6 +6,7 @@
     :config
     (progn
       (elfeed-goodies/setup)
+      (setf elfeed-curl-extra-arguments '("--socks5-hostname" "127.0.0.1:1080"))
       (my/normal-keys
        :keymaps 'elfeed-search-mode-map
        "c"  'elfeed-db-compact
