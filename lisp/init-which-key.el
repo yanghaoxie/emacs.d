@@ -39,13 +39,6 @@
      "x" '(:ignore t :which-key "text")
      "xS" '(:ignore t :which-key "Synosaurus")
      "z" '(:ignore t :which-key "zoom"))
-    ;; python-mode
-    (my/leader-keys-major-mode
-     :keymaps 'python-mode-map
-     "g" '(:ignore t :which-key "goto")
-     "h" '(:ignore t :which-key "help")
-     "s" '(:ignore t :which-key "REPL")
-     )
 
      ))
 (provide 'init-which-key)

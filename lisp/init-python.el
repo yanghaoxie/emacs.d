@@ -5,7 +5,9 @@
   (progn
     (my/leader-keys-major-mode
      :keymaps 'python-mode-map
+     :major-modes t
      "'"  'run-python
+     "s" '(:ignore t :which-key "REPL")
      "sb" 'python-shell-send-buffer
      "sf" 'python-shell-send-defun
      "sr" 'python-shell-send-region
@@ -20,7 +22,10 @@
   (progn
     (my/leader-keys-major-mode
      :keymaps 'python-mode-map
+     :major-modes t
+     "h" '(:ignore t :which-key "help")
      "hh" 'anaconda-mode-show-doc
+     "g" '(:ignore t :which-key "goto")
      "ga" 'anaconda-mode-find-assignments
      "gb" 'anaconda-mode-go-back
      "gu" 'anaconda-mode-find-references
