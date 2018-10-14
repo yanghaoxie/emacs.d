@@ -1,7 +1,7 @@
 (use-package tex
   :defer t
   :ensure auctex
-  :init
+  :config
   (progn
     (setq TeX-save-query nil)
     (setq TeX-view-program-selection
@@ -23,7 +23,7 @@
     (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
     (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
     (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode))
-  :config
+  :init
   ;; Key bindings for plain Tex
   (my/leader-keys-major-mode
    :keymaps 'LaTeX-mode-map
