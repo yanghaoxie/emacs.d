@@ -1,6 +1,7 @@
 (use-package tex
   :defer t
   :ensure auctex
+  :mode (".tex\\'" . LaTeX-mode)
   :config
   (progn
     (setq TeX-save-query nil)
@@ -26,6 +27,7 @@
   :init
   ;; Key bindings for plain Tex
   (my/leader-keys-major-mode
+   :major-modes '(latex-mode t)
    :keymaps 'LaTeX-mode-map
    "\\"  'TeX-insert-macro                            ;; C-c C-m
    "-"   'TeX-recenter-output-buffer                  ;; C-c C-l
@@ -38,20 +40,25 @@
    "m"   'TeX-insert-macro                            ;; C-c C-m
    "v"   'TeX-view                                    ;; C-c C-v
    ;; TeX-doc is a very slow function
+   "h"   '(:ignore t :which-key "help")
    "hd"  'TeX-doc)
   ;; Key bindings specific to LaTeX
   (my/leader-keys-major-mode
+   :major-modes '(latex-mode t)
    :keymaps 'LaTeX-mode-map
    "*"   'LaTeX-mark-section      ;; C-c *
    "."   'LaTeX-mark-environment  ;; C-c .
    "c"   'LaTeX-close-environment ;; C-c ]
    "e"   'LaTeX-environment       ;; C-c C-e
+   "i"   '(:ignore t :which-key "insert")
    "ii"   'LaTeX-insert-item       ;; C-c C-j
    "s"   'LaTeX-section           ;; C-c C-s
+   "f"   '(:ignore t :which-key "fill")
    "fe"  'LaTeX-fill-environment  ;; C-c C-q C-e
    "fp"  'LaTeX-fill-paragraph    ;; C-c C-q C-p
    "fr"  'LaTeX-fill-region       ;; C-c C-q C-r
    "fs"  'LaTeX-fill-section      ;; C-c C-q C-s
+   "p"   '(:ignore t :which-key "preview")
    "pb"  'preview-buffer
    "pc"  'preview-clearout
    "pd"  'preview-document
