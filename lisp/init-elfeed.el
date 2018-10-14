@@ -26,7 +26,7 @@
        "q" 'elfeed-search-quit-window)
       (my/normal-keys
        :keymaps 'elfeed-search-mode-map
-       :states 'visual
+       :states 'normal
        "+"  'elfeed-search-tag-all
        "-"  'elfeed-search-untag-all
        "b"  'elfeed-search-browse-url
