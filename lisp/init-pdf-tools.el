@@ -35,7 +35,7 @@
 	   "G"  'pdf-view-last-page
 	   ;; scale/fit
 	   "w" 'pdf-view-fit-width-to-window
-	   "h" 'pdf-view-fit-height-to-window
+	   "H" 'pdf-view-fit-height-to-window
 	   "p" 'pdf-view-fit-page-to-window
 	   ;; Search
 	   "/" 'isearch-forward
