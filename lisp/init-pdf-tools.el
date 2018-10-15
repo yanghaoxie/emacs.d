@@ -8,7 +8,17 @@
     (pdf-tools-install)
     (add-hook 'pdf-view-mode-hook (lambda() (display-line-numbers-mode -1)))
     ;;turn off cua so copy works
-    (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0))))
+    (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
+    (defhydra hydra-zoom-pdf ()
+       "zoom-pdf"
+       ("i" pdf-view-enlarge "in")
+       ("o" pdf-view-shrink "out")
+       ("w" pdf-view-fit-width-to-window "reset")
+       ("p" pdf-view-fit-page-to-window)
+       ("q" nil "quit"))
+    (my/leader-keys-major-mode
+      :keymaps 'pdf-view-mode-map
+      "z" 'hydra-zoom-pdf/body))
   :general
   (:states '(normal)
 	   :keymaps 'pdf-view-mode-map
