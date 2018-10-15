@@ -13,8 +13,8 @@
        "zoom-pdf"
        ("i" pdf-view-enlarge "in")
        ("o" pdf-view-shrink "out")
-       ("w" pdf-view-fit-width-to-window "reset")
-       ("p" pdf-view-fit-page-to-window)
+       ("w" pdf-view-fit-width-to-window "width")
+       ("p" pdf-view-fit-page-to-window "page")
        ("q" nil "quit"))
     (my/leader-keys-major-mode
       :keymaps 'pdf-view-mode-map
