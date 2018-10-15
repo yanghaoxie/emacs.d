@@ -241,6 +241,7 @@
 
 (use-package evil-org
   :ensure t
+  :diminish evil-org-mode
   :after org
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
