@@ -7,5 +7,6 @@
 	shell-pop-full-span t
 	)
   (my/leader-keys
-    "'" 'shell-pop))
+    "'" 'shell-pop
+    "as" 'eshell))
 (provide 'init-shell)
