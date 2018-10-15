@@ -13,5 +13,5 @@
        ("q" nil "quit")
        )
     (my/leader-keys
-     "zf" 'hydra-zoom-frm/body)))
+     "Fz" 'hydra-zoom-frm/body)))
 (provide 'init-zoom-frm)

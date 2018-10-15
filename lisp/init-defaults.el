@@ -44,7 +44,7 @@
   ("0" (text-scale-set 0) "resert")
   ("q" nil "quit"))
 (my/leader-keys
- "zx" 'hydra-text-scale/body)
+ "xz" 'hydra-text-scale/body)
 
 ;; window-scale
 (defhydra hydra-window-scale ()
@@ -54,7 +54,7 @@
   ("0" balance-windows "resert")
   ("q" nil "quit"))
 (my/leader-keys
- "zw" 'hydra-window-scale/body)
+ "wz" 'hydra-window-scale/body)
 
 ;; build-in modes
 (use-package eldoc
