@@ -44,11 +44,14 @@
   (my/leader-keys-major-mode
     :states 'normal
     :keymaps 'pdf-view-mode-map
+    :major-modes t
     ;; Slicing image
+    "s" '(:ignore t :which-key "slice/occur")
     "sm" 'pdf-view-set-slice-using-mouse
     "sb" 'pdf-view-set-slice-from-bounding-box
     "sr" 'pdf-view-reset-slice
     ;; Annotations
+    "a" '(:ignore t :which-key "annotation")
     "aD" 	'pdf-annot-delete
     "at" 	'pdf-annot-attachment-dired
     "ah" 	'pdf-annot-add-highlight-markup-annotation
@@ -59,6 +62,7 @@
     "at" 	'pdf-annot-add-text-annotation
     "au" 	'pdf-annot-add-underline-markup-annotation
     ;; Fit image to window
+    "f" '(:ignore t :which-key "fit")
     "fw" 'pdf-view-fit-width-to-window
     "fh" 'pdf-view-fit-height-to-window
     "fp" 'pdf-view-fit-page-to-window
