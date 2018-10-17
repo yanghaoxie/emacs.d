@@ -7,6 +7,7 @@
   (progn
     (pdf-tools-install)
     (add-hook 'pdf-view-mode-hook (lambda() (display-line-numbers-mode -1)))
+    (add-hook 'pdf-view-mode-hook (lambda() (pdf-view-midnight-minor-mode 1)))
     ;;turn off cua so copy works
     (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
     (defhydra hydra-zoom-pdf ()
