@@ -250,4 +250,21 @@
               (evil-org-set-key-theme)))
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
+
+(use-package org-noter
+  :ensure t
+  :init
+  (my/leader-keys-major-mode
+    :keymaps 'pdf-view-mode-map
+    "n" 'org-noter
+    "i" 'org-noter-insert-note
+    "k" 'org-noter-kill-session)
+  :config
+  (progn
+    (setq org-noter-default-notes-file-names '("ref-notes.org")
+	  org-noter-notes-search-path '("~/Dropbox/document/org/references")
+	  org-noter-auto-save-last-location t
+	  org-noter-doc-split-fraction '(0.8 . 0.8)
+	  org-noter-always-create-frame nil
+	  org-noter-insert-note-no-questions t)))
 (provide 'init-org)
