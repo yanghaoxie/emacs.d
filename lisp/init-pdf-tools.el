@@ -80,6 +80,6 @@
     "ss" 'pdf-occur
     "p" 'pdf-misc-print-document
     "O" 'pdf-outline
-    "n" 'pdf-view-midnight-minor-mode)
+    "m" 'pdf-view-midnight-minor-mode)
   )
 (provide 'init-pdf-tools)
