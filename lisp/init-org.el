@@ -253,6 +253,7 @@
 
 (use-package org-noter
   :ensure t
+  :commands org-noter
   :init
   (my/leader-keys-major-mode
     :keymaps 'pdf-view-mode-map
