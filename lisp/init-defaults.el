@@ -15,7 +15,7 @@
 (column-number-mode t)
 (size-indication-mode t)
 (blink-cursor-mode 0)
-
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 ;; auto save
 (setq  auto-save-default t
        auto-save-timeout 20
