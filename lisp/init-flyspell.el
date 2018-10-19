@@ -6,6 +6,7 @@
     "tS" 'my/toggle-flyspell
     "Sb" 'flyspell-buffer
     "Sn" 'flyspell-goto-next-error))
+
 (use-package flyspell-correct
   :ensure t
   )
