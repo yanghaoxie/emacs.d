@@ -78,7 +78,7 @@
   (setq bibtex-completion-pdf-field "file"
 	bibtex-completion-find-additional-pdfs t
 	bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
-	bibtex-completion-notes-path "~/Dropbox/document/org/references/ref_notes.org"
+	bibtex-completion-notes-path "~/Dropbox/document/org/references/ref-notes.org"
 	bibtex-completion-notes-template-one-file
 	"\n* ${title} cite:${=key=}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n :INTERLEAVE_PDF: ${file}\n :END:\n\n"))
 (provide 'init-ivy)
