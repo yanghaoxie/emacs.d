@@ -5,8 +5,12 @@
   (my/leader-keys
     "tS" 'my/toggle-flyspell
     "Sb" 'flyspell-buffer
-    "Sn" 'flyspell-goto-next-error))
+    "Sn" 'flyspell-goto-next-error)
+  :config
+  (progn
     (add-hook 'prog-mode-hook #'flyspell-prog-mode)
+    (add-hook 'text-mode-hook #'turn-on-flyspell)
+    (add-hook 'org-mode-hook #'turn-on-flyspell)))
 
 (use-package flyspell-correct
   :ensure t
