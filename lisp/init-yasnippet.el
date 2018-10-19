@@ -5,7 +5,7 @@
   :diminish yas-minor-mode
   :init
   (progn
-    (dolist (hook '(prog-mode-hook org-mode-hook))
+    (dolist (hook '(prog-mode-hook org-mode-hook LaTeX-mode-hook))
       (add-hook hook '(lambda () (yas-minor-mode 1))))))
 
 (use-package yasnippet-snippets
