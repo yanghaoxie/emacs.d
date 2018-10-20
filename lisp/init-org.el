@@ -268,4 +268,36 @@
 	  org-noter-doc-split-fraction '(0.8 . 0.8)
 	  org-noter-always-create-frame nil
 	  org-noter-insert-note-no-questions t)))
+
+(use-package org-journal
+  :ensure t
+  :defer t
+  :commands (org-journal-new-entry org-journal-search-forever)
+  :init
+  (progn
+    (my/leader-keys
+      "aoj" '(:ignore t :wk "org-journal")
+      "aojj" 'org-journal-new-entry
+      "aojs" 'org-journal-search-forever)
+    (my/leader-keys-major-mode
+      :keymaps 'calendar-mode-map
+      "r" 'org-journal-read-entry
+      "i" 'org-journal-new-date-entry
+      "n" 'org-journal-next-entry
+      "p" 'org-journal-previous-entry
+      "s" 'org-journal-search-forever
+      "w" 'org-journal-search-calendar-week
+      "m" 'org-journal-search-calendar-month
+      "y" 'org-journal-search-calendar-year)
+    (my/normal-keys
+      :keymaps 'calendar-mode-map
+      "q" 'calendar-exit)
+    (my/leader-keys-major-mode
+      :keymaps 'org-journal-mode-map
+      "j" 'org-journal-new-entry
+      "n" 'org-journal-open-next-entry
+      "p" 'org-journal-open-previous-entry))
+  :config
+  (progn
+    (setq org-journal-dir "~/Dropbox/document/org/journal")))
 (provide 'init-org)
