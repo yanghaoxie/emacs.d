@@ -107,6 +107,7 @@
   (require-init 'init-expand-region)
   (require-init 'init-sudo-edit)
   (require-init 'init-smartparens)
+  (require-init 'init-evil-iedit-state)
   ;; theme
   (require-init 'init-theme)
   ;; vim
