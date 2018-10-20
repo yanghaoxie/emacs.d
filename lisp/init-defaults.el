@@ -116,7 +116,8 @@
 
 ;; applications --------------------------------------------------------------
 (my/leader-keys
- "au" 'undo-tree-visualize)
+  "au" 'undo-tree-visualize
+  "ac" 'calendar)
 ;; buffer --------------------------------------------------------------------
 (my/leader-keys
  "bd" 'my/kill-this-buffer
