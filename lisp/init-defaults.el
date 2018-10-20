@@ -35,7 +35,8 @@
       delete-old-versions t
       backup-by-copying t
       vc-make-backup-files t)
-
+;; font
+(set-face-attribute 'default nil :font "Hack")
 ;; text-scale
 (defhydra hydra-text-scale ()
   "text-scale"
