@@ -12,6 +12,7 @@
     (setq evil-insert-state-cursor '(bar "LimeGreen")
           evil-normal-state-cursor '(box "darkorange")
 	  evil-visual-state-cursor '(box "LightGoldenrod")
+	  evil-emacs-state-cursor '(box "MediumPurple2")
 	  evil-echo-state nil)))
 
 (use-package evil-escape
