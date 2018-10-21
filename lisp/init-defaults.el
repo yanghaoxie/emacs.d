@@ -59,7 +59,14 @@
 
 ;; build-in modes
 (use-package eldoc
-    :diminish eldoc-mode)
+  :defer t
+  :diminish eldoc-mode
+  :init
+  (progn
+    (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
+    (add-hook 'lisp-interaction-mode-hook 'eldoc-mode)
+    (add-hook 'ielm-mode-hook 'eldoc-mode)
+    (add-hook 'eval-expression-minibuffer-setup-hook 'eldoc-mode)))
 
 (use-package electric-pair-mode
     :defer t
