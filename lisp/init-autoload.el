@@ -26,8 +26,12 @@ If the universal prefix argument is used then kill also the window."
 (defun my/toggle-syntax-checking ()
   (interactive)
   (if (bound-and-true-p flycheck-mode)
-      (flycheck-mode -1)
-    (flycheck-mode 1)))
+      (progn
+	(flycheck-mode -1)
+	(message "Flycheck mode disable in current buffer"))
+    (progn
+      (flycheck-mode 1)
+      (message "Flycheck mode enable in current buffer"))))
 
 ;;;###autoload
 (defun my/byte-compile-init-dir ()
