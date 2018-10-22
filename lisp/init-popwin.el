@@ -25,5 +25,6 @@
       (push '("*frequencies*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
       (push '("*Synonyms List*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
       (push '("*Ledger Report*"     :dedicated t :position right :stick t :noselect nil   :width 0.6) popwin:special-display-config)
+      (push '("\*Outline.*pdf\*"     :regexp t :dedicated t :position right :stick t :noselect nil   :width 0.3) popwin:special-display-config)
       ))
 (provide 'init-popwin)
