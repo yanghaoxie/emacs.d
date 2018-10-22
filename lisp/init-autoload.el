@@ -98,7 +98,15 @@ current window."
   (if (bound-and-true-p flyspell-mode)
       (flyspell-mode -1)
     (flyspell-mode 1)))
-
+(defun my/toggle-flyspell ()
+  (interactive)
+  (if (bound-and-true-p flyspell-mode)
+      (progn
+	(flyspell-mode -1)
+	(message "Flyspell mode disabled in current buffer"))
+    (progn
+      (flyspell-mode 1)
+      (message "Flyspell mode enabled in current buffer"))))
 ;;;###autoload
 (defun my/toggle-color-identifiers ()
   (interactive)
