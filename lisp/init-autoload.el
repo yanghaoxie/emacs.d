@@ -28,10 +28,10 @@ If the universal prefix argument is used then kill also the window."
   (if (bound-and-true-p flycheck-mode)
       (progn
 	(flycheck-mode -1)
-	(message "Flycheck mode disable in current buffer"))
+	(message "Flycheck mode disabled in current buffer"))
     (progn
       (flycheck-mode 1)
-      (message "Flycheck mode enable in current buffer"))))
+      (message "Flycheck mode enabled in current buffer"))))
 
 ;;;###autoload
 (defun my/byte-compile-init-dir ()
@@ -101,7 +101,7 @@ current window."
   (if (bound-and-true-p color-identifiers-mode)
       (progn
 	(color-identifiers-mode -1)
-	(message "Color identifiers mode disable in current buffer"))
+	(message "Color identifiers mode disabled in current buffer"))
     (progn
       (color-identifiers-mode 1)
-      (message "Color identifiers mode enable in current buffer"))))
+      (message "Color identifiers mode enabled in current buffer"))))
