@@ -99,5 +99,9 @@ current window."
 (defun my/toggle-color-identifiers ()
   (interactive)
   (if (bound-and-true-p color-identifiers-mode)
-      (color-identifiers-mode -1)
-    (color-identifiers-mode 1)))
+      (progn
+	(color-identifiers-mode -1)
+	(message "Color identifiers mode disable in current buffer"))
+    (progn
+      (color-identifiers-mode 1)
+      (message "Color identifiers mode enable in current buffer"))))
