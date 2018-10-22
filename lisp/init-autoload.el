@@ -82,11 +82,15 @@ current window."
       (load-theme theme1 t))))
 
 ;;;###autoload
-(defun my/toggle-highlight-symbol()
+(defun my/toggle-highlight-symbol ()
   (interactive)
   (if (bound-and-true-p highlight-symbol-mode)
-      (highlight-symbol-mode -1)
-    (highlight-symbol-mode 1)))
+      (progn
+	(highlight-symbol-mode -1)
+	(message "Highlight symbol mode disabled in current buffer"))
+    (progn
+      (highlight-symbol-mode 1)
+      (message "Highlight symbol mode enabled in current buffer"))))
 
 ;;;###autoload
 (defun my/toggle-flyspell()
