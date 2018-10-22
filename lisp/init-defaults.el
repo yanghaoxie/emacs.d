@@ -52,6 +52,8 @@
   "window-scale"
   ("i" (lambda () (interactive) (enlarge-window-horizontally 10)) "in")
   ("o" (lambda () (interactive) (shrink-window-horizontally 10)) "out")
+  ("I" (lambda () (interactive) (enlarge-window 5)) "IN")
+  ("O" (lambda () (interactive) (shrink-window 5)) "OUT")
   ("0" balance-windows "resert")
   ("q" nil "quit"))
 (my/leader-keys
