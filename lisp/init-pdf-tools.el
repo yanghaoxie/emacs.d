@@ -82,5 +82,9 @@
     "p" 'pdf-misc-print-document
     "O" 'pdf-outline
     "m" 'pdf-view-midnight-minor-mode)
+  (my/normal-keys
+    :keymaps 'pdf-occur-buffer-mode-map
+    "RET" 'pdf-occur-view-occurrence
+    "q" 'tablist-quit)
   )
 (provide 'init-pdf-tools)
