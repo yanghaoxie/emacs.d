@@ -3,7 +3,8 @@
   :mode (".py\\'" . python-mode)
   :config
   (progn
-    (setq python-shell-interpreter "ipython3")
+    (setq python-shell-interpreter "ipython"
+	  python-shell-interpreter-args "--simple-prompt")
     (my/leader-keys-major-mode
      :keymaps 'python-mode-map
      :major-modes t
