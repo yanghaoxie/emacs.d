@@ -13,7 +13,10 @@
      "sb" 'python-shell-send-buffer
      "sf" 'python-shell-send-defun
      "sr" 'python-shell-send-region
-     "ss" 'python-shell-send-string)))
+     "ss" 'python-shell-send-string)
+    (my/leader-keys-major-mode
+      :keymaps 'inferior-python-mode-map
+      "h" 'counsel-shell-history)))
 
 (use-package anaconda-mode
   :ensure t
