@@ -61,4 +61,17 @@
   :config
   (progn
     (add-hook 'python-mode-hook 'yapf-mode)))
+
+(use-package pyvenv
+  :ensure t
+  :defer t
+  :after python
+  :init
+  (my/leader-keys-major-mode
+    :keymaps 'python-mode-map
+    "v" '(:ignore t :wk "virtualenv")
+    "va" 'pyvenv-activate
+    "vd" 'pyvenv-deactivate
+    "vw" 'pyvenv-workon)
+  )
 (provide 'init-python)
