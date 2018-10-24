@@ -9,7 +9,8 @@
    "M-p" 'highlight-symbol-prev
    "M-'" 'highlight-symbol-query-replace)
   :config
-  (setq highlight-symbol-idle-delay 0.5)
+  (setq highlight-symbol-idle-delay 0.5
+	highlight-symbol-occurrence-message '(explicit nivigation temporary))
   ;; (highlight-symbol-mode 1)
   )
 (provide 'init-highlight-symbol)
