@@ -13,7 +13,8 @@
      "sb" 'python-shell-send-buffer
      "sf" 'python-shell-send-defun
      "sr" 'python-shell-send-region
-     "ss" 'python-shell-send-string)
+     "ss" 'python-shell-send-string
+     "sz" 'python-shell-switch-to-shell)
     (my/leader-keys-major-mode
       :keymaps 'inferior-python-mode-map
       "h" 'counsel-shell-history)))
