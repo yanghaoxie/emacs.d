@@ -5,7 +5,7 @@
         winum-auto-setup-mode-line nil
         winum-mode-line-position 1
         winum-ignored-buffers '(" *which-key*")
-	winum-scope 'frame-local)
+	winum-scope 'visible)
   (winum-mode)
   :general
   (:states '(insert normal visual motion)
