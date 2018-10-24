@@ -8,6 +8,7 @@
       (add-hook 'after-init-hook 'global-company-mode))
     :config
     (progn
+      (add-to-list 'company-backends 'company-anaconda)
       (defun ora-company-number ()
         "Forward to `company-complete-number'.
 
