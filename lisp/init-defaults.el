@@ -17,6 +17,7 @@
 (blink-cursor-mode 0)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 ;; auto save
+(auto-save-visited-mode t)
 (setq  auto-save-default t
        auto-save-timeout 20
        auto-save-interval 20)
