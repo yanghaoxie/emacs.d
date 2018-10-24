@@ -150,6 +150,7 @@
   (require-init 'init-elfeed)
   (require-init 'init-shell)
   (require-init 'init-ledger)
+  (require-init 'init-atomic-chrome)
   ;; chinese
   (require-init 'init-pyim)
 
