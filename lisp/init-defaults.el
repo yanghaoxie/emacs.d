@@ -79,10 +79,7 @@
 (use-package display-line-numbers
     :init
     (setq display-line-numbers-type 'visual)
-    :config
-    ;; (add-hook 'prog-mode-hook '(lambda () (display-line-numbers-mode 1))))
     (global-display-line-numbers-mode 1))
-    ;; (add-hook 'prog-mode-hook #'global-display-line-numbers-mode))
 
 (use-package prettify-symbols-mode
   :defer t
