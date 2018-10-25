@@ -174,4 +174,15 @@
   "xp" 'clipboard-yank
   "xy" 'clipboard-kill-ring-save
   "xc" 'clipboard-kill-region)
+;; frequently accessed files
+(defhydra hydra-frequently-accessed-files (:exit t)
+  "files"
+  ("o" (lambda () (interactive) (find-file "~/Dropbox/document/org/main.org")) "main.org")
+  ("n" (lambda () (interactive) (find-file "~/Dropbox/document/org/references/ref-notes.org")) "ref-noter.org")
+  ("i" (lambda () (interactive) (find-file "~/.emacs.d/init.el")) "init.el")
+  ("l" (lambda () (interactive) (find-file "~/Dropbox/document/ledger/ledger.ledger")) "ledger.ledger")
+  ("d" (lambda () (interactive) (find-file "~/.dotfiles/README.md")) "dotfiles")
+  ("q" nil "quit"))
+(my/leader-keys
+  "fo" 'hydra-frequently-accessed-files/body)
 (provide 'init-defaults)
