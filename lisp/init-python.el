@@ -27,18 +27,18 @@
   :init
   (progn
     (my/leader-keys-major-mode
-     :keymaps 'python-mode-map
-     :major-modes t
-     "h" '(:ignore t :which-key "help")
-     "hh" 'anaconda-mode-show-doc
-     "g" '(:ignore t :which-key "goto")
-     "ga" 'anaconda-mode-find-assignments
-     "gb" 'anaconda-mode-go-back
-     "gu" 'anaconda-mode-find-references
-     "gd" 'anaconda-mode-find-definitions
-     "gD" 'anaconda-mode-find-definitions-other-window))
   :config
   (anaconda-mode))
+      :keymaps 'python-mode-map
+      :major-modes t
+      "h" '(:ignore t :which-key "help")
+      "hh" 'anaconda-mode-show-doc
+      "g" '(:ignore t :which-key "goto")
+      "ga" 'anaconda-mode-find-assignments
+      "gb" 'anaconda-mode-go-back
+      "gu" 'anaconda-mode-find-references
+      "gd" 'anaconda-mode-find-definitions
+      "gD" 'anaconda-mode-find-definitions-other-window)
 
 (use-package company-anaconda
   :ensure t
