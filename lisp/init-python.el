@@ -27,8 +27,6 @@
   :init
   (progn
     (my/leader-keys-major-mode
-  :config
-  (anaconda-mode))
       :keymaps 'python-mode-map
       :major-modes t
       "h" '(:ignore t :which-key "help")
@@ -39,6 +37,7 @@
       "gu" 'anaconda-mode-find-references
       "gd" 'anaconda-mode-find-definitions
       "gD" 'anaconda-mode-find-definitions-other-window)
+    (add-hook 'python-mode-hook 'anaconda-mode)))
 
 (use-package company-anaconda
   :ensure t
