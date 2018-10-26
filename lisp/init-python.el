@@ -45,8 +45,7 @@
   :after 'anaconda-mode
   :init
   (progn
-    (add-to-list 'company-backend 'company-anaconda)
-    (add-hook 'python-mode-hook 'anaconda-mode)))
+    (add-to-list 'company-backend 'company-anaconda)))
 
 (use-package yapfify
   :ensure t
