@@ -144,6 +144,7 @@
   (require-init 'init-synosaurus)
   (require-init 'init-langtool)
   (require-init 'init-wordnut)
+  (require-init 'init-bing-dict)
   ;; tools
   (require-init 'init-ranger)
   (require-init 'init-pdf-tools)
