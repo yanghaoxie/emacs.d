@@ -106,6 +106,8 @@
 
 (use-package server
   :commands server-running-p
+  :init
+  (server-mode 1)
   :config
   (unless (server-running-p)
     (server-start)))
