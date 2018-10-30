@@ -3,7 +3,7 @@
   :init
   (progn
     (my/leader-keys
-      "aw" 'wordnut-search)
+      "a M-w" 'wordnut-search)
     (my/normal-keys
       :keymaps 'wordnut-mode-map
       "q" 'quit-window)))
