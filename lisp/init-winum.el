@@ -5,7 +5,8 @@
         winum-auto-setup-mode-line nil
         winum-mode-line-position 1
         winum-ignored-buffers '(" *which-key*")
-	winum-scope 'visible)
+	winum-scope 'visible
+	winum-reverse-frame-list t)
   (winum-mode)
   :general
   (:states '(insert normal visual motion)
