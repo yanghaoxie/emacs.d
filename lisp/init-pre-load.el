@@ -25,7 +25,12 @@
       :states '(normal visual motion emacs insert)
       :keymaps 'override
       :prefix ","
-      :non-normal-prefix "M-,")))
+      :non-normal-prefix "M-,")
+    (general-create-definer my/leader-keys-minor-mode
+      :states '(normal visual motion emacs insert)
+      :keymaps 'override
+      :prefix ";"
+      :non-normal-prefix "M-;")))
 
 ;; diminish
 (use-package diminish
