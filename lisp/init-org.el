@@ -269,7 +269,8 @@
 	  org-noter-auto-save-last-location t
 	  org-noter-doc-split-fraction '(0.8 . 0.8)
 	  org-noter-always-create-frame nil
-	  org-noter-insert-note-no-questions t)))
+	  org-noter-insert-note-no-questions t
+	  org-noter-notes-window-location 'vertical-split)))
 
 (use-package org-journal
   :ensure t
