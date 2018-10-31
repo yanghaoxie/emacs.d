@@ -260,6 +260,8 @@
     "n" 'org-noter
     "i" 'org-noter-insert-note
     "k" 'org-noter-kill-session)
+  (my/leader-keys-major-mode
+    "n" 'org-noter )
   :config
   (progn
     (setq org-noter-default-notes-file-names '("ref-notes.org")
