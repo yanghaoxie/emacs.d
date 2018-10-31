@@ -71,7 +71,7 @@
 
 (use-package ivy-bibtex
   :ensure t
-  :defer t
+  :commands ivy-bibtex
   :init
   (my/leader-keys
     "ib" 'ivy-bibtex)
