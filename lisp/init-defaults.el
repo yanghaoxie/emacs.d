@@ -184,6 +184,7 @@
   ("i" (lambda () (interactive) (find-file "~/.emacs.d/init.el")) "init.el")
   ("l" (lambda () (interactive) (find-file "~/Dropbox/document/ledger/ledger.ledger")) "ledger.ledger")
   ("d" (lambda () (interactive) (find-file "~/.dotfiles/README.md")) "dotfiles")
+  ("M-d" (lambda () (interactive) (deer "~/Dropbox/")) "Dropbox")
   ("q" nil "quit"))
 (my/leader-keys
   "fo" 'hydra-frequently-accessed-files/body)
