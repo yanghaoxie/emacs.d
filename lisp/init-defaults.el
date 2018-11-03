@@ -185,6 +185,7 @@
   ("l" (lambda () (interactive) (find-file "~/Dropbox/document/ledger/ledger.ledger")) "ledger.ledger")
   ("d" (lambda () (interactive) (find-file "~/.dotfiles/README.md")) "dotfiles")
   ("M-d" (lambda () (interactive) (deer "~/Dropbox/")) "Dropbox")
+  ("c" (lambda () (interactive) (find-file "~/Dropbox/document/org/capture/capture.org")) "capture.org")
   ("q" nil "quit"))
 (my/leader-keys
   "fo" 'hydra-frequently-accessed-files/body)
