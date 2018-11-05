@@ -24,10 +24,10 @@
   (:states '(normal)
 	   :keymaps 'pdf-view-mode-map
 	   ;; navigation
-	   "j" '(lambda() (interactive) (pdf-view-next-line-or-next-page 35))
-	   "J" '(lambda() (interactive) (pdf-view-next-line-or-next-page 10))
-	   "k" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 35))
-	   "K" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 10))
+	   "J" '(lambda() (interactive) (pdf-view-next-line-or-next-page 35))
+	   "j" '(lambda() (interactive) (pdf-view-next-line-or-next-page 10))
+	   "K" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 35))
+	   "k" '(lambda() (interactive) (pdf-view-previous-line-or-previous-page 10))
 	   "h" '(lambda() (interactive) (image-backward-hscroll 20))
 	   "l" '(lambda() (interactive) (image-forward-hscroll 20))
 	   "u" 'pdf-view-scroll-down-or-previous-page
