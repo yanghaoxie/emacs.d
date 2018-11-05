@@ -79,6 +79,7 @@
     (electric-pair-mode t)))
 
 (use-package display-line-numbers
+  :if (version<= "26.1" emacs-version)
   :init
   (setq display-line-numbers-type 'visual)
   (global-display-line-numbers-mode 1))
