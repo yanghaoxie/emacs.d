@@ -11,5 +11,6 @@
   "eb" 'eval-buffer
   "ee" 'eval-last-sexp
   "er" 'eval-region
-  "ef" 'eval-defun))
+  "ef" 'eval-defun
+  "ep" 'eval-print-last-sexp))
 (provide 'init-elisp)
