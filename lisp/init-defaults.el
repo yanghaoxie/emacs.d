@@ -25,7 +25,7 @@
   (concat user-emacs-directory "autosaves/"))
 
 (unless (file-exists-p emacs-autosave-directory)
-    (make-directory emacs-autosave-directory))
+  (make-directory emacs-autosave-directory))
 
 (setq auto-save-file-name-transforms
       `((".*" ,emacs-autosave-directory t)))
@@ -47,7 +47,7 @@
   ("0" (text-scale-set 0) "resert")
   ("q" nil "quit"))
 (my/leader-keys
- "xz" 'hydra-text-scale/body)
+  "xz" 'hydra-text-scale/body)
 
 ;; window-scale
 (defhydra hydra-window-scale ()
@@ -59,7 +59,7 @@
   ("0" balance-windows "resert")
   ("q" nil "quit"))
 (my/leader-keys
- "wz" 'hydra-window-scale/body)
+  "wz" 'hydra-window-scale/body)
 
 ;; build-in modes
 (use-package eldoc
@@ -73,15 +73,15 @@
     (add-hook 'eval-expression-minibuffer-setup-hook 'eldoc-mode)))
 
 (use-package electric-pair-mode
-    :defer t
-    :init
-    (progn
-      (electric-pair-mode t)))
+  :defer t
+  :init
+  (progn
+    (electric-pair-mode t)))
 
 (use-package display-line-numbers
-    :init
-    (setq display-line-numbers-type 'visual)
-    (global-display-line-numbers-mode 1))
+  :init
+  (setq display-line-numbers-type 'visual)
+  (global-display-line-numbers-mode 1))
 
 (use-package prettify-symbols-mode
   :defer t
@@ -130,47 +130,47 @@
   "ac" 'calendar)
 ;; buffer --------------------------------------------------------------------
 (my/leader-keys
- "bd" 'my/kill-this-buffer
- "bn" 'next-buffer
- "bp" 'previous-buffer
- "br" 'revert-buffer
- "TAB" 'my/alternate-buffer
- "bx" 'kill-buffer-and-window
- )
+  "bd" 'my/kill-this-buffer
+  "bn" 'next-buffer
+  "bp" 'previous-buffer
+  "br" 'revert-buffer
+  "TAB" 'my/alternate-buffer
+  "bx" 'kill-buffer-and-window
+  )
 ;; file ----------------------------------------------------------------------
 (my/leader-keys
- "fs" 'save-buffer)
+  "fs" 'save-buffer)
 ;; frame
 (my/leader-keys
- "Fd" 'delete-frame
- "Fn" 'make-frame
- "Fo" 'other-frame)
+  "Fd" 'delete-frame
+  "Fn" 'make-frame
+  "Fo" 'other-frame)
 ;; help ----------------------------------------------------------------------
 (my/leader-keys
- "hdb" 'describe-bindings
- "hdc" 'describe-char
- "hdf" 'describe-function
- "hdk" 'describe-key
- "hdm" 'describe-mode
- "hdp" 'describe-package
- "hdt" 'describe-theme
- "hdv" 'describe-variable
- "hn"  'view-emacs-news
-)
+  "hdb" 'describe-bindings
+  "hdc" 'describe-char
+  "hdf" 'describe-function
+  "hdk" 'describe-key
+  "hdm" 'describe-mode
+  "hdp" 'describe-package
+  "hdt" 'describe-theme
+  "hdv" 'describe-variable
+  "hn"  'view-emacs-news
+  )
 ;; quit ---------------------------------------------------------------------
 (my/leader-keys
- "qs" 'save-buffers-kill-emacs
- "qr" 'restart-emacs
- "qd" 'my/restart-emacs-debug-init)
+  "qs" 'save-buffers-kill-emacs
+  "qr" 'restart-emacs
+  "qd" 'my/restart-emacs-debug-init)
 ;; window -------------------------------------------------------------------
 (my/leader-keys
- "wv" 'split-window-right
- "wV" 'split-window-right-and-focus
- "ws" 'split-window-below
- "wS" 'split-window-below-and-focus
- "w=" 'balance-windows-area
- "wm" 'my/toggle-maximize-buffer
- "wd" 'delete-window)
+  "wv" 'split-window-right
+  "wV" 'split-window-right-and-focus
+  "ws" 'split-window-below
+  "wS" 'split-window-below-and-focus
+  "w=" 'balance-windows-area
+  "wm" 'my/toggle-maximize-buffer
+  "wd" 'delete-window)
 ;; text
 (my/leader-keys
   "xp" 'clipboard-yank
