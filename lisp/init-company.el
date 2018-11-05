@@ -1,15 +1,15 @@
 (use-package company
-    :ensure t
-    :diminish company-mode
-    :init
-    (progn
-      (setq company-idle-delay 0.1
-            company-show-numbers t)
-      (add-hook 'after-init-hook 'global-company-mode))
-    :config
-    (progn
-      (defun ora-company-number ()
-        "Forward to `company-complete-number'.
+  :ensure t
+  :diminish company-mode
+  :init
+  (progn
+    (setq company-idle-delay 0.1
+	  company-show-numbers t)
+    (add-hook 'after-init-hook 'global-company-mode))
+  :config
+  (progn
+    (defun ora-company-number ()
+      "Forward to `company-complete-number'.
 
 Unless the number is potentially part of the candidate.
 In that case, insert the number."
