@@ -17,6 +17,8 @@
   (setq-default pyim-punctuation-half-width-functions
                 '(pyim-probe-punctuation-line-beginning
                   pyim-probe-punctuation-after-punctuation))
-  (setq pyim-page-tooltip 'posframe)
+  (if (version<= "26.1" emacs-version)
+      (progn
+	(setq pyim-page-tooltip 'posframe)))
   (setq pyim-page-length 5))
 (provide 'init-pyim)

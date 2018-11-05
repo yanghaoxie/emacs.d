@@ -20,6 +20,7 @@
     "el" 'flycheck-list-errors))
 
 (use-package flycheck-posframe
+  :if (version<= "26.1" emacs-version)
   :ensure t
   :after flycheck
   :config (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
