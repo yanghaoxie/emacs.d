@@ -127,6 +127,7 @@
   ;; completion
   (require-init 'init-ivy)
   (require-init 'init-company)
+  (require-init 'init-prescient)
   (require-init 'init-yasnippet)
   ;; source control
   (require-init 'init-git)
