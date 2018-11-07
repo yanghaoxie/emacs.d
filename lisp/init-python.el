@@ -18,7 +18,10 @@
      "sz" 'python-shell-switch-to-shell)
     (my/leader-keys-major-mode
       :keymaps 'inferior-python-mode-map
-      "h" 'counsel-shell-history)))
+      "h" 'counsel-shell-history)
+    (my/normal-keys
+      :keymaps 'inferior-python-mode-map
+      "M-o" 'ace-link)))
 
 (use-package anaconda-mode
   :ensure t
