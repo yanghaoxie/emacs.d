@@ -24,5 +24,7 @@
   :if (version<= "26.1" emacs-version)
   :ensure t
   :after flycheck
-  :config (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
+  :config
+  (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode)
+  (flycheck-posframe-configure-pretty-defaults))
 (provide 'init-flycheck)
