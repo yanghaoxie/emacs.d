@@ -19,7 +19,7 @@
     (my/leader-keys-major-mode
       :keymaps 'inferior-python-mode-map
       "h" 'counsel-shell-history)
-    (my/normal-keys
+    (my/all-states-keys
       :keymaps 'inferior-python-mode-map
       "M-o" 'ace-link)))
 
