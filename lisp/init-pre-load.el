@@ -30,7 +30,10 @@
       :states '(normal visual motion emacs insert)
       :keymaps 'override
       :prefix ";"
-      :non-normal-prefix "M-;")))
+      :non-normal-prefix "M-;")
+    (general-create-definer my/all-states-keys
+      :states '(normal visual motion emacs insert)
+      :keymaps 'override)))
 
 ;; diminish
 (use-package diminish
