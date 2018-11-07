@@ -5,6 +5,7 @@
   (my/leader-keys
     "ts" 'my/toggle-syntax-checking)
   :config
+  (setq flycheck-display-errors-delay 0.2)
   (my/leader-keys
     "eb" 'flycheck-buffer
     "ec" 'flycheck-clear
