@@ -6,7 +6,8 @@
 
 (use-package company-prescient
   :ensure t
-  :init
+  :after company
+  :config
   (progn
     (company-prescient-mode t)))
 
