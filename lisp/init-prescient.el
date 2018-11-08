@@ -1,6 +1,6 @@
 (use-package prescient
   :ensure t
-  :init
+  :config
   (progn
     (prescient-persist-mode t)))
 
