@@ -13,7 +13,8 @@
 
 (use-package ivy-prescient
   :ensure t
-  :init
+  :after ivy
+  :config
   (progn
     (ivy-prescient-mode t)))
 
