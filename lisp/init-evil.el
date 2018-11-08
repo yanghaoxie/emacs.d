@@ -55,7 +55,11 @@
 
 (use-package evil-matchit
     :ensure t
-    :defer t)
+    :after evil
+    :init
+    (my/leader-keys
+      "jm" 'evilmi-jump-items)
+    (global-evil-matchit-mode))
 
 (use-package evil-surround
     :ensure t
