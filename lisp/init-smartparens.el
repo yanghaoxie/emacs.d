@@ -4,8 +4,8 @@
   :diminish smartparens-mode
   :init
   (progn
-    (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
-    (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode))
+    (smartparens-global-mode t)
+    (smartparens-global-strict-mode t))
   :config
   (my/leader-keys
     "k{" 'sp-wrap-curly
