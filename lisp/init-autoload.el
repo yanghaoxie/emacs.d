@@ -117,3 +117,9 @@ current window."
     (progn
       (color-identifiers-mode 1)
       (message "Color identifiers mode enabled in current buffer"))))
+
+;;;###autoload
+(defun my/show-current-time ()
+  ;; show current time in minibuffer
+  (interactive)
+  (message (current-time-string)))

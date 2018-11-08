@@ -128,7 +128,8 @@
 ;; applications --------------------------------------------------------------
 (my/leader-keys
   "au" 'undo-tree-visualize
-  "ac" 'calendar)
+  "ac" 'calendar
+  "at" 'my/show-current-time)
 ;; buffer --------------------------------------------------------------------
 (my/leader-keys
   "bd" 'my/kill-this-buffer
