@@ -10,7 +10,7 @@
 (setq display-time-24hr-format t
       display-time-default-load-average nil
       display-time-day-and-date t)
-(display-time-mode t)
+;; (display-time-mode t)
 ;;
 (column-number-mode t)
 (size-indication-mode t)
