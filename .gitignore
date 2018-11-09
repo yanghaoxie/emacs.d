@@ -21,3 +21,5 @@ anaconda-mode/
 /layouts
 /persp-confs
 /var
+/.python-environments
+/dict
