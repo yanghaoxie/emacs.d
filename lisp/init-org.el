@@ -75,6 +75,7 @@
 
      "a" 'org-agenda
 
+     "u" 'org-update-checkbox-count
      "Tc" 'org-toggle-checkbox
      "Te" 'org-toggle-pretty-entities
      "Ti" 'org-toggle-inline-images
