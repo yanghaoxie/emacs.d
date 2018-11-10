@@ -82,7 +82,18 @@
   :if (version<= "26.1" emacs-version)
   :init
   (setq display-line-numbers-type 'visual)
-  (global-display-line-numbers-mode 1))
+  (global-display-line-numbers-mode 1)
+  (defun my/toggle-line-numbers-type ()
+    (interactive)
+    (if (eq display-line-numbers t)
+	(progn
+	  (setq display-line-numbers 'visual)
+	  (message "show visual line numbers"))
+      (progn
+	(setq display-line-numbers t)
+	(message "Show absolute line numbers"))))
+  (my/leader-keys
+    "tl" 'my/toggle-line-numbers-type))
 
 (use-package prettify-symbols-mode
   :defer t
