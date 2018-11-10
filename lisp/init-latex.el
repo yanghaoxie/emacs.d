@@ -23,7 +23,8 @@
           LaTeX-fill-break-at-separators nil)
     (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
     (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
-    (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode))
+    (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
+    (add-hook 'LaTeX-mode-hook (lambda() (setq-local display-line-numbers-type 'relative))))
   :init
   ;; Key bindings for plain Tex
   (my/leader-keys-major-mode
