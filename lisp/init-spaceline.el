@@ -10,8 +10,7 @@
 	    spaceline-purpose-hide-if-not-dedicated t
 	    spaceline-buffer-encoding-abbrev-p nil
 	    spaceline-window-numbers-unicode t
-	    spaceline-workspace-numbers-unicode t
-	    powerline-height 18))
+	    spaceline-workspace-numbers-unicode t))
     :config
     (spaceline-spacemacs-theme)
     (spaceline-compile))
