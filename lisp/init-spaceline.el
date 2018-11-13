@@ -6,6 +6,8 @@
 	    powerline-default-separator 'wave
 	    anzu-cons-mode-line-p nil
 	    spaceline-minor-modes-p nil
+	    spaceline-purpose-p t
+	    spaceline-purpose-hide-if-not-dedicated t
 	    spaceline-buffer-encoding-abbrev-p nil
 	    spaceline-window-numbers-unicode t
 	    spaceline-workspace-numbers-unicode t
