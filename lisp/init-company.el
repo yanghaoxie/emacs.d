@@ -3,11 +3,15 @@
   :diminish company-mode
   :init
   (progn
-    (setq company-idle-delay 0.1
-	  company-show-numbers t)
     (add-hook 'after-init-hook 'global-company-mode))
   :config
   (progn
+    (setq company-idle-delay 0
+    	  company-show-numbers t
+    	  company-tooltip-idle-delay 0
+    	  company-minimum-prefix-length 2
+    	  company-dabbrev-ignore-case nil
+    	  company-dabbrev-downcase nil
     (defun ora-company-number ()
       "Forward to `company-complete-number'.
 
