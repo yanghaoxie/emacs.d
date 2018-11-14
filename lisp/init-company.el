@@ -12,6 +12,8 @@
     	  company-minimum-prefix-length 2
     	  company-dabbrev-ignore-case nil
     	  company-dabbrev-downcase nil
+    	  company-ispell-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
+    	  ispell-alternate-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
     (defun ora-company-number ()
       "Forward to `company-complete-number'.
 
