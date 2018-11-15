@@ -97,6 +97,7 @@
   (require-init 'init-popwin)
   (require-init 'init-zoom-frm)
   (require-init 'init-hide-mode-line)
+  (require-init 'init-window-purpose)
   ;; (require-init 'init-smart-mode-line)
   ;; (require-init 'init-spaceline)
   (require-init 'init-modeline)
