@@ -12,7 +12,28 @@
     "k(" 'sp-wrap-round
     "k[" 'sp-wrap-square
     "ku" 'sp-unwrap-sexp
-    "kr" 'sp-rewrap-sexp))
+    "kr" 'sp-rewrap-sexp)
+  (my/all-states-keys
+    :prefix "M-s"
+    ;; navigation
+    "f" 'sp-forward-sexp
+    "b" 'sp-backward-sexp
+    "d" 'sp-down-sexp
+    "M-d" 'sp-backward-down-sexp
+    "u" 'sp-up-sexp
+    "M-u" 'sp-backward-up-sexp
+    "n" 'sp-next-sexp
+    "p" 'sp-previous-sexp
+    "a" 'sp-beginning-of-sexp
+    "e" 'sp-end-of-sexp
+    ;; slurp and barf
+    "l" 'sp-forward-slurp-sexp
+    "h" 'sp-backward-slurp-sexp
+    "M-l" 'sp-forward-barf-sexp
+    "M-h" 'sp-backward-barf-sexp
+    ;; killing
+    "k" 'sp-kill-sexp
+    "M-k" 'sp-backward-kill-sexp))
 
 (use-package evil-smartparens
   :ensure t
