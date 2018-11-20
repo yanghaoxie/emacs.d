@@ -109,6 +109,7 @@
   (require-init 'init-sudo-edit)
   (require-init 'init-smartparens)
   (require-init 'init-evil-iedit-state)
+  (require-init 'init-move-text)
   ;; theme
   (require-init 'init-theme)
   ;; vim
