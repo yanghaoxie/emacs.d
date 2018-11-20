@@ -23,3 +23,5 @@ anaconda-mode/
 /var
 /.python-environments
 /dict
+/history
+/inferior-Python-history
