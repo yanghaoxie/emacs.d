@@ -9,6 +9,8 @@
     (evil-set-initial-state 'pdf-outline-buffer-mode 'normal)
     (evil-set-initial-state 'paradox-menu-mode 'normal)
     (evil-set-initial-state 'calendar-mode 'normal)
+    (evil-set-initial-state 'process-menu-mode 'motion)
+    (evil-set-initial-state 'special-mode 'motion)
     (setq evil-insert-state-cursor '(bar "LimeGreen")
           evil-normal-state-cursor '(box "darkorange")
 	  evil-visual-state-cursor '(box "LightGoldenrod")
