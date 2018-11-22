@@ -1,5 +1,6 @@
 (use-package wordnut
   :ensure t
+  :defer t
   :init
   (progn
     (my/leader-keys
