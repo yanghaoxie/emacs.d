@@ -10,7 +10,8 @@
 	    spaceline-purpose-hide-if-not-dedicated t
 	    spaceline-buffer-encoding-abbrev-p nil
 	    spaceline-window-numbers-unicode t
-	    spaceline-workspace-numbers-unicode t))
+	    spaceline-workspace-numbers-unicode t
+	    spaceline-input-method-p nil))
     :config
     (spaceline-spacemacs-theme)
     (spaceline-compile))
