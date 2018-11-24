@@ -73,8 +73,6 @@
   :ensure t
   :commands ivy-bibtex
   :init
-  (my/leader-keys
-    "ib" 'ivy-bibtex)
   (progn
     (my/leader-keys
       "ib" 'ivy-bibtex)
