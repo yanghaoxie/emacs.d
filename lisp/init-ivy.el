@@ -84,5 +84,5 @@
 	bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
 	bibtex-completion-notes-path "~/Dropbox/document/org/references/ref-notes.org"
 	bibtex-completion-notes-template-one-file
-	"\n* ${title} cite:${=key=}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n :INTERLEAVE_PDF: ${file}\n :END:\n\n"))
+	"\n** ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :NOTER_DOCUMENT: ${file}\n  :END:\n\n"
 (provide 'init-ivy)
