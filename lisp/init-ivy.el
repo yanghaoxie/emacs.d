@@ -79,10 +79,19 @@
     (my/leader-keys-minor-mode
       :keymaps 'bibtex-completion-notes-mode-map
       "s" 'bibtex-completion-exit-notes-buffer))
+  :config
   (setq bibtex-completion-pdf-field "file"
 	bibtex-completion-find-additional-pdfs t
 	bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
 	bibtex-completion-notes-path "~/Dropbox/document/org/references/ref-notes.org"
 	bibtex-completion-notes-template-one-file
 	"\n** ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :NOTER_DOCUMENT: ${file}\n  :END:\n\n"
+	bibtex-completion-additional-search-fields '(eventtitle)
+	bibtex-completion-display-formats
+	'((article       . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${journal:40}")
+	  (inbook        . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")
+	  (incollection  . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+	  (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}")
+	  (t             . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}"))))
+
 (provide 'init-ivy)
