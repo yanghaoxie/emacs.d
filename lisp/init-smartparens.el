@@ -7,6 +7,9 @@
     (smartparens-global-mode t)
     (smartparens-global-strict-mode t))
   :config
+  ;; smartparens #431 workaround for fixing conflict between smarparens and yasnippet
+  (add-hook 'yas-before-expand-snippet-hook (lambda () (smartparens-mode -1)))
+  (add-hook 'yas-after-exit-snippet-hook (lambda () (smartparens-mode 1)))
   (my/leader-keys
     "k{" 'sp-wrap-curly
     "k(" 'sp-wrap-round
