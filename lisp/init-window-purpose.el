@@ -1,5 +1,6 @@
 (use-package window-purpose
   :ensure t
+  :defer t
   :init
   (progn
     (my/leader-keys
