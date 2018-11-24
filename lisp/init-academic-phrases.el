@@ -4,15 +4,11 @@
   :init
   (progn
     (my/leader-keys-major-mode
-     :keymaps 'latex-mode
-      "oap" 'academic-phrases
-      "oas" 'academic-phrases-by-section
-      )
+     :keymaps 'LaTeX-mode-map
+      "ip" 'academic-phrases
+      "is" 'academic-phrases-by-section)
     (my/leader-keys-major-mode
-     :keymaps 'org-mode
-      "oap" 'academic-phrases
-      "oas" 'academic-phrases-by-section
-      )
-    )
-  )
+     :keymaps 'org-mode-map
+      "ip" 'academic-phrases
+      "is" 'academic-phrases-by-section)))
 (provide 'init-academic-phrases)
