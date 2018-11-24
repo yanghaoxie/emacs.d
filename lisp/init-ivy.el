@@ -75,6 +75,12 @@
   :init
   (my/leader-keys
     "ib" 'ivy-bibtex)
+  (progn
+    (my/leader-keys
+      "ib" 'ivy-bibtex)
+    (my/leader-keys-minor-mode
+      :keymaps 'bibtex-completion-notes-mode-map
+      "s" 'bibtex-completion-exit-notes-buffer))
   (setq bibtex-completion-pdf-field "file"
 	bibtex-completion-find-additional-pdfs t
 	bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
