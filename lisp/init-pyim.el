@@ -1,6 +1,7 @@
 (use-package pyim
   :ensure t
   :defer t
+  :commands (pyim-convert-code-at-point toggle-input-method)
   :init
   :general
   ("M-j" 'pyim-convert-code-at-point)
