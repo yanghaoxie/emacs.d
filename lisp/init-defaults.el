@@ -182,6 +182,7 @@
   "ws" 'split-window-below
   "wS" 'split-window-below-and-focus
   "w=" 'balance-windows-area
+  "wb" 'balance-windows
   "wm" 'my/toggle-maximize-buffer
   "wd" 'delete-window)
 ;; text
