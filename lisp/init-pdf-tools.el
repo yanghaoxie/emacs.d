@@ -85,6 +85,7 @@
   (my/normal-keys
     :keymaps 'pdf-occur-buffer-mode-map
     "RET" 'pdf-occur-view-occurrence
+    "M-RET" 'pdf-occur-goto-occurrence
     "q" 'tablist-quit)
   )
 (provide 'init-pdf-tools)
