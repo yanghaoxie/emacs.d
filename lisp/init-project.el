@@ -51,19 +51,4 @@
     (progn
       (projectile-mode)))
 
-(use-package counsel-projectile
-    :ensure t
-    :defer t
-    :init
-    (my/leader-keys
-     "p SPC" 'counsel-projectile
-     "pf" 'counsel-projectile-find-file
-     "pb" 'counsel-projectile-switch-to-buffer
-     "pd" 'counsel-projectile-find-dir
-     "pp" 'counsel-projectile-switch-project
-     "psg" 'counsel-projectile-grep
-     "pss" 'counsel-projectile-ag
-     "psr" 'counsel-projectile-rg)
-    :config
-    (counsel-projectile-mode))
 (provide 'init-project)

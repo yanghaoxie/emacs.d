@@ -94,4 +94,20 @@
 	  (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}")
 	  (t             . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}"))))
 
+(use-package counsel-projectile
+    :ensure t
+    :defer t
+    :init
+    (my/leader-keys
+     "p SPC" 'counsel-projectile
+     "pf" 'counsel-projectile-find-file
+     "pb" 'counsel-projectile-switch-to-buffer
+     "pd" 'counsel-projectile-find-dir
+     "pp" 'counsel-projectile-switch-project
+     "psg" 'counsel-projectile-grep
+     "pss" 'counsel-projectile-ag
+     "psr" 'counsel-projectile-rg)
+    :config
+    (counsel-projectile-mode))
+
 (provide 'init-ivy)
