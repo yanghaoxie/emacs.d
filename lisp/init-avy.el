@@ -3,7 +3,7 @@
     :defer t
     :init
     (progn
-      (setq avy-all-windows 'nil
+      (setq avy-all-windows nil
             avy-background t)
       (my/leader-keys
        "jj" 'evil-avy-goto-char-timer
