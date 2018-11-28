@@ -6,8 +6,8 @@
       (setq avy-all-windows nil
             avy-background t)
       (my/leader-keys
-       "jj" 'evil-avy-goto-char-timer
-       "jl" 'evil-avy-goto-line
-       "jw" 'evil-avy-goto-word-or-subword-1
-       "jc" 'evil-avy-goto-char)))
+       "jj" 'avy-goto-char-timer
+       "jl" 'avy-goto-line
+       "jw" 'avy-goto-word-or-subword-1
+       "jc" 'avy-goto-char)))
 (provide 'init-avy)
