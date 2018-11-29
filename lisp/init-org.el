@@ -5,6 +5,7 @@
   :config
   (progn
     (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+    (add-hook 'org-mode-hook 'turn-on-auto-fill)
     (setq org-directory "~/Dropbox/document/org")
     (setq org-agenda-files (apply 'append
 				  (mapcar
