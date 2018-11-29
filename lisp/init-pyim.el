@@ -6,7 +6,13 @@
   :general
   ("M-j" 'pyim-convert-code-at-point)
   :config
-  (setq pyim-dicts "/home/yhxie/.emacs.d/pyim/pyim-bigdict.pyim")
+  (setq pyim-dicts "/home/yhxie/.emacs.d/pyim/pyim-bigdict.pyim"
+	pyim-fuzzy-pinyin-alist '(("s" "sh")
+				  ("c" "ch")
+				  ("z" "zh")
+				  ("in" "ing")
+				  ("en" "eng")
+				  ("l" "n")))
   (setq default-input-method "pyim")
   (setq pyim-default-scheme 'quanpin)
   (setq-default pyim-english-input-switch-functions
