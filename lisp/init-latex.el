@@ -4,6 +4,7 @@
   :mode (".tex\\'" . LaTeX-mode)
   :config
   (progn
+    (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
     (setq TeX-save-query nil)
     (setq TeX-view-program-selection
           (quote
