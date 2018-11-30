@@ -41,39 +41,39 @@
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
 
 (use-package evil-exchange
-    :ensure t
-    :config
-    (evil-exchange-install))
+  :ensure t
+  :config
+  (evil-exchange-install))
 
 (use-package evil-nerd-commenter
-    :ensure t
-    :init
-    (my/leader-keys
-     ";" 'evilnc-comment-operator
-     "cl" 'evilnc-comment-or-uncomment-lines
-     "cp" 'evilnc-comment-or-uncomment-paragraphs))
+  :ensure t
+  :init
+  (my/leader-keys
+    ";" 'evilnc-comment-operator
+    "cl" 'evilnc-comment-or-uncomment-lines
+    "cp" 'evilnc-comment-or-uncomment-paragraphs))
 
 (use-package evil-matchit
-    :ensure t
-    :after evil
-    :init
-    (my/leader-keys
-      "jm" 'evilmi-jump-items)
-    (global-evil-matchit-mode))
+  :ensure t
+  :after evil
+  :init
+  (my/leader-keys
+    "jm" 'evilmi-jump-items)
+  (global-evil-matchit-mode))
 
 (use-package evil-surround
-    :ensure t
-    :config
-    (global-evil-surround-mode 1))
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
 
 (use-package evil-snipe
-    :ensure t
-    :diminish evil-snipe-local-mode
-    :init
-    (setq evil-snipe-show-prompt nil)
-    :config
-    (evil-snipe-mode 1)
-    (evil-snipe-override-mode 1))
+  :ensure t
+  :diminish evil-snipe-local-mode
+  :init
+  (setq evil-snipe-show-prompt nil)
+  :config
+  (evil-snipe-mode 1)
+  (evil-snipe-override-mode 1))
 
 ;; (use-package evil-cleverparens
 ;;   :ensure t
