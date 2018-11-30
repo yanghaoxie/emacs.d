@@ -9,8 +9,8 @@
 	    spaceline-purpose-p t
 	    spaceline-purpose-hide-if-not-dedicated t
 	    spaceline-buffer-encoding-abbrev-p nil
-	    spaceline-window-numbers-unicode t
-	    spaceline-workspace-numbers-unicode t
+	    spaceline-window-numbers-unicode nil
+	    spaceline-workspace-numbers-unicode nil
 	    spaceline-input-method-p nil))
     :config
     (spaceline-spacemacs-theme)
