@@ -3,9 +3,10 @@
   :diminish flyspell-mode
   :init
   (my/leader-keys
-    "tS" 'my/toggle-flyspell
-    "Sb" 'flyspell-buffer
-    "Sn" 'flyspell-goto-next-error)
+    "t M-s" 'my/toggle-flyspell
+    "M-s b" 'flyspell-buffer
+    "M-s n" 'flyspell-goto-next-error
+    "M-s p" 'flyspell-correct-at-point)
   :config
   (progn
     (add-hook 'prog-mode-hook #'flyspell-prog-mode)

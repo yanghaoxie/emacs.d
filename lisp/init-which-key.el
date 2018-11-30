@@ -30,7 +30,7 @@
      "q" '(:ignore t :which-key "quit")
      "r" '(:ignore t :which-key "regs/rings/replace")
      "s" '(:ignore t :which-key "search")
-     "S" '(:ignore t :which-key "Spell/Grammar")
+     "M-s" '(:ignore t :which-key "Spell/Grammar")
      "t" '(:ignore t :which-key "toggles")
      "th" '(:ignore t :which-key "highlight")
      "T" '(:ignore t :which-key "Themes")
