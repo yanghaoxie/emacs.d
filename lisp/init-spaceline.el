@@ -3,7 +3,7 @@
     :init
     (progn
       (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state
-	    powerline-default-separator 'wave
+	    powerline-default-separator 'slant
 	    anzu-cons-mode-line-p nil
 	    spaceline-minor-modes-p nil
 	    spaceline-purpose-p t
