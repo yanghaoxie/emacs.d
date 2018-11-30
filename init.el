@@ -156,6 +156,7 @@
   (require-init 'init-shell)
   (require-init 'init-ledger)
   (require-init 'init-atomic-chrome)
+  (require-init 'init-crux)
   ;; chinese
   (require-init 'init-pyim)
 
