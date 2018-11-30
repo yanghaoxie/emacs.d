@@ -128,6 +128,7 @@
   ;; (require-init 'init-smartscan)
   ;; completion
   (require-init 'init-ivy)
+  (require-init 'init-helm)
   (require-init 'init-company)
   (require-init 'init-prescient)
   (require-init 'init-yasnippet)
