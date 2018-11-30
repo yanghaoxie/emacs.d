@@ -13,7 +13,10 @@
        "jw" 'avy-goto-word-or-subword-1
        "j M-w" 'my/avy-goto-word-or-subword-1-all-windows
        "jc" 'avy-goto-char
-       "j M-c" 'my/avy-goto-char-all-windows)))
+       "j M-c" 'my/avy-goto-char-all-windows))
+    (my/leader-keys-major-mode
+      :keymaps 'org-mode-map
+      "jj" 'avy-org-goto-heading-timer))
 
 ;;;###autoload
 (defun my/avy-goto-char-timer-all-windows ()
