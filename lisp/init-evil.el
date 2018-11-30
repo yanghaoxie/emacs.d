@@ -28,20 +28,17 @@
   (evil-escape-mode))
 
 (use-package evil-anzu
-    :ensure t
-    ;; :diminish evil-anzu-mode
-    :init
-    (require 'evil-anzu)
-    (global-anzu-mode)
-    (diminish 'anzu-mode)
-    :general
-    (my/leader-keys
-     "rs" 'anzu-query-replace
-     "rr" 'anzu-query-replace-regexp)
-    :config
-    (global-set-key [remap query-replace] 'anzu-query-replace)
-    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
-    )
+  :ensure t
+  :init
+  (require 'evil-anzu)
+  (global-anzu-mode)
+  :general
+  (my/leader-keys
+    "rs" 'anzu-query-replace
+    "rr" 'anzu-query-replace-regexp)
+  :config
+  (global-set-key [remap query-replace] 'anzu-query-replace)
+  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
 
 (use-package evil-exchange
     :ensure t
