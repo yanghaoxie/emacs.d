@@ -180,6 +180,8 @@
 
 (use-package helm-org-rifle
   :ensure t
+  :commands (helm-org-rifle-agenda-files
+	     helm-org-rifle-occur-agenda-files)
   :config
   (progn
     ))
