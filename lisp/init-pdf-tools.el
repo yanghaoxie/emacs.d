@@ -32,6 +32,8 @@
 	   "l" '(lambda() (interactive) (image-forward-hscroll 20))
 	   "u" 'pdf-view-scroll-down-or-previous-page
 	   "d" 'pdf-view-scroll-up-or-next-page
+	   "f" 'pdf-view-next-page
+	   "b" 'pdf-view-previous-page
 	   "gg"  'pdf-view-first-page
 	   "G"  'pdf-view-last-page
 	   ;; scale/fit
