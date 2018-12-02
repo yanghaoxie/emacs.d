@@ -174,6 +174,8 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
     (add-hook 'kill-buffer-hook 'comint-write-input-ring)
     (add-hook 'kill-emacs-hook 'comint-write-input-ring-all-buffers)))
 ;; key bindings
+(my/all-states-keys
+  "C-e" 'move-end-of-line)
 
 (my/leader-keys
   "!" 'shell-command)
