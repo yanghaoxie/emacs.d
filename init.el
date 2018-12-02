@@ -110,6 +110,7 @@
   (require-init 'init-smartparens)
   (require-init 'init-evil-iedit-state)
   (require-init 'init-move-text)
+  (require-init 'init-zop-to-char)
   ;; theme
   (require-init 'init-theme)
   ;; vim
