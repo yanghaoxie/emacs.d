@@ -121,6 +121,7 @@
 
 (use-package helm-swoop
   :ensure t
+  :commands helm-swoop
   :init
   (progn
     (my/leader-keys
