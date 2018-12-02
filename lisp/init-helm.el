@@ -184,7 +184,9 @@
 	     helm-org-rifle-occur-agenda-files)
   :config
   (progn
-    ))
+    (my/leader-keys-major-mode
+      "s M-r" 'helm-org-rifle-agenda-files
+      "so" 'helm-org-rifle-occur-agenda-files)))
 
 (use-package helm-bibtex
   :ensure t
