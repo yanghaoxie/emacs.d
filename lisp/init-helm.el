@@ -107,6 +107,10 @@
 
 (use-package helm-ag
   :ensure t
+  :commands (helm-do-ag
+	     helm-do-ag-buffers
+	     helm-do-ag-thi-file
+	     helm-do-ag-project-root)
   :init
   (progn
     (my/leader-keys
