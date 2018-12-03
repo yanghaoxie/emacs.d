@@ -56,7 +56,7 @@
   ("o" (lambda () (interactive) (shrink-window-horizontally 10)) "out")
   ("I" (lambda () (interactive) (enlarge-window 5)) "IN")
   ("O" (lambda () (interactive) (shrink-window 5)) "OUT")
-  ("0" balance-windows "resert")
+  ("r" balance-windows "resert")
   ("q" nil "quit"))
 (my/leader-keys
   "wz" 'hydra-window-scale/body)
