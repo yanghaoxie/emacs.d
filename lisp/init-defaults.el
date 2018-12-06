@@ -180,6 +180,71 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
   (progn
     (setq ispell-program-name "aspell"
 	  ispell-silently-savep t)))
+
+(use-package calendar
+  :commands calendar
+  :config
+  ;; keybindings are copied from evil-collection
+  (my/normal-keys
+    :keymaps 'calendar-mode-map
+    ;; motion
+    "h" 'calendar-backward-day
+    "j" 'calendar-forward-week
+    "k" 'calendar-backward-week
+    "l" 'calendar-forward-day
+    "0" 'calendar-beginning-of-week
+    "^" 'calendar-beginning-of-week
+    "$" 'calendar-end-of-week
+    "[" 'calendar-backward-year
+    "]" 'calendar-forward-year
+    "M-<" 'calendar-beginning-of-year
+    "M->" 'calendar-end-of-year
+    "(" 'calendar-beginning-of-month
+    ")" 'calendar-end-of-month
+    "<" 'calendar-scroll-right
+    ">" 'calendar-scroll-left
+    "C-b" 'calendar-scroll-right-three-months
+    "C-f" 'calendar-scroll-left-three-months
+    "{" 'calendar-backward-month
+    "}" 'calendar-forward-month
+    "C-k" 'calendar-backward-month
+    "C-j" 'calendar-forward-month
+    "gk" 'calendar-backward-month
+    "gj" 'calendar-forward-month
+
+    ;; visual
+    "v" 'calendar-set-mark
+
+    ;; goto
+    "." 'calendar-goto-today
+    "gd" 'calendar-goto-date ; "gd" in evil-org-agenda, "gd" in Emacs.
+    ;; "gD" 'calendar-other-month ; Not very useful if we have `calendar-goto-date'.
+
+    ;; diary
+    "D" 'diary-view-other-diary-entries
+    "d" 'diary-view-entries
+    "m" 'diary-mark-entries
+    "s" 'diary-show-all-entries
+
+    "u" 'calendar-unmark
+    "x" 'calendar-mark-holidays
+
+    ;; show
+    "gm" 'calendar-lunar-phases ; "gm" in evil-org-agenda. TODO: Shadows calendar-mayan.
+    "gs" 'calendar-sunrise-sunset ; "gs" in evil-org-agenda
+    "gh" 'calendar-list-holidays ; "gh" in evil-org-agenda. TODO: Shadows calendar-hebrew.
+    "ga" 'org-calendar-goto-agenda ; "gc" in evil-org-agenda. TODO: Shadows calendar-iso.
+    "r" 'calendar-cursor-holidays
+
+    ;; refresh
+    "gr" 'calendar-redraw
+
+    "g?" 'calendar-goto-info-node
+    "?" 'calendar-goto-info-node ; Search is not very useful.
+    "M-=" 'calendar-count-days-region
+
+    ;; quit
+    "q" 'calendar-exit))
 ;; key bindings
 (my/all-states-keys
   "C-e" 'move-end-of-line)
