@@ -173,6 +173,13 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
     (add-hook 'inferior-python-mode-hook 'turn-on-comint-history nil nil)
     (add-hook 'kill-buffer-hook 'comint-write-input-ring)
     (add-hook 'kill-emacs-hook 'comint-write-input-ring-all-buffers)))
+
+(use-package ispell
+  :defer 15
+  :config
+  (progn
+    (setq ispell-program-name "aspell"
+	  ispell-silently-savep t)))
 ;; key bindings
 (my/all-states-keys
   "C-e" 'move-end-of-line)
