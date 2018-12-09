@@ -123,3 +123,4 @@ current window."
   ;; show current time in minibuffer
   (interactive)
   (message (current-time-string)))
+(provide 'init-autoload)
