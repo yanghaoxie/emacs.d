@@ -267,7 +267,8 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
   )
 ;; file ----------------------------------------------------------------------
 (my/leader-keys
-  "fs" 'save-buffer)
+  "fs" 'save-buffer
+  "fn" 'my/copy-file-name-to-clipboard)
 ;; frame
 (my/leader-keys
   "Fd" 'delete-frame
