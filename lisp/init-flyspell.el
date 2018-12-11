@@ -14,7 +14,6 @@
     (add-hook 'org-mode-hook #'turn-on-flyspell)))
 
 (use-package flyspell-correct
-  :ensure t
-  )
+  :ensure t)
 
 (provide 'init-flyspell)
