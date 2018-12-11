@@ -244,6 +244,12 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
 
     ;; quit
     "q" 'calendar-exit))
+
+(use-package imenu
+  :defer t
+  :init
+  (my/leader-keys
+    "ji" 'imenu))
 ;; key bindings
 (my/all-states-keys
   "C-e" 'move-end-of-line)
