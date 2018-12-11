@@ -111,6 +111,7 @@
   (require-init 'init-evil-iedit-state)
   (require-init 'init-move-text)
   (require-init 'init-zop-to-char)
+  (require-init 'init-imenu-list)
   ;; theme
   (require-init 'init-theme)
   ;; vim
