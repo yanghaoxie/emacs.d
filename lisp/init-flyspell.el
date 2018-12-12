@@ -7,6 +7,14 @@
     "M-s b" 'flyspell-buffer
     "M-s n" 'flyspell-goto-next-error
     "M-s p" 'flyspell-correct-at-point)
+  (defhydra hydra-spelling ()
+    ("b" flyspell-buffer "check buffer")
+    ("d" ispell-change-dictionary "change dictionary")
+    ("n" flyspell-goto-next-error "next")
+    ("c" flyspell-correct-previous-word-generic "correct")
+    ("q" nil "quit"))
+  (my/leader-keys
+    "M-s ." 'hydra-spelling/body)
   :config
   (progn
     (add-hook 'prog-mode-hook #'flyspell-prog-mode)
