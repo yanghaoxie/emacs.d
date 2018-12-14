@@ -74,6 +74,7 @@
     "as" 	'pdf-annot-add-squiggly-markup-annotation
     "at" 	'pdf-annot-add-text-annotation
     "au" 	'pdf-annot-add-underline-markup-annotation
+    "b" 'pdf-isearch-sync-backward
     ;; Fit image to window
     "f" '(:ignore t :which-key "fit")
     "fw" 'pdf-view-fit-width-to-window
