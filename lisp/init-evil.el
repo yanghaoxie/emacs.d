@@ -73,7 +73,10 @@
   (setq evil-snipe-show-prompt nil)
   :config
   (evil-snipe-mode 1)
-  (evil-snipe-override-mode 1))
+  (evil-snipe-override-mode 1)
+  (my/normal-keys
+    "s" 'evil-snipe-s
+    "S" 'evil-snipe-S))
 
 ;; (use-package evil-cleverparens
 ;;   :ensure t
