@@ -259,7 +259,7 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
 
 ;; applications --------------------------------------------------------------
 (my/leader-keys
-  "au" 'undo-tree-visualize
+  ;; "au" 'undo-tree-visualize
   "ac" 'calendar
   "at" 'my/show-current-time)
 ;; buffer --------------------------------------------------------------------

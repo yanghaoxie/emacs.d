@@ -3,6 +3,9 @@
   :diminish undo-tree-mode
   :init (setq undo-tree-visualizer-timestamps t
               undo-tree-visualizer-diff t)
+  (progn
+    (my/leader-keys
+      "au" 'undo-tree-visualize))
   :config
   (progn
     ;; restore diff window after quit.  TODO fix upstream
