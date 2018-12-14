@@ -254,6 +254,7 @@
 
 (use-package org-noter
   :ensure t
+  :defer t
   :commands org-noter
   :init
   (my/leader-keys-major-mode
