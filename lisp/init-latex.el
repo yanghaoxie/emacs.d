@@ -52,6 +52,7 @@
    "."   'LaTeX-mark-environment  ;; C-c .
    "c"   'LaTeX-close-environment ;; C-c ]
    "e"   'LaTeX-environment       ;; C-c C-e
+   "M-e" 'TeX-next-error
    "i"   '(:ignore t :which-key "insert")
    "ii"   'LaTeX-insert-item       ;; C-c C-j
    "s"   'LaTeX-section           ;; C-c C-s
