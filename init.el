@@ -144,6 +144,7 @@
   (require-init 'init-org)
   (require-init 'init-elisp)
   (require-init 'init-latex)
+  (require-init 'init-lua)
   (require-init 'init-python)
   ;; writting
   (require-init 'init-academic-phrases)
