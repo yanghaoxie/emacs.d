@@ -91,4 +91,8 @@
     "M-RET" 'pdf-occur-goto-occurrence
     "q" 'tablist-quit)
   )
+
+(use-package org-pdfview
+  :ensure t
+  :after pdf-tools)
 (provide 'init-pdf-tools)
