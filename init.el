@@ -113,6 +113,7 @@
   (require-init 'init-easy-kill)
   (require-init 'init-zop-to-char)
   (require-init 'init-imenu-list)
+  (require-init 'init-unfill)
   ;; theme
   (require-init 'init-theme)
   ;; vim
