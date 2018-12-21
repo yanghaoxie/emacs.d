@@ -15,7 +15,8 @@
     "k(" 'sp-wrap-round
     "k[" 'sp-wrap-square
     "ku" 'sp-unwrap-sexp
-    "kr" 'sp-rewrap-sexp)
+    "kr" 'sp-rewrap-sexp
+    "tp" 'my/toggle-smartparens)
   (my/all-states-keys
     :prefix "M-s"
     ;; navigation
@@ -36,7 +37,20 @@
     "M-h" 'sp-backward-barf-sexp
     ;; killing
     "k" 'sp-kill-sexp
-    "M-k" 'sp-backward-kill-sexp))
+    "M-k" 'sp-backward-kill-sexp)
+  (defun my/toggle-smartparens ()
+    (interactive)
+    (if (bound-and-true-p smartparens-mode)
+	(progn
+	  (smartparens-mode -1)
+	  (smartparens-strict-mode -1)
+	  (evil-smartparens-mode -1)
+	  (message "Smartparens mode disabled in current buffer"))
+      (progn
+	(smartparens-mode 1)
+	(smartparens-strict-mode 1)
+	(evil-smartparens-mode 1)
+	(message "Smartparens mode enabled in current buffer")))))
 
 (use-package evil-smartparens
   :ensure t
