@@ -237,7 +237,9 @@
     (setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref-notes.org")
     (my/leader-keys-major-mode
       :keymaps 'org-mode-map
-     "oo" 'my/org-ref-open-pdf-at-point)))
+      "oo" 'my/org-ref-open-pdf-at-point
+      "C-j" 'org-ref-next-key
+      "C-k" 'org-ref-previous-key)))
 
 (use-package org-bullets
   :ensure t
