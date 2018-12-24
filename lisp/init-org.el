@@ -5,6 +5,9 @@
   :config
   (progn
     (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+    (add-hook 'org-mode-hook
+	      (lambda ()
+		(add-to-list (make-local-variable 'company-backends) '(company-ispell company-capf company-dabbrev))))
     (add-hook 'org-mode-hook 'turn-on-auto-fill)
     (setq org-directory "~/Dropbox/document/org")
     (setq org-agenda-files (apply 'append
