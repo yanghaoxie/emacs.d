@@ -221,7 +221,9 @@
       "td" '(:ignore t :which-key "delete")
       "ti" '(:ignore t :which-key "insert")
       "tt" '(:ignore t :which-key "toggle")
-      "x" '(:ignore t :which-key "text"))))
+      "x" '(:ignore t :which-key "text"))
+    (my/leader-keys-major-mode
+      "op" 'org-open-at-point)))
 
 (use-package org-ref
   :ensure t
