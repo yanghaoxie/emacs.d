@@ -16,7 +16,9 @@
       "j M-c" 'my/avy-goto-char-all-windows))
   (my/leader-keys-major-mode
     :keymaps 'org-mode-map
-    "jj" 'avy-org-goto-heading-timer))
+    "jj" 'avy-org-goto-heading-timer)
+  (my/normal-keys
+    "f" 'my/avy-goto-char-in-line-without-background))
 
 ;;;###autoload
 (defun my/avy-goto-char-timer-all-windows ()
@@ -41,5 +43,11 @@
   (interactive)
   (let ((avy-all-windows t))
     (call-interactively 'avy-goto-char)))
+
+;;;###autoload
+(defun my/avy-goto-char-in-line-without-background ()
+  (interactive)
+  (let ((avy-background nil))
+    (call-interactively 'avy-goto-char-in-line)))
 
 (provide 'init-avy)
