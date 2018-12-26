@@ -1,6 +1,5 @@
 (use-package helm
   :ensure t
-  :defer t
   :init
   (progn
     (with-eval-after-load 'helm
@@ -219,7 +218,6 @@
 	  (incollection  . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
 	  (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}")
 	  (t             . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}"))))
-
 (use-package flyspell-correct-helm
   :ensure t
   :commands (flyspell-correct-helm)
