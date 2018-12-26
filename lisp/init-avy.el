@@ -17,8 +17,7 @@
   (my/leader-keys-major-mode
     :keymaps 'org-mode-map
     "jj" 'avy-org-goto-heading-timer)
-  (my/normal-keys
-    "f" 'my/avy-goto-char-in-line-without-background))
+  (global-set-key [remap evil-snipe-f] 'my/avy-goto-char-in-line-without-background))
 
 ;;;###autoload
 (defun my/avy-goto-char-timer-all-windows ()
