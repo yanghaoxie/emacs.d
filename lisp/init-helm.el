@@ -1,5 +1,6 @@
 (use-package helm
   :ensure t
+  :defer
   :init
   (progn
     (with-eval-after-load 'helm
