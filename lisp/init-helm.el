@@ -194,10 +194,16 @@
   :init
   (progn
     (my/leader-keys
-      "ib" 'helm-bibtex)
+      "ib" 'ivy-bibtex)
     (my/leader-keys-minor-mode
       :keymaps 'bibtex-completion-notes-mode-map
       "s" 'bibtex-completion-exit-notes-buffer))
+  :general
+  (ivy-minibuffer-map
+   "C-j" 'ivy-next-line
+   "C-k" 'ivy-previous-line
+   "C-h" (kbd "DEL")
+   "C-l" 'ivy-alt-done)
   :config
   (setq bibtex-completion-pdf-field "file"
 	bibtex-completion-find-additional-pdfs t
