@@ -28,4 +28,11 @@
   (with-eval-after-load 'eshell
     (require 'eshell-z)))
 
+(use-package eshell-prompt-extras
+  :ensure t
+  :commands epe-theme-lambda
+  :init
+  (setq eshell-highlight-prompt nil
+	eshell-prompt-function 'epe-theme-lambda))
+
 (provide 'init-shell)
