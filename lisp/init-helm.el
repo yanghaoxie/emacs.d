@@ -225,4 +225,13 @@
   :general
   (:keymaps 'override
 	    "C-;" 'flyspell-correct-wrapper))
+
+(use-package helm-pydoc
+  :ensure t
+  :commands helm-pydoc
+  :init
+  (my/leader-keys-major-mode
+    :keymaps 'python-mode-map
+    "hd" 'helm-pydoc))
+
 (provide 'init-helm)
