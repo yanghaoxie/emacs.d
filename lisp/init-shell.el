@@ -1,3 +1,15 @@
+(use-package eshell
+  :defer t
+  :config
+  (progn
+    (setq eshell-cmpl-cycle-completions nil)
+    (add-hook 'eshell-mode-hook 'my/eshell-set-keys)
+    (defun my/eshell-set-keys ()
+      (my/all-states-keys
+	:keymaps 'eshell-mode-map
+	"C-j" 'eshell-next-input
+	"C-k" 'eshell-previous-input))))
+
 (use-package shell-pop
   :ensure t
   :defer t
