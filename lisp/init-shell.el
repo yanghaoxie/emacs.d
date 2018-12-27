@@ -20,4 +20,12 @@
   (my/leader-keys
     "'" 'shell-pop
     "as" 'eshell))
+
+(use-package eshell-z
+  :ensure t
+  :defer t
+  :init
+  (with-eval-after-load 'eshell
+    (require 'eshell-z)))
+
 (provide 'init-shell)
