@@ -4,11 +4,25 @@
   (progn
     (setq eshell-cmpl-cycle-completions nil)
     (add-hook 'eshell-mode-hook 'my/eshell-set-keys)
+    (add-hook 'eshell-after-prompt-hook 'my//protect-eshell-prompt)
     (defun my/eshell-set-keys ()
       (my/all-states-keys
 	:keymaps 'eshell-mode-map
 	"C-j" 'eshell-next-input
-	"C-k" 'eshell-previous-input))))
+	"C-k" 'eshell-previous-input))
+    (defun my//protect-eshell-prompt ()
+      "Protect Eshell's prompt like Comint's prompts.
+E.g. `evil-change-whole-line' won't wipe the prompt. This
+is achieved by adding the relevant text properties."
+      (let ((inhibit-field-text-motion t))
+	(add-text-properties
+	 (point-at-bol)
+	 (point)
+	 '(rear-nonsticky t
+			  inhibit-line-move-field-capture t
+			  field output
+			  read-only t
+			  front-sticky (field inhibit-line-move-field-capture)))))))
 
 (use-package shell-pop
   :ensure t
