@@ -57,6 +57,7 @@
 (use-package evil-matchit
   :ensure t
   :after evil
+  :commands evilmi-jump-items
   :init
   (my/leader-keys
     "jm" 'evilmi-jump-items)
