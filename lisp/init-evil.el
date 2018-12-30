@@ -61,6 +61,7 @@
   :init
   (my/leader-keys
     "jm" 'evilmi-jump-items)
+  :config
   (global-evil-matchit-mode))
 
 (use-package evil-surround
