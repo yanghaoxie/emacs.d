@@ -76,6 +76,7 @@
   (require-init 'init-elpa)
   (require-init 'init-pre-load)
   (require-init 'init-paradox)
+  (require-init 'init-auto-package-update)
   ;; auto-compile
   (require-init 'init-auto-compile)
   ;; autoload
