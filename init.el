@@ -104,6 +104,7 @@
   ;; (require-init 'init-modeline)
   ;; (require-init 'init-doom-modeline)
   (require-init 'init-all-the-icons-dired)
+  (require-init 'init-rainbow-mode)
   ;; universal
   (require-init 'init-restart-emacs)
   (require-init 'init-undo-tree)
