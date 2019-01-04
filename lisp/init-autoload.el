@@ -87,10 +87,12 @@ current window."
   (if (bound-and-true-p highlight-symbol-mode)
       (progn
 	(highlight-symbol-mode -1)
-	(message "Highlight symbol mode disabled in current buffer"))
+	(hl-line-mode 1)
+	(message "Highlight symbol mode disabled and hl-line-mode enabled in current buffer"))
     (progn
       (highlight-symbol-mode 1)
-      (message "Highlight symbol mode enabled in current buffer"))))
+      (hl-line-mode -1)
+      (message "Highlight symbol mode enabled and hl-line-mode disabled in current buffer"))))
 
 ;;;###autoload
 (defun my/toggle-flyspell()
