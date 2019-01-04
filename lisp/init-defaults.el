@@ -37,7 +37,11 @@
       vc-make-backup-files t)
 ;; font
 (set-face-attribute 'default nil :font "Hack")
-(global-hl-line-mode t)
+
+(use-package hl-line
+  :config
+  (add-hook 'prog-mode-hook (lambda () (hl-line-mode t)))
+  (add-hook 'text-mode-hook (lambda () (hl-line-mode t))))
 ;; text-scale
 (defhydra hydra-text-scale ()
   "text-scale"
