@@ -73,6 +73,13 @@
       (helm-mode)
       (helm-autoresize-mode))))
 
+(use-package helm-describe-modes
+  :ensure t
+  :defer t
+  :after helm
+  :init
+  (global-set-key [remap describe-mode] #'helm-describe-modes))
+
 ;;;###autoload
 ;; copy from spacemacs
 (defun my/helm-faces ()
