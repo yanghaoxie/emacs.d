@@ -61,6 +61,7 @@
   :init
   (my/leader-keys
     "jm" 'evilmi-jump-items)
+  (global-set-key [remap evil-jump-item] 'evilmi-jump-items)
   :config
   (global-evil-matchit-mode))
 
