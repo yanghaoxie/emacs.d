@@ -1,5 +1,6 @@
 (use-package spaceline
     :ensure t
+    :pin melpa-stable
     :init
     (progn
       (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state
