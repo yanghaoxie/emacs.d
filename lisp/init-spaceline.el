@@ -16,6 +16,9 @@
   ;; (spaceline-spacemacs-theme)
   ;; (spaceline-compile)
   )
+
+(use-package all-the-icons
+  :ensure t)
   :config
   (spaceline-spacemacs-theme)
   (spaceline-compile))
