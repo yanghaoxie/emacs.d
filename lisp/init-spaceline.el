@@ -19,7 +19,20 @@
 
 (use-package all-the-icons
   :ensure t)
+
+(use-package spaceline-all-the-icons
+  :after (spaceline all-the-icons)
   :config
-  (spaceline-spacemacs-theme)
-  (spaceline-compile))
+  (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state
+	spaceline-all-the-icons-icon-set-modified 'circle
+	spaceline-all-the-icons-projectile-p nil
+	spaceline-all-the-icons-slim-render t
+	spaceline-all-the-icons-separator-type 'none
+	spaceline-all-the-icons-time-p nil
+	spaceline-all-the-icons-icon-set-eyebrowse-slot 'string
+	spaceline-all-the-icons-icon-set-window-numbering 'string)
+  (spaceline-all-the-icons--setup-anzu)
+  (spaceline-all-the-icons--setup-paradox)
+  (spaceline-all-the-icons-theme))
+
 (provide 'init-spaceline)
