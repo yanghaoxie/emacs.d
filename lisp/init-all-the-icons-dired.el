@@ -2,7 +2,7 @@
   :ensure t
   :after all-the-icons
   :commands (deer ranger)
-  :config
+  :init
   (add-hook #'dired-mode-hook 'all-the-icons-dired-mode))
 
 (provide 'init-all-the-icons-dired)
