@@ -7,7 +7,7 @@
      '(eyebrowse-mode-line-active ((t (:inherit bold-italic)))))
     :general
     (:keymaps 'override
-     :states '(normal visual motion)
+     :states '(normal visual)
      "gt" 'eyebrowse-next-window-config
      "gT" 'eyebrowse-prev-window-config
      "gc" 'eyebrowse-close-window-config
