@@ -184,7 +184,9 @@
   :commands (flyspell-correct-helm)
   :general
   (:keymaps 'override
-	    "C-;" 'flyspell-correct-wrapper))
+	    "C-;" 'flyspell-correct-wrapper)
+  :init
+  (setq flyspell-correct-interface #'flyspell-correct-helm))
 
 (use-package helm-org-rifle
   :ensure t
