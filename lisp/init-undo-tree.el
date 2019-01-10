@@ -9,5 +9,8 @@
   :config
   (progn
     (setq undo-tree-visualizer-timestamps t
-	  undo-tree-visualizer-diff t)))
+	  undo-tree-visualizer-diff t
+	  undo-tree-auto-save-history t
+	  undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))))
+
 (provide 'init-undo-tree)
