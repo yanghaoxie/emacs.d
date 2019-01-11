@@ -254,6 +254,43 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
   :init
   (my/leader-keys
     "ji" 'imenu))
+
+(use-package image-mode
+  :defer t
+  :mode (".jpg\\'" . image-mode)
+  :config
+  (progn
+    (add-hook 'image-minor-mode-hook (lambda() (display-line-numbers-mode -1)))
+    (setq image-animate-loop t)
+    (my/leader-keys-major-mode
+      :keymaps 'image-mode-map
+      "aa" 'image-toggle-animation
+      "a+" 'image-increase-speed
+      "a-" 'image-decrease-speed
+      "ar" 'image-reset-speed
+      "gn" 'image-next-file
+      "gN" 'image-previous-file
+      "t+" 'image-increase-size
+      "t-" 'image-decrease-size
+      "tf" 'image-mode-fit-frame
+      "tr" 'image-transform-reset
+      "th" 'image-transform-fit-to-height
+      "tw" 'image-transform-fit-to-width
+      "ts" 'image-transform-set-scale
+      "tr" 'image-transform-rotation)
+    (my/leader-keys-major-mode
+      :keymaps 'image-mode-map
+      :major-modes t
+      "a" '(:ignore t :wk "animate")
+      "g" '(:ignore t :wk "goto file")
+      "t" '(:ignore t :wk "transform/resize"))
+    (my/normal-keys
+      :keymaps 'image-mode-map
+      "h" 'image-backward-hscroll
+      "j" 'image-next-line
+      "k" 'image-previous-line
+      "l" 'image-forward-hscroll)))
+
 ;; key bindings
 (my/all-states-keys
   "C-e" 'move-end-of-line)
