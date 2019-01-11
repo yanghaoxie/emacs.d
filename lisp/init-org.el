@@ -226,6 +226,7 @@
       "tt" '(:ignore t :which-key "toggle")
       "x" '(:ignore t :which-key "text"))
     (my/leader-keys-major-mode
+      :keymaps 'org-mode-map
       "op" 'org-open-at-point)))
 
 (use-package org-ref
@@ -270,6 +271,7 @@
     "i" 'org-noter-insert-note
     "k" 'org-noter-kill-session)
   (my/leader-keys-major-mode
+    :keymaps 'org-mode-map
     "n" 'org-noter )
   :config
   (progn
