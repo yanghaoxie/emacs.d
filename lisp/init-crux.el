@@ -1,5 +1,8 @@
 (use-package crux
   :ensure t
+  :commands (crux-move-beginning-of-line
+	     crux-rename-file-and-buffer
+	     crux-find-user-init-file)
   :config
   (progn
     (my/all-states-keys
