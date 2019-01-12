@@ -3,7 +3,7 @@
   :commands (crux-move-beginning-of-line
 	     crux-rename-file-and-buffer
 	     crux-find-user-init-file)
-  :config
+  :init
   (progn
     (my/all-states-keys
       "C-a" 'crux-move-beginning-of-line)
