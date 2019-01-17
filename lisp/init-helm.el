@@ -24,7 +24,7 @@
       "Cl"   'helm-colors
       "fb" 'helm-filtered-bookmarks
       "ff"   'helm-find-files
-      "fL"   'helm-locate
+      "fl"   'helm-locate
       "fr"   'helm-recentf
       "hdd"  'helm-apropos
       "hdF"  'my/helm-faces
