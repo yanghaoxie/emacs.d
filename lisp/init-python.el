@@ -16,9 +16,6 @@
      "sr" 'python-shell-send-region
      "ss" 'python-shell-send-string
      "sz" 'python-shell-switch-to-shell)
-    (my/leader-keys-major-mode
-      :keymaps 'inferior-python-mode-map
-      "h" 'counsel-shell-history)
     (my/all-states-keys
       :keymaps 'inferior-python-mode-map
       "M-o" 'ace-link)))
