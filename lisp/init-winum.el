@@ -4,7 +4,7 @@
   (setq winum-auto-assign-0-to-minibuffer nil
         winum-auto-setup-mode-line nil
         winum-mode-line-position 1
-        winum-ignored-buffers '(" *which-key*")
+        winum-ignored-buffers '(" *which-key*" "*helm M-x*" "*helm find files*" "*helm mini*")
 	winum-scope 'visible
 	winum-reverse-frame-list t)
   (winum-mode)
