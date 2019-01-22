@@ -52,6 +52,9 @@
     (my/leader-keys-major-mode
       :keymaps 'org-mode-map
       "jh" 'helm-org-in-buffer-headings)
+    (my/leader-keys-major-mode
+      :keymaps 'inferior-python-mode-map
+      "h" 'helm-comint-input-ring)
     :config
     (progn
       (custom-set-faces '(helm-action ((t (:foreground "dark sea green" :underline nil)))) )
