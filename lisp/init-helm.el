@@ -141,7 +141,8 @@
   (progn
     (setq helm-swoop-split-with-multiple-windows t
 	  helm-swoop-speed-or-color t
-	  helm-swoop-pre-input-function (lambda () ""))))
+	  helm-swoop-pre-input-function (lambda () ""))
+    (custom-set-faces '(helm-swoop-target-word-face ((t (:inherit lazy-highlight)))))))
 
 (use-package helm-themes
   :ensure t
