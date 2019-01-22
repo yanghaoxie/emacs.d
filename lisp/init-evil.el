@@ -13,6 +13,7 @@
     (evil-set-initial-state 'special-mode 'motion)
     (evil-set-initial-state 'pdf-occur-buffer-mode 'normal)
     (evil-set-initial-state 'imenu-list-major-mode 'normal)
+    (evil-set-initial-state 'neotree-mode 'normal)
     (setq evil-insert-state-cursor '(bar "LimeGreen")
           evil-normal-state-cursor '(box "darkorange")
 	  evil-visual-state-cursor '(box "LightGoldenrod")
