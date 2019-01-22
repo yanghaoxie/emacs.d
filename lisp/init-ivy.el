@@ -7,7 +7,10 @@
     (setq ivy-use-virtual-buffers t
           ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
     (my/leader-keys
-      "bb" 'ivy-switch-buffer))
+      "bb" 'ivy-switch-buffer)
+    (my/leader-keys-major-mode
+      :keymaps 'inferior-python-mode-map
+      "h" 'counsel-shell-history))
   ;; :config
   :general
   (ivy-minibuffer-map
