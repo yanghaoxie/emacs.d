@@ -30,5 +30,6 @@
       (push '("*WordNut*"     :dedicated t :position right :stick t :noselect nil   :width 0.5) popwin:special-display-config)
       (push '("*Synonyms List*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
       (push '("*Calendar*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
+      (push '("*Youdao Dictionary*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.25) popwin:special-display-config)
       ))
 (provide 'init-popwin)
