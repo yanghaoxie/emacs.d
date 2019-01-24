@@ -11,21 +11,21 @@
       (define-key map (kbd "C-k") 'company-select-previous)
       (define-key map (kbd "C-l") 'company-complete-selection))
     (setq company-idle-delay 0
-    	  company-show-numbers t
-    	  company-tooltip-idle-delay 0
-    	  company-minimum-prefix-length 2
-    	  company-dabbrev-ignore-case nil
-    	  company-dabbrev-downcase nil
-    	  company-ispell-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
-    	  ispell-alternate-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
-    	  company-backends '(company-capf
-    			     company-files
-    			     company-keywords
-    			     company-ispell
-    			     company-yasnippet
-    			     company-abbrev
-    			     company-dabbrev
-    			     company-dabbrev-code))
+	  company-show-numbers t
+	  company-tooltip-idle-delay 0
+	  company-minimum-prefix-length 2
+	  company-dabbrev-ignore-case nil
+	  company-dabbrev-downcase nil
+	  company-ispell-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
+	  ispell-alternate-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
+	  company-backends '(company-capf
+			     company-files
+			     company-keywords
+			     company-ispell
+			     company-yasnippet
+			     company-abbrev
+			     company-dabbrev
+			     company-dabbrev-code))
     (defun ora-company-number ()
       "Forward to `company-complete-number'.
 
