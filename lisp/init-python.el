@@ -18,7 +18,23 @@
       "sz" 'python-shell-switch-to-shell)
     (my/all-states-keys
       :keymaps 'inferior-python-mode-map
-      "M-o" 'ace-link)))
+      "M-o" 'ace-link)
+    (defun my/company-comint-history (command &optional arg &rest ignore)
+      "`company-mode' completion backend for comint history"
+      (interactive (list 'interactive))
+      (cl-case command
+	(interactive (company-begin-backend 'company-comint-history))
+	(prefix (company-grab-symbol))
+	(candidates
+	 (cl-remove-if-not
+	  (lambda (c) (string-prefix-p arg c))
+	  (ring-elements comint-input-ring)))
+	(no-cache t)
+	(duplicates t)))
+    (add-hook 'inferior-python-mode-hook
+	      (lambda ()
+		(add-to-list (make-local-variable 'company-backends) '(my/company-comint-history company-files company-dabbrev-code))))
+    ))
 
 (use-package yapfify
   :ensure t
