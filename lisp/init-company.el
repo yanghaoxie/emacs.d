@@ -6,6 +6,10 @@
     (add-hook 'after-init-hook 'global-company-mode))
   :config
   (progn
+    (let ((map company-active-map))
+      (define-key map (kbd "C-j") 'company-select-next)
+      (define-key map (kbd "C-k") 'company-select-previous)
+      (define-key map (kbd "C-l") 'company-complete-selection))
     (setq company-idle-delay 0
     	  company-show-numbers t
     	  company-tooltip-idle-delay 0
