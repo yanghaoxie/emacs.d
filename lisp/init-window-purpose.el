@@ -17,4 +17,9 @@
   (purpose-compile-user-configuration)
   (purpose-mode))
 
+(use-package spacemacs-purpose-popwin
+  :load-path "~/.emacs.d/site-lisp/spacemacs-purpose-popwin/"
+  :config
+  (pupo-mode))
+
 (provide 'init-window-purpose)
