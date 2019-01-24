@@ -2,9 +2,8 @@
   :ensure t
   :init
   (my/leader-keys
-    "wM" 'ace-swap-window)
-  (my/all-states-keys
-    "M-o" 'ace-window)
+    "wM" 'ace-swap-window
+    "wW" 'ace-window)
   :config
   (progn
     (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))))
