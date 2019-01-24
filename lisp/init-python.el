@@ -7,15 +7,15 @@
 	  python-shell-interpreter-args "--simple-prompt")
     (add-hook 'python-mode-hook (lambda () (set-fill-column 79)))
     (my/leader-keys-major-mode
-     :keymaps 'python-mode-map
-     :major-modes t
-     "'"  'run-python
-     "s" '(:ignore t :which-key "REPL")
-     "sb" 'python-shell-send-buffer
-     "sf" 'python-shell-send-defun
-     "sr" 'python-shell-send-region
-     "ss" 'python-shell-send-string
-     "sz" 'python-shell-switch-to-shell)
+      :keymaps 'python-mode-map
+      :major-modes t
+      "'"  'run-python
+      "s" '(:ignore t :which-key "REPL")
+      "sb" 'python-shell-send-buffer
+      "sf" 'python-shell-send-defun
+      "sr" 'python-shell-send-region
+      "ss" 'python-shell-send-string
+      "sz" 'python-shell-switch-to-shell)
     (my/all-states-keys
       :keymaps 'inferior-python-mode-map
       "M-o" 'ace-link)))
