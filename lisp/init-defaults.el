@@ -35,6 +35,7 @@
       delete-old-versions t
       backup-by-copying t
       vc-make-backup-files t)
+(setq delete-by-moving-to-trash t)
 ;; font
 (set-face-attribute 'default nil :font "Hack")
 
