@@ -15,4 +15,4 @@
     (my/leader-keys
       "aw" 'youdao-dictionary-search-from-input)))
 
-(provide 'init-bing-dict)
+(provide 'init-dict)
