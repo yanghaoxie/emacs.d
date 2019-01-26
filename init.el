@@ -133,6 +133,7 @@
   (require-init 'init-golden-scroll-screen)
   (require-init 'init-ace-link)
   (require-init 'init-ace-window)
+  (require-init 'init-dumb-jump)
   ;; (require-init 'init-smartscan)
   ;; completion
   (require-init 'init-ivy)
