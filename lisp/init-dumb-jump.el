@@ -9,3 +9,5 @@
   :config
   (progn
     (setq dumb-jump-selector 'helm)))
+
+(provide 'init-dumb-jump)
