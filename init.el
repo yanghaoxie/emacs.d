@@ -169,6 +169,7 @@
   (require-init 'init-ledger)
   (require-init 'init-atomic-chrome)
   (require-init 'init-crux)
+  (require-init 'init-neotree)
   ;; chinese
   (require-init 'init-pyim)
 
