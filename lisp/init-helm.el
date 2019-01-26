@@ -200,8 +200,11 @@
   :config
   (progn
     (my/leader-keys-major-mode
+      :keymaps 'org-mode-map
       "s M-r" 'helm-org-rifle-agenda-files
-      "so" 'helm-org-rifle-occur-agenda-files)))
+      "so" 'helm-org-rifle-occur-agenda-files)
+    (my/leader-keys
+      "aor" 'helm-org-rifle-agenda-files)))
 
 (use-package helm-bibtex
   :ensure t
@@ -247,5 +250,9 @@
   (my/leader-keys-major-mode
     :keymaps 'python-mode-map
     "hd" 'helm-pydoc))
+
+(use-package helm-shell-history
+  :load-path "~/Program/helm-shell-history"
+  )
 
 (provide 'init-helm)
