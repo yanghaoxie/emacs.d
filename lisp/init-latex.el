@@ -50,6 +50,7 @@
    :keymaps 'LaTeX-mode-map
    "*"   'LaTeX-mark-section      ;; C-c *
    "."   'LaTeX-mark-environment  ;; C-c .
+   "/"   'TeX-command-buffer
    "c"   'LaTeX-close-environment ;; C-c ]
    "e"   'LaTeX-environment       ;; C-c C-e
    "M-e" 'TeX-next-error
