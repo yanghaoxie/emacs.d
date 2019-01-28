@@ -251,8 +251,4 @@
     :keymaps 'python-mode-map
     "hd" 'helm-pydoc))
 
-(use-package helm-shell-history
-  :load-path "~/Program/helm-shell-history"
-  )
-
 (provide 'init-helm)
