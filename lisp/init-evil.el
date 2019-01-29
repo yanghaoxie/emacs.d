@@ -40,6 +40,7 @@
     "rs" 'anzu-query-replace
     "rr" 'anzu-query-replace-regexp)
   :config
+  (setq anzu-cons-mode-line-p nil)
   (global-set-key [remap query-replace] 'anzu-query-replace)
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
 
