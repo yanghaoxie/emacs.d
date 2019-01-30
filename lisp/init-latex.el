@@ -82,7 +82,8 @@
   :ensure t
   :diminish cdlatex-mode
   :config
-  (setq cdlatex-simplify-sub-super-scripts nil)
+  (setq cdlatex-simplify-sub-super-scripts nil
+	cdlatex-paired-parens "$[{(<")
   (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
   (add-hook 'org-mode-hook 'turn-on-cdlatex))
 (provide 'init-latex)
