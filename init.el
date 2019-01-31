@@ -172,6 +172,7 @@
   (require-init 'init-neotree)
   ;; chinese
   (require-init 'init-pyim)
+  (require-init 'init-cal-china-x)
 
 
 
