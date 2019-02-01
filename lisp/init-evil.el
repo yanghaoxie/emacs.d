@@ -15,6 +15,7 @@
     (evil-set-initial-state 'imenu-list-major-mode 'normal)
     (evil-set-initial-state 'neotree-mode 'normal)
     (evil-set-initial-state 'youdao-dictionary-mode 'motion)
+    (evil-set-initial-state 'flycheck-error-list-mode 'normal)
     (setq evil-insert-state-cursor '(bar "LimeGreen")
           evil-normal-state-cursor '(box "darkorange")
 	  evil-visual-state-cursor '(box "LightGoldenrod")
