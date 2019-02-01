@@ -19,6 +19,12 @@
     "en" 'flycheck-next-error
     "ep" 'flycheck-previous-error
     "el" 'flycheck-list-errors)
+  (my/normal-keys
+    :keymaps 'flycheck-error-list-mode-map
+    "RET" 'flycheck-error-list-goto-error
+    "j" 'flycheck-error-list-next-error
+    "k" 'flycheck-error-list-previous-error
+    "q" 'quit-window)
   (progn
     ;; Custom fringe indicator
     (when (and (fboundp 'define-fringe-bitmap)
