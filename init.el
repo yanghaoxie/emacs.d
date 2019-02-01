@@ -170,6 +170,7 @@
   (require-init 'init-atomic-chrome)
   (require-init 'init-crux)
   (require-init 'init-neotree)
+  (require-init 'init-pomodoro)
   ;; chinese
   (require-init 'init-pyim)
   (require-init 'init-cal-china-x)
