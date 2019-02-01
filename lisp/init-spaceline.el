@@ -19,7 +19,10 @@
   (spaceline-toggle-minor-modes-off)
   (spaceline-toggle-buffer-encoding-abbrev-off)
   (spaceline-toggle-major-mode-off)
-  (spaceline-spacemacs-theme))
+  (spaceline-define-segment my/pomodoro
+    pomodoro-mode-line-string)
+  (spaceline-spacemacs-theme '(my/pomodoro :when active :tight t))
+  )
 
 ;; (use-package spaceline
 ;;   :ensure t
