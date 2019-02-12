@@ -8,8 +8,8 @@
     :general
     (:keymaps 'override
      :states '(normal visual)
-     "gt" 'eyebrowse-next-window-config
-     "gT" 'eyebrowse-prev-window-config
+     ;; "gt" 'eyebrowse-next-window-config
+     ;; "gT" 'eyebrowse-prev-window-config
      "gc" 'eyebrowse-close-window-config
      "gr" 'eyebrowse-create-window-config
      "gl" 'eyebrowse-last-window-config
