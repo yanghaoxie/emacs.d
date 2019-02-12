@@ -20,7 +20,28 @@
           evil-normal-state-cursor '(box "darkorange")
 	  evil-visual-state-cursor '(box "LightGoldenrod")
 	  evil-emacs-state-cursor '(box "MediumPurple2")
-	  evil-echo-state nil)))
+	  evil-echo-state nil)
+
+    (defun my/end-of-buffer ()
+      "Go to beginning of last line in buffer.
+If last line is empty, go to beginning of penultimate one
+instead."
+      (interactive)
+      (goto-char (point-max))
+      (beginning-of-line (and (looking-at-p "^$") 0)))
+
+    (evil-define-motion my/evil-goto-line (count)
+      "Go to the first non-blank character of line COUNT.
+By default the last line."
+      :jump t
+      :type line
+      (if (null count)
+	  (with-no-warnings (my/end-of-buffer))
+	(goto-char (point-min))
+	(forward-line (1- count)))
+      (evil-first-non-blank))
+
+    (global-set-key [remap evil-goto-line] #'my/evil-goto-line)))
 
 (use-package evil-escape
   :ensure t
