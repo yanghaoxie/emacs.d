@@ -3,6 +3,11 @@
   :init
   (progn
     (evil-mode 1))
+  :general
+  (:keymaps 'override
+	    :states 'insert
+	    "C-j" 'evil-next-line
+	    "C-k" 'evil-previous-line)
   :config
   (progn
     (evil-set-initial-state 'pdf-view-mode 'normal)
