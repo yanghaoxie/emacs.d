@@ -234,10 +234,10 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
     "x" 'calendar-mark-holidays
 
     ;; show
-    "gm" 'calendar-lunar-phases ; "gm" in evil-org-agenda. TODO: Shadows calendar-mayan.
+    "gm" 'calendar-lunar-phases ; "gm" in evil-org-agenda.
     "gs" 'calendar-sunrise-sunset ; "gs" in evil-org-agenda
-    "gh" 'calendar-list-holidays ; "gh" in evil-org-agenda. TODO: Shadows calendar-hebrew.
-    "ga" 'org-calendar-goto-agenda ; "gc" in evil-org-agenda. TODO: Shadows calendar-iso.
+    "gh" 'calendar-list-holidays ; "gh" in evil-org-agenda.
+    "ga" 'org-calendar-goto-agenda ; "gc" in evil-org-agenda.
     "r" 'calendar-cursor-holidays
 
     ;; refresh
