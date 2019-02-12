@@ -114,4 +114,3 @@
       'evil-indent-plus-a-indent-up-down)))
 
 (provide 'init-evil)
-
