@@ -197,7 +197,7 @@
   :ensure t
   :commands (helm-org-rifle-agenda-files
 	     helm-org-rifle-occur-agenda-files)
-  :config
+  :init
   (progn
     (my/leader-keys-major-mode
       :keymaps 'org-mode-map
