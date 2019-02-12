@@ -44,7 +44,7 @@
   (progn
     (my/leader-keys-major-mode
      :keymaps 'python-mode-map
-     "=" 'yapfify-buffer)))
+     "f" 'yapfify-buffer)))
 
 (use-package pyvenv
   :ensure t
