@@ -1,5 +1,6 @@
 (use-package pomodoro
   :ensure t
+  :commands pomodoro-start
   :init
   (my/leader-keys
     "ap" 'pomodoro-start)
