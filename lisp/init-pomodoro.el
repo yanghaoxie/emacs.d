@@ -3,7 +3,11 @@
   :commands pomodoro-start
   :init
   (my/leader-keys
-    "ap" 'pomodoro-start)
+    "ap" '(:ignore t :wk "pomodoro")
+    "apb" 'pomodoro-start
+    "app" 'pomodoro-pause
+    "apr" 'pomodoro-resume
+    "ape" 'pomodoro-stop)
   :config
   (setq pomodoro-time-format "%.2m"
 	pomodoro-work-time 25
