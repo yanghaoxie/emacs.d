@@ -20,7 +20,8 @@
   (spaceline-toggle-buffer-encoding-abbrev-off)
   (spaceline-toggle-major-mode-off)
   (spaceline-define-segment my/pomodoro
-    pomodoro-mode-line-string)
+    (when (featurep 'pomodoro)
+      pomodoro-mode-line-string))
   (spaceline-spacemacs-theme '(my/pomodoro :when active :tight t))
   )
 
