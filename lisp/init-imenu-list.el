@@ -10,6 +10,7 @@
   (my/normal-keys
     :keymaps 'imenu-list-major-mode-map
     "d" 'imenu-list-display-entry
-    "r" 'imenu-list-refresh))
+    "r" 'imenu-list-refresh
+    "q" 'imenu-list-quit-window))
 
 (provide 'init-imenu-list)
