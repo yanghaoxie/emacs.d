@@ -5,7 +5,7 @@
         winum-auto-setup-mode-line nil
         winum-mode-line-position 1
         winum-ignored-buffers '(" *which-key*" "*helm M-x*" "*helm find files*" "*helm mini*" "*Helm Swoop*")
-	winum-scope 'visible
+	winum-scope 'frame-local
 	winum-reverse-frame-list t)
   (winum-mode)
   :general
