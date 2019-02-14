@@ -118,6 +118,7 @@
   (require-init 'init-imenu-list)
   (require-init 'init-string-inflection)
   (require-init 'init-unfill)
+  (require-init 'init-visual-fill-column)
   ;; theme
   (require-init 'init-theme)
   ;; vim
