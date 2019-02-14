@@ -172,6 +172,7 @@
   (require-init 'init-crux)
   (require-init 'init-neotree)
   (require-init 'init-pomodoro)
+  (require-init 'init-nov)
   ;; chinese
   (require-init 'init-pyim)
   (require-init 'init-cal-china-x)
