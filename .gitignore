@@ -25,3 +25,7 @@ anaconda-mode/
 /dict
 /history
 /inferior-Python-history
+session.*
+/quelpa/
+nov-places
+.*
