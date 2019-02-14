@@ -77,6 +77,7 @@
   (require-init 'init-pre-load)
   (require-init 'init-paradox)
   (require-init 'init-auto-package-update)
+  (require-init 'init-try)
   ;; auto-compile
   (require-init 'init-auto-compile)
   ;; autoload
