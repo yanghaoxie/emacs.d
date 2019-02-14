@@ -5,6 +5,7 @@
   :config
   (progn
     (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+    (add-hook 'LaTeX-mode-hook 'visual-line-mode)
     (setq TeX-save-query nil)
     (setq TeX-view-program-selection
 	  (quote
