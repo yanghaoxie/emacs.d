@@ -299,6 +299,10 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
 (my/leader-keys
   "!" 'shell-command)
 
+;; Universal argument
+(my/leader-keys
+  "u" 'universal-argument)
+
 ;; applications --------------------------------------------------------------
 (my/leader-keys
   ;; "au" 'undo-tree-visualize
