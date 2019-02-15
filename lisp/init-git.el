@@ -19,7 +19,9 @@
      "gm"  'magit-dispatch-popup
      "gs"  'magit-status
      "gS"  'magit-stage-file
-     "gU"  'magit-unstage-file))
+     "gU"  'magit-unstage-file)
+    (add-hook 'magit-popup-mode-hook (lambda () (display-line-numbers-mode -1)))
+    (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1))))
 
 (use-package evil-magit
     :ensure t
