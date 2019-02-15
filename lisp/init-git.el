@@ -1,6 +1,13 @@
 (use-package magit
     :ensure t
     :commands (magit-status magit-init)
+    :general
+    (:keymaps 'magit-mode-map
+	      "0" nil
+	      "1" nil
+	      "2" nil
+	      "3" nil
+	      "4" nil)
     :init
     (my/leader-keys
      "gc"  'magit-clone
