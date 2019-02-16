@@ -346,9 +346,9 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
 ;; window -------------------------------------------------------------------
 (my/leader-keys
   "wv" 'split-window-right
-  "wV" 'split-window-right-and-focus
+  "wV" 'my/split-window-right-and-focus
   "ws" 'split-window-below
-  "wS" 'split-window-below-and-focus
+  "wS" 'my/split-window-below-and-focus
   "w=" 'balance-windows-area
   "wb" 'balance-windows
   "wm" 'my/toggle-maximize-buffer
@@ -371,4 +371,25 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
   ("q" nil "quit"))
 (my/leader-keys
   "fo" 'hydra-frequently-accessed-files/body)
+
+;;;###autoload
+(defun my/split-window-right-and-focus ()
+  "Split the window horizontally and focus the new window."
+  (interactive)
+  (split-window-right)
+  (windmove-right)
+  (when (and (boundp 'golden-ratio-mode)
+             (symbol-value golden-ratio-mode))
+    (golden-ratio)))
+
+;;;###autoload
+(defun my/split-window-below-and-focus ()
+  "Split the window vertically and focus the new window."
+  (interactive)
+  (split-window-below)
+  (windmove-down)
+  (when (and (boundp 'golden-ratio-mode)
+             (symbol-value golden-ratio-mode))
+    (golden-ratio)))
+
 (provide 'init-defaults)
