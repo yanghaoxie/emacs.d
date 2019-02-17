@@ -272,7 +272,7 @@
     "k" 'org-noter-kill-session)
   (my/leader-keys-major-mode
     :keymaps 'org-mode-map
-    "n" 'org-noter )
+    "n" 'org-noter)
   :config
   (progn
     (setq org-noter-default-notes-file-names '("ref-notes.org")
