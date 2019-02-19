@@ -90,6 +90,9 @@
     "RET" 'pdf-occur-view-occurrence
     "M-RET" 'pdf-occur-goto-occurrence
     "q" 'tablist-quit)
+  (my/leader-keys-major-mode
+    :keymaps 'LaTeX-mode-map
+    "M-f" 'pdf-sync-forward-search)
   )
 
 (use-package org-pdfview
