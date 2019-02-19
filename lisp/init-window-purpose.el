@@ -19,6 +19,7 @@
 
 (use-package spacemacs-purpose-popwin
   :load-path "~/.emacs.d/site-lisp/spacemacs-purpose-popwin/"
+  :after window-purpose
   :config
   (pupo-mode))
 
