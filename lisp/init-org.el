@@ -185,7 +185,7 @@
      "in" 'org-add-note
      "ip" 'org-set-property
      "is" 'org-insert-subheading
-     "it" 'org-set-tags)
+     "it" 'org-set-tags-command)
     ;; org-agenda
     (my/leader-keys
      "ao#" 'org-agenda-list-stuck-projects
