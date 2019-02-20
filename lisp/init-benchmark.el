@@ -3,7 +3,12 @@
   :init
   (progn
     (my/leader-keys
-      "ae" 'esup)))
+      "ae" 'esup))
+  :config
+  (my/motion-keys
+    :keymaps 'esup-mode-map
+    "n" 'esup-next-result
+    "p" 'esup-previous-result))
 
 (use-package benchmark-init
     :ensure t
