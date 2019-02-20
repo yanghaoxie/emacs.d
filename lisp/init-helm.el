@@ -26,7 +26,7 @@
       "ff"   'helm-find-files
       "fl"   'helm-locate
       "fr"   'helm-recentf
-      "hdd"  'helm-apropos
+      "hda"  'helm-apropos
       "hdF"  'my/helm-faces
       "hdb" 'describe-bindings
       "hdc" 'describe-char
