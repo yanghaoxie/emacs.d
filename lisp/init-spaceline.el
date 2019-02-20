@@ -10,7 +10,6 @@
 	  spaceline-buffer-encoding-abbrev-p nil
 	  spaceline-window-numbers-unicode nil
 	  spaceline-workspace-numbers-unicode nil
-	  spaceline-input-method-p nil
 	  spaceline-major-mode-p nil))
   :config
   (spaceline-compile)
@@ -19,6 +18,7 @@
   (spaceline-toggle-minor-modes-off)
   (spaceline-toggle-buffer-encoding-abbrev-off)
   (spaceline-toggle-major-mode-off)
+  (spaceline-toggle-input-method-off)
   (spaceline-define-segment my/pomodoro
     (when (featurep 'pomodoro)
       pomodoro-mode-line-string))
