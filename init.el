@@ -178,6 +178,7 @@
   ;; chinese
   (require-init 'init-pyim)
   (require-init 'init-cal-china-x)
+  (require-init 'init-ace-pinyin)
 
 
 
