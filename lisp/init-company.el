@@ -19,13 +19,13 @@
 	  company-ispell-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
 	  ispell-alternate-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
 	  company-backends '(company-capf
-			     company-files
+			     company-dabbrev-code
 			     company-keywords
+			     company-files
 			     company-ispell
 			     company-yasnippet
 			     company-abbrev
-			     company-dabbrev
-			     company-dabbrev-code))
+			     company-dabbrev))
     (defun ora-company-number ()
       "Forward to `company-complete-number'.
 Unless the number is potentially part of the candidate.
