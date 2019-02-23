@@ -156,6 +156,8 @@
   (require-init 'init-lua)
   (require-init 'init-yaml)
   (require-init 'init-python)
+  ;; lsp
+  (require-init 'init-lsp)
   ;; writting
   (require-init 'init-academic-phrases)
   (require-init 'init-artbollocks)
