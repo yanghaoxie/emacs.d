@@ -19,6 +19,10 @@
 	  company-ispell-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
 	  ispell-alternate-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
 	  company-transformers '(company-sort-by-backend-importance)
+	  company-dabbrev-code-other-buffers t
+	  company-dabbrev-ignore-case nil
+	  company-dabbrev-downcase nil
+	  company-dabbrev-code-time-limit 5
 	  company-backends '(company-capf
 			     company-dabbrev-code
 			     company-keywords
