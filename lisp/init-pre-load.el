@@ -40,8 +40,8 @@
     (general-create-definer my/leader-keys-extra
       :states '(normal visual motion emacs insert)
       :keymaps 'override
-      :prefix "."
-      :non-normal-prefix "M-.")))
+      :prefix ";"
+      :non-normal-prefix "M-;")))
 
 ;; diminish
 (use-package diminish
