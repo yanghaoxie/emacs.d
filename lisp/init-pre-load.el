@@ -36,7 +36,12 @@
       :non-normal-prefix "M-;")
     (general-create-definer my/all-states-keys
       :states '(normal visual motion emacs insert)
-      :keymaps 'override)))
+      :keymaps 'override)
+    (general-create-definer my/leader-keys-extra
+      :states '(normal visual motion emacs insert)
+      :keymaps 'override
+      :prefix "."
+      :non-normal-prefix "M-.")))
 
 ;; diminish
 (use-package diminish
