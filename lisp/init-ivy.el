@@ -79,9 +79,10 @@
   (progn
     (my/leader-keys
       "ib" 'ivy-bibtex)
-    (my/leader-keys-minor-mode
-      :keymaps 'bibtex-completion-notes-mode-map
-      "s" 'bibtex-completion-exit-notes-buffer))
+    ;; (my/leader-keys-minor-mode
+    ;;   :keymaps 'bibtex-completion-notes-mode-map
+    ;;   "s" 'bibtex-completion-exit-notes-buffer)
+    )
   :config
   (setq bibtex-completion-pdf-field "file"
 	bibtex-completion-find-additional-pdfs t

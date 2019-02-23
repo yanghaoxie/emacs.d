@@ -213,9 +213,10 @@
   (progn
     (my/leader-keys
       "ib" 'ivy-bibtex)
-    (my/leader-keys-minor-mode
-      :keymaps 'bibtex-completion-notes-mode-map
-      "s" 'bibtex-completion-exit-notes-buffer))
+    ;; (my/leader-keys-minor-mode
+    ;;   :keymaps 'bibtex-completion-notes-mode-map
+    ;;   "s" 'bibtex-completion-exit-notes-buffer)
+    )
   :general
   (ivy-minibuffer-map
    "C-j" 'ivy-next-line
