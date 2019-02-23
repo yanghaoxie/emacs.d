@@ -10,7 +10,8 @@
       "r M-d" 'purpose-toggle-window-buffer-dedicated
       "rD" 'purpose-delete-non-dedicated-windows
       "rp" 'purpose-switch-buffer-with-some-purpose
-      "rP" 'purpose-set-window-purpose))
+      "rP" 'purpose-set-window-purpose
+      "rf" 'purpose-load-window-layout-file))
   :config
   (add-to-list 'purpose-user-mode-purposes '(python-mode . py))
   (add-to-list 'purpose-user-mode-purposes '(inferior-python-mode . py-repl))
