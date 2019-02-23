@@ -9,6 +9,9 @@
 	    "C-j" 'evil-next-line
 	    "C-k" 'evil-previous-line)
   :config
+  (my/normal-keys
+    :keymaps 'override
+    "gD" 'xref-find-definitions-other-window)
   (progn
     (evil-set-initial-state 'pdf-view-mode 'normal)
     (evil-set-initial-state 'pdf-outline-buffer-mode 'normal)
