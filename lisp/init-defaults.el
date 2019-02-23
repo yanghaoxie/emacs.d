@@ -293,6 +293,11 @@ otherwise 'comint-write-input-ring' will find mentioned var nil."
       "l" 'image-forward-hscroll)))
 
 ;; key bindings
+
+(my/leader-keys-extra
+  "a" 'beginning-of-defun
+  "e" 'end-of-defun)
+
 (my/all-states-keys
   "C-e" 'move-end-of-line)
 
