@@ -16,6 +16,9 @@
     (general-create-definer my/normal-keys
       :states 'normal
       :keymaps 'override)
+    (general-create-definer my/motion-keys
+      :states 'motion
+      :keymaps 'override)
     (general-create-definer my/leader-keys
       :states '(normal visual motion emacs insert)
       :keymaps 'override
