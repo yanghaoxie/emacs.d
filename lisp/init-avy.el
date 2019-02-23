@@ -17,6 +17,10 @@
   (my/leader-keys-major-mode
     :keymaps 'org-mode-map
     "jj" 'avy-org-goto-heading-timer)
+  (my/leader-keys-extra
+    "w" 'avy-goto-word-1
+    "c" 'avy-goto-char
+    "l" 'avy-goto-line)
   (global-set-key [remap evil-snipe-f] 'my/avy-goto-char-in-line-without-background))
 
 ;;;###autoload
