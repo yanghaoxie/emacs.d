@@ -32,8 +32,8 @@
 	(no-cache t)
 	(duplicates t)))
     (add-hook 'inferior-python-mode-hook
-	      (lambda ()
-		(add-to-list (make-local-variable 'company-backends) '(my/company-comint-history company-files company-dabbrev-code))))
+    	      (lambda ()
+    		(add-to-list (make-local-variable 'company-backends) '(my/company-comint-history company-dabbrev-code))))
     ))
 
 (use-package yapfify
