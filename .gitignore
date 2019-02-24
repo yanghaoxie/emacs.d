@@ -1,0 +1,16 @@
+/.emacs.desktop
+/.emacs.desktop.lock
+/auto-save-list/*
+/autosaves/*
+/backups/*
+*.elc
+/elpa-26.1/*
+/elpa/*
+/history
+/init.el
+/init.org~
+/projectile-bookmarks.eld
+/recentf
+/undo/*
+/transient/*
+/custom.el
