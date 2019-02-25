@@ -1619,6 +1619,9 @@ current window."
    
 #+BEGIN_SRC emacs-lisp
   (use-package ace-link
+    :commands (ace-link-info
+	       ace-link-help
+	       ace-link-eww)
     :init
     (progn
       (with-eval-after-load 'info
