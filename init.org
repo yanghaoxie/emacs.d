@@ -87,7 +87,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (setq package-enable-at-startup nil)
   (package-initialize)
 #+END_SRC
-
 ** bootstrap straight
 
 #+BEGIN_SRC emacs-lisp :tangle no
