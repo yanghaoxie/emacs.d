@@ -1712,6 +1712,7 @@ current window."
 	"hi"   'helm-info-at-point
 	"hm"   'helm-man-woman
 	"iu"   'helm-ucs
+	"ji" 'helm-imenu
 	"jI"   'helm-imenu-in-all-buffers
 	"rm"   'helm-all-mark-rings
 	"rl"   'helm-resume
