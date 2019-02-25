@@ -334,6 +334,8 @@ current window."
   (setq delete-by-moving-to-trash t)
   ;; font
   (set-face-attribute 'default nil :font "Hack")
+  ;; scratch buffer message
+  (setq initial-scratch-message ";; Better to run than curse the road.")
 
   (use-package hl-line
     :config
