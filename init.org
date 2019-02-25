@@ -1284,9 +1284,6 @@ current window."
 ** evil
 #+BEGIN_SRC emacs-lisp
   (use-package evil
-    :init
-    (progn
-      (evil-mode 1))
     :general
     (:keymaps 'override
 	      :states 'insert
@@ -1334,7 +1331,8 @@ current window."
 	  (forward-line (1- count)))
 	(evil-first-non-blank))
 
-      (global-set-key [remap evil-goto-line] #'my/evil-goto-line)))
+      (global-set-key [remap evil-goto-line] #'my/evil-goto-line)
+      (evil-mode 1)))
 #+END_SRC
 
 ** evil escape
