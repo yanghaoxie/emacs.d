@@ -1990,6 +1990,13 @@ current window."
 			      (self-insert-command 1)))
 	(define-key map (kbd "<return>") nil))))
 #+END_SRC
+*** company statistics
+#+BEGIN_SRC emacs-lisp
+  (use-package company-statistics
+    :after company
+    :config
+    (company-statistics-mode))
+#+END_SRC
 ** yasnippet
 *** yasnippet
 #+BEGIN_SRC emacs-lisp
