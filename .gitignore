@@ -14,3 +14,9 @@
 /undo/*
 /transient/*
 /custom.el
+/.lsp-session-v1
+/company-statistics-cache.el
+/eshell/history
+/inferior-Python-history
+/pyim/*
+/url/*
