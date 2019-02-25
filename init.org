@@ -1338,6 +1338,7 @@ current window."
 ** evil escape
 #+BEGIN_SRC emacs-lisp
   (use-package evil-escape
+    :defer 5
     :diminish evil-escape-mode
     :init
     (setq evil-escape-key-sequence "jk"
