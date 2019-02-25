@@ -1446,7 +1446,6 @@ current window."
   (use-package eyebrowse
       :defer t
       :init
-      (eyebrowse-mode)
       (custom-set-faces
        '(eyebrowse-mode-line-active ((t (:inherit bold-italic)))))
       :general
@@ -1466,7 +1465,9 @@ current window."
        "g6" 'eyebrowse-switch-to-window-config-6
        "g7" 'eyebrowse-switch-to-window-config-7
        "g8" 'eyebrowse-switch-to-window-config-8
-       "g9" 'eyebrowse-switch-to-window-config-9))
+       "g9" 'eyebrowse-switch-to-window-config-9)
+      :config
+      (eyebrowse-mode))
 #+END_SRC
 
 * project
