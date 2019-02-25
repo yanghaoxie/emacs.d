@@ -1388,6 +1388,7 @@ current window."
 ** evil surround
 #+BEGIN_SRC emacs-lisp
   (use-package evil-surround
+    :defer t
     :config
     (global-evil-surround-mode 1))
 #+END_SRC
