@@ -1647,6 +1647,11 @@ current window."
    
 #+BEGIN_SRC emacs-lisp
   (use-package dumb-jump
+    :commands (dumb-jump-go-other-window
+	       dumb-jump-go
+	       dumb-jump-quick-look
+	       dumb-jump-go-prefer-external
+	       dumb-jump-go-prefer-external-other-window)
     :init
     (my/all-states-keys
       "M-g o" 'dumb-jump-go-other-window
