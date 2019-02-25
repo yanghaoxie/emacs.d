@@ -71,7 +71,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 * package related
-** package archives
+** package
 #+BEGIN_SRC emacs-lisp
   (require 'package)
   ;; ;;; Install into separate package dirs for each Emacs version, to prevent bytecode incompatibility
