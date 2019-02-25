@@ -1392,7 +1392,7 @@ current window."
     (global-evil-surround-mode 1))
 #+END_SRC
 ** evil snipe
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package evil-snipe
     :diminish evil-snipe-local-mode
     :init
