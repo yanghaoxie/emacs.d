@@ -830,8 +830,6 @@ current window."
 #+BEGIN_SRC emacs-lisp
   (use-package which-key
     :diminish which-key-mode
-    :init
-    (which-key-mode)
     :config
     (progn
       (setq which-key-idle-delay 0.4
@@ -867,7 +865,8 @@ current window."
        "wp" '(:ignore t :which-key "popwin")
        "x" '(:ignore t :which-key "text")
        "xS" '(:ignore t :which-key "Synosaurus")
-       "z" '(:ignore t :which-key "zoom"))))
+       "z" '(:ignore t :which-key "zoom"))
+      (which-key-mode)))
 #+END_SRC
 ** popwin
 #+BEGIN_SRC emacs-lisp
