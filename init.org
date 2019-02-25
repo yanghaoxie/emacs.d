@@ -1257,7 +1257,6 @@ current window."
 ** theme
 #+BEGIN_SRC emacs-lisp
   (use-package gruvbox-theme
-    :defer t
     :init
     (load-theme 'gruvbox-light-soft t)
     )
