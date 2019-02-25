@@ -1851,7 +1851,8 @@ current window."
 *** helm flx
 #+BEGIN_SRC emacs-lisp
   (use-package helm-flx
-    :init
+    :after helm
+    :config
     (helm-flx-mode))
 #+END_SRC
 *** flyspell-correct-helm
