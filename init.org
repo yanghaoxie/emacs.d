@@ -813,8 +813,7 @@ current window."
      "M-'" 'highlight-symbol-query-replace)
     :config
     (setq highlight-symbol-idle-delay 0.5
-	  highlight-symbol-occurrence-message '(explicit nivigation temporary))
-    (highlight-symbol-mode 1))
+	  highlight-symbol-occurrence-message '(explicit nivigation temporary)))
 #+END_SRC
 ** color identifiers mode
 #+BEGIN_SRC emacs-lisp
