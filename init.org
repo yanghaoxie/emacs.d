@@ -3334,8 +3334,30 @@ current window."
     :after (elfeed)
     :config
     (elfeed-org)
-    (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org")))
+    (setq rmh-elfeed-org-files (list "~/.emacs.d/init.org")))
 #+END_SRC
+**** Blogs                                                           :elfeed:
+***** Software
+****** Emacs                                                          :emacs:
+******* http://planet.emacsen.org/atom.xml
+******* http://pragmaticemacs.com/feed/
+******* http://blog.binchen.org/rss.xml
+****** Person                                                        :person:
+******* http://feeds.sachachua.com/sachac
+***** Blogs
+****** Comic                                                          :comic:
+******* http://xkcd.com/rss.xml
+***** News
+****** Reuters                                                      :reuters:
+******* http://feeds.reuters.com/reuters/topNews
+******* http://feeds.reuters.com/Reuters/worldNews
+******* http://feeds.reuters.com/reuters/technologyNews
+***** Science
+****** Science Daily                                                     :SD:
+******* https://www.sciencedaily.com/rss/computers_math/computer_science.xml :CS:
+****** Science American                                                  :SA:
+******* http://rss.sciam.com/ScientificAmerican-Global
+	
 *** autoload functions
 #+BEGIN_SRC emacs-lisp
   ;;functions to support syncing .elfeed between machines
