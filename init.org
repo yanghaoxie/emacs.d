@@ -108,6 +108,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** install use-package and related packages
 #+BEGIN_SRC emacs-lisp
   ;; (straight-use-package 'use-package)
+  ;; install use-package
+  (unless (package-installed-p 'use-package)
+    (package-install 'use-package))
   ;; further reduce load time, from use-package official github page
   (eval-when-compile
     (require 'use-package))
