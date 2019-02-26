@@ -1944,6 +1944,7 @@ current window."
 	    :buffer "*helm faces*")))
 #+END_SRC
 ** company
+*** company
 #+BEGIN_SRC emacs-lisp
   (use-package company
     :diminish company-mode
