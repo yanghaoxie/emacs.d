@@ -2855,6 +2855,7 @@ current window."
     (progn
       (my/leader-keys-major-mode
 	:keymaps 'lsp-ui-mode-map
+	"p" '(:ignore t :wk "peek")
 	"pd" 'lsp-ui-peek-find-definitions
 	"pr" 'lsp-ui-peek-find-references)
       (setq lsp-ui-sideline-delay 0.2
