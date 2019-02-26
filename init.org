@@ -1350,7 +1350,6 @@ current window."
     :init
     (require 'evil-anzu)
     (global-anzu-mode)
-    :general
     (my/leader-keys
       "rs" 'anzu-query-replace
       "rr" 'anzu-query-replace-regexp)
