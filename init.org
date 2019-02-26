@@ -62,7 +62,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    
 #+BEGIN_SRC emacs-lisp
   (setq gc-cons-threshold most-positive-fixnum)
-#+END_SRC emacs-lisp
+#+END_SRC
 ** setting custom file
    
 #+BEGIN_SRC emacs-lisp
