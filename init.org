@@ -1367,6 +1367,9 @@ current window."
 ** evil nerd commenter
 #+BEGIN_SRC emacs-lisp
   (use-package evil-nerd-commenter
+    :commands (evilnc-comment-operator
+	       evilnc-comment-or-uncomment-lines
+	       evilnc-comment-or-uncomment-paragraphs)
     :init
     (my/leader-keys
       ";" 'evilnc-comment-operator
