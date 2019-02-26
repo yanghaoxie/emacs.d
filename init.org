@@ -2790,6 +2790,17 @@ current window."
       "vw" 'pyvenv-workon))
 #+END_SRC
 
+** sphinx doc
+#+BEGIN_SRC emacs-lisp
+  (use-package sphinx-doc
+    :commands sphinx-doc
+    :init
+    (my/leader-keys-major-mode
+      :keymaps 'python-mode-map
+      "d" 'sphinx-doc)
+    :config
+    (sphinx-doc-mode))
+#+END_SRC
 ** lsp
 *** lsp mode
 #+BEGIN_SRC emacs-lisp
