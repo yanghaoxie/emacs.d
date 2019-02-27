@@ -1348,16 +1348,16 @@ current window."
 ** evil anzu
 #+BEGIN_SRC emacs-lisp
   (use-package evil-anzu
+    :defer 5
     :init
-    (require 'evil-anzu)
-    (global-anzu-mode)
     (my/leader-keys
       "rs" 'anzu-query-replace
       "rr" 'anzu-query-replace-regexp)
     :config
     (setq anzu-cons-mode-line-p nil)
     (global-set-key [remap query-replace] 'anzu-query-replace)
-    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
+    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+    (global-anzu-mode))
 #+END_SRC
 ** evil exchange
 #+BEGIN_SRC emacs-lisp
