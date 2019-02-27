@@ -3714,7 +3714,7 @@ is achieved by adding the relevant text properties."
 ** cal china x
 #+BEGIN_SRC emacs-lisp
   (use-package cal-china-x
-    :commands calendar)
+    :after calendar)
 #+END_SRC
 ** ace pinyin
 #+BEGIN_SRC emacs-lisp
