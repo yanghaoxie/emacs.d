@@ -2255,7 +2255,8 @@ current window."
 #+END_SRC
 *** flyspell correct
 #+BEGIN_SRC emacs-lisp
-  (use-package flyspell-correct)
+  (use-package flyspell-correct
+    :commands (flyspell-correct-wrapper))
 #+END_SRC
 * languages
 ** org
