@@ -3340,6 +3340,7 @@ current window."
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed-goodies
       :defer t
+      :commands elfeed-goodies/setup
       :config
       (progn
 	(elfeed-goodies/setup)
