@@ -1743,7 +1743,8 @@ current window."
 	(setq helm-split-window-inside-p t
 	      helm-echo-input-in-header-line t
 	      helm-autoresize-min-height 20
-	      helm-autoresize-max-height 0)
+	      helm-autoresize-max-height 0
+	      helm-M-x-fuzzy-match t)
 	(defun spacemacs//helm-hide-minibuffer-maybe ()
 	  "Hide minibuffer in Helm session if we use the header line as input field."
 	  (when (with-helm-buffer helm-echo-input-in-header-line)
