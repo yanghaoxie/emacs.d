@@ -3690,10 +3690,10 @@ is achieved by adding the relevant text properties."
 #+BEGIN_SRC emacs-lisp
   (use-package pyim
     :defer t
-    :commands (pyim-convert-code-at-point toggle-input-method)
+    :commands (pyim-convert-string-at-point toggle-input-method)
     :init
     :general
-    ("M-j" 'pyim-convert-code-at-point)
+    ("M-j" 'pyim-convert-string-at-point)
     :config
     (setq pyim-dicts "/home/yhxie/.emacs.d/pyim/pyim-bigdict.pyim"
 	  pyim-fuzzy-pinyin-alist '(("s" "sh")
