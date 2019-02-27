@@ -1362,6 +1362,7 @@ current window."
 ** evil exchange
 #+BEGIN_SRC emacs-lisp
   (use-package evil-exchange
+    :defer t
     :config
     (evil-exchange-install))
 #+END_SRC
