@@ -1864,7 +1864,7 @@ current window."
 *** flyspell-correct-helm
 #+BEGIN_SRC emacs-lisp
   (use-package flyspell-correct-helm
-    :commands (flyspell-correct-helm)
+    :commands (flyspell-correct-wrapper)
     :general
     (:keymaps 'override
 	      "C-;" 'flyspell-correct-wrapper)
