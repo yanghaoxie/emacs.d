@@ -1918,14 +1918,6 @@ current window."
 	    (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}")
 	    (t             . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}"))))
 #+END_SRC
-*** flyspell correct helm
-#+BEGIN_SRC emacs-lisp
-  (use-package flyspell-correct-helm
-    :commands (flyspell-correct-helm)
-    :general
-    (:keymaps 'override
-	      "C-;" 'flyspell-correct-wrapper))
-#+END_SRC
 *** helm pydoc
 #+BEGIN_SRC emacs-lisp
   (use-package helm-pydoc
