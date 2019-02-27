@@ -3530,8 +3530,20 @@ is achieved by adding the relevant text properties."
       (my/leader-keys
 	"f M-r" 'crux-rename-file-and-buffer
 	"f M-o" 'crux-open-with
-	"fi" 'crux-find-user-init-file)
+	"f M-e" 'my/open-with-evince
+	"fi" 'my/find-user-init-org-file)
       (crux-with-region-or-buffer indent-region)))
+
+  ;;;###autoload
+  (defun my/open-with-evince ()
+    (interactive)
+    (call-process "evince" nil 0 nil buffer-file-name))
+
+  ;;;###autoload
+  (defun my/find-user-init-org-file ()
+    (interactive)
+    (find-file (expand-file-name (concat user-emacs-directory "init.org"))))
+
 #+END_SRC
 ** neotree
 #+BEGIN_SRC emacs-lisp
