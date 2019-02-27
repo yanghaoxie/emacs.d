@@ -3305,7 +3305,7 @@ current window."
     :init (my/leader-keys "af" 'my/elfeed-load-db-and-open)
     :config
     (progn
-      ;; (elfeed-goodies/setup)
+      (elfeed-goodies/setup)
       (setf elfeed-curl-extra-arguments '("--socks5-hostname" "127.0.0.1:1080"))
       (my/normal-keys
 	:keymaps 'elfeed-search-mode-map
