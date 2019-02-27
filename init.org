@@ -2741,7 +2741,7 @@ current window."
 	:major-modes t
 	"'"  'run-python
 	"s" '(:ignore t :which-key "REPL")
-	"sb" 'python-shell-send-buffer
+	"sb" 'my/python-shell-send-buffer-after-save-buffer
 	"sf" 'python-shell-send-defun
 	"sr" 'python-shell-send-region
 	"ss" 'python-shell-send-string
@@ -2761,6 +2761,14 @@ current window."
 	    (ring-elements comint-input-ring)))
 	  (no-cache t)
 	  (duplicates t)))
+      (defun my/python-shell-send-buffer-after-save-buffer ()
+	"Save current buffer before save the code to python shell"
+	(interactive)
+	(if (buffer-modified-p)
+	    (progn
+	     (save-buffer)
+	     (python-shell-send-buffer))
+	  (python-shell-send-buffer)))
       (add-hook 'inferior-python-mode-hook
 		(lambda ()
 		  (add-to-list (make-local-variable 'company-backends) '(my/company-comint-history company-dabbrev-code))))
