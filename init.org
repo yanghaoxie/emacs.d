@@ -973,7 +973,8 @@ current window."
 
 ** spaceline
 #+BEGIN_SRC emacs-lisp
-  (use-package spaceline
+  (use-package spaceline-config
+    :ensure spaceline
     :init
     (progn
       (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state
