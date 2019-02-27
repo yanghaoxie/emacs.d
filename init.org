@@ -412,7 +412,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :commands recentf-mode
     :config
     (progn
-      (setq recentf-max-saved-items 25)
+      (setq recentf-max-saved-items 100
+	    recentf-auto-cleanup 'never)
       (recentf-mode 1)))
 
   (use-package autorevert
