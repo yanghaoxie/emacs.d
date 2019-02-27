@@ -1094,7 +1094,8 @@ current window."
       "M-h" 'sp-backward-barf-sexp
       ;; killing
       "k" 'sp-kill-sexp
-      "M-k" 'sp-backward-kill-sexp)
+      "M-k" 'sp-backward-kill-sexp
+      "r" 'sp-rewrap-sexp)
     (defun my/toggle-smartparens ()
       (interactive)
       (if (bound-and-true-p smartparens-mode)
