@@ -426,10 +426,10 @@ current window."
 
   (use-package server
     :ensure nil
+    :defer t
     :commands server-running-p
-    :init
-    (server-mode 1)
     :config
+    (server-mode 1)
     (unless (server-running-p)
       (server-start)))
 
