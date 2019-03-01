@@ -1857,7 +1857,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** flyspell-correct-helm
 #+BEGIN_SRC emacs-lisp
   (use-package flyspell-correct-helm
-    :commands (flyspell-correct-wrapper)
+    :commands (flyspell-correct-helm)
     :general
     (:keymaps 'override
 	      "C-;" 'flyspell-correct-wrapper)
