@@ -25,3 +25,5 @@
 /projectile.cache
 inferior-Python*-history
 /eshell/*
+/anaconda-mode/*
+/layouts/*
