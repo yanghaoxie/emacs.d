@@ -1638,10 +1638,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     (my/leader-keys
       "wM" 'ace-swap-window
-      "wW" 'ace-window)
-    :config
-    (progn
-      (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))))
+      "wW" 'ace-window))
 #+END_SRC
 
 ** dumb jump
