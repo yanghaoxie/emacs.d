@@ -2811,7 +2811,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (require 'lsp-clients)
       (setq lsp-message-project-root-warning t
 	    lsp-prefer-flymake nil
-	    lsp-restart 'ignore))
+	    lsp-restart 'ignore
+	    lsp-eldoc-hook '(lsp-hover)))
     (lsp))
 #+END_SRC
 *** company lsp
