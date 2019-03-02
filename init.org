@@ -2012,7 +2012,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package yasnippet-snippets
     :after yasnippet)
 #+END_SRC
-** ivy-yasnippet
+*** ivy-yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package ivy-yasnippet
     :after yasnippet
@@ -2022,7 +2022,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (my/leader-keys
        "is" 'ivy-yasnippet)))
 #+END_SRC
-** auo yasnippet
+*** auo yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package auto-yasnippet
     :defer 5
