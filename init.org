@@ -2502,6 +2502,20 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (add-hook 'org-mode-hook 'org-bullets-mode))
 #+END_SRC
+*** org-ref
+#+BEGIN_SRC emacs-lisp
+  (use-package org-ref
+    :after org
+    :init
+    (progn
+      (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
+      (setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref-notes.org")
+      (my/leader-keys-major-mode
+	:keymaps 'org-mode-map
+	"oo" 'my/org-ref-open-pdf-at-point
+	"C-j" 'org-ref-next-key
+	"C-k" 'org-ref-previous-key)))
+#+END_SRC
 *** org-noter
 #+BEGIN_SRC emacs-lisp
   (use-package org-noter
