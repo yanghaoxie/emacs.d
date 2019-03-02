@@ -2784,7 +2784,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "vw" 'pyvenv-workon))
 #+END_SRC
 
-** sphinx doc
+*** sphinx doc
 #+BEGIN_SRC emacs-lisp
   (use-package sphinx-doc
     :commands sphinx-doc
