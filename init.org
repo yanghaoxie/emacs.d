@@ -906,6 +906,17 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
 #+END_SRC
 
+** setting about garbage collection
+#+BEGIN_SRC emacs-lisp
+  (defun my/defer-garbage-collection ()
+    (setq gc-cons-threshold most-positive-fixnum))
+
+  (defun my/restore-garbage-collection ()
+    (setq gc-cons-threshold 800000))
+
+  (add-hook 'minibuffer-setup-hook #'my/defer-garbage-collection)
+  (add-hook 'minibuffer-exit-hook #'my/restore-garbage-collection)
+#+END_SRC
 * start-up profiler
 #+BEGIN_SRC emacs-lisp
   (use-package esup
