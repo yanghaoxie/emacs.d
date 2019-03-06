@@ -10,7 +10,7 @@ This is an Emacs configuration file written in org mode.
 * Table of Contents                                                   :TOC_3:
 - [[#about][About]]
 - [[#initial][initial]]
-  - [[#set-coding-system][set coding system]]
+  - [[#lexical-binding][lexical binding]]
   - [[#setting-up-auto-tangle][setting up auto tangle]]
   - [[#start-time][start time]]
   - [[#dont-gc-during-startup-to-save-time][don't GC during startup to save time]]
