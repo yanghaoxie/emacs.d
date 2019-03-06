@@ -258,7 +258,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** don't GC during startup to save time
    
 #+BEGIN_SRC emacs-lisp
-  (setq gc-cons-threshold most-positive-fixnum)
+  ;; stolen from doom-emacs
+  (defvar my--file-name-handler-alist file-name-handler-alist)
+  (setq gc-cons-threshold most-positive-fixnum
+	gc-cons-percentage 0.6
+	file-name-handler-alist nil)
 #+END_SRC
 ** setting custom file
    
@@ -3960,6 +3964,7 @@ is achieved by adding the relevant text properties."
 #+END_SRC
 ** set best garbage collection threshold
 #+BEGIN_SRC emacs-lisp
-  (defvar best-gc-cons-threshold 4000000 "Best default gc threshold value. Should't be too big.")
-  (setq gc-cons-threshold best-gc-cons-threshold)
+  (setq gc-cons-threshold 800000
+	    gc-cons-percentage 0.1
+	    file-name-handler-alist my--file-name-handler-alist)
 #+END_SRC
