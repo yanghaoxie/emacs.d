@@ -1518,7 +1518,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    evil-visual-state-cursor '(box "LightGoldenrod")
 	    evil-emacs-state-cursor '(box "MediumPurple2")
 	    evil-echo-state nil)
-
+  ;;;###autoload
       (defun my/end-of-buffer ()
 	"Go to beginning of last line in buffer.
   If last line is empty, go to beginning of penultimate one
