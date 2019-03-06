@@ -528,7 +528,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	vc-make-backup-files t)
   (setq delete-by-moving-to-trash t)
   ;; font
-  (set-face-attribute 'default nil :font "Hack")
+  (set-frame-font "Hack 11" nil t)
   ;; scratch buffer message
   (setq initial-scratch-message ";; Better to run than curse the road.")
   ;; save system clipboard contents to emacs kill ring
