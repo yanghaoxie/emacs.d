@@ -348,6 +348,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	:non-normal-prefix "M-;")))
 #+END_SRC
 
+** try
+#+BEGIN_SRC emacs-lisp
+  (use-package try)
+#+END_SRC
 * autoload functions
 
 #+BEGIN_SRC emacs-lisp
