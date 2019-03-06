@@ -2924,6 +2924,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (setq org-journal-dir "~/Dropbox/document/org/journal")))
 #+END_SRC
 ** emacs lisp
+*** emacs lisp
 #+BEGIN_SRC emacs-lisp
   (use-package emacs-lisp
     :ensure nil
