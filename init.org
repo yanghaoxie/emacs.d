@@ -201,6 +201,10 @@ This is an Emacs configuration file written in org mode.
   - [[#set-best-garbage-collection-threshold][set best garbage collection threshold]]
 
 * initial
+** lexical binding
+#+BEGIN_SRC emacs-lisp
+  ;;; -*- lexical-binding: t; -*-
+#+END_SRC
 ** setting up auto tangle
 Copy these code from https://github.com/larstvei/dot-emacs
 
