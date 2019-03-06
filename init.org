@@ -24,6 +24,7 @@ This is an Emacs configuration file written in org mode.
 - [[#autoload-functions][autoload functions]]
 - [[#defaults][defaults]]
   - [[#setting-related-in-build-in-features][setting related in build-in features]]
+  - [[#setting-about-garbage-collection][setting about garbage collection]]
 - [[#start-up-profiler][start-up profiler]]
 - [[#ui][UI]]
   - [[#gui-frame][GUI frame]]
