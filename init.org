@@ -3146,7 +3146,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "v" '(:ignore t :wk "virtualenv")
       "va" 'pyvenv-activate
       "vd" 'pyvenv-deactivate
-      "vw" 'pyvenv-workon))
+      "vw" 'pyvenv-workon
+      "r" 'pyvenv-restart-python)
+    (my/leader-keys-major-mode
+      :keymaps 'inferior-python-mode-map
+      "r" 'pyvenv-restart-python))
 #+END_SRC
 
 *** sphinx doc
