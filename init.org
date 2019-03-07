@@ -4055,6 +4055,7 @@ is achieved by adding the relevant text properties."
 ** toc org
 #+BEGIN_SRC emacs-lisp
   (use-package toc-org
+    :defer t
     :init
     (add-hook 'org-mode-hook 'toc-org-mode))
 #+END_SRC
