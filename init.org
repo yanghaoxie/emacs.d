@@ -21,7 +21,7 @@ This is an Emacs configuration file written in org mode.
   - [[#install-use-package-and-related-packages][install use-package and related packages]]
   - [[#install-general][install general]]
   - [[#try][try]]
-- [[#autoload-functions][autoload functions]]
+- [[#autoload][autoload]]
 - [[#defaults][defaults]]
   - [[#setting-related-in-build-in-features][setting related in build-in features]]
   - [[#setting-about-garbage-collection][setting about garbage collection]]
@@ -48,7 +48,7 @@ This is an Emacs configuration file written in org mode.
   - [[#undo-tree][undo tree]]
   - [[#expand-tree][expand tree]]
   - [[#sudo-edit][sudo edit]]
-  - [[#smartparens][smartparens]]
+  - [[#smartparens-related][smartparens related]]
     - [[#smartparens][smartparens]]
     - [[#evil-smartparens][evil smartparens]]
   - [[#move-text][move text]]
@@ -58,8 +58,8 @@ This is an Emacs configuration file written in org mode.
   - [[#string-inflection][string inflection]]
   - [[#unfill][unfill]]
   - [[#visual-fill-column][visual fill column]]
-- [[#theme][theme]]
-  - [[#theme][theme]]
+- [[#themes][themes]]
+  - [[#gruvbox][gruvbox]]
 - [[#vim][vim]]
   - [[#evil][evil]]
   - [[#evil-escape][evil escape]]
@@ -75,7 +75,7 @@ This is an Emacs configuration file written in org mode.
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
 - [[#project][project]]
-  - [[#project][project]]
+  - [[#projectile][projectile]]
 - [[#navigation][navigation]]
   - [[#avy][avy]]
   - [[#winum][winum]]
@@ -98,7 +98,7 @@ This is an Emacs configuration file written in org mode.
     - [[#helm-org-rifle][helm org rifle]]
     - [[#helm-bibtex][helm bibtex]]
     - [[#helm-pydoc][helm pydoc]]
-    - [[#autoload][autoload]]
+    - [[#autoload-1][autoload]]
   - [[#ivy-related][ivy related]]
     - [[#ivy][ivy]]
     - [[#ivy-rich][ivy-rich]]
@@ -109,10 +109,10 @@ This is an Emacs configuration file written in org mode.
     - [[#ivy-bibtex][ivy bibtex]]
     - [[#counsel-projectile][counsel projectile]]
     - [[#flyspell-correct-ivy][flyspell correct ivy]]
-  - [[#company][company]]
+  - [[#company-related][company related]]
     - [[#company][company]]
     - [[#company-statistics][company statistics]]
-  - [[#yasnippet][yasnippet]]
+  - [[#yasnippet-related][yasnippet related]]
     - [[#yasnippet][yasnippet]]
     - [[#yasnippet-snippets][yasnippet-snippets]]
     - [[#ivy-yasnippet][ivy-yasnippet]]
@@ -128,18 +128,18 @@ This is an Emacs configuration file written in org mode.
   - [[#flycheck][flycheck]]
     - [[#flychek][flychek]]
     - [[#flychek-posframe][flychek posframe]]
-  - [[#flyspell][flyspell]]
+  - [[#flyspell-related][flyspell related]]
     - [[#flyspell][flyspell]]
     - [[#flyspell-correct][flyspell correct]]
 - [[#languages][languages]]
-  - [[#org][org]]
-    - [[#org][org]]
+  - [[#org-related][org related]]
+    - [[#org-mode][org mode]]
     - [[#evil-org][evil-org]]
     - [[#org-bullets][org-bullets]]
     - [[#org-ref][org-ref]]
     - [[#org-noter][org-noter]]
     - [[#org-journal][org journal]]
-  - [[#emacs-lisp][emacs lisp]]
+  - [[#emacs-lisp-related][emacs lisp related]]
     - [[#emacs-lisp][emacs lisp]]
     - [[#parinfer][parinfer]]
   - [[#latex][latex]]
@@ -148,7 +148,7 @@ This is an Emacs configuration file written in org mode.
     - [[#cdlatex][cdlatex]]
   - [[#lua][lua]]
   - [[#yaml][yaml]]
-  - [[#python][python]]
+  - [[#python-related][python related]]
     - [[#python][python]]
     - [[#yapfify][yapfify]]
     - [[#pyvenv][pyvenv]]
@@ -172,17 +172,17 @@ This is an Emacs configuration file written in org mode.
   - [[#ranger][ranger]]
   - [[#pdf-tools][pdf tools]]
   - [[#keyfreq][keyfreq]]
-  - [[#elfeed][elfeed]]
+  - [[#elfeed-related][elfeed related]]
     - [[#elfeed][elfeed]]
     - [[#elfeed-goodies][elfeed goodies]]
     - [[#elfeed-org][elfeed org]]
-    - [[#autoload-functions][autoload functions]]
+    - [[#autoload-2][autoload]]
   - [[#shell][shell]]
     - [[#eshell][eshell]]
     - [[#shell-pop][shell pop]]
     - [[#eshell-z][eshell z]]
     - [[#eshell-prompt-extras][eshell prompt extras]]
-  - [[#ledger][ledger]]
+  - [[#ledger-related][ledger related]]
     - [[#ledger][ledger]]
     - [[#evil-ledger][evil ledger]]
     - [[#flycheck-ledger][flycheck ledger]]
@@ -361,10 +361,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package try)
 #+END_SRC
-* autoload functions
+* autoload
 
 #+BEGIN_SRC emacs-lisp
-  
+
   ;;;###autoload
   (defun my/kill-this-buffer (&optional arg)
     ;; copy from spacemacs
@@ -1264,7 +1264,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (my/leader-keys
        "fe" 'sudo-edit)))
 #+END_SRC
-** smartparens
+** smartparens related
 *** smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
@@ -1464,8 +1464,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (add-hook 'visual-fill-column-mode-hook 'visual-line-mode))
 #+END_SRC
-* theme
-** theme
+* themes
+** gruvbox
 #+BEGIN_SRC emacs-lisp
   (use-package gruvbox-theme
     :config
@@ -1685,7 +1685,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 * project
-** project
+** projectile
 #+BEGIN_SRC emacs-lisp
   (use-package projectile
       :diminish projectile-mode
@@ -2278,7 +2278,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (:keymaps 'override
      "C-;" 'flyspell-correct-wrapper))
 #+END_SRC
-** company
+** company related
 *** company
 #+BEGIN_SRC emacs-lisp
   (use-package company
@@ -2343,7 +2343,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (company-statistics-mode))
 #+END_SRC
-** yasnippet
+** yasnippet related
 *** yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
@@ -2565,7 +2565,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode)
     (flycheck-posframe-configure-pretty-defaults))
 #+END_SRC
-** flyspell
+** flyspell related
 *** flyspell
 #+BEGIN_SRC emacs-lisp
   (use-package flyspell
@@ -2597,8 +2597,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :commands (flyspell-correct-wrapper))
 #+END_SRC
 * languages
-** org
-*** org
+** org related
+*** org mode
 #+BEGIN_SRC emacs-lisp
   (use-package org
     :defer t
@@ -2926,7 +2926,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (setq org-journal-dir "~/Dropbox/document/org/journal")))
 #+END_SRC
-** emacs lisp
+** emacs lisp related
 *** emacs lisp
 #+BEGIN_SRC emacs-lisp
   (use-package emacs-lisp
@@ -3075,7 +3075,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		       (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
 #+END_SRC
 
-** python
+** python related
 *** python
 #+BEGIN_SRC emacs-lisp
   (use-package python
@@ -3655,7 +3655,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  yas-next-field-or-maybe-expand
 	  )))
 #+END_SRC
-** elfeed
+** elfeed related
 *** elfeed
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed
@@ -3738,7 +3738,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ****** Science American                                                  :SA:
 ******* http://rss.sciam.com/ScientificAmerican-Global
 	
-*** autoload functions
+*** autoload
 #+BEGIN_SRC emacs-lisp
   ;;functions to support syncing .elfeed between machines
   ;;makes sure elfeed reads index from disk before launching
@@ -3824,7 +3824,7 @@ is achieved by adding the relevant text properties."
   (setq eshell-highlight-prompt nil
 	eshell-prompt-function 'epe-theme-lambda))
 #+END_SRC
-** ledger
+** ledger related
 *** ledger
 #+BEGIN_SRC emacs-lisp
   (use-package ledger-mode
