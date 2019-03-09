@@ -801,6 +801,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	"k" 'image-previous-line
 	"l" 'image-forward-hscroll)))
 
+  (use-package saveplace
+    :ensure nil
+    :init
+    (progn
+      (save-place-mode)
+      (setq save-place t)))
+
   ;; key bindings
 
   (my/leader-keys-extra
