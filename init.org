@@ -58,6 +58,7 @@ This is an Emacs configuration file written in org mode.
   - [[#string-inflection][string inflection]]
   - [[#unfill][unfill]]
   - [[#visual-fill-column][visual fill column]]
+  - [[#fix-word][fix word]]
 - [[#themes][themes]]
   - [[#gruvbox][gruvbox]]
 - [[#vim][vim]]
@@ -1463,6 +1464,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :commands visual-fill-column-mode
     :config
     (add-hook 'visual-fill-column-mode-hook 'visual-line-mode))
+#+END_SRC
+** fix word
+#+BEGIN_SRC emacs-lisp
+  (use-package fix-word
+    :commands (fix-word-upcase
+	       fix-word-downcase
+	       fix-word-capitalize)
+    :init
+    (my/all-states-keys
+      "M-u" 'fix-word-upcase
+      "M-l" 'fix-word-downcase
+      "M-c" 'fix-word-capitalize))
 #+END_SRC
 * themes
 ** gruvbox
