@@ -27,3 +27,6 @@ inferior-Python*-history
 /eshell/*
 /anaconda-mode/*
 /layouts/*
+/amx-items
+/elpa*/*
+/places
