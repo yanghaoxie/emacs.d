@@ -608,7 +608,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package recentf
     :ensure nil
-    :commands recentf-mode
+    :defer t
+    :init
+    (add-hook 'find-file-hook (lambda () (unless recentf-mode
+						 (recentf-mode)
+						 (recentf-track-opened-file))))
     :config
     (progn
       (setq recentf-max-saved-items 100
