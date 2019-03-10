@@ -3244,11 +3244,23 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	"p" '(:ignore t :wk "peek")
 	"pd" 'lsp-ui-peek-find-definitions
 	"pr" 'lsp-ui-peek-find-references)
+      (my/leader-keys-major-mode
+	:keymaps 'python-mode-map
+	"u" 'my/toggle-lsp-ui-mode)
       (setq lsp-ui-sideline-delay 0.2
 	    lsp-ui-peek-always-show t
 	    lsp-ui-doc-use-childframe t
-	    )
-      (lsp-ui-sideline-mode -1)))
+	    )))
+  ;;;###autoload
+  (defun my/toggle-lsp-ui-mode ()
+    (interactive)
+    (if (bound-and-true-p lsp-ui-mode)
+	(progn
+	  (lsp-ui-mode -1)
+	  (message "Lsp ui mode disabled in current buffer"))
+      (progn
+	(lsp-ui-mode 1)
+	(message "Lsp ui mode enabled in current buffer"))))
 #+END_SRC
 * writing
 ** academic phrases
