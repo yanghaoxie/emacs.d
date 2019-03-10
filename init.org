@@ -945,8 +945,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "n" 'esup-next-result
       "p" 'esup-previous-result))
 
-  (use-package benchmark-init
-      :config
+   (use-package benchmark-init
+      :init
       (progn
 	(my/leader-keys
 	  "ab" '(:ignore t :which-key "benchmark")
