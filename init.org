@@ -43,6 +43,7 @@ This is an Emacs configuration file written in org mode.
     - [[#spacemacs-purpose-popwin][spacemacs purpose popwin]]
   - [[#spaceline][spaceline]]
   - [[#ranbow-mode][ranbow mode]]
+  - [[#pretty-hydra][pretty hydra]]
 - [[#universal][universal]]
   - [[#restart-emacs][restart-emacs]]
   - [[#undo-tree][undo tree]]
@@ -1225,6 +1226,33 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "tc" 'rainbow-mode))
 #+END_SRC
 
+** pretty hydra
+#+BEGIN_SRC emacs-lisp
+  (use-package pretty-hydra
+    :init
+    (my/leader-keys
+      "t." 'hydra-toggles/body)
+    :config
+    (pretty-hydra-define hydra-toggles
+    (:hint nil :color amaranth :quit-key "q")
+    ("Basic"
+     (("n" display-line-numbers-mode "line number" :toggle t)
+      ("N" my/toggle-line-numbers-type "line number type")
+      ("w" whitespace-mode "whitespace" :toggle t)
+      ("r" rainbow-mode "rainbow" :toggle t))
+     "Highlight"
+     (("s" highlight-symbol-mode "symbol" :toggle t)
+      ("l" hl-line-mode "line" :toggle t)
+      ("t" hl-todo-mode "todo" :toggle t)
+      ("i" color-identifiers-mode "identifiers" :toggle t))
+     "UI"
+     (("m" hide-mode-line-mode "mode line" :toggle t))
+     "Coding"
+     (("p" smartparens-global-mode "smartparens" :toggle t)
+      ("P" smartparens-global-strict-mode "smartparens strict" :toggle t)
+      ("c" flycheck-mode "flycheck" :toggle t)
+      ("s" flyspell-mode "flyspell" :toggle t)))))
+#+END_SRC
 * universal
 ** restart-emacs
    
