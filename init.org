@@ -1687,8 +1687,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (defhydra hydra-evil-numbers (:hint nil)
       "
-  Evil Numbers Transient State
-  [_i_] increase [_d_] decrease [0..9] prefix [_q_] exit
+  Evil Numbers: [_i_] increase [_d_] decrease [0..9] prefix [_q_] exit
   "
       ("i" evil-numbers/inc-at-pt)
       ("d" evil-numbers/dec-at-pt)
