@@ -1523,6 +1523,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      "C-j" 'evil-next-line
 	      "C-k" 'evil-previous-line)
     :config
+    (define-key evil-insert-state-map [remap evil-complete-previous] 'hippie-expand)
     (my/normal-keys
       "gD" 'xref-find-definitions-other-window)
     (progn
@@ -2432,7 +2433,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package hippie-expand
     :ensure nil
     :init
-    (define-key evil-insert-state-map [remap evil-complete-previous] 'hippie-expand)
     (setq hippie-expand-try-functions-list
 	  '(
 	    ;; Try to expand yasnippet snippets based on prefix
