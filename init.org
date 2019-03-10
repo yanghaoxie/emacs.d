@@ -2427,7 +2427,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (dolist (hook '(prog-mode-hook org-mode-hook LaTeX-mode-hook))
 	(add-hook hook '(lambda ()
-			  (yas-reload-all)
 			  (yas-minor-mode 1))))))
 #+END_SRC
 *** yasnippet-snippets
