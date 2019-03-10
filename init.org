@@ -1685,9 +1685,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package eyebrowse
     :defer t
-    :init
-    (custom-set-faces
-     '(eyebrowse-mode-line-active ((t (:inherit bold-italic)))))
     :general
     (:keymaps 'override
 	      :states '(normal visual)
@@ -1707,6 +1704,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      "g8" 'eyebrowse-switch-to-window-config-8
 	      "g9" 'eyebrowse-switch-to-window-config-9)
     :config
+    (custom-set-faces
+     '(eyebrowse-mode-line-active ((t (:inherit bold-italic)))))
     (eyebrowse-mode))
 #+END_SRC
 
