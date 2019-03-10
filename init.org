@@ -2327,6 +2327,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    company-dabbrev-ignore-case nil
 	    company-dabbrev-downcase nil
 	    company-dabbrev-code-time-limit 5
+	    company-dabbrev-code-modes '(python-mode inferior-python-mode)
 	    company-backends '(company-capf
 			       company-dabbrev-code
 			       company-keywords
