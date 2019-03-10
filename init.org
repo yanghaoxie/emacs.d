@@ -3151,8 +3151,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  (python-shell-send-buffer)))
       (add-hook 'inferior-python-mode-hook
 		(lambda ()
-		  (add-to-list (make-local-variable 'company-backends) '(my/company-comint-history company-dabbrev-code))))
-      ))
+		  (add-to-list (make-local-variable 'company-backends) '(company-capf company-dabbrev-code))))))
 #+END_SRC
 *** yapfify
 #+BEGIN_SRC emacs-lisp
