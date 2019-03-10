@@ -3119,7 +3119,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	"sf" 'python-shell-send-defun
 	"sr" 'python-shell-send-region
 	"ss" 'python-shell-send-string
-	"sz" 'python-shell-switch-to-shell)
+	"sz" 'python-shell-switch-to-shell
+	"," 'python-indent-shift-left
+	"." 'python-indent-shift-right)
       (my/all-states-keys
 	:keymaps 'inferior-python-mode-map
 	"M-o" 'ace-link)
