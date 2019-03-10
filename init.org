@@ -1682,6 +1682,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package evil-numbers
     :defer t
+    :commands hydra-evil-numbers/body
     :init
     (my/leader-keys
       "n" '(:ignore t :wk "numbers")
