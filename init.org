@@ -358,7 +358,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
 ** try
 #+BEGIN_SRC emacs-lisp
-  (use-package try)
+  (use-package try
+    :commands try)
 #+END_SRC
 * autoload
 
