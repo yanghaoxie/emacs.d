@@ -3106,7 +3106,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (progn
       (setq python-shell-interpreter "ipython3.5"
-	    python-shell-interpreter-args "--simple-prompt")
+	    python-shell-interpreter-args "--simple-prompt"
+	    python-indent-offset 4
+	    python-indent-guess-indent-offset nil)
       (add-hook 'python-mode-hook (lambda () (set-fill-column 79)))
       (my/leader-keys-major-mode
 	:keymaps 'python-mode-map
