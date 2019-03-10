@@ -2398,7 +2398,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     (progn
       (dolist (hook '(prog-mode-hook org-mode-hook LaTeX-mode-hook))
-	(add-hook hook '(lambda () (yas-minor-mode 1))))))
+	(add-hook hook '(lambda ()
+			  (yas-reload-all)
+			  (yas-minor-mode 1))))))
 #+END_SRC
 *** yasnippet-snippets
 #+BEGIN_SRC emacs-lisp
