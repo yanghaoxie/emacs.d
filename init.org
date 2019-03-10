@@ -73,6 +73,7 @@ This is an Emacs configuration file written in org mode.
   - [[#evil-goggles][evil goggles]]
   - [[#evil-indent-plus][evil indent plus]]
   - [[#eivl-iedit-state][eivl iedit state]]
+  - [[#evil-numbers][evil numbers]]
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
 - [[#project][project]]
@@ -1676,7 +1677,25 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    iedit-toggle-key-default nil)
       (my/leader-keys "se" 'evil-iedit-state/iedit-mode)))
 #+END_SRC
-
+** evil numbers
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-numbers
+    :defer t
+    :init
+    (my/leader-keys
+      "n" '(:ignore t :wk "numbers")
+      "ni" 'evil-numbers/inc-at-pt
+      "nd" 'evil-numbers/dec-at-pt
+      "n." 'hydra-evil-numbers/body)
+    :config
+    (defhydra hydra-evil-numbers (:hint nil)
+      "
+  Evil Numbers: [_i_] increase [_d_] decrease [0..9] prefix [_q_] exit
+  "
+      ("i" evil-numbers/inc-at-pt)
+      ("d" evil-numbers/dec-at-pt)
+      ("q" nil :exit t)))
+#+END_SRC
 * workspaces
 ** eyebrowse
 #+BEGIN_SRC emacs-lisp
