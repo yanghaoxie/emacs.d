@@ -416,10 +416,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (let ((current-buffer (window-buffer window)))
       ;; if no window is found in the windows history, `switch-to-buffer' will
       ;; default to calling `other-buffer'.
-      (switch-to-buffer
-       (cl-find-if (lambda (buffer)
-		     (not (eq buffer current-buffer)))
-		   (mapcar #'car (window-prev-buffers window))))))
+      (without-purpose (switch-to-buffer
+			(cl-find-if (lambda (buffer)
+				      (not (eq buffer current-buffer)))
+				    (mapcar #'car (window-prev-buffers window)))))))
 
   ;;;###autoload
   (defun my/org-ref-open-pdf-at-point ( )
