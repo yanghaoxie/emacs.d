@@ -537,6 +537,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (setq initial-major-mode 'emacs-lisp-mode)
   ;; save system clipboard contents to emacs kill ring
   (setq save-interprogram-paste-before-kill t)
+  ;; change emacs frame title
+  (setq frame-title-format
+	'("" invocation-name ": " (:eval (replace-regexp-in-string
+					  "^ +" "" (buffer-name)))))
 
   (use-package hl-line
     :config
