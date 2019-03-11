@@ -1241,7 +1241,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ("w" whitespace-mode "whitespace" :toggle t)
       ("r" rainbow-mode "rainbow" :toggle t))
      "Highlight"
-     (("s" highlight-symbol-mode "symbol" :toggle t)
+     (("S" highlight-symbol-mode "symbol" :toggle t)
       ("l" hl-line-mode "line" :toggle t)
       ("t" hl-todo-mode "todo" :toggle t)
       ("i" color-identifiers-mode "identifiers" :toggle t))
