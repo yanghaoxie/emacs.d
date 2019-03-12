@@ -2303,8 +2303,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 *** amx
 #+BEGIN_SRC emacs-lisp
-(use-package amx
-  :commands (counsel-M-X))
+  (use-package amx
+    :commands (counsel-M-X)
+    :config
+    (amx-mode))
 #+END_SRC
 *** ivy bibtex
 #+BEGIN_SRC emacs-lisp
