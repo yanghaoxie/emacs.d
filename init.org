@@ -2227,7 +2227,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 ** ivy related
 *** ivy
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 (use-package ivy
   :diminish ivy-mode
   :init
@@ -2248,14 +2248,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    "C-l" 'ivy-alt-done))
 #+END_SRC
 *** ivy-rich
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 (use-package ivy-rich
   :after (ivy counsel)
   :config
   (ivy-rich-mode 1))
 #+END_SRC
 *** counsel
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 (use-package counsel
   :init
   :general
@@ -2284,7 +2284,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (ivy-mode))
 #+END_SRC
 *** swiper
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 (use-package swiper
   :config
   :general
@@ -2293,14 +2293,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    "ss" 'swiper))
 #+END_SRC
 *** ivy-xref
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 (use-package ivy-xref
   :defer t
   :init
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
 #+END_SRC
 *** amx
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 (use-package amx
   :commands (counsel-M-X))
 #+END_SRC
@@ -2332,7 +2332,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  (t             . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}"))))
 #+END_SRC
 *** counsel projectile
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 (use-package counsel-projectile
     :defer t
     :init
@@ -2349,7 +2349,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (counsel-projectile-mode))
 #+END_SRC
 *** flyspell correct ivy
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 (use-package flyspell-correct-ivy
   :commands (flyspell-correct-ivy)
   :general
@@ -2357,7 +2357,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "C-;" 'flyspell-correct-wrapper))
 #+END_SRC
 *** ivy posframe
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
   (use-package ivy-posframe
     :config
     (setq ivy-posframe-hide-minibuffer t
