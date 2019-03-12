@@ -2366,13 +2366,17 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  ivy-posframe-border-width 10
 	  ivy-posframe-width (round (* (frame-width) 0.49)))
     (custom-set-faces '(ivy-posframe-border ((t (:inherit default)))) )
-    (push '(counsel-M-x . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
-    (push '(ivy-switch-buffer . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
-    (push '(counsel-find-file . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
-    (push '(counsel-projectile-find-file . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
-    (push '(flyspell-correct-wrapper . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
-    (push '(counsel-apropos . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
-    (push '(swiper . ivy-posframe-display-at-frame-bottom-left) ivy-display-functions-alist)
+    ;; ivy-posframe-display-at-frame-center
+    (dolist (command '(ivy-switch-buffer
+		       counsel-M-x
+		       counsel-find-file
+		       counsel-projectile-find-file
+		       counsel-apropos
+		       flyspell-correct-wrapper))
+      (push `(,command . ivy-posframe-display-at-frame-center) ivy-display-functions-alist))
+    ;; ivy-posframe-display-at-frame-bottom-left
+    (dolist (command '(swiper))
+      (push `(,command . ivy-posframe-display-at-frame-bottom-left) ivy-display-functions-alist))
     (ivy-posframe-enable))
 #+END_SRC
 ** company related
