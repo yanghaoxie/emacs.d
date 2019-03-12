@@ -2266,6 +2266,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "ff" 'counsel-find-file
      ;; help
      "?"   'counsel-descbinds
+     "hda" 'counsel-apropos
      "hdf" 'counsel-describe-function
      "hdF" 'counsel-describe-face
      "hdv" 'counsel-describe-variable
