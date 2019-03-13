@@ -2704,6 +2704,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** org mode
 #+BEGIN_SRC emacs-lisp
   (use-package org
+    :ensure org-plus-contrib
     :defer t
     :mode ("\\.org\\'" . org-mode)
     :config
