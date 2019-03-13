@@ -3473,7 +3473,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      "U" 'package-menu-mark-upgrades
 	      "u" 'package-menu-mark-unmark
 	      "x" 'package-menu-execute
-	      "q" 'paradox-quit-and-close))
+	      "q" 'paradox-quit-and-close)
+    :config
+    (setq paradox-github-token t))
 #+END_SRC
 ** ranger
 #+BEGIN_SRC emacs-lisp
