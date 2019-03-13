@@ -2764,7 +2764,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	"q" 'org-edit-src-exit
 	"a" 'org-edit-src-abort
 	"k" 'org-edit-src-abort))
-;; https://github.com/noctuid/general.el/issues/61
+    ;; https://github.com/noctuid/general.el/issues/61
     (add-hook 'org-src-mode-hook #'evil-normalize-keymaps)
     ;; org-mode
     (my/leader-keys-major-mode
