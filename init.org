@@ -816,8 +816,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :ensure nil
     :init
     (progn
-      (save-place-mode)
-      (setq save-place t)))
+      (save-place-mode)))
 
   ;; key bindings
 
