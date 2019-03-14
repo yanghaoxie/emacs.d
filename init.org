@@ -2228,24 +2228,24 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** ivy related
 *** ivy
 #+BEGIN_SRC emacs-lisp
-(use-package ivy
-  :diminish ivy-mode
-  :init
-  (progn
-    (setq ivy-use-virtual-buffers t
-          ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
-    (my/leader-keys
-      "bb" 'ivy-switch-buffer)
-    (my/leader-keys-major-mode
-      :keymaps 'inferior-python-mode-map
-      "h" 'counsel-shell-history))
-  ;; :config
-  :general
-  (ivy-minibuffer-map
-   "C-j" 'ivy-next-line
-   "C-k" 'ivy-previous-line
-   "C-h" (kbd "DEL")
-   "C-l" 'ivy-alt-done))
+  (use-package ivy
+    :diminish ivy-mode
+    :init
+    (progn
+      (setq ivy-use-virtual-buffers t
+	    ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
+      (my/leader-keys
+	"bb" 'ivy-switch-buffer)
+      (my/leader-keys-major-mode
+	:keymaps 'inferior-python-mode-map
+	"h" 'counsel-shell-history))
+    ;; :config
+    :general
+    (ivy-minibuffer-map
+     "C-j" 'ivy-next-line
+     "C-k" 'ivy-previous-line
+     "C-h" (kbd "DEL")
+     "C-l" 'ivy-alt-done))
 #+END_SRC
 *** ivy-rich
 #+BEGIN_SRC emacs-lisp
