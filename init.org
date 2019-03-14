@@ -1006,7 +1006,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       :defer t
       :init
       (progn
-	(add-hook 'prog-mode-hook #'highlight-parentheses-mode)
+	(add-hook 'after-init-hook #'global-highlight-parentheses-mode)
 	(setq hl-paren-delay 0.2)
 	(setq hl-paren-colors '("Springgreen3"
 				"IndianRed1"
