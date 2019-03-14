@@ -997,7 +997,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package rainbow-delimiters
     :init
-    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+    (add-hook 'text-mode-hook 'rainbow-delimiters-mode))
 #+END_SRC
 ** highlight parentheses
 #+BEGIN_SRC emacs-lisp
