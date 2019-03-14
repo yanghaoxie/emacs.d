@@ -2264,6 +2264,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
      ;; files
      "ff" 'counsel-find-file
+     "fl" 'counsel-locate
      ;; help
      "?"   'counsel-descbinds
      "hda" 'counsel-apropos
