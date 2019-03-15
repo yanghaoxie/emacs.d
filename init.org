@@ -44,6 +44,10 @@ This is an Emacs configuration file written in org mode.
   - [[#spaceline][spaceline]]
   - [[#ranbow-mode][ranbow mode]]
   - [[#pretty-hydra][pretty hydra]]
+  - [[#all-the-icons-related][all the icons related]]
+    - [[#all-the-icons][all the icons]]
+    - [[#all-the-icons-ivy][all the icons ivy]]
+    - [[#all-the-icons-dired][all the icons dired]]
 - [[#universal][universal]]
   - [[#restart-emacs][restart-emacs]]
   - [[#undo-tree][undo tree]]
@@ -1259,6 +1263,51 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ("P" smartparens-global-strict-mode "smartparens strict" :toggle t)
       ("c" flycheck-mode "flycheck" :toggle t)
       ("s" flyspell-mode "flyspell" :toggle t)))))
+#+END_SRC
+** all the icons related
+*** all the icons
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons
+    :defer t
+    :init
+    (add-hook 'after-init-hook (lambda () (require 'all-the-icons)))
+    :config
+    (setq all-the-icons-scale-factor 1.0))
+#+END_SRC
+*** all the icons ivy
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons-ivy
+    :after (ivy all-the-icons)
+    :defer t
+    :init
+    (add-hook 'counsel-projectile-mode-hook 'all-the-icons-ivy-setup)
+    (add-hook 'ivy-mode-hook 'all-the-icons-ivy-setup)
+    :config
+    (progn
+      (defun all-the-icons-ivy-file-transformer (s)
+	"Return a candidate string for filename S preceded by an icon."
+	(format "%s %s"
+		(propertize "\t" 'display (all-the-icons-ivy-icon-for-file s))
+		s))
+      (defun all-the-icons-ivy--buffer-transformer (b s)
+	"Return a candidate string for buffer B named S preceded by an icon.
+  Try to find the icon for the buffer's B `major-mode'.
+  If that fails look for an icon for the mode that the `major-mode' is derived from."
+	(let ((mode (buffer-local-value 'major-mode b)))
+	  (format "%s %s"
+		  (propertize "\t" 'display (or
+					     (all-the-icons-ivy--icon-for-mode mode)
+					     (all-the-icons-ivy--icon-for-mode (get mode 'derived-mode-parent))))
+		  (all-the-icons-ivy--buffer-propertize b s))))
+      (all-the-icons-ivy-setup)))
+#+END_SRC
+*** all the icons dired
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons-dired
+    :after ranger
+    :init
+    (add-hook 'ranger-mode-hook 'all-the-icons-dired-mode)
+    (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 #+END_SRC
 * universal
 ** restart-emacs
