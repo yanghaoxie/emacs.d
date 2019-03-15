@@ -2391,18 +2391,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 *** counsel projectile
 #+BEGIN_SRC emacs-lisp
-(use-package counsel-projectile
+  (use-package counsel-projectile
     :defer t
     :init
     (my/leader-keys
-     "p SPC" 'counsel-projectile
-     "pf" 'counsel-projectile-find-file
-     "pb" 'counsel-projectile-switch-to-buffer
-     "pd" 'counsel-projectile-find-dir
-     "pp" 'counsel-projectile-switch-project
-     "psg" 'counsel-projectile-grep
-     "pss" 'counsel-projectile-ag
-     "psr" 'counsel-projectile-rg)
+      "p SPC" 'counsel-projectile
+      "pf" 'counsel-projectile-find-file
+      "pb" 'counsel-projectile-switch-to-buffer
+      "pd" 'counsel-projectile-find-dir
+      "pp" 'counsel-projectile-switch-project
+      "psg" 'counsel-projectile-grep
+      "pss" 'counsel-projectile-ag
+      "psr" 'counsel-projectile-rg)
     :config
     (counsel-projectile-mode))
 #+END_SRC
