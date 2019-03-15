@@ -2299,7 +2299,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq ivy-use-virtual-buffers t
 	  ivy-re-builders-alist '((t . ivy--regex-ignore-order))
 	  ivy-initial-inputs-alist nil
-	  ivy-count-format "(%d/%d) "))
+	  ivy-count-format "(%d/%d) ")
+    (ivy-mode))
 #+END_SRC
 *** ivy-rich
 #+BEGIN_SRC emacs-lisp
@@ -2335,9 +2336,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "Ts"  'counsel-load-theme
      ;; insert color
      "ic" 'counsel-colors-emacs
-     "iu" 'counsel-unicode-char)
-    :config
-    (ivy-mode))
+     "iu" 'counsel-unicode-char))
 #+END_SRC
 *** swiper
 #+BEGIN_SRC emacs-lisp
