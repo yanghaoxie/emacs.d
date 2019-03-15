@@ -2247,7 +2247,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "C-l" 'ivy-alt-done)
     :config
     (setq ivy-use-virtual-buffers t
-	  ivy-re-builders-alist '((t . ivy--regex-ignore-order))))
+	  ivy-re-builders-alist '((t . ivy--regex-ignore-order))
+	  ivy-initial-inputs-alist nil
+	  ivy-count-format "(%d/%d) "))
 #+END_SRC
 *** ivy-rich
 #+BEGIN_SRC emacs-lisp
