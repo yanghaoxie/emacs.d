@@ -1788,6 +1788,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package eyebrowse
     :defer t
+    :init
+    (add-hook 'after-init-hook 'eyebrowse-mode)
     :general
     (:keymaps 'override
 	      :states '(normal visual)
