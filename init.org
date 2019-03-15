@@ -1172,6 +1172,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package window-purpose
     :defer t
+    :commands without-purpose
     :init
     (progn
       (my/leader-keys
