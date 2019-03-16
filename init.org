@@ -4312,7 +4312,11 @@ is achieved by adding the relevant text properties."
       "hv" 'helpful-variable
       "hp" 'helpful-at-point
       "hk" 'helpful-key
-      "ha" 'helpful-symbol))
+      "ha" 'helpful-symbol)
+    :config
+    (my/normal-keys
+      :keymaps 'helpful-mode-map
+      "o" 'ace-link-help))
 #+END_SRC
 * Chinese
 ** pyim
