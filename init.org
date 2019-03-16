@@ -2447,6 +2447,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (push `(,command . ivy-posframe-display-at-frame-center) ivy-display-functions-alist))
     (dolist (command '(swiper))
       (push `(,command . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist))
+    (push '(t . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
     (ivy-posframe-enable))
 #+END_SRC
 ** company related
