@@ -1626,6 +1626,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (evil-set-initial-state 'flycheck-error-list-mode 'normal)
       (evil-set-initial-state 'nov-mode 'normal)
       (evil-set-initial-state 'lsp-ui-imenu-mode 'normal)
+      (evil-set-initial-state 'helpful-mode 'normal)
       (setq evil-insert-state-cursor '(bar "LimeGreen")
 	    evil-normal-state-cursor '(box "darkorange")
 	    evil-visual-state-cursor '(box "LightGoldenrod")
