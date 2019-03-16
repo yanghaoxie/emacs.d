@@ -199,6 +199,7 @@ This is an Emacs configuration file written in org mode.
   - [[#pomodoro][pomodoro]]
   - [[#nov][nov]]
   - [[#toc-org][toc org]]
+  - [[#helpful][helpful]]
 - [[#chinese][Chinese]]
   - [[#pyim][pyim]]
   - [[#cal-china-x][cal china x]]
@@ -4296,6 +4297,22 @@ is achieved by adding the relevant text properties."
     :defer t
     :init
     (add-hook 'org-mode-hook 'toc-org-mode))
+#+END_SRC
+** helpful
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package helpful
+    :commands (helpful-callable
+	       helpful-variable
+	       helpful-at-point
+	       helpful-key
+	       helpful-symbol)
+    :init
+    (my/leader-keys
+      "hf" 'helpful-callable
+      "hv" 'helpful-variable
+      "hp" 'helpful-at-point
+      "hk" 'helpful-key
+      "ha" 'helpful-symbol))
 #+END_SRC
 * Chinese
 ** pyim
