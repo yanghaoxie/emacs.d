@@ -2015,7 +2015,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    :header-args: :tangle no
    :END:
 *** helm
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package helm
     :commands helm-mode
     :init
@@ -2097,7 +2097,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(helm-autoresize-mode))))
 #+END_SRC
 *** helm describe modes
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package helm-describe-modes
     :defer t
     :after helm
@@ -2213,7 +2213,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq flyspell-correct-interface #'flyspell-correct-helm))
 #+END_SRC
 *** helm org rifle
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package helm-org-rifle
     :commands (helm-org-rifle-agenda-files
 	       helm-org-rifle-occur-agenda-files)
