@@ -2449,6 +2449,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (push `(,command . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist))
     (push '(t . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
     (ivy-posframe-enable))
+
+  ;;;###autoload
+  (defun my/ivy-bibtex ()
+    (interactive)
+    (let ((ivy-posframe-width (round (+ (frame-width) 10)))
+	  (ivy-display-function #'ivy-posframe-display-at-frame-bottom-left))
+      (ivy-bibtex)))
+
+  (global-set-key [remap ivy-bibtex] 'my/ivy-bibtex)
 #+END_SRC
 ** company related
 *** company
