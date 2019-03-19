@@ -161,6 +161,7 @@ This is an Emacs configuration file written in org mode.
     - [[#yapfify][yapfify]]
     - [[#pyvenv][pyvenv]]
     - [[#sphinx-doc][sphinx doc]]
+    - [[#importmagic][importmagic]]
   - [[#lsp][lsp]]
     - [[#lsp-mode][lsp mode]]
     - [[#company-lsp][company lsp]]
@@ -3387,6 +3388,17 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "d" 'sphinx-doc)
     :config
     (sphinx-doc-mode))
+#+END_SRC
+*** importmagic
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package importmagic
+    :defer t
+    :init
+    (progn
+      (add-hook 'python-mode-hook 'importmagic-mode)
+      (my/leader-keys-major-mode
+	:keymaps 'python-mode
+	"rf" 'importmagic-fix-symbol-at-point)))
 #+END_SRC
 ** lsp
 *** lsp mode
