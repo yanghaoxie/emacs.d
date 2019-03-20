@@ -3410,7 +3410,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (add-hook 'python-mode-hook 'importmagic-mode)
       (my/leader-keys-major-mode
-	:keymaps 'python-mode
+	:keymaps 'python-mode-map
 	"rf" 'importmagic-fix-symbol-at-point)))
 #+END_SRC
 ** lsp
