@@ -19,6 +19,7 @@ This is an Emacs configuration file written in org mode.
   - [[#package][package]]
   - [[#bootstrap-straight][bootstrap straight]]
   - [[#install-use-package-and-related-packages][install use-package and related packages]]
+    - [[#hydra][hydra]]
   - [[#install-general][install general]]
   - [[#try][try]]
 - [[#autoload][autoload]]
@@ -326,8 +327,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (require 'use-package))
   (setq use-package-always-ensure t)
   (use-package diminish)
-  (use-package hydra)
   (require 'diminish)
+#+END_SRC
+*** hydra
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package hydra
+    :config
+    (setq hydra-lv nil))
 #+END_SRC
 ** install general
 #+BEGIN_SRC emacs-lisp
