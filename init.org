@@ -49,6 +49,7 @@ This is an Emacs configuration file written in org mode.
     - [[#all-the-icons][all the icons]]
     - [[#all-the-icons-ivy][all the icons ivy]]
     - [[#all-the-icons-dired][all the icons dired]]
+  - [[#hl-todo][hl todo]]
 - [[#universal][universal]]
   - [[#restart-emacs][restart-emacs]]
   - [[#undo-tree][undo tree]]
@@ -1327,6 +1328,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     (add-hook 'ranger-mode-hook 'all-the-icons-dired-mode)
     (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+#+END_SRC
+** hl todo
+#+BEGIN_SRC emacs-lisp
+  (use-package hl-todo
+    :init
+    (add-hook 'prog-mode-hook 'hl-todo-mode)
+    (add-hook 'LaTeX-mode-hook 'hl-todo-mode))
 #+END_SRC
 * universal
 ** restart-emacs
