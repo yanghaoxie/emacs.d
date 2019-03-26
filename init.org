@@ -66,6 +66,7 @@ This is an Emacs configuration file written in org mode.
   - [[#unfill][unfill]]
   - [[#visual-fill-column][visual fill column]]
   - [[#fix-word][fix word]]
+  - [[#electric-operator][electric operator]]
 - [[#themes][themes]]
   - [[#gruvbox][gruvbox]]
 - [[#vim][vim]]
@@ -1599,6 +1600,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-u" 'fix-word-upcase
       "M-l" 'fix-word-downcase
       "M-c" 'fix-word-capitalize))
+#+END_SRC
+** electric operator
+#+BEGIN_SRC emacs-lisp
+  (use-package electric-operator
+    :commands electric-operator-mode
+    :init
+    (add-hook 'prog-mode-hook #'electric-operator-mode))
 #+END_SRC
 * themes
 ** gruvbox
