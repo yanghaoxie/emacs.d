@@ -3615,7 +3615,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     (my/leader-keys
       "ar" 'ranger
-      "ad" 'deer))
+      "ad" 'deer)
+    (my/motion-keys
+      "M-g" 'ranger-go))
 #+END_SRC
 ** pdf tools
 #+BEGIN_SRC emacs-lisp
