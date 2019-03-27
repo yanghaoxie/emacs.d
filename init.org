@@ -1829,7 +1829,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'after-init-hook 'eyebrowse-mode)
     :general
     (:keymaps 'override
-	      :states '(normal visual)
+	      :states '(normal visual motion)
 	      ;; "gt" 'eyebrowse-next-window-config
 	      ;; "gT" 'eyebrowse-prev-window-config
 	      "gc" 'eyebrowse-close-window-config
