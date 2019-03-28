@@ -1907,6 +1907,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	;; work around for this issue https://github.com/bbatsov/projectile/issues/1322
 	(setq projectile-git-command "fd . --print0 --no-ignore-vcs --color never")
 	(setq projectile-indexing-method 'alien)
+	(add-to-list 'projectile-other-file-alist '("tex" . ("pdf")))
+	(add-to-list 'projectile-other-file-alist '("pdf" . ("tex")))
 	(projectile-mode)))
 #+END_SRC
 * navigation
