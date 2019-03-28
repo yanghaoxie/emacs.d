@@ -2871,6 +2871,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		  )))
     (setq org-refile-targets (quote ((nil :maxlevel . 2)
 				     (org-agenda-files :maxlevel . 2))))
+    (setq org-list-allow-alphabetical t)
     :init
     ;; org-capture
     (with-eval-after-load 'org-capture
