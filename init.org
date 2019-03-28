@@ -1896,6 +1896,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
        "pG" 'projectile-regenerate-tags
        "pI" 'projectile-invalidate-cache
        "pk" 'projectile-kill-buffers
+       "po" 'projectile-find-other-file
        "pp" 'projectile-switch-project
        "pr" 'projectile-recentf
        "pR" 'projectile-replace
