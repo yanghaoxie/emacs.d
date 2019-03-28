@@ -3621,7 +3621,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "ar" 'ranger
       "ad" 'deer)
     (my/motion-keys
-      "M-g" 'ranger-go))
+      :keymaps 'ranger-mode-map
+      "M-g" 'ranger-go
+      "gg" 'ranger-goto-top))
 #+END_SRC
 ** pdf tools
 #+BEGIN_SRC emacs-lisp
