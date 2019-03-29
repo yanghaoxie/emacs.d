@@ -130,6 +130,7 @@ This is an Emacs configuration file written in org mode.
     - [[#ivy-yasnippet][ivy-yasnippet]]
     - [[#auo-yasnippet][auo yasnippet]]
     - [[#hippie-expand][hippie expand]]
+    - [[#company-posframe][company posframe]]
 - [[#source-control][source control]]
   - [[#version-control][version control]]
   - [[#git][git]]
@@ -2642,6 +2643,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    ))
     :general
     ("M-/" 'hippie-expand))
+#+END_SRC
+*** company posframe
+#+BEGIN_SRC emacs-lisp
+  (use-package company-posframe
+    :after company
+    :config
+    (require 'desktop)
+    (push '(company-posframe-mode . nil)
+	  desktop-minor-mode-table)
+    (company-posframe-mode 1))
 #+END_SRC
 * source control
 ** version control
