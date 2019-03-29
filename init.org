@@ -1607,7 +1607,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package electric-operator
     :commands electric-operator-mode
     :init
-    (add-hook 'prog-mode-hook #'electric-operator-mode))
+    (add-hook 'python-mode-hook #'electric-operator-mode)
+    (add-hook 'inferior-python-mode-hook #'electric-operator-mode))
 #+END_SRC
 * themes
 ** gruvbox
