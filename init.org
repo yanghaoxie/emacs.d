@@ -207,6 +207,8 @@ This is an Emacs configuration file written in org mode.
   - [[#helpful][helpful]]
 - [[#chinese][Chinese]]
   - [[#pyim][pyim]]
+    - [[#pyim-1][pyim]]
+    - [[#liberime][liberime]]
   - [[#cal-china-x][cal china x]]
   - [[#ace-pinyin][ace pinyin]]
 - [[#finishing-work][finishing work]]
@@ -4388,6 +4390,7 @@ is achieved by adding the relevant text properties."
 #+END_SRC
 * Chinese
 ** pyim
+*** pyim
 #+BEGIN_SRC emacs-lisp
   (use-package pyim
     :defer t
@@ -4418,6 +4421,15 @@ is achieved by adding the relevant text properties."
 	(progn
 	  (setq pyim-page-tooltip 'posframe)))
     (setq pyim-page-length 5))
+#+END_SRC
+*** liberime
+#+BEGIN_SRC emacs-lisp
+  (use-package liberime
+    :load-path "~/Program/liberime/build/"
+    :config
+    (liberime-start "/usr/share/rime-data" "~/.emacs.d/rime/")
+    (liberime-select-schema "luna_pinyin_simp")
+    (setq pyim-default-scheme 'rime-quanpin))
 #+END_SRC
 ** cal china x
 #+BEGIN_SRC emacs-lisp
