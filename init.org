@@ -3747,8 +3747,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  abort-recursive-edit
 	  ace-jump-done
 	  ace-jump-move
-	  ace-window
-	  avy-goto-line
 	  backward-char
 	  backward-kill-word
 	  backward-word
@@ -3756,7 +3754,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  browse-kill-ring-insert-and-quit
 	  browse-kill-ring-quit
 	  clipboard-kill-ring-save
-	  comint-previous-input
 	  comint-send-input
 	  company-complete-common
 	  company-complete-number
@@ -3810,7 +3807,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  evil-goto-first-line
 	  evil-goto-line
 	  evil-goto-mark-line
-	  evil-indent
 	  evil-inner-WORD
 	  evil-inner-double-quote
 	  evil-inner-single-quote
@@ -3834,10 +3830,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  evil-ret
 	  evil-scroll-page-down
 	  evil-scroll-page-up
-	  evil-search-forward
-	  evil-search-next
-	  evil-search-word-forward
-	  evil-set-marker
 	  evil-substitute
 	  evil-visual-block
 	  evil-visual-char
