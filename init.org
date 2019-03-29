@@ -338,7 +338,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp :tangle yes
   (use-package hydra
     :config
-    (setq hydra-lv nil))
+    (setq hydra-hint-display-type 'posframe))
 #+END_SRC
 ** install general
 #+BEGIN_SRC emacs-lisp
