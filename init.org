@@ -326,6 +326,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;; (straight-use-package 'use-package)
   ;; install use-package
   (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
     (package-install 'use-package))
   ;; further reduce load time, from use-package official github page
   (eval-when-compile
