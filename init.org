@@ -4398,8 +4398,7 @@ is achieved by adding the relevant text properties."
     :general
     ("M-j" 'pyim-convert-string-at-point)
     :config
-    (setq pyim-dicts "/home/yhxie/.emacs.d/pyim/pyim-bigdict.pyim"
-	  pyim-fuzzy-pinyin-alist '(("s" "sh")
+    (setq pyim-fuzzy-pinyin-alist '(("s" "sh")
 				    ("c" "ch")
 				    ("z" "zh")
 				    ("in" "ing")
