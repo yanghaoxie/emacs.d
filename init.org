@@ -3922,7 +3922,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  pwd
 	  quit-window
 	  right-char
-	  save-buffer
 	  save-buffers-kill-terminal
 	  scroll-down-command
 	  scroll-up-command
