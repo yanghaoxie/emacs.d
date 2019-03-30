@@ -2481,6 +2481,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** ivy posframe
 #+BEGIN_SRC emacs-lisp
   (use-package ivy-posframe
+    :defer 5
     :after ivy
     :config
     (setq ivy-posframe-hide-minibuffer t
