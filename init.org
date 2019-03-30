@@ -847,6 +847,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "C-o" 'Custom-goto-parent
       "q" 'Custom-buffer-done))
 
+  (use-package autorevert
+    :config
+    (global-auto-revert-mode))
+
   ;; key bindings
 
   (my/leader-keys-extra
