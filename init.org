@@ -851,6 +851,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (global-auto-revert-mode))
 
+  (use-package midnight
+    :config
+    (add-hook 'midnight-hook #'recentf-cleanup)
+    (setq clean-buffer-list-kill-regexps '("^.*")
+	  midnight-period 7200)
+    (midnight-mode 1))
+
   ;; key bindings
 
   (my/leader-keys-extra
