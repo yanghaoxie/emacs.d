@@ -515,9 +515,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   ;; replace "yes" and "no" by "y" and "n"
   (defalias 'yes-or-no-p 'y-or-n-p)
-  ;; save desktop
-  (desktop-save-mode t)
-  (setq desktop-lazy-verbose nil)
   ;;display-time-mode
   (setq display-time-24hr-format t
 	display-time-default-load-average nil
@@ -561,6 +558,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (setq frame-title-format
 	'("" invocation-name ": " (:eval (replace-regexp-in-string
 					  "^ +" "" (buffer-name)))))
+  (use-package desktop
+    :config
+    (setq desktop-lazy-verbose nil)
+    (desktop-save-mode 1))
 
   (use-package hl-line
     :config
