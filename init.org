@@ -2390,6 +2390,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "hdF" 'counsel-describe-face
      "hdv" 'counsel-describe-variable
      "hi"  'counsel-info-lookup-symbol
+     "ji" 'counsel-imenu
      ;; register/ring
      "ry"  'counsel-yank-pop
      "rm"  'counsel-mark-ring
