@@ -37,6 +37,8 @@ This is an Emacs configuration file written in org mode.
   - [[#highlight-symbol][highlight symbol]]
   - [[#color-identifiers-mode][color identifiers mode]]
   - [[#which-key][which key]]
+    - [[#which-key-1][which key]]
+    - [[#which-key-posframe][which key posframe]]
   - [[#popwin][popwin]]
   - [[#zoom-frm][zoom frm]]
   - [[#hide-mode-line][hide mode line]]
@@ -1096,6 +1098,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "thi" 'my/toggle-color-identifiers))
 #+END_SRC
 ** which key
+*** which key
 #+BEGIN_SRC emacs-lisp
   (use-package which-key
     :diminish which-key-mode
@@ -1136,6 +1139,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
        "xS" '(:ignore t :which-key "Synosaurus")
        "z" '(:ignore t :which-key "zoom"))
       (which-key-mode)))
+#+END_SRC
+*** which key posframe
+#+BEGIN_SRC emacs-lisp
+  (use-package which-key-posframe
+    :defer 5
+    :after (which-key posframe)
+    :load-path "~/Program/which-key-posframe/"
+    :config
+    (which-key-posframe-enable))
 #+END_SRC
 ** popwin
 #+BEGIN_SRC emacs-lisp
