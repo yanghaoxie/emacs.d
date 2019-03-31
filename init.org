@@ -4429,6 +4429,7 @@ is achieved by adding the relevant text properties."
 *** liberime
 #+BEGIN_SRC emacs-lisp
   (use-package liberime
+    :after pyim
     :load-path "~/Program/liberime/build/"
     :config
     (liberime-start "/usr/share/rime-data" "~/.emacs.d/rime/")
