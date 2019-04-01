@@ -3550,11 +3550,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (interactive)
     (if (bound-and-true-p lsp-ui-mode)
 	(progn
-	  (lsp-ui-mode -1)
-	  (message "Lsp ui mode disabled in current buffer"))
+	  (lsp-ui-sideline-mode -1)
+	  (lsp-ui-doc-mode -1)
+	  (message "Lsp ui sideline/doc mode disabled in current buffer"))
       (progn
-	(lsp-ui-mode 1)
-	(message "Lsp ui mode enabled in current buffer"))))
+	(lsp-ui-sideline-mode 1)
+	(lsp-ui-doc-mode 1)
+	(message "Lsp ui sideline/doc mode enabled in current buffer"))))
 #+END_SRC
 * writing
 ** academic phrases
