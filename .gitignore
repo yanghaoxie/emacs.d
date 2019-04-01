@@ -29,3 +29,5 @@ inferior-Python*-history
 /elpa*/*
 /places
 /quelpa/*
+/rime/*
+/.dap-breakpoints
