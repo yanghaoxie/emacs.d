@@ -3295,13 +3295,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 *** company-auctex
 #+BEGIN_SRC emacs-lisp
-  (use-package cdlatex
-  :diminish cdlatex-mode
-  :config
-  (setq cdlatex-simplify-sub-super-scripts nil
-	cdlatex-paired-parens "$[{(<")
-  (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
-  (add-hook 'org-mode-hook 'turn-on-cdlatex))
+  (use-package company-auctex
+    :after auctex
+    :config
+    (company-auctex-init))
 #+END_SRC
 *** cdlatex
 #+BEGIN_SRC emacs-lisp
