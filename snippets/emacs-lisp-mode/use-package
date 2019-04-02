@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: use-package
-# key: up
-# --
-:defer t
-:config
-(require 'init-$1)$0

@@ -1,6 +1,0 @@
-(require 'fish-completion)
-(setq fish-completion-fallback-on-bash-p t)
-(when (and (executable-find "fish")
-           (require 'fish-completion nil t))
-  (global-fish-completion-mode))
-(provide 'init-fish-completion)

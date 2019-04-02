@@ -1,5 +1,0 @@
-(setq bookmark-version-control t)
-(setq bookmark-save-flag 1)
-(setq delete-old-versions t)
-(require 'bookmark+)
-(provide 'init-bookmark-plus)

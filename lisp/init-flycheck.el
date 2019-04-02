@@ -1,5 +1,0 @@
-(add-hook 'python-mode-hook 'flycheck-mode)
-'(flycheck-error ((t (:slant italic))))
-'(flycheck-warning ((t (:slant italic))))
-'(flymake-errline ((t nil)))
-(provide 'init-flycheck)

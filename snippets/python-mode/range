@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: range
-# key: rg
-# --
-rang($1):
-$0

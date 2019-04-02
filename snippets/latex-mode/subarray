@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: subarray
-# key: suba
-# --
-\begin{subarray}{c} $0  \end{subarray}
