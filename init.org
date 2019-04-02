@@ -2727,7 +2727,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
        "gS"  'magit-stage-file
        "gU"  'magit-unstage-file)
       (add-hook 'magit-popup-mode-hook (lambda () (display-line-numbers-mode -1)))
-      (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1))))
+      (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1)))
+      :config
+      (setq transient-display-buffer-action '(display-buffer-below-selected)
+	    magit-completing-read-function #'ivy-completing-read))
 #+END_SRC
 *** evil magit
 #+BEGIN_SRC emacs-lisp
