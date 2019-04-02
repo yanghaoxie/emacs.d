@@ -859,7 +859,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (add-hook 'midnight-hook #'recentf-cleanup)
     (setq clean-buffer-list-kill-regexps '("^.*")
-	  midnight-period 7200)
+	  midnight-period 259200)
     (midnight-mode 1))
 
   ;; key bindings
