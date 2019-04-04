@@ -157,6 +157,7 @@ This is an Emacs configuration file written in org mode.
   - [[#emacs-lisp-related][emacs lisp related]]
     - [[#emacs-lisp][emacs lisp]]
   - [[#latex][latex]]
+    - [[#reftex][reftex]]
     - [[#auctex][auctex]]
     - [[#company-auctex][company-auctex]]
     - [[#cdlatex][cdlatex]]
@@ -3230,7 +3231,31 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 ** latex
-   
+*** reftex
+#+BEGIN_SRC emacs-lisp
+  (use-package reftex
+    :init
+    (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+    :config
+    (setq reftex-plug-into-AUCTeX t
+	  reftex-use-fonts t)
+    (my/leader-keys-major-mode
+      :keymaps 'LaTeX-mode-map
+      "r" '(:ignore t :wk "reftex")
+      "rc"    'reftex-citation
+      "rg"    'reftex-grep-document
+      "ri"    'reftex-index-selection-or-word
+      "rI"    'reftex-display-index
+      "r TAB" 'reftex-index
+      "rl"    'reftex-label
+      "rp"    'reftex-index-phrase-selection-or-word
+      "rP"    'reftex-index-visit-phrases-buffer
+      "rr"    'reftex-reference
+      "rs"    'reftex-search-document
+      "rt"    'reftex-toc
+      "rT"    'reftex-toc-recenter
+      "rv"    'reftex-view-crossref))
+#+END_SRC
 *** auctex
 #+BEGIN_SRC emacs-lisp
   (use-package tex
