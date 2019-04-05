@@ -84,6 +84,7 @@ This is an Emacs configuration file written in org mode.
   - [[#evil-indent-plus][evil indent plus]]
   - [[#eivl-iedit-state][eivl iedit state]]
   - [[#evil-numbers][evil numbers]]
+  - [[#evil-args][evil args]]
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
 - [[#project][project]]
@@ -1874,6 +1875,19 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ("i" evil-numbers/inc-at-pt)
       ("d" evil-numbers/dec-at-pt)
       ("q" nil :exit t)))
+#+END_SRC
+** evil args
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-args
+    :defer t
+    :init
+    (progn
+      (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
+      (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
+      (my/normal-keys
+	"gL" 'evil-forward-arg
+	"gh" 'evil-backward-arg
+	"gK" 'evil-jump-out-args)))
 #+END_SRC
 * workspaces
 ** eyebrowse
