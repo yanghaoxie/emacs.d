@@ -1505,40 +1505,40 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ("N" sp-backward-down-sexp)
       ("p" sp-up-sexp)
       ("P" sp-backward-up-sexp)
-  
-    ;; Slurping & barfing
-    ("h" sp-backward-slurp-sexp)
-    ("H" sp-backward-barf-sexp)
-    ("l" sp-forward-slurp-sexp)
-    ("L" sp-forward-barf-sexp)
-  
-    ;; Wrapping
-    ("R" sp-rewrap-sexp)
-    ("u" sp-unwrap-sexp)
-    ("U" sp-backward-unwrap-sexp)
-    ("(" sp-wrap-round)
-    ("{" sp-wrap-curly)
-    ("[" sp-wrap-square)
-  
-    ;; Sexp juggling
-    ("S" sp-split-sexp)
-    ("s" sp-splice-sexp)
-    ("r" sp-raise-sexp)
-    ("j" sp-join-sexp)
-    ("t" sp-transpose-sexp)
-    ("A" sp-absorb-sexp)
-    ("E" sp-emit-sexp)
-    ("o" sp-convolute-sexp)
-  
-    ;; Destructive editing
-    ("c" sp-change-inner :exit t)
-    ("C" sp-change-enclosing :exit t)
-    ("k" sp-kill-sexp)
-    ("K" sp-backward-kill-sexp)
-    ("w" sp-copy-sexp)
 
-    ("q" nil)
-    ("g" nil))
+      ;; Slurping & barfing
+      ("h" sp-backward-slurp-sexp)
+      ("H" sp-backward-barf-sexp)
+      ("l" sp-forward-slurp-sexp)
+      ("L" sp-forward-barf-sexp)
+
+      ;; Wrapping
+      ("R" sp-rewrap-sexp)
+      ("u" sp-unwrap-sexp)
+      ("U" sp-backward-unwrap-sexp)
+      ("(" sp-wrap-round)
+      ("{" sp-wrap-curly)
+      ("[" sp-wrap-square)
+
+      ;; Sexp juggling
+      ("S" sp-split-sexp)
+      ("s" sp-splice-sexp)
+      ("r" sp-raise-sexp)
+      ("j" sp-join-sexp)
+      ("t" sp-transpose-sexp)
+      ("A" sp-absorb-sexp)
+      ("E" sp-emit-sexp)
+      ("o" sp-convolute-sexp)
+
+      ;; Destructive editing
+      ("c" sp-change-inner :exit t)
+      ("C" sp-change-enclosing :exit t)
+      ("k" sp-kill-sexp)
+      ("K" sp-backward-kill-sexp)
+      ("w" sp-copy-sexp)
+
+      ("q" nil)
+      ("g" nil))
     (my/all-states-keys
       "C-s" 'hydra-smartparens/body))
 #+END_SRC
