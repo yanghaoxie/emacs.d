@@ -1464,6 +1464,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-u" 'sp-backward-up-sexp
       "n" 'sp-next-sexp
       "p" 'sp-previous-sexp
+      "." 'hydra-smartparens/body
       "a" 'sp-beginning-of-sexp
       "e" 'sp-end-of-sexp
       ;; slurp and barf
@@ -1538,9 +1539,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ("w" sp-copy-sexp)
 
       ("q" nil)
-      ("g" nil))
-    (my/all-states-keys
-      "C-s" 'hydra-smartparens/body))
+      ("g" nil)))
 #+END_SRC
 *** evil smartparens
 #+BEGIN_SRC emacs-lisp
