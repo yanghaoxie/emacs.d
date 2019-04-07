@@ -3629,7 +3629,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;;;###autoload
   (defun my/toggle-lsp-ui-mode ()
     (interactive)
-    (if (bound-and-true-p lsp-ui-mode)
+    (if (bound-and-true-p lsp-ui-doc-mode)
 	(progn
 	  (lsp-ui-sideline-mode -1)
 	  (lsp-ui-doc-mode -1)
