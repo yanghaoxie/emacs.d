@@ -351,7 +351,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
        :point (point)
        :internal-border-color "gray50"
        :internal-border-width 2
-       :poshandler #'posframe-poshandler-frame-center))
+       :poshandler #'posframe-poshandler-frame-top-center))
     (defun my/hydra-posframe-hide ()
       (posframe-hide " *hydra-posframe*"))
     (setq hydra-hint-display-alist
