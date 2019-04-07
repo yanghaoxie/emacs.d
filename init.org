@@ -1258,8 +1258,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (add-to-list 'purpose-user-mode-purposes '(python-mode . py))
     (add-to-list 'purpose-user-mode-purposes '(inferior-python-mode . py-repl))
+    (global-set-key [remap ivy-switch-buffer] 'my/ivy-switch-buffer)
     (purpose-compile-user-configuration)
     (purpose-mode))
+
+  ;;;###autoload
+  (defun my/ivy-switch-buffer ()
+    (interactive)
+    (without-purpose (ivy-switch-buffer)))
 #+END_SRC
 *** spacemacs purpose popwin
 #+BEGIN_SRC emacs-lisp
