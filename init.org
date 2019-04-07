@@ -3523,10 +3523,17 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "va" 'pyvenv-activate
       "vd" 'pyvenv-deactivate
       "vw" 'pyvenv-workon
-      "s M-r" 'pyvenv-restart-python)
+      "s R" 'pyvenv-restart-python
+      "s M-r" 'my/restart-python-and-send-buffer)
     (my/leader-keys-major-mode
       :keymaps 'inferior-python-mode-map
-      "s M-r" 'pyvenv-restart-python))
+      "s R" 'pyvenv-restart-python))
+
+  ;;;###autoload
+  (defun my/restart-python-and-send-buffer ()
+    (interactive)
+    (pyvenv-restart-python)
+    (my/python-shell-send-buffer-after-save-buffer))
 #+END_SRC
 
 *** sphinx doc
