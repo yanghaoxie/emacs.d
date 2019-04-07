@@ -156,6 +156,7 @@ This is an Emacs configuration file written in org mode.
     - [[#org-journal][org journal]]
   - [[#emacs-lisp-related][emacs lisp related]]
     - [[#emacs-lisp][emacs lisp]]
+    - [[#parinfer-mode][parinfer mode]]
   - [[#latex][latex]]
     - [[#reftex][reftex]]
     - [[#auctex][auctex]]
@@ -3243,7 +3244,21 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     "ef" 'eval-defun
     "ep" 'eval-print-last-sexp))
 #+END_SRC
-
+*** parinfer mode
+#+BEGIN_SRC emacs-lisp
+  (use-package parinfer
+    :ensure t
+    :bind
+    (("C-," . parinfer-toggle-mode))
+    :init
+    (progn
+      (setq parinfer-extensions
+	    '(defaults       ; should be included.
+	      evil           ; If you use Evil.
+	      smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
+	      smart-yank))   ; Yank behavior depend on mode.
+      (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)))
+#+END_SRC
 ** latex
 *** reftex
 #+BEGIN_SRC emacs-lisp
