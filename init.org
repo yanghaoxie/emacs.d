@@ -3371,9 +3371,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** company-auctex
 #+BEGIN_SRC emacs-lisp
   (use-package company-auctex
-    :after auctex
-    :config
-    (company-auctex-init))
+    :mode (".tex\\'" . LaTeX-mode)
+    :init
+    (add-hook 'LaTeX-mode-hook
+	      (lambda ()
+		(add-to-list (make-local-variable 'company-backends)
+			     '(company-auctex-labels
+			       company-auctex-bibs
+			       company-auctex-macros
+			       company-auctex-symbols
+			       company-auctex-environments)))))
 #+END_SRC
 *** cdlatex
 #+BEGIN_SRC emacs-lisp
