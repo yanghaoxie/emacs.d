@@ -3623,7 +3623,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (setq lsp-ui-sideline-delay 0.2
 	    lsp-ui-peek-always-show t
 	    lsp-ui-doc-use-childframe t
-	    lsp-enable-symbol-highlighting nil)))
+	    lsp-enable-symbol-highlighting nil
+	    lsp-ui-sideline-enable nil
+	    lsp-ui-doc-enable nil)))
   ;;;###autoload
   (defun my/toggle-lsp-ui-mode ()
     (interactive)
