@@ -3584,7 +3584,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (add-hook 'python-mode-hook
 		(lambda ()
-		  (add-to-list (make-local-variable 'company-backends) '(company-lsp company-dabbrev-code company-files)))))
+		  (add-to-list (make-local-variable 'company-backends) '(company-lsp company-files)))))
     :config
     (progn
       (setq company-lsp-enable-recompletion t
