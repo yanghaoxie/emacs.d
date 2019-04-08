@@ -2439,9 +2439,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (my/leader-keys
 	"bb" 'ivy-switch-buffer)
-      (my/leader-keys-major-mode
+      (my/all-states-keys
 	:keymaps 'inferior-python-mode-map
-	"h" 'counsel-shell-history))
+	"M-h" 'counsel-shell-history))
     ;; :config
     :general
     (ivy-minibuffer-map
