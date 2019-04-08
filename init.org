@@ -2600,7 +2600,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq ivy-posframe-hide-minibuffer t
 	  ivy-posframe-border-width 2
-	  ivy-posframe-width (round (* (frame-width) 0.49)))
+	  ivy-posframe-width (round (* (frame-width) 0.49))
+	  ivy-posframe-height 10)
     (dolist (command '(ivy-switch-buffer
 		       counsel-M-x
 		       counsel-find-file
