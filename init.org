@@ -3803,12 +3803,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ;;turn off cua so copy works
       (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
       (defhydra hydra-zoom-pdf ()
-	 "zoom-pdf"
-	 ("i" pdf-view-enlarge "in")
-	 ("o" pdf-view-shrink "out")
-	 ("w" pdf-view-fit-width-to-window "width")
-	 ("p" pdf-view-fit-page-to-window "page")
-	 ("q" nil "quit"))
+	"zoom-pdf"
+	("i" pdf-view-enlarge "in")
+	("o" pdf-view-shrink "out")
+	("w" pdf-view-fit-width-to-window "width")
+	("p" pdf-view-fit-page-to-window "page")
+	("q" nil "quit"))
       (my/leader-keys-major-mode
 	:keymaps 'pdf-view-mode-map
 	"z" 'hydra-zoom-pdf/body))
