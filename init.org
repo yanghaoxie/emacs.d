@@ -2514,9 +2514,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "Ts"  'counsel-load-theme
      ;; insert color
      "ic" 'counsel-colors-emacs
-     "iu" 'counsel-unicode-char))
+     "iu" 'counsel-unicode-char)
     (my/all-states-keys
       "M-y" 'counsel-yank-pop)
+    :config
+    (counsel-mode))
 #+END_SRC
 *** swiper
 #+BEGIN_SRC emacs-lisp
