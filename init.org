@@ -2492,6 +2492,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      ;; insert color
      "ic" 'counsel-colors-emacs
      "iu" 'counsel-unicode-char))
+    (my/all-states-keys
+      "M-y" 'counsel-yank-pop)
 #+END_SRC
 *** swiper
 #+BEGIN_SRC emacs-lisp
