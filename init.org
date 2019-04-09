@@ -1907,15 +1907,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil args
 #+BEGIN_SRC emacs-lisp
   (use-package evil-args
-    :defer t
+    :after evil
     :init
     (progn
-      (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
-      (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
       (my/normal-keys
 	"gL" 'evil-forward-arg
 	"gh" 'evil-backward-arg
-	"gK" 'evil-jump-out-args)))
+	"gK" 'evil-jump-out-args))
+    :config
+    (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
+    (define-key evil-outer-text-objects-map "a" 'evil-outer-arg))
 #+END_SRC
 * workspaces
 ** eyebrowse
