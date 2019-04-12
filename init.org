@@ -87,6 +87,7 @@ This is an Emacs configuration file written in org mode.
   - [[#evil-args][evil args]]
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
+  - [[#persp-mode][persp mode]]
 - [[#project][project]]
   - [[#projectile][projectile]]
 - [[#navigation][navigation]]
@@ -1945,6 +1946,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      '(eyebrowse-mode-line-active ((t (:inherit bold-italic))))))
 #+END_SRC
 
+** persp mode
+#+BEGIN_SRC emacs-lisp
+  (use-package persp-mode
+    :config
+    (require 'spacemacs-persp-extra)
+    (my/normal-keys
+      "g M-0" 'spacemacs/persp-switch-to-0
+      "g M-1" 'spacemacs/persp-switch-to-1
+      "g M-2" 'spacemacs/persp-switch-to-2))
+#+END_SRC
 * project
 ** projectile
 #+BEGIN_SRC emacs-lisp
