@@ -210,6 +210,7 @@ This is an Emacs configuration file written in org mode.
   - [[#nov][nov]]
   - [[#toc-org][toc org]]
   - [[#helpful][helpful]]
+  - [[#terminal-here][terminal here]]
 - [[#chinese][Chinese]]
   - [[#pyim][pyim]]
     - [[#pyim-1][pyim]]
@@ -4533,6 +4534,26 @@ is achieved by adding the relevant text properties."
       :keymaps 'helpful-mode-map
       "o" 'ace-link-help
       "q" 'quit-window))
+#+END_SRC
+** terminal here
+#+BEGIN_SRC emacs-lisp
+  (use-package terminal-here
+    :commands (terminal-here
+	       terminal-here-launch-in-directory)
+    :init
+    (my/leader-keys
+      "aT" 'terminal-here)
+    (require 'ivy)
+    (require 'counsel)
+    (ivy-add-actions
+     'counsel-find-file
+     '(("t" my/counsel-terminal-here "terminal")))
+    :config
+    (setq terminal-here-terminal-command (list "urxvtc")))
+
+  ;;;###autoload
+  (defun my/counsel-terminal-here (x)
+    (terminal-here-launch-in-directory x))
 #+END_SRC
 * Chinese
 ** pyim
