@@ -299,10 +299,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (require 'package)
   ;; ;;; Install into separate package dirs for each Emacs version, to prevent bytecode incompatibility
-  (let ((versioned-package-dir
-	 (expand-file-name (format "elpa-%s.%s" emacs-major-version emacs-minor-version)
-			   user-emacs-directory)))
-    (setq package-user-dir versioned-package-dir))
+  ;; (let ((versioned-package-dir
+  ;;        (expand-file-name (format "elpa-%s.%s" emacs-major-version emacs-minor-version)
+  ;; 			 user-emacs-directory)))
+  ;;   (setq package-user-dir versioned-package-dir))
   (setq package-archives '(("melpa" . "~/elpa/melpa/")
 			   ("melpa-stable" . "~/elpa/melpa-stable/")
 			   ("gnu" . "~/elpa/gnu/")
