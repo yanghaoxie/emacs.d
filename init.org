@@ -118,6 +118,7 @@ This is an Emacs configuration file written in org mode.
   - [[#ivy-related][ivy related]]
     - [[#ivy][ivy]]
     - [[#ivy-rich][ivy-rich]]
+    - [[#ivy-hydra][ivy hydra]]
     - [[#counsel][counsel]]
     - [[#swiper][swiper]]
     - [[#ivy-xref][ivy-xref]]
@@ -2487,6 +2488,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   :after (ivy counsel)
   :config
   (ivy-rich-mode 1))
+#+END_SRC
+*** ivy hydra
+#+BEGIN_SRC emacs-lisp :tangle no
+  (use-package ivy-hydra)
 #+END_SRC
 *** counsel
 #+BEGIN_SRC emacs-lisp
