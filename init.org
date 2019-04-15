@@ -1351,7 +1351,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq all-the-icons-scale-factor 1.0))
 #+END_SRC
 *** all the icons ivy
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package all-the-icons-ivy
     :after (ivy all-the-icons)
     :defer t
@@ -2460,7 +2460,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (ivy-mode))
 #+END_SRC
 *** ivy-rich
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
 (use-package ivy-rich
   :after (ivy counsel)
   :config
