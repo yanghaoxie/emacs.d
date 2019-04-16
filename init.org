@@ -693,6 +693,19 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "wu" 'winner-undo
       "wU" 'winner-redo)
     :config
+    (setq winner-boring-buffers
+	  '("*Completions*"
+	    "*Compile-Log*"
+	    "*inferior-lisp*"
+	    "*Fuzzy Completions*"
+	    "*Apropos*"
+	    "*Help*"
+	    "*cvs*"
+	    "*Buffer List*"
+	    "*Ibuffer*"
+	    "*esh command on file*"
+	    "*Youdao Dictionary*"
+	    ))
     (winner-mode))
 
   (use-package savehist
