@@ -1466,6 +1466,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (smartparens-global-mode t)
     (smartparens-global-strict-mode t)
+    :init
     ;; smartparens #431 workaround for fixing conflict between smarparens and yasnippet
     (add-hook 'yas-before-expand-snippet-hook (lambda () (smartparens-mode -1)))
     (add-hook 'yas-after-exit-snippet-hook (lambda () (smartparens-mode 1)))
