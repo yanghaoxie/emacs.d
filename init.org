@@ -174,6 +174,8 @@ This is an Emacs configuration file written in org mode.
     - [[#pyvenv][pyvenv]]
     - [[#sphinx-doc][sphinx doc]]
     - [[#importmagic][importmagic]]
+  - [[#shell-script][shell script]]
+    - [[#sh-script][sh script]]
   - [[#lsp][lsp]]
     - [[#lsp-mode][lsp mode]]
     - [[#company-lsp][company lsp]]
@@ -3648,6 +3650,42 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	:keymaps 'python-mode-map
 	"r" '(:ignore t :wk "refactor")
 	"rf" 'importmagic-fix-symbol-at-point)))
+#+END_SRC
+** shell script
+*** sh script
+#+BEGIN_SRC emacs-lisp
+  (use-package sh-script
+    :defer t
+    :init
+    (progn
+      (my/leader-keys-major-mode
+	:keymaps 'sh-mode-map
+	"\\" 'sh-backslash-region
+	"i" '(:ignore t :wk "insert")
+	"ic" 'sh-case
+	"ii" 'sh-if
+	"if" 'sh-function
+	"io" 'sh-for
+	"ie" 'sh-indexed-loop
+	"iw" 'sh-while
+	"ir" 'sh-repeat
+	"is" 'sh-select
+	"iu" 'sh-until
+	"ig" 'sh-while-getopts)
+      ;; Use sh-mode when opening `.zsh' files, and when opening Prezto runcoms.
+      (dolist (pattern '("\\.zsh\\'"
+			 "zlogin\\'"
+			 "zlogout\\'"
+			 "zpreztorc\\'"
+			 "zprofile\\'"
+			 "zshenv\\'"
+			 "zshrc\\'"))
+	(add-to-list 'auto-mode-alist (cons pattern 'sh-mode)))
+      (defun spacemacs//setup-shell ()
+	(when (and buffer-file-name
+		   (string-match-p "\\.zsh\\'" buffer-file-name))
+	  (sh-set-shell "zsh")))
+      (add-hook 'sh-mode-hook 'spacemacs//setup-shell)))
 #+END_SRC
 ** lsp
 *** lsp mode
