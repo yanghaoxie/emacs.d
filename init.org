@@ -2643,6 +2643,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    company-show-numbers t
 	    company-tooltip-idle-delay 0
 	    company-minimum-prefix-length 2
+	    company-tooltip-align-annotations t
 	    company-dabbrev-ignore-case nil
 	    company-dabbrev-downcase nil
 	    company-ispell-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
