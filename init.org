@@ -178,6 +178,7 @@ This is an Emacs configuration file written in org mode.
     - [[#lsp-mode][lsp mode]]
     - [[#company-lsp][company lsp]]
     - [[#lsp-ui][lsp ui]]
+    - [[#lsp-python-ms][lsp python ms]]
 - [[#writing][writing]]
   - [[#academic-phrases][academic phrases]]
   - [[#artbollocks][artbollocks]]
@@ -3743,6 +3744,20 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(lsp-ui-sideline-mode 1)
 	(lsp-ui-doc-mode 1)
 	(message "Lsp ui sideline/doc mode enabled in current buffer"))))
+#+END_SRC
+*** lsp python ms
+#+BEGIN_SRC emacs-lisp
+  (use-package lsp-python-ms
+    :commands lsp
+    :load-path "~/Program/lsp-python-ms/"
+    :hook (python-mode)
+    :config
+    ;; for dev build of language server
+    (setq lsp-python-ms-dir
+	  (expand-file-name "~/Program/python-language-server/output/bin/Release/"))
+    ;; for executable of language server, if it's not symlinked on your PATH
+    (setq lsp-python-ms-executable
+	  "~/Program/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer"))
 #+END_SRC
 * writing
 ** academic phrases
