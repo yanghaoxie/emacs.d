@@ -3075,6 +3075,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "u" 'org-update-checkbox-count
       "Tc" 'org-toggle-checkbox
       "Te" 'org-toggle-pretty-entities
+      "Th" 'org-toggle-heading
       "Ti" 'org-toggle-inline-images
       "Tl" 'org-toggle-link-display
       "Tt" 'org-show-todo-tree
