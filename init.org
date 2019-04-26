@@ -88,6 +88,7 @@ This is an Emacs configuration file written in org mode.
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
   - [[#persp-mode][persp mode]]
+  - [[#spacemacs-persp-extra][spacemacs persp extra]]
 - [[#project][project]]
   - [[#projectile][projectile]]
 - [[#navigation][navigation]]
@@ -1955,6 +1956,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "g M-0" 'spacemacs/persp-switch-to-0
       "g M-1" 'spacemacs/persp-switch-to-1
       "g M-2" 'spacemacs/persp-switch-to-2))
+#+END_SRC
+** spacemacs persp extra
+#+BEGIN_SRC emacs-lisp
+  (use-package spacemacs-persp-extra
+    :ensure nil
+    :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
+    :config
+    (setq dotspacemacs-auto-generate-layout-names nil
+	  dotspacemacs-default-layout-name 'none))
 #+END_SRC
 * project
 ** projectile
