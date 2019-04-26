@@ -12,6 +12,8 @@
 
 ;; General Persp functions
 
+(require 'spacemacs-persp-extra-config)
+
 (defun spacemacs//activate-persp-mode ()
   "Always activate persp-mode, unless it is already active.
  (e.g. don't re-activate during `dotspacemacs/sync-configuration-layers' -
@@ -689,3 +691,5 @@ containing the buffer."
                (append (persp-parameter 'gui-eyebrowse-window-configs persp)
                        (persp-parameter 'term-eyebrowse-window-configs persp)))
         (eyebrowse--rename-window-config-buffers window-config old new)))))
+
+(provide 'spacemacs-persp-extra)

@@ -55,3 +55,5 @@ layout (or 10th) layout, the 3rd list contains names for the 3rd
 layout, the 4th for the 4th, and so on until the 10th (aka layout
 number 0). The first list is sepcial - it is a grab-bag for names
 in case none of the regular names can be used for a new layout.")
+
+(provide 'spacemacs-persp-extra-config)
