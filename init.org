@@ -1995,6 +1995,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "g M-l" 'spacemacs/jump-to-last-layout
       "g M-c" 'spacemacs/layouts-ts-close)
     :config
+    (setq persp-reset-windows-on-nil-window-conf t
+	  persp-set-last-persp-for-new-frames nil)
     (persp-mode))
 #+END_SRC
 ** spacemacs persp extra
