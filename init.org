@@ -2004,9 +2004,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package spacemacs-persp-extra
     :ensure nil
     :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
+    :init
+    (setq dotspacemacs-auto-generate-layout-names t
+	  dotspacemacs-default-layout-name 'none)
     :config
-    (setq dotspacemacs-auto-generate-layout-names nil
-	  dotspacemacs-default-layout-name 'none))
+    )
+
 #+END_SRC
 * project
 ** projectile
