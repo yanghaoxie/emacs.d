@@ -1985,7 +1985,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/normal-keys
       "g M-0" 'spacemacs/persp-switch-to-0
       "g M-1" 'spacemacs/persp-switch-to-1
-      "g M-2" 'spacemacs/persp-switch-to-2)
+      "g M-2" 'spacemacs/persp-switch-to-2
+      "g M-3" 'spacemacs/persp-switch-to-3
+      "g M-4" 'spacemacs/persp-switch-to-4
+      "g M-5" 'spacemacs/persp-switch-to-5
+      "g M-6" 'spacemacs/persp-switch-to-6
+      "g M-7" 'spacemacs/persp-switch-to-7
+      "g M-8" 'spacemacs/persp-switch-to-8
+      "g M-9" 'spacemacs/persp-switch-to-9
+      "g M-l" 'spacemacs/jump-to-last-layout
+      "g M-c" 'spacemacs/layouts-ts-close)
     :config
     (persp-mode))
 #+END_SRC
