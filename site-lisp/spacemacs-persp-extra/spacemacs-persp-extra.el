@@ -166,11 +166,12 @@ ask the user if a new layout should be created."
                                  (spacemacs//generate-layout-name pos))))
         (cond
          (generated-name
-          (persp-switch generated-name))
+          (persp-switch generated-name)
+	  (switch-to-buffer "*scratch*"))
          ((y-or-n-p (concat "Layout in this position doesn't exist. "
                             "Do you want to create one? "))
           (persp-switch nil)
-          (spacemacs/home-delete-other-windows)))))))
+	  (switch-to-buffer "*scratch*")))))))
 
 ;; Define all `spacemacs/persp-switch-to-X' functions
 (dolist (i (number-sequence 9 0 -1))
