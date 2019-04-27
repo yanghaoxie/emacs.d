@@ -692,4 +692,11 @@ containing the buffer."
                        (persp-parameter 'term-eyebrowse-window-configs persp)))
         (eyebrowse--rename-window-config-buffers window-config old new)))))
 
+;; Persp and Projectile integration
+
+(defun spacemacs//add-project-buffers-to-persp (persp _persp-hash)
+  (if-let ((buffers (and (projectile-project-p)
+                         (projectile-project-buffers))))
+      (persp-add-buffer buffers persp nil nil)))
+
 (provide 'spacemacs-persp-extra)
