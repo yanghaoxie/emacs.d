@@ -1944,6 +1944,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :defer t
     :init
     (add-hook 'after-init-hook 'eyebrowse-mode)
+    (add-hook 'persp-before-switch-functions
+	      #'spacemacs/update-eyebrowse-for-perspective)
+    (add-hook 'eyebrowse-post-window-switch-hook
+	      #'spacemacs/save-eyebrowse-for-perspective)
+    (add-hook 'persp-activated-functions
+	      #'spacemacs/load-eyebrowse-for-perspective)
+    (add-hook 'persp-before-save-state-to-file-functions
+	      #'spacemacs/update-eyebrowse-for-perspective)
+    (add-hook 'persp-after-load-state-functions
+	      #'spacemacs/load-eyebrowse-after-loading-layout)
     :general
     (:keymaps 'override
 	      :states '(normal visual motion)
