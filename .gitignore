@@ -31,3 +31,4 @@ inferior-Python*-history
 /quelpa/*
 /rime/*
 /.dap-breakpoints
+*.pyi
