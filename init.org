@@ -215,6 +215,7 @@ This is an Emacs configuration file written in org mode.
   - [[#toc-org][toc org]]
   - [[#helpful][helpful]]
   - [[#terminal-here][terminal here]]
+  - [[#deft][deft]]
 - [[#chinese][Chinese]]
   - [[#pyim][pyim]]
     - [[#pyim-1][pyim]]
@@ -4630,6 +4631,33 @@ is achieved by adding the relevant text properties."
   ;;;###autoload
   (defun my/counsel-terminal-here (x)
     (terminal-here-launch-in-directory x))
+#+END_SRC
+** deft
+#+BEGIN_SRC emacs-lisp
+  (use-package deft
+    :commands deft
+    :init
+    (progn
+      (my/leader-keys
+	"an" 'deft))
+    :config
+    (setq deft-directory "~/Dropbox/document/org/"
+	  deft-recursive t
+	  deft-window-width 100
+	  deft-use-filename-as-title t
+	  deft-extensions '("org" "md" "txt")
+	  deft-text-mode 'org-mode
+	  deft-use-filename-as-title t
+	  deft-use-filter-string-for-filename 't)
+    (my/leader-keys-major-mode
+      :keymaps 'deft-mode-map
+      "c" 'deft-filter-clear
+      "i" 'deft-toggle-incremental-search
+      "n" 'deft-new-file
+      "N" 'deft-new-file-named
+      "q" 'quit-window
+      "o" 'deft-open-file-other-window
+      "r" 'deft-rename-file))
 #+END_SRC
 * Chinese
 ** pyim
