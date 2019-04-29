@@ -3673,7 +3673,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package lsp-mode
     :commands lsp
     :diminish lsp-mode
-    :commands lsp
     :hook (python-mode)
     :config
     (progn
