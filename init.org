@@ -52,6 +52,7 @@ This is an Emacs configuration file written in org mode.
     - [[#all-the-icons-ivy][all the icons ivy]]
     - [[#all-the-icons-dired][all the icons dired]]
   - [[#hl-todo][hl todo]]
+  - [[#posframe][posframe]]
 - [[#universal][universal]]
   - [[#restart-emacs][restart-emacs]]
   - [[#undo-tree][undo tree]]
@@ -1407,6 +1408,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     (add-hook 'prog-mode-hook 'hl-todo-mode)
     (add-hook 'LaTeX-mode-hook 'hl-todo-mode))
+#+END_SRC
+** posframe
+#+BEGIN_SRC emacs-lisp
+  (use-package posframe
+    :load-path "~/Program/posframe/")
 #+END_SRC
 * universal
 ** restart-emacs
