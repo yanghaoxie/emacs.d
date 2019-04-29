@@ -306,7 +306,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;; 			 user-emacs-directory)))
   ;;   (setq package-user-dir versioned-package-dir))
   (setq package-archives '(("melpa" . "~/elpa/melpa/")
-			   ("melpa-stable" . "~/elpa/melpa-stable/")
+			   ;; ("melpa-stable" . "~/elpa/melpa-stable/")
 			   ("gnu" . "~/elpa/gnu/")
 			   ("org" . "~/elpa/org/")
 			   ("emacswiki" . "~/elpa/emacswiki/")))
