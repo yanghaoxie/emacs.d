@@ -1184,7 +1184,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :load-path "~/Program/which-key-posframe/"
     :config
     (setq which-key-posframe-border-width 2)
-    (which-key-posframe-enable))
+    (which-key-posframe-mode))
 #+END_SRC
 ** popwin
 #+BEGIN_SRC emacs-lisp
