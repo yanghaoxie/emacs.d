@@ -1394,7 +1394,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (all-the-icons-ivy-setup)))
 #+END_SRC
 *** all the icons dired
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package all-the-icons-dired
     :after ranger
     :init
