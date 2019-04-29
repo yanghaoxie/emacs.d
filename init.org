@@ -2254,7 +2254,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(helm-autoresize-mode))))
 #+END_SRC
 *** helm describe modes
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp
   (use-package helm-describe-modes
     :defer t
     :after helm
