@@ -2622,8 +2622,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		       counsel-apropos
 		       flyspell-correct-wrapper))
       (push `(,command . ivy-posframe-display-at-frame-center) ivy-display-functions-alist))
+
+
+    (defun ivy-posframe-display-at-other-half-frame (str)
+      (ivy-posframe--display str #'posframe-poshandler-other-half-frame))
+
     (dolist (command '(swiper))
-      (push `(,command . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist))
+      (push `(,command . ivy-posframe-display-at-other-half-frame) ivy-display-functions-alist))
+    (dolist (command '(ivy-bibtex))
+      (push `(,command . ivy-posframe-display-at-frame-bottom-left) ivy-display-functions-alist))
     (push '(t . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
     (ivy-posframe-enable))
 
