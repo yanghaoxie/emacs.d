@@ -1843,7 +1843,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     (my/leader-keys
       "jm" 'evilmi-jump-items)
-    (global-set-key [remap evil-jump-item] 'evilmi-jump-items)
+    ;; (global-set-key [remap evil-jump-item] 'evilmi-jump-items)
     :config
     (global-evil-matchit-mode))
 #+END_SRC
