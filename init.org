@@ -3322,10 +3322,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package parinfer
     :ensure t
-    :bind
-    (("C-," . parinfer-toggle-mode))
     :init
     (progn
+      (my/leader-keys
+	"tP" 'parinfer-toggle-mode)
       (setq parinfer-extensions
 	    '(defaults       ; should be included.
 	      evil           ; If you use Evil.
