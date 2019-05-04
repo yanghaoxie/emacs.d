@@ -2020,8 +2020,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "pv" 'projectile-vc)
     :config
     (progn
-      ;; work around for this issue https://github.com/bbatsov/projectile/issues/1322
-      (setq projectile-git-command "fd . --print0 --no-ignore-vcs --color never")
       (setq projectile-indexing-method 'alien)
       (add-to-list 'projectile-other-file-alist '("tex" . ("pdf")))
       (add-to-list 'projectile-other-file-alist '("pdf" . ("tex")))
