@@ -85,6 +85,7 @@ This is an Emacs configuration file written in org mode.
   - [[#eivl-iedit-state][eivl iedit state]]
   - [[#evil-numbers][evil numbers]]
   - [[#evil-args][evil args]]
+  - [[#evil-mc][evil mc]]
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
 - [[#project][project]]
@@ -1935,6 +1936,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
     (define-key evil-outer-text-objects-map "a" 'evil-outer-arg))
+#+END_SRC
+** evil mc
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-mc
+    :init
+    (my/normal-keys
+      "gr" '(:ignore t :wk "evil-mc"))
+    :config
+    (progn
+      (push 'evil-escape-mode evil-mc-incompatible-minor-modes)
+      (add-hook 'prog-mode-hook 'turn-on-evil-mc-mode)
+      (add-hook 'text-mode-hook 'turn-on-evil-mc-mode)))
 #+END_SRC
 * workspaces
 ** eyebrowse
