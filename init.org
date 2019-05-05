@@ -88,6 +88,8 @@ This is an Emacs configuration file written in org mode.
   - [[#evil-mc][evil mc]]
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
+  - [[#persp-mode][persp mode]]
+  - [[#spacemacs-persp-extra][spacemacs persp extra]]
 - [[#project][project]]
   - [[#projectile][projectile]]
 - [[#navigation][navigation]]
@@ -1967,6 +1969,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :defer t
     :init
     (add-hook 'after-init-hook 'eyebrowse-mode)
+    (add-hook 'persp-before-switch-functions
+	      #'spacemacs/update-eyebrowse-for-perspective)
+    (add-hook 'eyebrowse-post-window-switch-hook
+	      #'spacemacs/save-eyebrowse-for-perspective)
+    (add-hook 'persp-activated-functions
+	      #'spacemacs/load-eyebrowse-for-perspective)
+    (add-hook 'persp-before-save-state-to-file-functions
+	      #'spacemacs/update-eyebrowse-for-perspective)
+    (add-hook 'persp-after-load-state-functions
+	      #'spacemacs/load-eyebrowse-after-loading-layout)
     :general
     (:keymaps 'override
 	      :states '(normal visual motion)
@@ -1988,8 +2000,163 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (custom-set-faces
      '(eyebrowse-mode-line-active ((t (:inherit bold-italic))))))
+
+  (defhydra hydra-eyebrowse (:hint nil)
+    "
+   Go to^^^^^^                         Actions^^
+   [_0_.._9_]^^     nth/new workspace  [_d_] close current workspace
+   [_C-0_.._C-9_]^^ nth/new workspace  [_R_] rename current workspace
+   [_<tab>_]^^^^    last workspace     [_q_] quit
+   [_c_/_C_]^^      create workspace
+   [_l_]^^^^        layouts
+   [_n_/_C-l_]^^    next workspace
+   [_N_/_p_/_C-h_]  prev workspace
+   [_w_]^^^^        workspace w/helm/ivy\n"
+    ("0" eyebrowse-switch-to-window-config-0 :exit t)
+    ("1" eyebrowse-switch-to-window-config-1 :exit t)
+    ("2" eyebrowse-switch-to-window-config-2 :exit t)
+    ("3" eyebrowse-switch-to-window-config-3 :exit t)
+    ("4" eyebrowse-switch-to-window-config-4 :exit t)
+    ("5" eyebrowse-switch-to-window-config-5 :exit t)
+    ("6" eyebrowse-switch-to-window-config-6 :exit t)
+    ("7" eyebrowse-switch-to-window-config-7 :exit t)
+    ("8" eyebrowse-switch-to-window-config-8 :exit t)
+    ("9" eyebrowse-switch-to-window-config-9 :exit t)
+    ("C-0" eyebrowse-switch-to-window-config-0)
+    ("C-1" eyebrowse-switch-to-window-config-1)
+    ("C-2" eyebrowse-switch-to-window-config-2)
+    ("C-3" eyebrowse-switch-to-window-config-3)
+    ("C-4" eyebrowse-switch-to-window-config-4)
+    ("C-5" eyebrowse-switch-to-window-config-5)
+    ("C-6" eyebrowse-switch-to-window-config-6)
+    ("C-7" eyebrowse-switch-to-window-config-7)
+    ("C-8" eyebrowse-switch-to-window-config-8)
+    ("C-9" eyebrowse-switch-to-window-config-9)
+    ("<tab>" eyebrowse-last-window-config)
+    ("<return>" nil :exit t)
+    ("TAB" eyebrowse-last-window-config)
+    ("RET" nil :exit t)
+    ("c" eyebrowse-create-window-config :exit t)
+    ("C" eyebrowse-create-window-config)
+    ("C-h" eyebrowse-prev-window-config)
+    ("C-l" eyebrowse-next-window-config)
+    ("d" eyebrowse-close-window-config)
+    ("l" hydra-persp/body :exit t)
+    ("n" eyebrowse-next-window-config)
+    ("N" eyebrowse-prev-window-config)
+    ("p" eyebrowse-prev-window-config)
+    ("R" spacemacs/workspaces-ts-rename :exit t)
+    ("w" eyebrowse-switch-to-window-config :exit t)
+    ("q" nil))
 #+END_SRC
 
+** persp mode
+#+BEGIN_SRC emacs-lisp
+  (use-package persp-mode
+    :init
+    (my/normal-keys
+      "g M-0" 'spacemacs/persp-switch-to-0
+      "g M-1" 'spacemacs/persp-switch-to-1
+      "g M-2" 'spacemacs/persp-switch-to-2
+      "g M-3" 'spacemacs/persp-switch-to-3
+      "g M-4" 'spacemacs/persp-switch-to-4
+      "g M-5" 'spacemacs/persp-switch-to-5
+      "g M-6" 'spacemacs/persp-switch-to-6
+      "g M-7" 'spacemacs/persp-switch-to-7
+      "g M-8" 'spacemacs/persp-switch-to-8
+      "g M-9" 'spacemacs/persp-switch-to-9
+      "g M-l" 'spacemacs/jump-to-last-layout
+      "g M-c" 'spacemacs/layouts-ts-close)
+    (my/leader-keys
+      "l" 'hydra-persp/body)
+    :config
+    (setq persp-reset-windows-on-nil-window-conf t
+	  persp-set-last-persp-for-new-frames nil)
+    (persp-mode))
+
+  (defhydra hydra-persp (:hint nil)
+    "
+   Go to^^^^^^                                  Actions^^
+   [_0_.._9_]^^     nth/new layout              [_a_]^^   add buffer
+   [_C-0_.._C-9_]^^ nth/new layout              [_A_]^^   add all from layout
+   [_<tab>_]^^^^    last layout                 [_d_]^^   close current layout
+   [_b_]^^^^        buffer in layout            [_D_]^^   close other layout
+   [_h_]^^^^        default layout              [_L_]^^   load layouts from file
+   [_l_]^^^^        layout w/helm/ivy           [_r_]^^   remove current buffer
+   [_n_/_C-l_]^^    next layout                 [_R_]^^   rename current layout
+   [_N_/_p_/_C-h_]  prev layout                 [_s_/_S_] save all layouts/save by names
+   [_o_]^^^^        custom layout               [_t_]^^   show a buffer without adding it to current layout
+   [_w_]^^^^        workspaces transient state  [_x_]^^   kill current w/buffers
+   ^^^^^^                                       [_X_]^^   kill other w/buffers
+   ^^^^^^                                       [_<_/_>_] move layout left/right
+   ^^^^^^                                       "
+    ("1" spacemacs/persp-switch-to-1 :exit t)
+    ("2" spacemacs/persp-switch-to-2 :exit t)
+    ("3" spacemacs/persp-switch-to-3 :exit t)
+    ("4" spacemacs/persp-switch-to-4 :exit t)
+    ("5" spacemacs/persp-switch-to-5 :exit t)
+    ("6" spacemacs/persp-switch-to-6 :exit t)
+    ("7" spacemacs/persp-switch-to-7 :exit t)
+    ("8" spacemacs/persp-switch-to-8 :exit t)
+    ("9" spacemacs/persp-switch-to-9 :exit t)
+    ("0" spacemacs/persp-switch-to-0 :exit t)
+    ("C-1" spacemacs/persp-switch-to-1)
+    ("C-2" spacemacs/persp-switch-to-2)
+    ("C-3" spacemacs/persp-switch-to-3)
+    ("C-4" spacemacs/persp-switch-to-4)
+    ("C-5" spacemacs/persp-switch-to-5)
+    ("C-6" spacemacs/persp-switch-to-6)
+    ("C-7" spacemacs/persp-switch-to-7)
+    ("C-8" spacemacs/persp-switch-to-8)
+    ("C-9" spacemacs/persp-switch-to-9)
+    ("C-0" spacemacs/persp-switch-to-0)
+    ("<tab>" spacemacs/jump-to-last-layout)
+    ("<return>" nil :exit t)
+    ("TAB" spacemacs/jump-to-last-layout)
+    ("RET" nil :exit t)
+    ("C-h" persp-prev)
+    ("C-l" persp-next)
+    ("<" spacemacs/move-current-persp-left)
+    (">" spacemacs/move-current-persp-right)
+    ("a" persp-add-buffer :exit t)
+    ("A" persp-import-buffers :exit t)
+    ("b" spacemacs/persp-buffers :exit t)
+    ("d" spacemacs/layouts-ts-close)
+    ("D" spacemacs/layouts-ts-close-other :exit t)
+    ("h" spacemacs/layout-goto-default :exit t)
+    ("L" persp-load-state-from-file :exit t)
+    ("l" persp-switch :exit t)
+    ("n" persp-next)
+    ("N" persp-prev)
+    ("o" spacemacs/select-custom-layout :exit t)
+    ("p" persp-prev)
+    ("r" persp-remove-buffer :exit t)
+    ("R" spacemacs/layouts-ts-rename :exit t)
+    ("s" persp-save-state-to-file :exit t)
+    ("S" persp-save-to-file-by-names :exit t)
+    ("t" persp-temporarily-display-buffer :exit t)
+    ("w" hydra-eyebrowse/body :exit t)
+    ("x" spacemacs/layouts-ts-kill)
+    ("X" spacemacs/layouts-ts-kill-other :exit t)
+    ("q" nil))
+#+END_SRC
+** spacemacs persp extra
+#+BEGIN_SRC emacs-lisp
+  (use-package spacemacs-persp-extra
+    :ensure nil
+    :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
+    :init
+    (setq dotspacemacs-auto-generate-layout-names t
+	  dotspacemacs-default-layout-name 'none)
+    :config
+    (defadvice persp-activate (before spacemacs//save-toggle-layout activate)
+      (setq spacemacs--last-selected-layout persp-last-persp-name))
+    (add-hook 'persp-mode-hook 'spacemacs//layout-autosave)
+    (add-hook 'persp-created-functions
+	      #'spacemacs//add-project-buffers-to-persp)
+    (advice-add 'persp-load-state-from-file :before 'spacemacs//layout-wait-for-modeline))
+
+#+END_SRC
 * project
 ** projectile
 #+BEGIN_SRC emacs-lisp
@@ -2632,6 +2799,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  ivy-posframe-min-width 80
 	  ivy-posframe-min-height 10
 	  ivy-posframe-height nil)
+	  ivy-posframe-width 80
+	  ivy-posframe-height 10)
     (dolist (command '(ivy-switch-buffer
 		       counsel-M-x
 		       counsel-find-file
