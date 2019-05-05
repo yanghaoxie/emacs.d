@@ -2798,7 +2798,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  ivy-posframe-width nil
 	  ivy-posframe-min-width 80
 	  ivy-posframe-min-height 10
-	  ivy-posframe-height nil)
+	  ivy-posframe-height nil
 	  ivy-posframe-width 80
 	  ivy-posframe-height 10)
     (dolist (command '(ivy-switch-buffer
