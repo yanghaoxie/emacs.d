@@ -2195,7 +2195,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    :header-args: :tangle no
    :END:
 *** helm
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package helm
     :commands helm-mode
     :init
@@ -2393,7 +2393,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq flyspell-correct-interface #'flyspell-correct-helm))
 #+END_SRC
 *** helm org rifle
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package helm-org-rifle
     :commands (helm-org-rifle-agenda-files
 	       helm-org-rifle-occur-agenda-files)
@@ -2462,7 +2462,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    :buffer "*helm faces*")))
 #+END_SRC
 *** helm posframe
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package helm-posframe
     :init
     (add-hook 'helm-org-rifle-after-command-hook 'helm-posframe-cleanup)
