@@ -2186,7 +2186,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-g z" 'dumb-jump-go-prefer-external-other-window)
     :config
     (progn
-      (setq dumb-jump-selector 'helm)))
+      (setq dumb-jump-selector 'ivy)))
 #+END_SRC
 
 * completion
