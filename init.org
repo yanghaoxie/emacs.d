@@ -902,6 +902,28 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  clean-buffer-list-delay-special 259200)
     (midnight-mode 1))
 
+  (use-package find-file
+    :ensure nil
+    :init
+    (my/leader-keys
+      "fO" 'ff-find-other-file)
+    (defvar org-other-file-alist
+      '(("\\.org\\'" (".el" ".pdf"))))
+    (defvar el-other-file-alist
+      '(("\\.el\\'" (".org"))))
+    (defvar pdf-other-file-alist
+      '(("\\.pdf\\'" (".tex" ".org"))))
+    (defvar latex-other-file-alist
+      '(("\\.tex\\'" (".pdf"))))
+    (add-hook 'org-mode-hook
+	      (lambda () (setq ff-other-file-alist 'org-other-file-alist)))
+    (add-hook 'emacs-lisp-mode-hook
+	      (lambda () (setq ff-other-file-alist 'el-other-file-alist)))
+    (add-hook 'LaTeX-mode-hook
+	      (lambda () (setq ff-other-file-alist 'latex-other-file-alist)))
+    (add-hook 'pdf-view-mode-hook
+	      (lambda () (setq ff-other-file-alist 'pdf-other-file-alist))))
+
   ;; key bindings
 
   (my/leader-keys-extra
