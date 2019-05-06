@@ -1997,6 +1997,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      "g7" 'eyebrowse-switch-to-window-config-7
 	      "g8" 'eyebrowse-switch-to-window-config-8
 	      "g9" 'eyebrowse-switch-to-window-config-9)
+    (my/leader-keys
+      "w." 'hydra-eyebrowse/body)
     :config
     (custom-set-faces
      '(eyebrowse-mode-line-active ((t (:inherit bold-italic))))))
