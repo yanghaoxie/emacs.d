@@ -118,6 +118,7 @@ This is an Emacs configuration file written in org mode.
     - [[#helm-posframe][helm posframe]]
   - [[#ivy-related][ivy related]]
     - [[#ivy][ivy]]
+    - [[#ivy-prescient][ivy prescient]]
     - [[#ivy-rich][ivy-rich]]
     - [[#ivy-hydra][ivy hydra]]
     - [[#counsel][counsel]]
@@ -2690,6 +2691,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  ivy-initial-inputs-alist nil
 	  ivy-count-format "(%d/%d) ")
     (ivy-mode))
+#+END_SRC
+*** ivy prescient
+#+BEGIN_SRC emacs-lisp
+  (use-package ivy-prescient
+    :after ivy
+    :config
+    (ivy-prescient-mode)
+    (prescient-persist-mode))
 #+END_SRC
 *** ivy-rich
 #+BEGIN_SRC emacs-lisp :tangle no
