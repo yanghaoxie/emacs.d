@@ -1977,11 +1977,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	       evil-mc-skip-and-goto-next-match evil-mc-skip-and-goto-next-match
 	       evil-mc-make-and-goto-prev-match evil-mc-skip-and-goto-prev-match)
     :init
+    (add-hook 'prog-mode-hook #'evil-mc-mode)
+    (add-hook 'text-mode-hook #'evil-mc-mode)
     (my/normal-keys
       "gr" '(:ignore t :wk "evil-mc"))
     :config
     (progn
-      (global-evil-mc-mode +1)
       (push 'evil-escape-mode evil-mc-incompatible-minor-modes)))
 #+END_SRC
 * workspaces
