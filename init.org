@@ -132,6 +132,7 @@ This is an Emacs configuration file written in org mode.
   - [[#company-related][company related]]
     - [[#company][company]]
     - [[#company-statistics][company statistics]]
+    - [[#company-prescient][company prescient]]
   - [[#yasnippet-related][yasnippet related]]
     - [[#yasnippet][yasnippet]]
     - [[#yasnippet-snippets][yasnippet-snippets]]
@@ -2917,11 +2918,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(define-key map (kbd "<return>") nil))))
 #+END_SRC
 *** company statistics
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package company-statistics
     :after company
     :config
     (company-statistics-mode))
+#+END_SRC
+*** company prescient
+#+BEGIN_SRC emacs-lisp
+  (use-package company-prescient
+    :after company
+    :config
+    (company-prescient-mode))
 #+END_SRC
 ** yasnippet related
 *** yasnippet
