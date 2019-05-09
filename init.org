@@ -3986,12 +3986,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (my/leader-keys-major-mode
        :keymaps 'LaTeX-mode-map
-	"ip" 'academic-phrases
-	"is" 'academic-phrases-by-section)
+	"iP" 'academic-phrases
+	"iS" 'academic-phrases-by-section)
       (my/leader-keys-major-mode
        :keymaps 'org-mode-map
-	"ip" 'academic-phrases
-	"is" 'academic-phrases-by-section)))
+	"iP" 'academic-phrases
+	"iS" 'academic-phrases-by-section)))
 #+END_SRC
 ** artbollocks
 #+BEGIN_SRC emacs-lisp
