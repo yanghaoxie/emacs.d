@@ -162,6 +162,7 @@ This is an Emacs configuration file written in org mode.
     - [[#org-noter][org-noter]]
     - [[#org-journal][org journal]]
     - [[#org-gcal][org gcal]]
+    - [[#org-caldav][org caldav]]
   - [[#emacs-lisp-related][emacs lisp related]]
     - [[#emacs-lisp][emacs lisp]]
     - [[#parinfer-mode][parinfer mode]]
@@ -3545,6 +3546,17 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (setq url-gateway-method 'socks)
   (setq socks-server '("Default server" "127.0.0.1" 1080 5))
+#+END_SRC
+*** org caldav
+#+BEGIN_SRC emacs-lisp
+  (use-package org-caldav
+    :config
+    (setq org-caldav-url 'google
+	  org-caldav-oauth2-client-id `,google-calendar-client-id
+	  org-caldav-oauth2-client-secret `,google-calendar-client-secret
+	  org-caldav-calendar-id `,google-calendar-id
+	  org-caldav-inbox "~/Dropbox/document/org/org-caldav/appointments.org"
+	  org-caldav-files '("~/Dropbox/document/org/org-caldav/org-caldav.org")))
 #+END_SRC
 ** emacs lisp related
 *** emacs lisp
