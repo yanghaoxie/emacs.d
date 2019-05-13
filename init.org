@@ -3496,7 +3496,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (setq org-noter-default-notes-file-names '("ref-notes.org")
 	    org-noter-notes-search-path '("~/Dropbox/document/org/references")
 	    org-noter-auto-save-last-location t
-	    org-noter-doc-split-fraction '(0.7 . 0.7)
+	    org-noter-doc-split-fraction `(, (- 1 (/ 70.0 (frame-width))) . 0.7)
 	    org-noter-always-create-frame nil
 	    org-noter-insert-note-no-questions t
 	    ;; org-noter-notes-window-location 'vertical-split
