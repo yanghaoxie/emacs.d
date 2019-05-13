@@ -3564,9 +3564,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq org-gcal-client-id `,google-calendar-client-id
 	  org-gcal-client-secret `,google-calendar-client-secret
 	  org-gcal-file-alist `((,google-calendar-id . "~/Dropbox/document/org/org-gcal/schedule.org"))))
-
-  (setq url-gateway-method 'socks)
-  (setq socks-server '("Default server" "127.0.0.1" 1080 5))
 #+END_SRC
 *** org caldav
 #+BEGIN_SRC emacs-lisp
