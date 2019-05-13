@@ -3445,7 +3445,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "x" '(:ignore t :which-key "text"))
     (my/leader-keys-major-mode
       :keymaps 'org-mode-map
-      "op" 'org-open-at-point))
+      "op" 'org-open-at-point)
+    (my/all-states-keys
+      :keymaps 'org-read-date-minibuffer-local-map
+      "M-h" 'calendar-backward-day
+      "M-l" 'calendar-forward-day
+      "M-j" 'calendar-forward-week
+      "M-k" 'calendar-backward-week
+      "M-J" 'calendar-forward-month
+      "M-K" 'calendar-backward-month))
 #+END_SRC
 *** org agenda
 #+BEGIN_SRC emacs-lisp
