@@ -163,6 +163,7 @@ This is an Emacs configuration file written in org mode.
     - [[#org-noter][org-noter]]
     - [[#org-journal][org journal]]
     - [[#org-projectile][org projectile]]
+    - [[#idle-org-agenda][idle org agenda]]
   - [[#emacs-lisp-related][emacs lisp related]]
     - [[#emacs-lisp][emacs lisp]]
     - [[#parinfer-mode][parinfer mode]]
@@ -3544,6 +3545,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq org-projectile-projects-file "~/Dropbox/document/org/projectes.org")
     (push (org-projectile-project-todo-entry) org-capture-templates))
+*** idle org agenda
+#+BEGIN_SRC emacs-lisp
+  (use-package idle-org-agenda
+    :after org-agenda
+    :config
+    (setq idle-org-agenda-interval 300)
+    (idle-org-agenda-mode))
 #+END_SRC
 ** emacs lisp related
 *** emacs lisp
