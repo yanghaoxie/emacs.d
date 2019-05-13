@@ -223,6 +223,7 @@ This is an Emacs configuration file written in org mode.
   - [[#helpful][helpful]]
   - [[#terminal-here][terminal here]]
   - [[#deft][deft]]
+  - [[#proxy-mode][proxy mode]]
 - [[#chinese][Chinese]]
   - [[#pyim][pyim]]
     - [[#pyim-1][pyim]]
@@ -4903,6 +4904,14 @@ is achieved by adding the relevant text properties."
       "q" 'quit-window
       "o" 'deft-open-file-other-window
       "r" 'deft-rename-file))
+#+END_SRC
+** proxy mode
+#+BEGIN_SRC emacs-lisp
+  (use-package proxy-mode
+    :commands proxy-mode
+    :config
+    (setq url-gateway-local-host-regexp
+	  (concat "\\`" (regexp-opt '("localhost" "127.0.0.1")) "\\'")))
 #+END_SRC
 * Chinese
 ** pyim
