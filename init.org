@@ -162,6 +162,7 @@ This is an Emacs configuration file written in org mode.
     - [[#org-ref][org-ref]]
     - [[#org-noter][org-noter]]
     - [[#org-journal][org journal]]
+    - [[#org-projectile][org projectile]]
   - [[#emacs-lisp-related][emacs lisp related]]
     - [[#emacs-lisp][emacs lisp]]
     - [[#parinfer-mode][parinfer mode]]
@@ -3535,6 +3536,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (progn
       (setq org-journal-dir "~/Dropbox/document/org/journal")))
+#+END_SRC
+*** org projectile
+#+BEGIN_SRC emacs-lisp
+  (use-package org-projectile
+    :config
+    (setq org-projectile-projects-file "~/Dropbox/document/org/projectes.org")
+    (push (org-projectile-project-todo-entry) org-capture-templates))
 #+END_SRC
 ** emacs lisp related
 *** emacs lisp
