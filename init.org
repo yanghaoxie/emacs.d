@@ -3547,6 +3547,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq org-projectile-projects-file "~/Dropbox/document/org/projectes.org")
     (push (org-projectile-project-todo-entry) org-capture-templates))
+#+END_SRC
 *** idle org agenda
 #+BEGIN_SRC emacs-lisp
   (use-package idle-org-agenda
@@ -3554,6 +3555,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq idle-org-agenda-interval 300)
     (idle-org-agenda-mode))
+#+END_SRC
 *** org gcal
 #+BEGIN_SRC emacs-lisp
   (load "~/emacs-secrets/secrets.el")
