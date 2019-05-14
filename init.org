@@ -3662,6 +3662,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	       org-gcal-fetch
 	       org-gcal-delete-at-point
 	       org-gcal-post-at-point)
+    :init
+    (my/leader-keys
+      "ag" '(:ignore t :wk "org-gcal")
+      "ags" 'org-gcal-sync
+      "agf" 'org-gcal-fetch
+      "agd" 'org-gcal-delete-at-point
+      "agp" 'org-gcal-post-at-point)
     :config
     (setq org-gcal-client-id `,google-calendar-client-id
 	  org-gcal-client-secret `,google-calendar-client-secret
