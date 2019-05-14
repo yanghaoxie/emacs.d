@@ -3658,6 +3658,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package oauth2)
   (use-package org-gcal
+    :commands (org-gcal-sync
+	       org-gcal-fetch
+	       org-gcal-delete-at-point
+	       org-gcal-post-at-point)
     :config
     (setq org-gcal-client-id `,google-calendar-client-id
 	  org-gcal-client-secret `,google-calendar-client-secret
