@@ -3672,7 +3672,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq org-gcal-client-id `,google-calendar-client-id
 	  org-gcal-client-secret `,google-calendar-client-secret
-	  org-gcal-file-alist `((,google-calendar-id . "~/Dropbox/document/org/org-gcal/schedule.org"))))
+	  org-gcal-file-alist `((,google-calendar-id . "~/Dropbox/document/org/org-gcal/schedule.org"))
+	  org-gcal-down-days 7
+	  org-gcal-up-days 7))
 #+END_SRC
 *** org caldav
 #+BEGIN_SRC emacs-lisp :tangle no
