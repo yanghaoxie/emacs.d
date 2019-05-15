@@ -2261,7 +2261,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     (progn
       (setq avy-all-windows nil
-	    avy-background t)
+	    avy-background t
+	    avy-flyspell-correct-function #'flyspell-correct-at-point)
       (my/leader-keys
 	"jj" 'avy-goto-char-timer
 	"j M-j" 'my/avy-goto-char-timer-all-windows
