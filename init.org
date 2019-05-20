@@ -1884,7 +1884,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "jm" 'evilmi-jump-items)
     (define-key evil-normal-state-map (kbd "%") 'evilmi-jump-items)
-    (define-key evil-visual-state-map (kbd "%") 'evilmi-jump-items))
+    (define-key evil-visual-state-map (kbd "%") 'evilmi-jump-items)
+    :config
+    (global-evil-matchit-mode))
 #+END_SRC
 ** evil surround
 #+BEGIN_SRC emacs-lisp
