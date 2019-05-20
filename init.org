@@ -482,6 +482,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (defun my/org-ref-open-pdf-at-point ( )
     "Open the pdf for bibtex key under point if it exists."
     (interactive)
+    (require 'ivy-bibtex)
     (let* ((results (org-ref-get-bibtex-key-and-file))
 	   (key (car results))
 	   (pdf-file (car (bibtex-completion-find-pdf key))))
