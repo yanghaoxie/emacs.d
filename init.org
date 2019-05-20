@@ -3804,7 +3804,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "."   'LaTeX-mark-environment  ;; C-c .
       "/"   'TeX-command-buffer
       "c"   'LaTeX-close-environment ;; C-c ]
-      "e"   'LaTeX-environment       ;; C-c C-e
+      ;; "e"   'LaTeX-environment       ;; C-c C-e
+      "e"   'cdlatex-environment
       "M-e" 'TeX-next-error
       "i"   '(:ignore t :which-key "insert")
       "ii"   'LaTeX-insert-item       ;; C-c C-j
