@@ -3653,7 +3653,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (idle-org-agenda-mode))
 #+END_SRC
 *** org gcal
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package oauth2)
   (use-package org-gcal
     :commands (org-gcal-sync
@@ -3675,7 +3675,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  org-gcal-up-days 7))
 #+END_SRC
 *** org caldav
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
   (use-package org-caldav
     :config
     (setq org-caldav-url 'google
