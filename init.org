@@ -1976,7 +1976,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil args
 #+BEGIN_SRC emacs-lisp
   (use-package evil-args
-    :after evil
+    :commands (evil-forward-arg
+	       evil-backward-arg
+	       evil-jump-out-args
+	       evil-inner-arg
+	       evil-outer-arg)
     :init
     (progn
       (my/normal-keys
