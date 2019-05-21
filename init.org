@@ -1067,6 +1067,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "p" 'esup-previous-result))
 
   (use-package benchmark-init
+    :commands (benchmark-init/show-durations-tree
+	       benchmark-init/durations-tree)
     :init
     (progn
       (my/leader-keys
