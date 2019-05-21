@@ -4163,6 +4163,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package academic-phrases
     :defer t
+    :commands (academic-phrases
+	       academic-phrases-by-section)
     :init
     (progn
       (my/leader-keys-major-mode
