@@ -1115,6 +1115,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** rainbow delimiters
 #+BEGIN_SRC emacs-lisp
   (use-package rainbow-delimiters
+    :commands rainbow-delimiters-mode
     :init
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
     (add-hook 'text-mode-hook 'rainbow-delimiters-mode))
