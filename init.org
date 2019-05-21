@@ -1147,6 +1147,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** highligh numbers
 #+BEGIN_SRC emacs-lisp
   (use-package highlight-numbers
+    :commands highlight-numbers-mode
     :init
     (add-hook 'prog-mode-hook 'highlight-numbers-mode)
     :config)
