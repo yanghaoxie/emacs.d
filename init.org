@@ -1055,6 +1055,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 * start-up profiler
 #+BEGIN_SRC emacs-lisp
   (use-package esup
+    :commands esup
     :init
     (progn
       (my/leader-keys
