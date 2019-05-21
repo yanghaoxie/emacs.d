@@ -1289,6 +1289,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** hide mode line
 #+BEGIN_SRC emacs-lisp
   (use-package hide-mode-line
+    :commands my/toggle-hide-mode-line
     :init
     (my/leader-keys
       "tm" 'my/toggle-hide-mode-line))
