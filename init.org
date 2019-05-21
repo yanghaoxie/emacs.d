@@ -1140,6 +1140,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package highlight-indentation
       :diminish highlight-indentation-mode
+      :commands highlight-indentation-mode
       :init
       (add-hook 'prog-mode-hook #'highlight-indentation-mode))
 #+END_SRC
