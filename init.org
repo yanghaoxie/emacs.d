@@ -2986,7 +2986,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** ivy-yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package ivy-yasnippet
-    :after yasnippet
+    :commands ivy-yasnippet
     :init
     (progn
       (setq ivy-yasnippet-expand-keys nil)
