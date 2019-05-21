@@ -4214,6 +4214,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package wordnut
     :defer t
+    :commands wordnut-search
     :init
     (progn
       (my/leader-keys
