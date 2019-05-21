@@ -2828,6 +2828,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package counsel-projectile
     :defer t
+    :commands (counsel-projectile
+	       counsel-projectile-find-file
+	       counsel-projectile-switch-to-buffer
+	       counsel-projectile-find-dir
+	       counsel-projectile-switch-project
+	       counsel-projectile-grep
+	       counsel-projectile-ag
+	       counsel-projectile-rg)
     :init
     (my/leader-keys
       "p SPC" 'counsel-projectile
