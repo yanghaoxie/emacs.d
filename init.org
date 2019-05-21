@@ -3900,11 +3900,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    
 #+BEGIN_SRC emacs-lisp
   (use-package yaml-mode
-  :mode (("\\.\\(yml\\|yaml\\)\\'" . yaml-mode)
-	 ("Procfile\\'" . yaml-mode))
-  :config (add-hook 'yaml-mode-hook
-		    '(lambda ()
-		       (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
+    :mode (("\\.\\(yml\\|yaml\\)\\'" . yaml-mode)
+	   ("Procfile\\'" . yaml-mode))
+    :config (add-hook 'yaml-mode-hook
+		      '(lambda ()
+			 (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
 #+END_SRC
 
 ** python related
