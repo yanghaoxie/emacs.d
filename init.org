@@ -2382,7 +2382,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
 ** ace window
    
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package ace-window
     :init
     (my/leader-keys
