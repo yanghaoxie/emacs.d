@@ -3771,6 +3771,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "rs"    'reftex-search-document
       "rt"    'reftex-toc
       "rT"    'reftex-toc-recenter
+      "ru"    'reftex-renumber-simple-labels
       "rv"    'reftex-view-crossref))
 #+END_SRC
 *** auctex
