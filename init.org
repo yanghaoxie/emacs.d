@@ -4638,7 +4638,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** elfeed org
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed-org
-    :after (elfeed)
+    :after (org elfeed)
+    :commands my/elfeed-load-db-and-open
     :config
     (elfeed-org)
     (setq rmh-elfeed-org-files (list "~/.emacs.d/init.org")))
