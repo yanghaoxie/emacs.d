@@ -4049,6 +4049,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ;; (add-hook 'python-mode-hook 'importmagic-mode)
       (my/leader-keys-major-mode
 	:keymaps 'python-mode-map
+	:major-modes t
 	"r" '(:ignore t :wk "refactor")
 	"rf" 'importmagic-fix-symbol-at-point)))
 #+END_SRC
