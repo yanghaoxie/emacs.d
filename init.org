@@ -1748,7 +1748,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'inferior-python-mode-hook #'electric-operator-mode))
 #+END_SRC
 ** secret information
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (load "~/emacs-secrets/secrets.el")
 #+END_SRC
 * themes
