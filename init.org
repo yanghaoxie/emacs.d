@@ -2213,7 +2213,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 * project
 ** projectile
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package projectile
     :diminish projectile-mode
     :commands (projectile-ack
