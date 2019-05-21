@@ -1652,6 +1652,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** easy text
 #+BEGIN_SRC emacs-lisp
   (use-package easy-kill
+    :commands easy-kill
     :init
     (progn
       (global-set-key [remap kill-ring-save] 'easy-kill)))
