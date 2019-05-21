@@ -1149,8 +1149,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package highlight-numbers
     :commands highlight-numbers-mode
     :init
-    (add-hook 'prog-mode-hook 'highlight-numbers-mode)
-    :config)
+    (add-hook 'prog-mode-hook 'highlight-numbers-mode))
 #+END_SRC
 ** highlight symbol
 #+BEGIN_SRC emacs-lisp
