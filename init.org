@@ -3869,6 +3869,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package cdlatex
     :diminish cdlatex-mode
+    :commands (turn-on-cdlatex
+	       cdlatex-mode)
     :config
     (setq cdlatex-simplify-sub-super-scripts nil
 	  cdlatex-paired-parens "$[{(<")
