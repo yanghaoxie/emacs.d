@@ -3731,7 +3731,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     "ep" 'eval-print-last-sexp))
 #+END_SRC
 *** parinfer mode
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package parinfer
     :ensure t
     :init
