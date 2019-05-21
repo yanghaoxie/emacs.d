@@ -1066,16 +1066,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "n" 'esup-next-result
       "p" 'esup-previous-result))
 
-   (use-package benchmark-init
-      :init
-      (progn
-	(my/leader-keys
-	  "ab" '(:ignore t :which-key "benchmark")
-	  "abt" 'benchmark-init/show-durations-tabulated
-	  "abr" 'benchmark-init/show-durations-tree))
-      :config
-      ;; To disable collection of benchmark data after init is done.
-      (add-hook 'after-init-hook 'benchmark-init/deactivate))
+  (use-package benchmark-init
+    :init
+    (progn
+      (my/leader-keys
+	"ab" '(:ignore t :which-key "benchmark")
+	"abt" 'benchmark-init/show-durations-tabulated
+	"abr" 'benchmark-init/show-durations-tree))
+    :config
+    ;; To disable collection of benchmark data after init is done.
+    (add-hook 'after-init-hook 'benchmark-init/deactivate))
 #+END_SRC
 * UI
 ** GUI frame
