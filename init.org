@@ -1171,6 +1171,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package color-identifiers-mode
     :defer t
     :diminish color-identifiers-mode
+    :commands color-identifiers-mode
     :init
     (my/leader-keys
       "thi" 'my/toggle-color-identifiers))
