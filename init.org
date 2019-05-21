@@ -3749,6 +3749,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** reftex
 #+BEGIN_SRC emacs-lisp
   (use-package reftex
+    :commands (turn-on-reftex
+	       reftex-mode)
     :init
     (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
     :config
