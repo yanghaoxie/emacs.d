@@ -3871,11 +3871,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :diminish cdlatex-mode
     :commands (turn-on-cdlatex
 	       cdlatex-mode)
+    :init
+    (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
+    (add-hook 'org-mode-hook 'turn-on-cdlatex)
     :config
     (setq cdlatex-simplify-sub-super-scripts nil
-	  cdlatex-paired-parens "$[{(<")
-    (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
-    (add-hook 'org-mode-hook 'turn-on-cdlatex))
+	  cdlatex-paired-parens "$[{(<"))
 #+END_SRC
 ** lua
 #+BEGIN_SRC emacs-lisp
