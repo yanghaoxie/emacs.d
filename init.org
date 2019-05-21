@@ -1447,6 +1447,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** hl todo
 #+BEGIN_SRC emacs-lisp
   (use-package hl-todo
+    :commands hl-todo-mode
     :init
     (add-hook 'prog-mode-hook 'hl-todo-mode)
     (add-hook 'LaTeX-mode-hook 'hl-todo-mode))
