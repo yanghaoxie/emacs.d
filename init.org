@@ -1660,6 +1660,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** zop to char
 #+BEGIN_SRC emacs-lisp
   (use-package zop-to-char
+    :commands zop-to-char
     :config
     (progn
       (global-set-key [remap zap-to-char] 'zop-to-char)
