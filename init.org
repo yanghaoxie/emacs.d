@@ -1669,6 +1669,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** imenu list
 #+BEGIN_SRC emacs-lisp
   (use-package imenu-list
+    :commands imenu-list-smart-toggle
     :init
     (progn
       (setq imenu-list-focus-after-activation t
