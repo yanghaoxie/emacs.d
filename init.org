@@ -2772,6 +2772,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/all-states-keys
       "M-y" 'counsel-yank-pop)
     :config
+    (setq counsel-yank-pop-preselect-last t)
     (counsel-mode))
 #+END_SRC
 *** swiper
