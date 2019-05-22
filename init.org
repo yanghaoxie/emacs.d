@@ -2747,28 +2747,28 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :general
     ("M-x" 'counsel-M-x)
     (my/leader-keys
-     ;; files
-     "ff" 'counsel-find-file
-     "fl" 'counsel-locate
-     ;; help
-     "?"   'counsel-descbinds
-     "hda" 'counsel-apropos
-     "hdf" 'counsel-describe-function
-     "hdF" 'counsel-describe-face
-     "hdv" 'counsel-describe-variable
-     "hi"  'counsel-info-lookup-symbol
-     "ji" 'counsel-imenu
-     ;; register/ring
-     "ry"  'counsel-yank-pop
-     "rm"  'counsel-mark-ring
-     ;; search
-     "sa" 'counsel-ag
-     "sp" 'counsel-projectile-ag
-     ;; themes
-     "Ts"  'counsel-load-theme
-     ;; insert color
-     "ic" 'counsel-colors-emacs
-     "iu" 'counsel-unicode-char)
+      ;; files
+      "ff" 'counsel-find-file
+      "fl" 'counsel-locate
+      ;; help
+      "?"   'counsel-descbinds
+      "hda" 'counsel-apropos
+      "hdf" 'counsel-describe-function
+      "hdF" 'counsel-describe-face
+      "hdv" 'counsel-describe-variable
+      "hi"  'counsel-info-lookup-symbol
+      "ji" 'counsel-imenu
+      ;; register/ring
+      "ry"  'counsel-yank-pop
+      "rm"  'counsel-mark-ring
+      ;; search
+      "sa" 'counsel-ag
+      "sp" 'counsel-projectile-ag
+      ;; themes
+      "Ts"  'counsel-load-theme
+      ;; insert color
+      "ic" 'counsel-colors-emacs
+      "iu" 'counsel-unicode-char)
     (my/all-states-keys
       "M-y" 'counsel-yank-pop)
     :config
