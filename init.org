@@ -689,10 +689,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :ensure nil
     :defer 5
     :diminish auto-revert-mode
-    :init
+    :config
     (setq auto-revert-interval 0.5)
-    (add-hook 'pdf-view-mode-hook 'auto-revert-mode)
-    )
+    (global-auto-revert-mode))
 
   (use-package server
     :ensure nil
