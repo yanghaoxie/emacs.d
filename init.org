@@ -2707,15 +2707,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package ivy
     :diminish ivy-mode
-    :init
-    (progn
-      (my/leader-keys
-	"bb" 'ivy-switch-buffer)
-      (my/all-states-keys
-	:keymaps 'inferior-python-mode-map
-	"M-h" 'counsel-shell-history))
-    ;; :config
     :general
+    (my/leader-keys
+      "bb" 'ivy-switch-buffer)
+    (my/all-states-keys
+      :keymaps 'inferior-python-mode-map
+      "M-h" 'counsel-shell-history)
     (ivy-minibuffer-map
      "C-j" 'ivy-next-line
      "C-k" 'ivy-previous-line
