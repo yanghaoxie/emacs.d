@@ -895,6 +895,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package custom
     :ensure nil
+    :defer 5
     :config
     (my/normal-keys
       :keymaps 'custom-mode-map
