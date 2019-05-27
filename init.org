@@ -887,9 +887,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package saveplace
     :ensure nil
-    :init
-    (progn
-      (save-place-mode)))
+    :defer 5
+    :config
+    (save-place-mode))
 
   (use-package custom
     :ensure nil
