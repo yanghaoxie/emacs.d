@@ -1404,7 +1404,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 ** all the icons related
 *** all the icons
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package all-the-icons
     :defer t
     :init
