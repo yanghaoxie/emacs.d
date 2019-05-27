@@ -2710,9 +2710,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :general
     (my/leader-keys
       "bb" 'ivy-switch-buffer)
-    (my/all-states-keys
-      :keymaps 'inferior-python-mode-map
-      "M-h" 'counsel-shell-history)
     (ivy-minibuffer-map
      "C-j" 'ivy-next-line
      "C-k" 'ivy-previous-line
@@ -2775,6 +2772,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "iu" 'counsel-unicode-char)
     (my/all-states-keys
       "M-y" 'counsel-yank-pop)
+    (my/all-states-keys
+      :keymaps 'inferior-python-mode-map
+      "M-h" 'counsel-shell-history)
     :config
     (setq counsel-yank-pop-preselect-last t)
     (counsel-mode))
