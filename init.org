@@ -681,7 +681,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (progn
       (setq recentf-max-saved-items 500
-	    recentf-auto-cleanup 'never)
+	    recentf-auto-cleanup 'never
+	    recentf-exclude '("/.emacs.d/pyim/" "/.elfeed/"))
       (recentf-mode 1)))
 
   (use-package autorevert
