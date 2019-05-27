@@ -3903,6 +3903,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    
 #+BEGIN_SRC emacs-lisp
   (use-package yaml-mode
+    :commands yaml-mode
     :mode (("\\.\\(yml\\|yaml\\)\\'" . yaml-mode)
 	   ("Procfile\\'" . yaml-mode))
     :config (add-hook 'yaml-mode-hook
