@@ -687,7 +687,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package autorevert
     :ensure nil
-    :defer t
+    :defer 5
     :diminish auto-revert-mode
     :init
     (setq auto-revert-interval 0.5)
