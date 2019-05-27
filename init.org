@@ -1110,6 +1110,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package beacon
     :diminish beacon-mode
+    :defer 5
     :config
     (setq beacon-blink-when-window-scrolls nil
 	  beacon-dont-blink-major-modes '(t pdf-view-mode)
