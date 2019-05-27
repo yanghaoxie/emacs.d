@@ -3672,6 +3672,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** org projectile
 #+BEGIN_SRC emacs-lisp
   (use-package org-projectile
+    :commands (org-projectile-location-for-project)
+    :init
+    (with-eval-after-load 'org-capture
+      (require 'org-projectile))
     :config
     (setq org-projectile-projects-file "~/Dropbox/document/org/projectes.org")
     (push (org-projectile-project-todo-entry) org-capture-templates))
