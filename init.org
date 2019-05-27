@@ -3489,7 +3489,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package org-agenda
     :ensure nil
-    :init
+    :commands org-agenda
+    :general
     (my/leader-keys-major-mode
       :keymaps 'org-agenda-mode-map
       "." 'hydra-org-agenda/body)
