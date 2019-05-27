@@ -603,7 +603,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (desktop-save-mode 1))
 
   (use-package hl-line
-    :config
+    :defer 5
+    :init
     (add-hook 'prog-mode-hook (lambda () (hl-line-mode t)))
     (add-hook 'text-mode-hook (lambda () (hl-line-mode t))))
   ;; text-scale
