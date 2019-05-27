@@ -1703,7 +1703,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** string inflection
 #+BEGIN_SRC emacs-lisp
   (use-package string-inflection
-    :init
+    :general
     (my/leader-keys
       "xi" 'hydra-string-inflection/body)
     :config
