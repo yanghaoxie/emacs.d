@@ -704,6 +704,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package winner
     :ensure nil
+    :commands (winner-undo
+	       winner-redo)
     :init
     (my/leader-keys
       "wu" 'winner-undo
