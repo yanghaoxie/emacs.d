@@ -5062,11 +5062,9 @@ is achieved by adding the relevant text properties."
 ** deft
 #+BEGIN_SRC emacs-lisp
   (use-package deft
-    :commands deft
-    :init
-    (progn
-      (my/leader-keys
-	"an" 'deft))
+    :general
+    (my/leader-keys
+      "an" 'deft)
     :config
     (setq deft-directory "~/Dropbox/document/org/"
 	  deft-recursive t
