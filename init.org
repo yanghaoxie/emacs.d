@@ -649,9 +649,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package display-line-numbers
     :if (version<= "26.1" emacs-version)
-    :init
+    :defer 5
+    :general
+    (my/leader-keys
+      "tl" 'my/toggle-line-numbers-type)
+    :config
     (setq display-line-numbers-type 'visual)
     (global-display-line-numbers-mode 1)
+  ;;;###autoload
     (defun my/toggle-line-numbers-type ()
       (interactive)
       (if (eq display-line-numbers t)
@@ -660,9 +665,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    (message "show visual line numbers"))
 	(progn
 	  (setq display-line-numbers t)
-	  (message "Show absolute line numbers"))))
-    (my/leader-keys
-      "tl" 'my/toggle-line-numbers-type))
+	  (message "Show absolute line numbers")))))
 
   (use-package prettify-symbols-mode
     :ensure nil
