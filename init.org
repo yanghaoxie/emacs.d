@@ -4398,6 +4398,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** keyfreq
 #+BEGIN_SRC emacs-lisp
   (use-package keyfreq
+    :defer 5
     :config
     (keyfreq-mode 1)
     (keyfreq-autosave-mode 1)
