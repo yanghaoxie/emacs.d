@@ -1662,9 +1662,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package zop-to-char
     :commands zop-to-char
+    :general
+    (my/all-states-keys
+      "M-z" 'zop-to-char)
     :config
     (progn
-      (global-set-key [remap zap-to-char] 'zop-to-char)
       (setq zop-to-char-prec-keys '(left ?\M-b)
 	    zop-to-char-next-keys '(right ?\M-f))))
 #+END_SRC
