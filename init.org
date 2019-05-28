@@ -2932,8 +2932,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 			       company-files
 			       company-ispell
 			       company-yasnippet
-			       company-abbrev
-			       company-dabbrev))
+			       company-abbrev))
       (defun ora-company-number ()
 	"Forward to `company-complete-number'.
   Unless the number is potentially part of the candidate.
