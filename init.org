@@ -2356,7 +2356,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	     "M-9" 'winum-select-window-9)
     :config
     (setq winum-auto-assign-0-to-minibuffer nil
-	  winum-auto-setup-mode-line nil
 	  winum-mode-line-position 1
 	  winum-ignored-buffers '(" *which-key*" "*helm M-x*" "*helm find files*" "*helm mini*" "*Helm Swoop*")
 	  winum-scope 'frame-local
