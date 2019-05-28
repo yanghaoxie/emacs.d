@@ -3248,7 +3248,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
     (add-hook 'org-mode-hook
 	      (lambda ()
-		(add-to-list (make-local-variable 'company-backends) '(company-ispell company-capf company-dabbrev))))
+		(add-to-list (make-local-variable 'company-backends) '(company-ispell company-capf))))
     (add-hook 'org-mode-hook 'turn-on-auto-fill)
     (setq org-src-tab-acts-natively t)
     (setq org-directory "~/Dropbox/document/org")
