@@ -551,6 +551,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 * defaults
 ** setting related in build-in features
 #+BEGIN_SRC emacs-lisp
+  (prefer-coding-system 'utf-8)
   ;; replace "yes" and "no" by "y" and "n"
   (defalias 'yes-or-no-p 'y-or-n-p)
   ;;display-time-mode
