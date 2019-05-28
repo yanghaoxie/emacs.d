@@ -1354,7 +1354,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    powerline-default-separator 'slant
 	    spaceline-purpose-hide-if-not-dedicated t
 	    spaceline-window-numbers-unicode nil
-	    spaceline-workspace-numbers-unicode nil))
+	    spaceline-workspace-numbers-unicode nil
+	    winum-auto-setup-mode-line nil))
     :config
     (spaceline-compile)
     (spaceline-helm-mode t)
