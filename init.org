@@ -2780,6 +2780,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-h" 'counsel-shell-history)
     :config
     (setq counsel-yank-pop-preselect-last t)
+    (add-to-list 'ivy-height-alist `(counsel-yank-pop . ,ivy-height))
     (counsel-mode))
 #+END_SRC
 *** swiper
