@@ -5170,7 +5170,7 @@ is achieved by adding the relevant text properties."
 ** ace pinyin
 #+BEGIN_SRC emacs-lisp
   (use-package ace-pinyin
-    :defer t
+    :after avy
     :config
     (ace-pinyin-global-mode t))
 #+END_SRC
