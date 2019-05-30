@@ -2061,7 +2061,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "w." 'hydra-eyebrowse/body)
     :config
-    (setq eyebrowse-mode-line-style 'current)
+    (setq eyebrowse-mode-line-style 'current
+	  eyebrowse-new-workspace t)
     (eyebrowse-mode))
 
   (defhydra hydra-eyebrowse (:hint nil)
