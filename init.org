@@ -2289,6 +2289,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  avy-background t
 	  avy-flyspell-correct-function #'flyspell-correct-at-point)
     :general
+    (:keymaps 'override
+	      [remap evil-find-char] 'my/avy-goto-char-in-line-without-background)
     (my/leader-keys
       "jj" 'avy-goto-char-timer
       "j M-j" 'my/avy-goto-char-timer-all-windows
@@ -2305,8 +2307,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "w" 'avy-goto-word-1
       "c" 'avy-goto-char
       "l" 'avy-goto-line)
-    (my/normal-keys
-      "f" 'my/avy-goto-char-in-line-without-background))
 
   ;;;###autoload
   (defun my/avy-goto-char-timer-all-windows ()
