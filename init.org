@@ -2305,7 +2305,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "w" 'avy-goto-word-1
       "c" 'avy-goto-char
       "l" 'avy-goto-line)
-    (global-set-key [remap evil-find-char] 'my/avy-goto-char-in-line-without-background))
+    (my/normal-keys
+      "f" 'my/avy-goto-char-in-line-without-background))
 
   ;;;###autoload
   (defun my/avy-goto-char-timer-all-windows ()
