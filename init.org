@@ -2366,9 +2366,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** golden scroll screen
 #+BEGIN_SRC emacs-lisp
   (use-package golden-ratio-scroll-screen
-    :config
-    (global-set-key [remap evil-scroll-page-up] 'golden-ratio-scroll-screen-down)
-    (global-set-key [remap evil-scroll-page-down] 'golden-ratio-scroll-screen-up))
+    :general
+    (:states '(normal visual motion)
+     :keymaps 'override
+	     "C-f" 'golden-ratio-scroll-screen-up
+	     "C-b" 'golden-ratio-scroll-screen-down))
 #+END_SRC
 ** ace link
    
