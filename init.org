@@ -2283,21 +2283,20 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** avy
 #+BEGIN_SRC emacs-lisp
   (use-package avy
-    :defer t
-    :init
-    (progn
-      (setq avy-all-windows nil
-	    avy-background t
-	    avy-flyspell-correct-function #'flyspell-correct-at-point)
-      (my/leader-keys
-	"jj" 'avy-goto-char-timer
-	"j M-j" 'my/avy-goto-char-timer-all-windows
-	"jl" 'avy-goto-line
-	"j M-l" 'my/avy-goto-line-all-windows
-	"jw" 'avy-goto-word-or-subword-1
-	"j M-w" 'my/avy-goto-word-or-subword-1-all-windows
-	"jc" 'avy-goto-char
-	"j M-c" 'my/avy-goto-char-all-windows))
+    :config
+    (setq avy-all-windows nil
+	  avy-background t
+	  avy-flyspell-correct-function #'flyspell-correct-at-point)
+    :general
+    (my/leader-keys
+      "jj" 'avy-goto-char-timer
+      "j M-j" 'my/avy-goto-char-timer-all-windows
+      "jl" 'avy-goto-line
+      "j M-l" 'my/avy-goto-line-all-windows
+      "jw" 'avy-goto-word-or-subword-1
+      "j M-w" 'my/avy-goto-word-or-subword-1-all-windows
+      "jc" 'avy-goto-char
+      "j M-c" 'my/avy-goto-char-all-windows)
     (my/leader-keys-major-mode
       :keymaps 'org-mode-map
       "jj" 'avy-org-goto-heading-timer)
