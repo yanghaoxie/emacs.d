@@ -2306,7 +2306,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys-extra
       "w" 'avy-goto-word-1
       "c" 'avy-goto-char
-      "l" 'avy-goto-line)
+      "l" 'avy-goto-line))
 
     ;;;###autoload
     (defun my/avy-goto-char-timer-all-windows ()
