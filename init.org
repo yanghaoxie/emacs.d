@@ -3283,9 +3283,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq org-capture-templates
 	  (quote (
 		  ("t" "todo" entry (file+headline "~/Dropbox/document/org/capture/capture.org" "Tasks")
-		   "* TODO %?\n%U\n%a\n")
+		   "* TODO %?\n\s\s%U\n")
 		  ("n" "note" entry (file+headline "~/Dropbox/document/org/capture/capture.org" "Notes")
-		   "* %?\n%U\n%a\n")
+		   "* %?\n\s\s%U\n")
 		  ("a" "appointments")
 		  ("ar" "repeating appointments" entry (file+headline "~/Dropbox/document/org/appts/appts.org" "Repeating Appointments")
 		   "* TODO %?")
