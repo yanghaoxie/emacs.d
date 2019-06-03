@@ -599,6 +599,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 					  "^ +" "" (buffer-name)))))
   (use-package desktop
     :config
+    (add-to-list 'desktop-globals-to-save 'register-alist)
     (setq desktop-lazy-verbose nil
 	  desktop-modes-not-to-save '(tags-table-mode emacs-lisp-mode))
     (desktop-save-mode 1))
