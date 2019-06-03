@@ -3495,6 +3495,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-k" 'calendar-backward-week
       "M-J" 'calendar-forward-month
       "M-K" 'calendar-backward-month))
+
+  ;;;###autoload
+  (defun my/org-meta-return ()
+    (interactive)
+    (end-of-line)
+    (org-meta-return))
+
+  (global-set-key [remap org-meta-return] 'my/org-meta-return)
 #+END_SRC
 *** org agenda
 #+BEGIN_SRC emacs-lisp
