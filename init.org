@@ -1792,7 +1792,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (:keymaps 'override
 	      :states 'insert
 	      "C-j" 'evil-next-line
-	      "C-k" 'evil-previous-line)
+	      "C-k" 'evil-previous-line
+	      "M-o" 'evil-open-below)
     :config
     (define-key evil-insert-state-map [remap evil-complete-previous] 'hippie-expand)
     (my/normal-keys
