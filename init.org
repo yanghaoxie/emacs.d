@@ -1908,6 +1908,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (define-key evil-normal-state-map (kbd "%") 'evilmi-jump-items)
     (define-key evil-visual-state-map (kbd "%") 'evilmi-jump-items)
     :config
+    (setq evilmi-always-simple-jump t)
     (global-evil-matchit-mode))
 #+END_SRC
 ** evil surround
