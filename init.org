@@ -3136,7 +3136,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** flychek   
 #+BEGIN_SRC emacs-lisp
   (use-package flycheck
-    :defer t
     :init
     (my/leader-keys
       "ts" 'my/toggle-syntax-checking)
