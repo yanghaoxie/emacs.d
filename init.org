@@ -4273,10 +4273,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** langtool
 #+BEGIN_SRC emacs-lisp
   (use-package langtool
-    :defer t
-    :commands (langtool-check
-	       langtool-correct-buffer)
-    :init
+    :general
     (my/leader-keys
       "Sc" 'langtool-check
       "SC" 'langtool-correct-buffer
