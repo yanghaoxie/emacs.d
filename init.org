@@ -5092,17 +5092,17 @@ is achieved by adding the relevant text properties."
     :general
     (my/leader-keys
       "aT" 'terminal-here)
-    (require 'ivy)
-    (require 'counsel)
-    (ivy-add-actions
-     'counsel-find-file
-     '(("t" my/counsel-terminal-here "terminal")))
     :config
     (setq terminal-here-terminal-command (list "urxvtc")))
 
   ;;;###autoload
   (defun my/counsel-terminal-here (x)
     (terminal-here-launch-in-directory x))
+
+  (with-eval-after-load 'counsel
+    (ivy-add-actions
+     'counsel-find-file
+     '(("t" my/counsel-terminal-here "terminal"))))
 #+END_SRC
 ** deft
 #+BEGIN_SRC emacs-lisp
