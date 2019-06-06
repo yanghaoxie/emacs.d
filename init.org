@@ -4336,6 +4336,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "ar" 'ranger
       "ad" 'deer)
+    :config
     (my/motion-keys
       :keymaps 'ranger-mode-map
       "M-g" 'ranger-go
