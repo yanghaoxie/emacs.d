@@ -4332,8 +4332,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** ranger
 #+BEGIN_SRC emacs-lisp
   (use-package ranger
-    :defer t
-    :init
+    :general
     (my/leader-keys
       "ar" 'ranger
       "ad" 'deer)
