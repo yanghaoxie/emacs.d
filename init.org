@@ -3103,7 +3103,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		"2" nil
 		"3" nil
 		"4" nil)
-      :init
       (my/leader-keys
        "gc"  'magit-clone
        "gff" 'magit-find-file
@@ -3115,6 +3114,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
        "gs"  'magit-status
        "gS"  'magit-stage-file
        "gU"  'magit-unstage-file)
+      :init
       (add-hook 'magit-popup-mode-hook (lambda () (display-line-numbers-mode -1)))
       (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1)))
       :config
