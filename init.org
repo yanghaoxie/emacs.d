@@ -5089,7 +5089,7 @@ is achieved by adding the relevant text properties."
   (use-package terminal-here
     :commands (terminal-here
 	       terminal-here-launch-in-directory)
-    :init
+    :general
     (my/leader-keys
       "aT" 'terminal-here)
     (require 'ivy)
