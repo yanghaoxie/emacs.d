@@ -5191,6 +5191,6 @@ is achieved by adding the relevant text properties."
 ** set best garbage collection threshold
 #+BEGIN_SRC emacs-lisp
   (setq gc-cons-threshold 800000
-	    gc-cons-percentage 0.1
-	    file-name-handler-alist my--file-name-handler-alist)
+	gc-cons-percentage 0.1
+	file-name-handler-alist my--file-name-handler-alist)
 #+END_SRC
