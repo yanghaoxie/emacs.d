@@ -3243,11 +3243,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ("q" nil "quit"))
     (my/leader-keys
       "M-s ." 'hydra-spelling/body)
-    :config
-    (progn
-      (add-hook 'prog-mode-hook #'flyspell-prog-mode)
-      (add-hook 'text-mode-hook #'turn-on-flyspell)
-      (add-hook 'org-mode-hook #'turn-on-flyspell)))
+    :init
+    (add-hook 'prog-mode-hook #'flyspell-prog-mode)
+    (add-hook 'text-mode-hook #'turn-on-flyspell)
+    (add-hook 'org-mode-hook #'turn-on-flyspell))
 #+END_SRC
 *** flyspell correct
 #+BEGIN_SRC emacs-lisp
