@@ -3228,9 +3228,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** flyspell
 #+BEGIN_SRC emacs-lisp
   (use-package flyspell
-    :defer t
     :diminish flyspell-mode
-    :init
+    :general
     (my/leader-keys
       "t M-s" 'my/toggle-flyspell
       "M-s b" 'flyspell-buffer
