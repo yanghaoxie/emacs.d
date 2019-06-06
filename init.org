@@ -5066,12 +5066,7 @@ is achieved by adding the relevant text properties."
 ** helpful
 #+BEGIN_SRC emacs-lisp :tangle yes
   (use-package helpful
-    :commands (helpful-callable
-	       helpful-variable
-	       helpful-at-point
-	       helpful-key
-	       helpful-symbol)
-    :init
+    :general
     (my/leader-keys
       "hf" 'helpful-callable
       "hv" 'helpful-variable
