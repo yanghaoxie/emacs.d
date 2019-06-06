@@ -4878,21 +4878,16 @@ is achieved by adding the relevant text properties."
 ** crux
 #+BEGIN_SRC emacs-lisp
   (use-package crux
-    :defer t
-    :commands (crux-move-beginning-of-line
-	       crux-rename-file-and-buffer
-	       crux-find-user-init-file
-	       crux-with-region-or-buffer)
-    :init
-    (progn
-      (my/all-states-keys
-	"C-a" 'crux-move-beginning-of-line)
-      (my/leader-keys
-	"f M-r" 'crux-rename-file-and-buffer
-	"f M-o" 'crux-open-with
-	"f M-e" 'my/open-with-evince
-	"fi" 'my/find-user-init-org-file)
-      (crux-with-region-or-buffer indent-region)))
+    :general
+    (my/all-states-keys
+      "C-a" 'crux-move-beginning-of-line)
+    (my/leader-keys
+      "f M-r" 'crux-rename-file-and-buffer
+      "f M-o" 'crux-open-with
+      "f M-e" 'my/open-with-evince
+      "fi" 'my/find-user-init-org-file)
+    :config
+    (crux-with-region-or-buffer indent-region))
 
   ;;;###autoload
   (defun my/open-with-evince ()
