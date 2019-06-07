@@ -1400,7 +1400,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ;; the buffer name
      "%b "
       ;; line and column
-      "(%02l, %01c) "
+      "(%02l:%01c) "
       ;; (vc-mode vc-mode)
       '(:eval
 	(when vc-mode
