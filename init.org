@@ -2041,16 +2041,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :defer t
     :init
     (add-hook 'after-init-hook 'eyebrowse-mode)
-    (add-hook 'persp-before-switch-functions
-	      #'spacemacs/update-eyebrowse-for-perspective)
-    (add-hook 'eyebrowse-post-window-switch-hook
-	      #'spacemacs/save-eyebrowse-for-perspective)
-    (add-hook 'persp-activated-functions
-	      #'spacemacs/load-eyebrowse-for-perspective)
-    (add-hook 'persp-before-save-state-to-file-functions
-	      #'spacemacs/update-eyebrowse-for-perspective)
-    (add-hook 'persp-after-load-state-functions
-	      #'spacemacs/load-eyebrowse-after-loading-layout)
     :general
     (:keymaps 'override
 	      :states '(normal visual motion)
@@ -2144,6 +2134,17 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "g M-c" 'spacemacs/layouts-ts-close)
     (my/leader-keys
       "l" 'hydra-persp/body)
+    :init
+    (add-hook 'persp-before-switch-functions
+	      #'spacemacs/update-eyebrowse-for-perspective)
+    (add-hook 'eyebrowse-post-window-switch-hook
+	      #'spacemacs/save-eyebrowse-for-perspective)
+    (add-hook 'persp-activated-functions
+	      #'spacemacs/load-eyebrowse-for-perspective)
+    (add-hook 'persp-before-save-state-to-file-functions
+	      #'spacemacs/update-eyebrowse-for-perspective)
+    (add-hook 'persp-after-load-state-functions
+	      #'spacemacs/load-eyebrowse-after-loading-layout)
     :config
     (setq persp-reset-windows-on-nil-window-conf t
 	  persp-set-last-persp-for-new-frames nil)
