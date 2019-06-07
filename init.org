@@ -2118,7 +2118,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** persp mode
 #+BEGIN_SRC emacs-lisp
   (use-package persp-mode
-    :init
+    :general
     (my/normal-keys
       "g M-0" 'spacemacs/persp-switch-to-0
       "g M-1" 'spacemacs/persp-switch-to-1
