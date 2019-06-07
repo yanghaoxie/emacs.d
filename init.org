@@ -2117,6 +2117,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 ** persp mode
+   :PROPERTIES:
+   :header-args: :tangle no
+   :END:
 *** persp
 #+BEGIN_SRC emacs-lisp
   (use-package persp-mode
