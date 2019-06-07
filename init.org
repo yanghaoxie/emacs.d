@@ -45,6 +45,7 @@ This is an Emacs configuration file written in org mode.
   - [[#window-purpose][window purpose]]
     - [[#spacemacs-purpose-popwin][spacemacs purpose popwin]]
   - [[#spaceline][spaceline]]
+  - [[#my-modeline][my modeline]]
   - [[#ranbow-mode][ranbow mode]]
   - [[#pretty-hydra][pretty hydra]]
   - [[#all-the-icons-related][all the icons related]]
@@ -1378,6 +1379,51 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (when (featurep 'pomodoro)
 	pomodoro-mode-line-string))
     (spaceline-spacemacs-theme '(my/pomodoro :when active :tight t)))
+#+END_SRC
+** my modeline
+#+BEGIN_SRC emacs-lisp
+  (setq winum-auto-setup-mode-line nil
+	eyebrowse-mode-line-left-delimiter ""
+	eyebrowse-mode-line-right-delimiter "")
+  (setq-default mode-line-format
+    (list
+     mode-line-front-space
+     "["
+     '(:eval (eyebrowse-mode-line-indicator))
+     "|"
+     '(:eval (winum-get-number-string))
+     "]"
+     " %*"
+     '(:eval evil-mode-line-tag)
+      ;; the buffer name
+     "%b "
+      ;; line and column
+      "(%02l, %01c) "
+      ;; (vc-mode vc-mode)
+      '(:eval
+	(when vc-mode
+	  (s-trim (concat vc-mode
+			  (when (buffer-file-name)
+			    (pcase (vc-state (buffer-file-name))
+			      (`up-to-date " ")
+			      (`edited " Mod")
+			      (`added " Add")
+			      (`unregistered " ??")
+			      (`removed " Del")
+			      (`needs-merge " Con")
+			      (`needs-update " Upd")
+			      (`ignored " Ign")
+			      (_ " Unk")))))))
+      mode-line-process
+      ;;global-mode-string, org-timer-set-timer in org-mode need this
+      "%M"
+      ;; window purpose indicator
+      '(:eval
+	(when (and (bound-and-true-p purpose-mode)
+		   (or (purpose-window-purpose-dedicated-p)
+		       (window-dedicated-p)))
+	  (propertize (substring (purpose--modeline-string) 2 -1))))
+      ))
 #+END_SRC
 ** ranbow mode
 #+BEGIN_SRC emacs-lisp
