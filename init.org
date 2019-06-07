@@ -90,7 +90,8 @@ This is an Emacs configuration file written in org mode.
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
   - [[#persp-mode][persp mode]]
-  - [[#spacemacs-persp-extra][spacemacs persp extra]]
+    - [[#persp][persp]]
+    - [[#spacemacs-persp-extra][spacemacs persp extra]]
 - [[#project][project]]
   - [[#projectile][projectile]]
 - [[#navigation][navigation]]
@@ -2116,6 +2117,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 ** persp mode
+*** persp
 #+BEGIN_SRC emacs-lisp
   (use-package persp-mode
     :general
@@ -2216,7 +2218,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     ("X" spacemacs/layouts-ts-kill-other :exit t)
     ("q" nil))
 #+END_SRC
-** spacemacs persp extra
+*** spacemacs persp extra
 #+BEGIN_SRC emacs-lisp
   (use-package spacemacs-persp-extra
     :ensure nil
