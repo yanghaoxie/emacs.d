@@ -1242,10 +1242,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package highlight-symbol
     :diminish highlight-symbol-mode
-    :init
+    :general
     (my/leader-keys
       "tha" 'my/toggle-highlight-symbol)
-    :general
     ("M-n" 'highlight-symbol-next
      "M-p" 'highlight-symbol-prev
      "M-'" 'highlight-symbol-query-replace)
