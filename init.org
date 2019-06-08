@@ -1249,8 +1249,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "tha" 'my/toggle-highlight-symbol)
     (:states '(normal visual motion)
-     "M-f" 'highlight-symbol-next
-     "M-b" 'highlight-symbol-prev
+     "M-]" 'highlight-symbol-next
+     "M-[" 'highlight-symbol-prev
      "M-'" 'highlight-symbol-query-replace)
     :config
     (setq highlight-symbol-idle-delay 0.5
