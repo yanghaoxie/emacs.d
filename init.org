@@ -2880,6 +2880,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :general
     (my/leader-keys
       "bb" 'ivy-switch-buffer)
+    ("M-v" 'ivy-switch-buffer)
     (ivy-minibuffer-map
      "C-j" 'ivy-next-line
      "C-k" 'ivy-previous-line
