@@ -4261,8 +4261,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** lsp python ms
 #+BEGIN_SRC emacs-lisp
   (use-package lsp-python-ms
-    :commands lsp
-    :hook (python-mode)
+    :hook (python-mode . lsp)
     :config
     ;; for dev build of language server
     (setq lsp-python-ms-dir
