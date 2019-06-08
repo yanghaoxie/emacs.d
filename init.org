@@ -184,6 +184,7 @@ This is an Emacs configuration file written in org mode.
     - [[#pyvenv][pyvenv]]
     - [[#sphinx-doc][sphinx doc]]
     - [[#importmagic][importmagic]]
+    - [[#anaconda][anaconda]]
   - [[#shell-script][shell script]]
     - [[#sh-script][sh script]]
   - [[#lsp][lsp]]
@@ -4109,6 +4110,38 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	:major-modes t
 	"r" '(:ignore t :wk "refactor")
 	"rf" 'importmagic-fix-symbol-at-point)))
+#+END_SRC
+*** anaconda
+#+BEGIN_SRC emacs-lisp :tangle no
+  (use-package anaconda-mode
+    :ghook ('python-mode-hook)
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'python-mode-map
+      :major-modes t
+      "h" '(:ignore t :which-key "help")
+      "hh" 'anaconda-mode-show-doc
+      "g" '(:ignore t :which-key "goto")
+      "ga" 'anaconda-mode-find-assignments
+      "gb" 'anaconda-mode-go-back
+      "gu" 'anaconda-mode-find-references
+      "gd" 'anaconda-mode-find-definitions
+      "gD" 'anaconda-mode-find-definitions-other-window)
+    :init
+    (add-hook 'python-mode-hook 'anaconda-mode)
+    (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
+
+  (use-package company-anaconda
+    :after anaconda
+    :init
+    (progn
+      (add-hook 'python-mode-hook
+		(lambda ()
+		  (add-to-list (make-local-variable 'company-backends) '(company-anaconda company-capf company-files company-dabbrev))))
+      (add-hook 'inferior-python-mode-hook
+		(lambda ()
+		  (add-to-list (make-local-variable 'company-backends) '(company-anaconda company-capf company-files company-dabbrev))))
+      ))
 #+END_SRC
 ** shell script
 *** sh script
