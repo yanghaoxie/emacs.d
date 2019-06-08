@@ -2918,6 +2918,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     :general
     ("M-x" 'counsel-M-x)
+    (my/noninsert-keys
+      "M-f" 'counsel-find-file)
     (my/leader-keys
       ;; files
       "ff" 'counsel-find-file
