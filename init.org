@@ -45,6 +45,7 @@ This is an Emacs configuration file written in org mode.
   - [[#window-purpose][window purpose]]
     - [[#spacemacs-purpose-popwin][spacemacs purpose popwin]]
   - [[#spaceline][spaceline]]
+  - [[#my-modeline][my modeline]]
   - [[#ranbow-mode][ranbow mode]]
   - [[#pretty-hydra][pretty hydra]]
   - [[#all-the-icons-related][all the icons related]]
@@ -91,7 +92,8 @@ This is an Emacs configuration file written in org mode.
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
   - [[#persp-mode][persp mode]]
-  - [[#spacemacs-persp-extra][spacemacs persp extra]]
+    - [[#persp][persp]]
+    - [[#spacemacs-persp-extra][spacemacs persp extra]]
 - [[#project][project]]
   - [[#projectile][projectile]]
 - [[#navigation][navigation]]
@@ -359,6 +361,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (setq use-package-always-ensure t)
   (use-package diminish)
   (require 'diminish)
+  (setq use-package-verbose t)
 #+END_SRC
 *** hydra
 #+BEGIN_SRC emacs-lisp :tangle yes
@@ -1357,7 +1360,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 ** spaceline
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package spaceline-config
     :ensure spaceline
     :init
@@ -1380,6 +1383,51 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (when (featurep 'pomodoro)
 	pomodoro-mode-line-string))
     (spaceline-spacemacs-theme '(my/pomodoro :when active :tight t)))
+#+END_SRC
+** my modeline
+#+BEGIN_SRC emacs-lisp
+  (setq winum-auto-setup-mode-line nil
+	eyebrowse-mode-line-left-delimiter ""
+	eyebrowse-mode-line-right-delimiter "")
+  (setq-default mode-line-format
+    (list
+     mode-line-front-space
+     "["
+     '(:eval (eyebrowse-mode-line-indicator))
+     "|"
+     '(:eval (winum-get-number-string))
+     "]"
+     " %*"
+     '(:eval evil-mode-line-tag)
+      ;; the buffer name
+     "%b "
+      ;; line and column
+      "(%02l:%01c) "
+      ;; (vc-mode vc-mode)
+      '(:eval
+	(when vc-mode
+	  (s-trim (concat vc-mode
+			  (when (buffer-file-name)
+			    (pcase (vc-state (buffer-file-name))
+			      (`up-to-date " ")
+			      (`edited " Mod")
+			      (`added " Add")
+			      (`unregistered " ??")
+			      (`removed " Del")
+			      (`needs-merge " Con")
+			      (`needs-update " Upd")
+			      (`ignored " Ign")
+			      (_ " Unk")))))))
+      mode-line-process
+      ;;global-mode-string, org-timer-set-timer in org-mode need this
+      "%M"
+      ;; window purpose indicator
+      '(:eval
+	(when (and (bound-and-true-p purpose-mode)
+		   (or (purpose-window-purpose-dedicated-p)
+		       (window-dedicated-p)))
+	  (propertize (substring (purpose--modeline-string) 2 -1))))
+      ))
 #+END_SRC
 ** ranbow mode
 #+BEGIN_SRC emacs-lisp
@@ -2050,16 +2098,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :defer t
     :init
     (add-hook 'after-init-hook 'eyebrowse-mode)
-    (add-hook 'persp-before-switch-functions
-	      #'spacemacs/update-eyebrowse-for-perspective)
-    (add-hook 'eyebrowse-post-window-switch-hook
-	      #'spacemacs/save-eyebrowse-for-perspective)
-    (add-hook 'persp-activated-functions
-	      #'spacemacs/load-eyebrowse-for-perspective)
-    (add-hook 'persp-before-save-state-to-file-functions
-	      #'spacemacs/update-eyebrowse-for-perspective)
-    (add-hook 'persp-after-load-state-functions
-	      #'spacemacs/load-eyebrowse-after-loading-layout)
     :general
     (:keymaps 'override
 	      :states '(normal visual motion)
@@ -2135,9 +2173,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 ** persp mode
+   :PROPERTIES:
+   :header-args: :tangle no
+   :END:
+*** persp
 #+BEGIN_SRC emacs-lisp
   (use-package persp-mode
-    :init
+    :general
     (my/normal-keys
       "g M-0" 'spacemacs/persp-switch-to-0
       "g M-1" 'spacemacs/persp-switch-to-1
@@ -2153,6 +2195,17 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "g M-c" 'spacemacs/layouts-ts-close)
     (my/leader-keys
       "l" 'hydra-persp/body)
+    :init
+    (add-hook 'persp-before-switch-functions
+	      #'spacemacs/update-eyebrowse-for-perspective)
+    (add-hook 'eyebrowse-post-window-switch-hook
+	      #'spacemacs/save-eyebrowse-for-perspective)
+    (add-hook 'persp-activated-functions
+	      #'spacemacs/load-eyebrowse-for-perspective)
+    (add-hook 'persp-before-save-state-to-file-functions
+	      #'spacemacs/update-eyebrowse-for-perspective)
+    (add-hook 'persp-after-load-state-functions
+	      #'spacemacs/load-eyebrowse-after-loading-layout)
     :config
     (setq persp-reset-windows-on-nil-window-conf t
 	  persp-set-last-persp-for-new-frames nil)
@@ -2224,7 +2277,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     ("X" spacemacs/layouts-ts-kill-other :exit t)
     ("q" nil))
 #+END_SRC
-** spacemacs persp extra
+*** spacemacs persp extra
 #+BEGIN_SRC emacs-lisp
   (use-package spacemacs-persp-extra
     :ensure nil
@@ -3112,7 +3165,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		"2" nil
 		"3" nil
 		"4" nil)
-      :init
       (my/leader-keys
        "gc"  'magit-clone
        "gff" 'magit-find-file
@@ -3124,6 +3176,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
        "gs"  'magit-status
        "gS"  'magit-stage-file
        "gU"  'magit-unstage-file)
+      :init
       (add-hook 'magit-popup-mode-hook (lambda () (display-line-numbers-mode -1)))
       (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1)))
       :config
@@ -3237,27 +3290,26 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** flyspell
 #+BEGIN_SRC emacs-lisp
   (use-package flyspell
-    :defer t
     :diminish flyspell-mode
-    :init
+    :general
     (my/leader-keys
       "t M-s" 'my/toggle-flyspell
       "M-s b" 'flyspell-buffer
       "M-s n" 'flyspell-goto-next-error
       "M-s p" 'flyspell-correct-at-point)
+    (my/leader-keys
+      "M-s ." 'hydra-spelling/body)
+    :init
+    (add-hook 'prog-mode-hook #'flyspell-prog-mode)
+    (add-hook 'text-mode-hook #'turn-on-flyspell)
+    (add-hook 'org-mode-hook #'turn-on-flyspell)
+    :config
     (defhydra hydra-spelling ()
       ("b" flyspell-buffer "check buffer")
       ("d" ispell-change-dictionary "change dictionary")
       ("n" flyspell-goto-next-error "next")
       ("c" flyspell-correct-previous-word-generic "correct")
-      ("q" nil "quit"))
-    (my/leader-keys
-      "M-s ." 'hydra-spelling/body)
-    :config
-    (progn
-      (add-hook 'prog-mode-hook #'flyspell-prog-mode)
-      (add-hook 'text-mode-hook #'turn-on-flyspell)
-      (add-hook 'org-mode-hook #'turn-on-flyspell)))
+      ("q" nil "quit")))
 #+END_SRC
 *** flyspell correct
 #+BEGIN_SRC emacs-lisp
@@ -4315,10 +4367,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** langtool
 #+BEGIN_SRC emacs-lisp
   (use-package langtool
-    :defer t
-    :commands (langtool-check
-	       langtool-correct-buffer)
-    :init
+    :general
     (my/leader-keys
       "Sc" 'langtool-check
       "SC" 'langtool-correct-buffer
@@ -4374,11 +4423,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** ranger
 #+BEGIN_SRC emacs-lisp
   (use-package ranger
-    :defer t
-    :init
+    :general
     (my/leader-keys
       "ar" 'ranger
       "ad" 'deer)
+    :config
     (my/motion-keys
       :keymaps 'ranger-mode-map
       "M-g" 'ranger-go
@@ -4923,21 +4972,16 @@ is achieved by adding the relevant text properties."
 ** crux
 #+BEGIN_SRC emacs-lisp
   (use-package crux
-    :defer t
-    :commands (crux-move-beginning-of-line
-	       crux-rename-file-and-buffer
-	       crux-find-user-init-file
-	       crux-with-region-or-buffer)
-    :init
-    (progn
-      (my/all-states-keys
-	"C-a" 'crux-move-beginning-of-line)
-      (my/leader-keys
-	"f M-r" 'crux-rename-file-and-buffer
-	"f M-o" 'crux-open-with
-	"f M-e" 'my/open-with-evince
-	"fi" 'my/find-user-init-org-file)
-      (crux-with-region-or-buffer indent-region)))
+    :general
+    (my/all-states-keys
+      "C-a" 'crux-move-beginning-of-line)
+    (my/leader-keys
+      "f M-r" 'crux-rename-file-and-buffer
+      "f M-o" 'crux-open-with
+      "f M-e" 'my/open-with-evince
+      "fi" 'my/find-user-init-org-file)
+    :config
+    (crux-with-region-or-buffer indent-region))
 
   ;;;###autoload
   (defun my/open-with-evince ()
@@ -5108,12 +5152,7 @@ is achieved by adding the relevant text properties."
 ** helpful
 #+BEGIN_SRC emacs-lisp :tangle yes
   (use-package helpful
-    :commands (helpful-callable
-	       helpful-variable
-	       helpful-at-point
-	       helpful-key
-	       helpful-symbol)
-    :init
+    :general
     (my/leader-keys
       "hf" 'helpful-callable
       "hv" 'helpful-variable
@@ -5131,20 +5170,20 @@ is achieved by adding the relevant text properties."
   (use-package terminal-here
     :commands (terminal-here
 	       terminal-here-launch-in-directory)
-    :init
+    :general
     (my/leader-keys
       "aT" 'terminal-here)
-    (require 'ivy)
-    (require 'counsel)
-    (ivy-add-actions
-     'counsel-find-file
-     '(("t" my/counsel-terminal-here "terminal")))
     :config
     (setq terminal-here-terminal-command (list "urxvtc")))
 
   ;;;###autoload
   (defun my/counsel-terminal-here (x)
     (terminal-here-launch-in-directory x))
+
+  (with-eval-after-load 'counsel
+    (ivy-add-actions
+     'counsel-find-file
+     '(("t" my/counsel-terminal-here "terminal"))))
 #+END_SRC
 ** deft
 #+BEGIN_SRC emacs-lisp
@@ -5246,6 +5285,6 @@ is achieved by adding the relevant text properties."
 ** set best garbage collection threshold
 #+BEGIN_SRC emacs-lisp
   (setq gc-cons-threshold 800000
-	    gc-cons-percentage 0.1
-	    file-name-handler-alist my--file-name-handler-alist)
+	gc-cons-percentage 0.1
+	file-name-handler-alist my--file-name-handler-alist)
 #+END_SRC
