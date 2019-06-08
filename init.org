@@ -394,6 +394,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (general-create-definer my/motion-keys
 	:states 'motion
 	:keymaps 'override)
+      (general-create-definer my/noninsert-keys
+	:states '(nromal visual motion)
+	:keymaps 'override)
       (general-create-definer my/leader-keys
 	:states '(normal visual motion emacs insert)
 	:keymaps 'override
