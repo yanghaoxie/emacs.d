@@ -1389,6 +1389,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (setq winum-auto-setup-mode-line nil
 	eyebrowse-mode-line-left-delimiter ""
 	eyebrowse-mode-line-right-delimiter "")
+  (defun my--pdfview-page-number ()
+    (format "(%d/%d)"
+	    (eval `(pdf-view-current-page))
+	    (pdf-cache-number-of-pages)))
+
   (setq-default mode-line-format
     (list
      mode-line-front-space
@@ -1402,7 +1407,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ;; the buffer name
      "%b "
       ;; line and column
-      "(%02l:%01c) "
+     '(:eval
+       (if (eq major-mode 'pdf-view-mode)
+	   (my--pdfview-page-number)
+	 (if (and
+	      (boundp 'column-number-indicator-zero-based)
+	      (not column-number-indicator-zero-based))
+	     "(%l:%2c)"
+	   "(%l:%2c)")))
+     " "
       ;; (vc-mode vc-mode)
       '(:eval
 	(when vc-mode
