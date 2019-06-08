@@ -4198,7 +4198,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** company lsp
 #+BEGIN_SRC emacs-lisp
   (use-package company-lsp
-    :after (company lsp-mode)
+    :commands company-lsp
     :init
     (progn
       (add-hook 'python-mode-hook
