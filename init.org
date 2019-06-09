@@ -2915,7 +2915,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** counsel
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
-    :init
     :general
     ("M-x" 'counsel-M-x)
     (my/noninsert-keys
