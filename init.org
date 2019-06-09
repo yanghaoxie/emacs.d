@@ -2955,7 +2955,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** swiper
 #+BEGIN_SRC emacs-lisp
   (use-package swiper
-    :config
     :general
     ("C-s" 'swiper)
     (my/leader-keys
