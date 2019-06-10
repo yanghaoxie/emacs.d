@@ -2574,6 +2574,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package dumb-jump
     :general
     (my/all-states-keys
+      :states '(insert emacs normal)
       "M-g o" 'dumb-jump-go-other-window
       "M-g g" 'dumb-jump-go
       "M-g l" 'dumb-jump-quick-look
