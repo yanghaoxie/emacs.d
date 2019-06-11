@@ -1488,13 +1488,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (defvar my--mode-line-eyebrowse
     '(:eval (eyebrowse-mode-line-indicator)))
+
+  (defvar my--mode-line-winum
+    '(:eval (winum-get-number-string)))
   (setq-default mode-line-format
     (list
      mode-line-front-space
      "["
      my--mode-line-eyebrowse
      "|"
-     '(:eval (winum-get-number-string))
+     my--mode-line-winum
      "]"
      " %*"
      '(:eval evil-mode-line-tag)
