@@ -1471,6 +1471,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    (eval `(pdf-view-current-page))
 	    (pdf-cache-number-of-pages)))
 
+  (defun my--line-column ()
+    (if (eq major-mode 'pdf-view-mode)
+	(my--pdfview-page-number)
+      (if (and
+	   (boundp 'column-number-indicator-zero-based)
+	   (not column-number-indicator-zero-based))
+	  "(%l:%2c)"
+	"(%l:%2c)")))
+
   (setq-default mode-line-format
     (list
      mode-line-front-space
@@ -1484,16 +1493,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ;; the buffer name
      "%b "
       ;; line and column
-     '(:eval
-       (if (eq major-mode 'pdf-view-mode)
-	   (my--pdfview-page-number)
-	 (if (and
-	      (boundp 'column-number-indicator-zero-based)
-	      (not column-number-indicator-zero-based))
-	     "(%l:%2c)"
-	   "(%l:%2c)")))
      " "
       '(vc-mode vc-mode)
+     (my--line-column)
       mode-line-process
       ;;global-mode-string, org-timer-set-timer in org-mode need this
       "%M"
