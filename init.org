@@ -1507,8 +1507,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ;; the buffer name
      "%b "
       ;; line and column
-     " "
-     (my--line-column)
+     my--mode-line-line-column
      '(vc-mode vc-mode)
       mode-line-process
       ;;global-mode-string, org-timer-set-timer in org-mode need this
