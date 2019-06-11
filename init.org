@@ -1471,14 +1471,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    (eval `(pdf-view-current-page))
 	    (pdf-cache-number-of-pages)))
 
-  (defun my--line-column ()
-    (if (eq major-mode 'pdf-view-mode)
-	(my--pdfview-page-number)
-      (if (and
-	   (boundp 'column-number-indicator-zero-based)
-	   (not column-number-indicator-zero-based))
-	  "(%l:%2c)"
-	"(%l:%2c)")))
+  (defvar my--mode-line-line-column
+    '(:eval (if (eq major-mode 'pdf-view-mode)
+		(my--pdfview-page-number)
+	      (if (and
+		   (boundp 'column-number-indicator-zero-based)
+		   (not column-number-indicator-zero-based))
+		  "(%l:%2c)"
+		"(%l:%2c)"))))
 
   (setq-default mode-line-format
     (list
