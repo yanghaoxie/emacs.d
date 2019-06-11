@@ -1480,6 +1480,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		  "(%l:%2c)"
 		"(%l:%2c)"))))
 
+  (defvar my--window-purpose
+    '(:eval (when (and (bound-and-true-p purpose-mode)
+		       (or (purpose-window-purpose-dedicated-p)
+			   (window-dedicated-p)))
+	      (propertize (substring (purpose--modeline-string) 2 -1)))))
   (setq-default mode-line-format
     (list
      mode-line-front-space
@@ -1499,12 +1504,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       mode-line-process
       ;;global-mode-string, org-timer-set-timer in org-mode need this
       "%M"
-      ;; window purpose indicator
-      '(:eval
-	(when (and (bound-and-true-p purpose-mode)
-		   (or (purpose-window-purpose-dedicated-p)
-		       (window-dedicated-p)))
-	  (propertize (substring (purpose--modeline-string) 2 -1))))
+      my--window-purpose
       ))
 #+END_SRC
 ** ranbow mode
