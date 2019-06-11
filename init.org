@@ -1494,8 +1494,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "%b "
       ;; line and column
      " "
-      '(vc-mode vc-mode)
      (my--line-column)
+     '(vc-mode vc-mode)
       mode-line-process
       ;;global-mode-string, org-timer-set-timer in org-mode need this
       "%M"
