@@ -1486,6 +1486,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 			   (window-dedicated-p)))
 	      (propertize (substring (purpose--modeline-string) 2 -1)))))
 
+  (defvar my--mode-line-pomodoro
+    '(:eval
+      (if (eq my--selected-window (selected-window))
+	  `,pomodoro-mode-line-string)))
+
   (defvar my--mode-line-eyebrowse
     '(:eval (eyebrowse-mode-line-indicator)))
 
@@ -1513,6 +1518,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ;;global-mode-string, org-timer-set-timer in org-mode need this
       "%M"
       my--window-purpose
+      " "
+      my--mode-line-pomodoro
       ))
 
   (defvar my--selected-window nil)
