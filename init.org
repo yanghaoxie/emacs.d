@@ -1499,6 +1499,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (defvar my--mode-line-evil-tag
     '(:eval evil-mode-line-tag))
+
   (setq-default mode-line-format
     (list
      mode-line-front-space
