@@ -1514,6 +1514,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "%M"
       my--window-purpose
       ))
+
+  (defvar my--selected-window nil)
+
+  (defun my--record-selected-window ()
+    (defvar my--selected-window (selected-window)))
+
+  (defun my--update-all ()
+    (force-mode-line-update t))
+
+  (add-hook 'post-command-hook 'my--record-selected-window)
+
+  (add-hook 'buffer-list-update-hook 'my--update-all)
 #+END_SRC
 ** ranbow mode
 #+BEGIN_SRC emacs-lisp
