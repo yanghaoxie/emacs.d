@@ -1518,7 +1518,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (defvar my--selected-window nil)
 
   (defun my--record-selected-window ()
-    (defvar my--selected-window (selected-window)))
+    (setq my--selected-window (selected-window)))
 
   (defun my--update-all ()
     (force-mode-line-update t))
