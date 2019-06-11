@@ -4586,7 +4586,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "r"   'pdf-view-revert-buffer
      "o"   'pdf-links-action-perform
      "O"   'pdf-outline
-     "zr"  'pdf-view-scale-reset)
+     "zr"  'pdf-view-scale-reset
+     "C-s" 'isearch-forward)
     (:states '(normal visual)
      :keymaps 'pdf-outline-buffer-mode-map
      "RET" 'pdf-outline-follow-link
