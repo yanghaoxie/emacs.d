@@ -1493,21 +1493,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	     "(%l:%2c)"
 	   "(%l:%2c)")))
      " "
-      ;; (vc-mode vc-mode)
-      '(:eval
-	(when vc-mode
-	  (s-trim (concat vc-mode
-			  (when (buffer-file-name)
-			    (pcase (vc-state (buffer-file-name))
-			      (`up-to-date " ")
-			      (`edited " Mod")
-			      (`added " Add")
-			      (`unregistered " ??")
-			      (`removed " Del")
-			      (`needs-merge " Con")
-			      (`needs-update " Upd")
-			      (`ignored " Ign")
-			      (_ " Unk")))))))
+      '(vc-mode vc-mode)
       mode-line-process
       ;;global-mode-string, org-timer-set-timer in org-mode need this
       "%M"
