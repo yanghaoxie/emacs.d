@@ -1491,6 +1491,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (defvar my--mode-line-winum
     '(:eval (winum-get-number-string)))
+
+  (defvar my--mode-line-evil-tag
+    '(:eval evil-mode-line-tag))
   (setq-default mode-line-format
     (list
      mode-line-front-space
@@ -1500,7 +1503,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      my--mode-line-winum
      "]"
      " %*"
-     '(:eval evil-mode-line-tag)
+     my--mode-line-evil-tag
       ;; the buffer name
      "%b "
       ;; line and column
