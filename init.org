@@ -1485,11 +1485,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		       (or (purpose-window-purpose-dedicated-p)
 			   (window-dedicated-p)))
 	      (propertize (substring (purpose--modeline-string) 2 -1)))))
+
+  (defvar my--mode-line-eyebrowse
+    '(:eval (eyebrowse-mode-line-indicator)))
   (setq-default mode-line-format
     (list
      mode-line-front-space
      "["
-     '(:eval (eyebrowse-mode-line-indicator))
+     my--mode-line-eyebrowse
      "|"
      '(:eval (winum-get-number-string))
      "]"
