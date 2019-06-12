@@ -5085,13 +5085,18 @@ is achieved by adding the relevant text properties."
       "f M-o" 'crux-open-with
       "f M-e" 'my/open-with-evince
       "fi" 'my/find-user-init-org-file)
+    :init
+    (with-eval-after-load 'counsel
+      (ivy-add-actions
+       'counsel-find-file
+       '(("e" my/open-with-evince "evince"))))
     :config
     (crux-with-region-or-buffer indent-region))
 
   ;;;###autoload
-  (defun my/open-with-evince ()
+  (defun my/open-with-evince (&optional x)
     (interactive)
-    (call-process "evince" nil 0 nil buffer-file-name))
+    (call-process "evince" nil 0 nil (or x buffer-file-name)))
 
   ;;;###autoload
   (defun my/find-user-init-org-file ()
