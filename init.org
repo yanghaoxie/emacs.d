@@ -3433,7 +3433,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      (lambda ()
 		(add-to-list (make-local-variable 'company-backends) '(company-ispell company-capf))))
     (add-hook 'org-mode-hook 'turn-on-auto-fill)
-    (setq org-src-tab-acts-natively t)
+    (setq org-src-tab-acts-natively t
+	  org-edit-src-auto-save-idle-delay 5)
     (setq org-directory "~/Dropbox/document/org")
     (setq org-agenda-files (apply 'append
 				  (mapcar
