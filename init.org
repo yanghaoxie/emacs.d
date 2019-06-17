@@ -1447,7 +1447,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    spaceline-purpose-hide-if-not-dedicated t
 	    spaceline-window-numbers-unicode nil
 	    spaceline-workspace-numbers-unicode nil
-	    winum-auto-setup-mode-line nil))
+	    winum-auto-setup-mode-line nil
+	    anzu-cons-mode-line-p nil))
     :config
     (spaceline-compile)
     (spaceline-helm-mode t)
