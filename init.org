@@ -4376,10 +4376,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     :general
     (:keymaps 'lsp-ui-peek-mode-map
-	      "h" 'lsp-ui-peek--select-prev-file
-	      "j" 'lsp-ui-peek--select-next
-	      "k" 'lsp-ui-peek--select-prev
-	      "l" 'lsp-ui-peek--select-next-file)
+     "h" 'lsp-ui-peek--select-prev-file
+     "j" 'lsp-ui-peek--select-next
+     "k" 'lsp-ui-peek--select-prev
+     "l" 'lsp-ui-peek--select-next-file)
     (my/normal-keys
       :keymaps 'lsp-ui-imenu-mode-map
       "h" 'lsp-ui-imenu--prev-kind
