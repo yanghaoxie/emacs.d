@@ -4388,21 +4388,20 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-d" 'lsp-ui-imenu--visit
       "q" 'lsp-ui-imenu--kill)
     :config
-    (progn
-      (my/leader-keys-major-mode
-	:keymaps 'lsp-ui-mode-map
-	"p" '(:ignore t :wk "peek")
-	"pd" 'lsp-ui-peek-find-definitions
-	"pr" 'lsp-ui-peek-find-references)
-      (my/leader-keys-major-mode
-	:keymaps 'python-mode-map
-	"u" 'my/toggle-lsp-ui-mode)
-      (setq lsp-ui-sideline-delay 0.2
-	    lsp-ui-peek-always-show t
-	    lsp-ui-doc-use-childframe t
-	    lsp-enable-symbol-highlighting nil
-	    lsp-ui-sideline-enable nil
-	    lsp-ui-doc-enable nil)))
+    (my/leader-keys-major-mode
+      :keymaps 'lsp-ui-mode-map
+      "p" '(:ignore t :wk "peek")
+      "pd" 'lsp-ui-peek-find-definitions
+      "pr" 'lsp-ui-peek-find-references)
+    (my/leader-keys-major-mode
+      :keymaps 'python-mode-map
+      "u" 'my/toggle-lsp-ui-mode)
+    (setq lsp-ui-sideline-delay 0.2
+	  lsp-ui-peek-always-show t
+	  lsp-ui-doc-use-childframe t
+	  lsp-enable-symbol-highlighting nil
+	  lsp-ui-sideline-enable nil
+	  lsp-ui-doc-enable nil))
   ;;;###autoload
   (defun my/toggle-lsp-ui-mode ()
     (interactive)
