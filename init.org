@@ -1792,8 +1792,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** move text
 #+BEGIN_SRC emacs-lisp
   (use-package move-text
-    :defer t
-    :init
+    :general
     (my/leader-keys
       "xJ" 'move-text-down
       "xK" 'move-text-up))
