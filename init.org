@@ -2006,20 +2006,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil anzu
 #+BEGIN_SRC emacs-lisp
   (use-package evil-anzu
-    :defer 5
-    :init
+    :ghook ('after-init-hook #'global-anzu-mode)
+    :general
     (my/leader-keys
       "rs" 'anzu-query-replace
       "rr" 'anzu-query-replace-regexp)
     :config
     (global-set-key [remap query-replace] 'anzu-query-replace)
-    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
-    (global-anzu-mode))
+    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
 #+END_SRC
 ** evil exchange
 #+BEGIN_SRC emacs-lisp
   (use-package evil-exchange
-    :defer t
     :after evil
     :init
     (progn
