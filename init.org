@@ -4924,11 +4924,8 @@ is achieved by adding the relevant text properties."
 #+END_SRC
 *** eshell z
 #+BEGIN_SRC emacs-lisp
-(use-package eshell-z
-  :defer t
-  :init
-  (with-eval-after-load 'eshell
-    (require 'eshell-z)))
+  (use-package eshell-z
+    :after eshell)
 #+END_SRC
 *** eshell prompt extras
 #+BEGIN_SRC emacs-lisp
