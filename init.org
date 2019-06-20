@@ -3782,34 +3782,32 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** org journal
 #+BEGIN_SRC emacs-lisp
   (use-package org-journal
-    :defer t
-    :commands (org-journal-new-entry org-journal-search-forever)
     :init
-    (progn
-      (setq org-journal-dir "~/Dropbox/document/org/journal"
-	    org-journal-file-type 'monthly)
-      (my/leader-keys
-	"aoj" '(:ignore t :wk "org-journal")
-	"aojj" 'org-journal-new-entry
-	"aojs" 'org-journal-search-forever)
-      (my/leader-keys-major-mode
-	:keymaps 'calendar-mode-map
-	"r" 'org-journal-read-entry
-	"i" 'org-journal-new-date-entry
-	"n" 'org-journal-next-entry
-	"p" 'org-journal-previous-entry
-	"s" 'org-journal-search-forever
-	"w" 'org-journal-search-calendar-week
-	"m" 'org-journal-search-calendar-month
-	"y" 'org-journal-search-calendar-year)
-      (my/normal-keys
-	:keymaps 'calendar-mode-map
-	"q" 'calendar-exit)
-      (my/leader-keys-major-mode
-	:keymaps 'org-journal-mode-map
-	"j" 'org-journal-new-entry
-	"n" 'org-journal-open-next-entry
-	"p" 'org-journal-open-previous-entry)))
+    (setq org-journal-dir "~/Dropbox/document/org/journal"
+	  org-journal-file-type 'monthly)
+    :general
+    (my/leader-keys
+      "aoj" '(:ignore t :wk "org-journal")
+      "aojj" 'org-journal-new-entry
+      "aojs" 'org-journal-search-forever)
+    (my/leader-keys-major-mode
+      :keymaps 'calendar-mode-map
+      "r" 'org-journal-read-entry
+      "i" 'org-journal-new-date-entry
+      "n" 'org-journal-next-entry
+      "p" 'org-journal-previous-entry
+      "s" 'org-journal-search-forever
+      "w" 'org-journal-search-calendar-week
+      "m" 'org-journal-search-calendar-month
+      "y" 'org-journal-search-calendar-year)
+    (my/normal-keys
+      :keymaps 'calendar-mode-map
+      "q" 'calendar-exit)
+    (my/leader-keys-major-mode
+      :keymaps 'org-journal-mode-map
+      "j" 'org-journal-new-entry
+      "n" 'org-journal-open-next-entry
+      "p" 'org-journal-open-previous-entry))
 #+END_SRC
 *** org projectile
 #+BEGIN_SRC emacs-lisp
