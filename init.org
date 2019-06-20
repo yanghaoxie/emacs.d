@@ -4885,7 +4885,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** eshell
 #+BEGIN_SRC emacs-lisp
   (use-package eshell
-    :defer t
+    :commands eshell
     :config
     (progn
       (setq eshell-cmpl-cycle-completions nil)
