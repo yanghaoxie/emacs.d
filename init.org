@@ -1784,7 +1784,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** evil smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package evil-smartparens
-    :defer t
+    :after smartparens
     :diminish evil-smartparens-mode
     :init
     (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
