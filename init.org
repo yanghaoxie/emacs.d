@@ -921,8 +921,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package imenu
     :ensure nil
-    :defer t
-    :init
+    :general
     (my/leader-keys
       "ji" 'imenu))
 
@@ -969,8 +968,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package custom
     :ensure nil
-    :defer 5
-    :config
+    :general
     (my/normal-keys
       :keymaps 'custom-mode-map
       "n" 'widget-forward
