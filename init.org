@@ -4404,15 +4404,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** wordnut
 #+BEGIN_SRC emacs-lisp
   (use-package wordnut
-    :defer t
-    :commands wordnut-search
-    :init
-    (progn
-      (my/leader-keys
-	"a M-w" 'wordnut-search)
-      (my/normal-keys
-	:keymaps 'wordnut-mode-map
-	"q" 'quit-window)))
+    :general
+    (my/leader-keys
+      "a M-w" 'wordnut-search)
+    (my/normal-keys
+      :keymaps 'wordnut-mode-map
+      "q" 'quit-window))
 #+END_SRC
 ** dict
 *** youdao dictionary
