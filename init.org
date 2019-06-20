@@ -3885,17 +3885,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** parinfer mode
 #+BEGIN_SRC emacs-lisp :tangle no
   (use-package parinfer
-    :ensure t
-    :init
-    (progn
-      (my/leader-keys
-	"tP" 'parinfer-toggle-mode)
-      (setq parinfer-extensions
-	    '(defaults       ; should be included.
-	      evil           ; If you use Evil.
-	      smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
-	      smart-yank))   ; Yank behavior depend on mode.
-      (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)))
+    :general
+    (my/leader-keys
+      "tP" 'parinfer-toggle-mode)
+    (setq parinfer-extensions
+	  '(defaults       ; should be included.
+	     evil           ; If you use Evil.
+	     smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
+	     smart-yank))   ; Yank behavior depend on mode.
+    (add-hook 'emacs-lisp-mode-hook #'parinfer-mode))
 #+END_SRC
 ** latex
 *** reftex
