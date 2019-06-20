@@ -721,12 +721,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      ielm-mode-hook
 	      eval-expression-minibuffer-setup-hook)))
 
-  (use-package electric-pair-mode
-    :ensure nil
-    :config
-    (progn
-      (electric-pair-mode t)))
-
   (use-package display-line-numbers
     :if (version<= "26.1" emacs-version)
     :general
