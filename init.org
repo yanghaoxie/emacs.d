@@ -3115,14 +3115,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
-    :defer t
-    :commands (yas-global-mode yas-minor-mode yas-activate-extra-mode)
-    :diminish yas-minor-mode
-    :init
-    (progn
-      (dolist (hook '(prog-mode-hook org-mode-hook LaTeX-mode-hook))
-	(add-hook hook '(lambda ()
-			  (yas-minor-mode 1))))))
+    :ghook ('(prog-mode-hook
+	      org-mode-hook
+	      LaTeX-mode-hook)
+	    #'yas-minor-mode))
 #+END_SRC
 *** yasnippet-snippets
 #+BEGIN_SRC emacs-lisp
