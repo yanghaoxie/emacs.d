@@ -1003,6 +1003,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :ensure nil
     :config
     (my/normal-keys
+      :keymaps 'occur-mode-map
       "RET" 'occur-mode-goto-occurrence-other-window
       "q" 'quit-window))
   ;; key bindings
