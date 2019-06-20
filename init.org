@@ -1023,6 +1023,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'pdf-view-mode-hook
 	      (lambda () (setq ff-other-file-alist 'pdf-other-file-alist))))
 
+  (use-package replace
+    :ensure nil
+    :config
+    (my/normal-keys
+      "RET" 'occur-mode-goto-occurrence-other-window
+      "q" 'quit-window))
   ;; key bindings
 
   (my/leader-keys-extra
