@@ -723,12 +723,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package display-line-numbers
     :if (version<= "26.1" emacs-version)
+    :ghook ('after-init-hook #'global-display-line-numbers-mode)
     :general
     (my/leader-keys
       "tl" 'my/toggle-line-numbers-type)
     :config
     (setq display-line-numbers-type 'visual)
-    (global-display-line-numbers-mode 1)
   ;;;###autoload
     (defun my/toggle-line-numbers-type ()
       (interactive)
