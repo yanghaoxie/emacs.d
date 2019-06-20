@@ -2719,8 +2719,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** helm thmes
 #+BEGIN_SRC emacs-lisp
   (use-package helm-themes
-    :defer t
-    :init
+    :general
     (my/leader-keys
       "Ts" 'helm-themes))
 #+END_SRC
