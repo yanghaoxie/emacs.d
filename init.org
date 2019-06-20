@@ -5155,8 +5155,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** toc org
 #+BEGIN_SRC emacs-lisp
   (use-package toc-org
-    :init
-    (add-hook 'org-mode-hook 'toc-org-mode))
+    :ghook ('org-mode-hook))
 #+END_SRC
 ** helpful
 #+BEGIN_SRC emacs-lisp :tangle yes
