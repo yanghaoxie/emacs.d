@@ -1995,7 +1995,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil escape
 #+BEGIN_SRC emacs-lisp
   (use-package evil-escape
-    :defer 5
     :diminish evil-escape-mode
     :init
     (setq evil-escape-key-sequence "jk"
@@ -2659,7 +2658,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** helm describe modes
 #+BEGIN_SRC emacs-lisp
   (use-package helm-describe-modes
-    :defer t
     :after helm
     :init
     (global-set-key [remap describe-mode] #'helm-describe-modes))
@@ -3212,7 +3210,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** version control
 #+BEGIN_SRC emacs-lisp
   (use-package diff-hl
-    :defer t
     :commands (diff-hl-mode
 	       diff-hl-flydiff-mode
 	       diff-hl-margin-minor-mode)
@@ -3394,7 +3391,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package org
     :ensure org-plus-contrib
-    :defer t
     :mode ("\\.org\\'" . org-mode)
     :config
     (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
@@ -3959,7 +3955,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** auctex
 #+BEGIN_SRC emacs-lisp
   (use-package tex
-    :defer t
     :ensure auctex
     :mode (".tex\\'" . LaTeX-mode)
     :config
@@ -4095,7 +4090,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** python
 #+BEGIN_SRC emacs-lisp
   (use-package python
-    :defer t
     :mode (".py\\'" . python-mode)
     :config
     (progn
@@ -4511,7 +4505,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package pdf-tools
     :diminish pdf-view-midnight-minor-mode
-    :defer t
     :mode (("\\.pdf\\'" . pdf-view-mode))
     :config
     (progn
@@ -4608,7 +4601,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** keyfreq
 #+BEGIN_SRC emacs-lisp
   (use-package keyfreq
-    :defer 5
     :config
     (keyfreq-mode 1)
     (keyfreq-autosave-mode 1)
@@ -4828,7 +4820,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** elfeed
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed
-    :defer t
     :commands (elfeed elfeed-db-load)
     :init (my/leader-keys "af" 'my/elfeed-load-db-and-open)
     :config
