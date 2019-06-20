@@ -2494,7 +2494,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** winum
 #+BEGIN_SRC emacs-lisp
   (use-package winum
-    :defer nil
+    :ghook ('after-init-hook)
     :general
     (:states '(insert normal visual motion)
 	     :keymaps 'override
