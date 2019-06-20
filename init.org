@@ -3736,10 +3736,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** org-bullets
 #+BEGIN_SRC emacs-lisp
   (use-package org-bullets
-    :defer t
-    :commands org-bullets-mode
-    :init
-    (add-hook 'org-mode-hook 'org-bullets-mode)
+    :ghook ('org-mode-hook)
+    :config
     (setq org-bullets-bullet-list '("●" "◉" "⊙" "○" "◌")))
 #+END_SRC
 *** org-ref
