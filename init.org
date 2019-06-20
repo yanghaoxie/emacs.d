@@ -4358,19 +4358,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** academic phrases
 #+BEGIN_SRC emacs-lisp
   (use-package academic-phrases
-    :defer t
-    :commands (academic-phrases
-	       academic-phrases-by-section)
-    :init
-    (progn
-      (my/leader-keys-major-mode
-       :keymaps 'LaTeX-mode-map
-	"iP" 'academic-phrases
-	"iS" 'academic-phrases-by-section)
-      (my/leader-keys-major-mode
-       :keymaps 'org-mode-map
-	"iP" 'academic-phrases
-	"iS" 'academic-phrases-by-section)))
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'LaTeX-mode-map
+      "iP" 'academic-phrases
+      "iS" 'academic-phrases-by-section)
+    (my/leader-keys-major-mode
+      :keymaps 'org-mode-map
+      "iP" 'academic-phrases
+      "iS" 'academic-phrases-by-section))
 #+END_SRC
 ** artbollocks
 #+BEGIN_SRC emacs-lisp
