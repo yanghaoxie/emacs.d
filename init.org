@@ -4154,9 +4154,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** pyvenv
 #+BEGIN_SRC emacs-lisp
   (use-package pyvenv
-    :defer t
-    :after python
-    :init
+    :general
     (my/leader-keys-major-mode
       :keymaps 'python-mode-map
       "v" '(:ignore t :wk "virtualenv")
