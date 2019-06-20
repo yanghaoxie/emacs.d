@@ -977,9 +977,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "q" 'Custom-buffer-done))
 
   (use-package midnight
-    :defer 5
-    :config
+    :init
     (add-hook 'midnight-hook #'recentf-cleanup)
+    :config
     (setq clean-buffer-list-kill-regexps '("^.*")
 	  midnight-period 7200
 	  clean-buffer-list-delay-special 259200)
