@@ -2512,8 +2512,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  winum-mode-line-position 1
 	  winum-ignored-buffers '(" *which-key*" "*helm M-x*" "*helm find files*" "*helm mini*" "*Helm Swoop*")
 	  winum-scope 'frame-local
-	  winum-reverse-frame-list t)
-    (winum-mode))
+	  winum-reverse-frame-list t))
 #+END_SRC
 
 ** golden scroll screen
