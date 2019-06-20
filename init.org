@@ -3717,13 +3717,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package evil-org
     :diminish evil-org-mode
-    :after org
+    :ghook ('org-mode-hook)
     :init
     (with-eval-after-load 'org-agenda
       (require 'evil-org-agenda)
       (evil-org-agenda-set-keys))
     :config
-    (add-hook 'org-mode-hook 'evil-org-mode)
     (add-hook 'evil-org-mode-hook
 	      (lambda ()
 		(evil-org-set-key-theme))))
