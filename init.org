@@ -4146,12 +4146,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package yapfify
     :diminish yapf-mode
-    :defer t
-    :init
-    (progn
-      (my/leader-keys-major-mode
-       :keymaps 'python-mode-map
-       "f" 'yapfify-buffer)))
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'python-mode-map
+      "f" 'yapfify-buffer))
 #+END_SRC
 *** pyvenv
 #+BEGIN_SRC emacs-lisp
