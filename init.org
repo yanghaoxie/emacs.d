@@ -4372,10 +4372,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package artbollocks-mode
     :diminish artbollocks-mode
-    :defer t
-    :init
-    (add-hook 'org-mode-hook 'artbollocks-mode)
-    (add-hook 'LaTeX-mode-hook 'artbollocks-mode)
+    :ghook ('(org-mode-hook
+	      LaTeX-mode-hook))
     :config
     (setq artbollocks-jargon nil
 	  artbollocks-passive-voice nil))
