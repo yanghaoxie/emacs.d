@@ -1245,10 +1245,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** color identifiers mode
 #+BEGIN_SRC emacs-lisp
   (use-package color-identifiers-mode
-    :defer t
     :diminish color-identifiers-mode
     :commands color-identifiers-mode
-    :init
+    :general
     (my/leader-keys
       "thi" 'my/toggle-color-identifiers))
 #+END_SRC
