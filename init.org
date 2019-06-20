@@ -4912,15 +4912,14 @@ is achieved by adding the relevant text properties."
 #+END_SRC
 *** shell pop
 #+BEGIN_SRC emacs-lisp
-(use-package shell-pop
-  :defer t
-  :commands shell-pop
-  :init
-  (setq shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell))))
-	shell-pop-full-span t)
-  (my/leader-keys
-    "'" 'shell-pop
-    "as" 'eshell))
+  (use-package shell-pop
+    :general
+    (my/leader-keys
+      "'" 'shell-pop
+      "as" 'eshell)
+    :config
+    (setq shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell))))
+	  shell-pop-full-span t))
 #+END_SRC
 *** eshell z
 #+BEGIN_SRC emacs-lisp
