@@ -4276,7 +4276,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	"rf" 'importmagic-fix-symbol-at-point)))
 #+END_SRC
 *** anaconda
-#+BEGIN_SRC emacs-lisp :tangle no
+   :PROPERTIES:
+   :header-args: :tangle no
+   :END:
+#+BEGIN_SRC emacs-lisp
   (use-package anaconda-mode
     :ghook ('python-mode-hook)
     :general
