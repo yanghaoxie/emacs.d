@@ -4233,37 +4233,36 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** sh script
 #+BEGIN_SRC emacs-lisp
   (use-package sh-script
-    :defer t
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'sh-mode-map
+      "\\" 'sh-backslash-region
+      "i" '(:ignore t :wk "insert")
+      "ic" 'sh-case
+      "ii" 'sh-if
+      "if" 'sh-function
+      "io" 'sh-for
+      "ie" 'sh-indexed-loop
+      "iw" 'sh-while
+      "ir" 'sh-repeat
+      "is" 'sh-select
+      "iu" 'sh-until
+      "ig" 'sh-while-getopts)
     :init
-    (progn
-      (my/leader-keys-major-mode
-	:keymaps 'sh-mode-map
-	"\\" 'sh-backslash-region
-	"i" '(:ignore t :wk "insert")
-	"ic" 'sh-case
-	"ii" 'sh-if
-	"if" 'sh-function
-	"io" 'sh-for
-	"ie" 'sh-indexed-loop
-	"iw" 'sh-while
-	"ir" 'sh-repeat
-	"is" 'sh-select
-	"iu" 'sh-until
-	"ig" 'sh-while-getopts)
-      ;; Use sh-mode when opening `.zsh' files, and when opening Prezto runcoms.
-      (dolist (pattern '("\\.zsh\\'"
-			 "zlogin\\'"
-			 "zlogout\\'"
-			 "zpreztorc\\'"
-			 "zprofile\\'"
-			 "zshenv\\'"
-			 "zshrc\\'"))
-	(add-to-list 'auto-mode-alist (cons pattern 'sh-mode)))
-      (defun spacemacs//setup-shell ()
-	(when (and buffer-file-name
-		   (string-match-p "\\.zsh\\'" buffer-file-name))
-	  (sh-set-shell "zsh")))
-      (add-hook 'sh-mode-hook 'spacemacs//setup-shell)))
+    ;; Use sh-mode when opening `.zsh' files, and when opening Prezto runcoms.
+    (dolist (pattern '("\\.zsh\\'"
+		       "zlogin\\'"
+		       "zlogout\\'"
+		       "zpreztorc\\'"
+		       "zprofile\\'"
+		       "zshenv\\'"
+		       "zshrc\\'"))
+      (add-to-list 'auto-mode-alist (cons pattern 'sh-mode)))
+    (defun spacemacs//setup-shell ()
+      (when (and buffer-file-name
+		 (string-match-p "\\.zsh\\'" buffer-file-name))
+	(sh-set-shell "zsh")))
+    (add-hook 'sh-mode-hook 'spacemacs//setup-shell))
 #+END_SRC
 ** lsp
 *** lsp mode
