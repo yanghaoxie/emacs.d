@@ -2079,7 +2079,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package evil-goggles
     :diminish evil-goggles-mode
-    :defer t
+    :after evil
     :config
     (evil-goggles-mode))
 #+END_SRC
