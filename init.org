@@ -2851,7 +2851,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :general
     (my/leader-keys
       "bb" 'ivy-switch-buffer)
-    (my/normal-keys
+    (my/non-insert-keys
       "M-b" 'ivy-switch-buffer)
     (ivy-minibuffer-map
      "C-j" 'ivy-next-line
@@ -2889,7 +2889,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package counsel
     :general
     ("M-x" 'counsel-M-x)
-    (my/noninsert-keys
+    (my/non-insert-keys
       "M-f" 'counsel-find-file)
     (my/leader-keys
       ;; files
