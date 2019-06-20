@@ -4813,7 +4813,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** elfeed goodies
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed-goodies
-      :defer t
       :commands elfeed-goodies/setup
       :config
       (progn
