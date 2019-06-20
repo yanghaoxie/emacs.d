@@ -1379,7 +1379,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** window purpose
 #+BEGIN_SRC emacs-lisp
   (use-package window-purpose
-    :defer t
     :ghook ('after-init-hook #'purpose-mode)
     :general
     (my/leader-keys
@@ -1661,7 +1660,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
-    :defer 5
     :diminish smartparens-mode
     :config
     (smartparens-global-mode t)
@@ -2066,7 +2064,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil surround
 #+BEGIN_SRC emacs-lisp
   (use-package evil-surround
-    :defer t
     :config
     (global-evil-surround-mode 1))
 #+END_SRC
@@ -2182,7 +2179,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** eyebrowse
 #+BEGIN_SRC emacs-lisp
   (use-package eyebrowse
-    :defer t
     :init
     (add-hook 'after-init-hook 'eyebrowse-mode)
     :general
