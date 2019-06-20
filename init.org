@@ -1469,7 +1469,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (spaceline-spacemacs-theme '(my/pomodoro :when active :tight t)))
 #+END_SRC
 ** my modeline
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (setq winum-auto-setup-mode-line nil
 	eyebrowse-mode-line-left-delimiter ""
 	eyebrowse-mode-line-right-delimiter "")
