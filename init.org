@@ -4256,12 +4256,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** sphinx doc
 #+BEGIN_SRC emacs-lisp
   (use-package sphinx-doc
+    :ghook ('python-mode-hook)
     :general
     (my/leader-keys-major-mode
       :keymaps 'python-mode-map
-      "d" 'sphinx-doc)
-    :config
-    (sphinx-doc-mode))
+      "d" 'sphinx-doc))
 #+END_SRC
 *** importmagic
 #+BEGIN_SRC emacs-lisp :tangle yes
