@@ -4940,7 +4940,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ***** News
 ****** Reuters                                                      :reuters:
 ******* http://feeds.reuters.com/reuters/topNews
-******* http://feeds.reuters.com/Reuters/worldNews
 ******* http://feeds.reuters.com/reuters/technologyNews
 ***** Science
 ****** Science Daily                                                     :SD:
