@@ -1619,13 +1619,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** undo tree
 #+BEGIN_SRC emacs-lisp
   (use-package undo-tree
-    :defer t
+    :ghook ('after-init-hook #'global-undo-tree-mode)
     :diminish undo-tree-mode
-    :commands undo-tree-visualize
-    :init
-    (progn
-      (my/leader-keys
-	"au" 'undo-tree-visualize))
+    :general
+    (my/leader-keys
+      "au" 'undo-tree-visualize)
     :config
     (progn
       (setq undo-tree-visualizer-timestamps t
