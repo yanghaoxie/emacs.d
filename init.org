@@ -723,7 +723,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package electric-pair-mode
     :ensure nil
-    :defer t
     :config
     (progn
       (electric-pair-mode t)))
@@ -805,7 +804,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package savehist
     :ensure nil
-    :defer 5
     :config
     (progn
       (setq savehist-autosave-interval 10)
@@ -4970,7 +4968,6 @@ is achieved by adding the relevant text properties."
 *** ledger
 #+BEGIN_SRC emacs-lisp
   (use-package ledger-mode
-    :defer t
     :mode ("\\.\\(ledger\\|ldg\\)\\'" . ledger-mode)
     :init
     (progn
@@ -5012,7 +5009,6 @@ is achieved by adding the relevant text properties."
 ** atomic chrome
 #+BEGIN_SRC emacs-lisp
   (use-package atomic-chrome
-    :defer 5
     :config
     (atomic-chrome-start-server))
 #+END_SRC
@@ -5049,7 +5045,6 @@ is achieved by adding the relevant text properties."
 ** neotree
 #+BEGIN_SRC emacs-lisp
   (use-package neotree
-    :defer t
     :commands neo-global--window-exists-p
     :init
     (progn
@@ -5169,7 +5164,6 @@ is achieved by adding the relevant text properties."
 ** nov
 #+BEGIN_SRC emacs-lisp
   (use-package nov
-    :defer t
     :mode ("\\.epub\\'" . nov-mode)
     :init
     (add-hook 'nov-mode-hook 'visual-line-mode)
@@ -5275,7 +5269,6 @@ is achieved by adding the relevant text properties."
 *** pyim
 #+BEGIN_SRC emacs-lisp
   (use-package pyim
-    :defer t
     :commands (pyim-convert-string-at-point toggle-input-method)
     :init
     :general
