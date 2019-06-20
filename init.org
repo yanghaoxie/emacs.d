@@ -3758,9 +3758,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package org-noter
     :load-path "~/Program/org-noter"
-    :defer t
-    :commands org-noter
-    :init
+    :general
     (my/leader-keys-major-mode
       :keymaps 'pdf-view-mode-map
       "n" 'org-noter
