@@ -755,7 +755,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package recentf
     :ensure nil
-    :defer t
     :init
     (add-hook 'find-file-hook (lambda () (unless recentf-mode
 						 (recentf-mode)
@@ -769,7 +768,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package autorevert
     :ensure nil
-    :defer 5
     :diminish auto-revert-mode
     :config
     (setq auto-revert-interval 0.5)
@@ -777,7 +775,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package server
     :ensure nil
-    :defer t
     :commands server-running-p
     :config
     (server-mode 1)
@@ -786,7 +783,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package winner
     :ensure nil
-    :defer 5
     :init
     (my/leader-keys
       "wu" 'winner-undo
@@ -852,7 +848,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package ispell
     :ensure nil
-    :defer 15
     :config
     (progn
       (setq ispell-program-name "aspell"
@@ -933,7 +928,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package image-mode
     :ensure nil
-    :defer t
     :mode (".jpg\\'" . image-mode)
     :config
     (progn
@@ -970,7 +964,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package saveplace
     :ensure nil
-    :defer 5
     :config
     (save-place-mode))
 
