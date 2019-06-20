@@ -3138,15 +3138,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** auo yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package auto-yasnippet
-    :defer 5
-    :init
-    (progn
-      (my/leader-keys
-       "iSc" 'aya-create
-       "iSe" 'aya-expand
-       "iSw" 'aya-persist-snippet
-       ))
-    )
+    :general
+    (my/leader-keys
+      "iSc" 'aya-create
+      "iSe" 'aya-expand
+      "iSw" 'aya-persist-snippet))
 #+END_SRC
 *** hippie expand
 #+BEGIN_SRC emacs-lisp
