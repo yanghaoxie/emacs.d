@@ -3895,7 +3895,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package idle-org-agenda
     :after org-agenda
     :config
-    (setq idle-org-agenda-interval 300)
+    (setq idle-org-agenda-interval 600)
     (advice-add 'idle-org-agenda--jump-to-agenda :before #'eyebrowse-switch-to-window-config-0)
     (idle-org-agenda-mode))
 #+END_SRC
