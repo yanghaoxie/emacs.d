@@ -4031,7 +4031,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** lua
 #+BEGIN_SRC emacs-lisp
   (use-package lua-mode
-    :defer t
     :mode ("\\.lua\\'" . lua-mode)
     :interpreter ("lua" . lua-mode)
     :init
