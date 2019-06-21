@@ -3739,7 +3739,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** org-ref
 #+BEGIN_SRC emacs-lisp
   (use-package org-ref
-    :ghook ('org-mode-hook)
+    :after org
     :config
     (progn
       (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
