@@ -2051,6 +2051,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil surround
 #+BEGIN_SRC emacs-lisp
   (use-package evil-surround
+    :after evil
     :config
     (global-evil-surround-mode 1))
 #+END_SRC
