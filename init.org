@@ -394,7 +394,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (general-create-definer my/motion-keys
 	:states 'motion
 	:keymaps 'override)
-      (general-create-definer my/noninsert-keys
+      (general-create-definer my/non-insert-keys
 	:states '(nromal visual motion)
 	:keymaps 'override)
       (general-create-definer my/leader-keys
@@ -716,31 +716,19 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   ;; build-in modes
   (use-package eldoc
-    :defer t
-    :diminish eldoc-mode
-    :init
-    (progn
-      (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
-      (add-hook 'lisp-interaction-mode-hook 'eldoc-mode)
-      (add-hook 'ielm-mode-hook 'eldoc-mode)
-      (add-hook 'eval-expression-minibuffer-setup-hook 'eldoc-mode)))
-
-  (use-package electric-pair-mode
-    :ensure nil
-    :defer t
-    :config
-    (progn
-      (electric-pair-mode t)))
+    :ghook ('(emacs-lisp-mode-hook
+	      lisp-interaction-mode-hook
+	      ielm-mode-hook
+	      eval-expression-minibuffer-setup-hook)))
 
   (use-package display-line-numbers
     :if (version<= "26.1" emacs-version)
-    :defer 5
+    :ghook ('after-init-hook #'global-display-line-numbers-mode)
     :general
     (my/leader-keys
       "tl" 'my/toggle-line-numbers-type)
     :config
     (setq display-line-numbers-type 'visual)
-    (global-display-line-numbers-mode 1)
   ;;;###autoload
     (defun my/toggle-line-numbers-type ()
       (interactive)
@@ -754,14 +742,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package prettify-symbols-mode
     :ensure nil
-    :defer t
-    :init
-    (setq prettify-symbols-unprettify-at-point 'right-edge)
-    (global-prettify-symbols-mode))
+    :ghook ('after-init-hook #'global-prettify-symbols-mode)
+    :config
+    (setq prettify-symbols-unprettify-at-point 'right-edge))
 
   (use-package recentf
     :ensure nil
-    :defer t
     :init
     (add-hook 'find-file-hook (lambda () (unless recentf-mode
 						 (recentf-mode)
@@ -775,7 +761,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package autorevert
     :ensure nil
-    :defer 5
     :diminish auto-revert-mode
     :config
     (setq auto-revert-interval 0.5)
@@ -783,7 +768,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package server
     :ensure nil
-    :defer t
     :commands server-running-p
     :config
     (server-mode 1)
@@ -792,7 +776,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package winner
     :ensure nil
-    :defer 5
     :init
     (my/leader-keys
       "wu" 'winner-undo
@@ -815,7 +798,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package savehist
     :ensure nil
-    :defer 5
     :config
     (progn
       (setq savehist-autosave-interval 10)
@@ -858,7 +840,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package ispell
     :ensure nil
-    :defer 15
     :config
     (progn
       (setq ispell-program-name "aspell"
@@ -932,14 +913,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package imenu
     :ensure nil
-    :defer t
-    :init
+    :general
     (my/leader-keys
       "ji" 'imenu))
 
   (use-package image-mode
     :ensure nil
-    :defer t
     :mode (".jpg\\'" . image-mode)
     :config
     (progn
@@ -976,14 +955,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package saveplace
     :ensure nil
-    :defer 5
     :config
     (save-place-mode))
 
   (use-package custom
     :ensure nil
-    :defer 5
-    :config
+    :general
     (my/normal-keys
       :keymaps 'custom-mode-map
       "n" 'widget-forward
@@ -992,9 +969,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "q" 'Custom-buffer-done))
 
   (use-package midnight
-    :defer 5
-    :config
+    :init
     (add-hook 'midnight-hook #'recentf-cleanup)
+    :config
     (setq clean-buffer-list-kill-regexps '("^.*")
 	  midnight-period 7200
 	  clean-buffer-list-delay-special 259200)
@@ -1201,7 +1178,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package beacon
     :diminish beacon-mode
-    :defer 5
     :config
     (setq beacon-blink-when-window-scrolls nil
 	  beacon-dont-blink-major-modes '(t pdf-view-mode)
@@ -1219,18 +1195,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** highlight parentheses
 #+BEGIN_SRC emacs-lisp
   (use-package highlight-parentheses
-      :diminish highlight-parentheses-mode
-      :defer t
-      :init
-      (progn
-	(add-hook 'after-init-hook #'global-highlight-parentheses-mode)
-	(setq hl-paren-delay 0.2)
-	(setq hl-paren-colors '("Springgreen3"
-				"IndianRed1"
-				"IndianRed3"
-				"IndianRed4")))
-      :config
-      (set-face-attribute 'hl-paren-face nil :weight 'ultra-bold))
+    :diminish highlight-parentheses-mode
+    :ghook ('prog-mode-hook #'highlight-parentheses-mode)
+    :config
+    (setq hl-paren-delay 0.2)
+    (setq hl-paren-colors '("Springgreen3"
+			    "IndianRed1"
+			    "IndianRed3"
+			    "IndianRed4"))
+    (set-face-attribute 'hl-paren-face nil :weight 'ultra-bold))
 #+END_SRC
 ** highligh indeantation
 #+BEGIN_SRC emacs-lisp
@@ -1265,10 +1238,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** color identifiers mode
 #+BEGIN_SRC emacs-lisp
   (use-package color-identifiers-mode
-    :defer t
     :diminish color-identifiers-mode
     :commands color-identifiers-mode
-    :init
+    :general
     (my/leader-keys
       "thi" 'my/toggle-color-identifiers))
 #+END_SRC
@@ -1400,25 +1372,22 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** window purpose
 #+BEGIN_SRC emacs-lisp
   (use-package window-purpose
-    :defer t
-    :commands without-purpose
-    :init
-    (progn
-      (my/leader-keys
-	"rb" 'purpose-switch-buffer-with-purpose
-	"rB" 'switch-buffer-without-purpose
-	"rd" 'purpose-toggle-window-purpose-dedicated
-	"r M-d" 'purpose-toggle-window-buffer-dedicated
-	"rD" 'purpose-delete-non-dedicated-windows
-	"rp" 'purpose-switch-buffer-with-some-purpose
-	"rP" 'purpose-set-window-purpose
-	"rf" 'purpose-load-window-layout-file))
+    :ghook ('after-init-hook #'purpose-mode)
+    :general
+    (my/leader-keys
+      "rb" 'purpose-switch-buffer-with-purpose
+      "rB" 'switch-buffer-without-purpose
+      "rd" 'purpose-toggle-window-purpose-dedicated
+      "r M-d" 'purpose-toggle-window-buffer-dedicated
+      "rD" 'purpose-delete-non-dedicated-windows
+      "rp" 'purpose-switch-buffer-with-some-purpose
+      "rP" 'purpose-set-window-purpose
+      "rf" 'purpose-load-window-layout-file)
     :config
     (add-to-list 'purpose-user-mode-purposes '(python-mode . py))
     (add-to-list 'purpose-user-mode-purposes '(inferior-python-mode . py-repl))
     (global-set-key [remap ivy-switch-buffer] 'my/ivy-switch-buffer)
-    (purpose-compile-user-configuration)
-    (purpose-mode))
+    (purpose-compile-user-configuration))
 
   ;;;###autoload
   (defun my/ivy-switch-buffer ()
@@ -1582,7 +1551,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** all the icons
 #+BEGIN_SRC emacs-lisp :tangle no
   (use-package all-the-icons
-    :defer t
     :init
     (add-hook 'after-init-hook (lambda () (require 'all-the-icons)))
     :config
@@ -1592,7 +1560,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp :tangle no
   (use-package all-the-icons-ivy
     :after (ivy all-the-icons)
-    :defer t
     :init
     (add-hook 'counsel-projectile-mode-hook 'all-the-icons-ivy-setup)
     (add-hook 'ivy-mode-hook 'all-the-icons-ivy-setup)
@@ -1645,13 +1612,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** undo tree
 #+BEGIN_SRC emacs-lisp
   (use-package undo-tree
-    :defer t
+    :ghook ('after-init-hook #'global-undo-tree-mode)
     :diminish undo-tree-mode
-    :commands undo-tree-visualize
-    :init
-    (progn
-      (my/leader-keys
-	"au" 'undo-tree-visualize))
+    :general
+    (my/leader-keys
+      "au" 'undo-tree-visualize)
     :config
     (progn
       (setq undo-tree-visualizer-timestamps t
@@ -1665,8 +1630,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** expand tree
 #+BEGIN_SRC emacs-lisp
   (use-package expand-region
-      :defer t
-      :init
+      :general
       (my/leader-keys
        "v" 'er/expand-region)
       :config
@@ -1687,7 +1651,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
-    :defer 5
     :diminish smartparens-mode
     :config
     (smartparens-global-mode t)
@@ -1814,7 +1777,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** evil smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package evil-smartparens
-    :defer t
+    :after smartparens
     :diminish evil-smartparens-mode
     :init
     (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
@@ -1822,8 +1785,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** move text
 #+BEGIN_SRC emacs-lisp
   (use-package move-text
-    :defer t
-    :init
+    :general
     (my/leader-keys
       "xJ" 'move-text-down
       "xK" 'move-text-up))
@@ -2026,7 +1988,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil escape
 #+BEGIN_SRC emacs-lisp
   (use-package evil-escape
-    :defer 5
     :diminish evil-escape-mode
     :init
     (setq evil-escape-key-sequence "jk"
@@ -2037,20 +1998,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil anzu
 #+BEGIN_SRC emacs-lisp
   (use-package evil-anzu
-    :defer 5
-    :init
+    :ghook ('after-init-hook #'global-anzu-mode)
+    :general
     (my/leader-keys
       "rs" 'anzu-query-replace
       "rr" 'anzu-query-replace-regexp)
     :config
     (global-set-key [remap query-replace] 'anzu-query-replace)
-    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
-    (global-anzu-mode))
+    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
 #+END_SRC
 ** evil exchange
 #+BEGIN_SRC emacs-lisp
   (use-package evil-exchange
-    :defer t
     :after evil
     :init
     (progn
@@ -2092,7 +2051,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil surround
 #+BEGIN_SRC emacs-lisp
   (use-package evil-surround
-    :defer t
     :config
     (global-evil-surround-mode 1))
 #+END_SRC
@@ -2113,24 +2071,22 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package evil-goggles
     :diminish evil-goggles-mode
-    :defer t
+    :after evil
     :config
     (evil-goggles-mode))
 #+END_SRC
 ** evil indent plus
 #+BEGIN_SRC emacs-lisp
   (use-package evil-indent-plus
-    :defer t
     :config
-    (progn
-      (define-key evil-inner-text-objects-map "i" 'evil-indent-plus-i-indent)
-      (define-key evil-outer-text-objects-map "i" 'evil-indent-plus-a-indent)
-      (define-key evil-inner-text-objects-map "I" 'evil-indent-plus-i-indent-up)
-      (define-key evil-outer-text-objects-map "I" 'evil-indent-plus-a-indent-up)
-      (define-key evil-inner-text-objects-map "J"
-	'evil-indent-plus-i-indent-up-down)
-      (define-key evil-outer-text-objects-map "J"
-	'evil-indent-plus-a-indent-up-down)))
+    (define-key evil-inner-text-objects-map "i" 'evil-indent-plus-i-indent)
+    (define-key evil-outer-text-objects-map "i" 'evil-indent-plus-a-indent)
+    (define-key evil-inner-text-objects-map "I" 'evil-indent-plus-i-indent-up)
+    (define-key evil-outer-text-objects-map "I" 'evil-indent-plus-a-indent-up)
+    (define-key evil-inner-text-objects-map "J"
+      'evil-indent-plus-i-indent-up-down)
+    (define-key evil-outer-text-objects-map "J"
+      'evil-indent-plus-a-indent-up-down))
 #+END_SRC
 ** eivl iedit state
 #+BEGIN_SRC emacs-lisp
@@ -2146,9 +2102,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil numbers
 #+BEGIN_SRC emacs-lisp
   (use-package evil-numbers
-    :defer t
-    :commands hydra-evil-numbers/body
-    :init
+    :general
     (my/leader-keys
       "n" '(:ignore t :wk "numbers")
       "ni" 'evil-numbers/inc-at-pt
@@ -2208,7 +2162,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** eyebrowse
 #+BEGIN_SRC emacs-lisp
   (use-package eyebrowse
-    :defer t
     :init
     (add-hook 'after-init-hook 'eyebrowse-mode)
     :general
@@ -2533,7 +2486,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** winum
 #+BEGIN_SRC emacs-lisp
   (use-package winum
-    :defer nil
+    :ghook ('after-init-hook)
     :general
     (:states '(insert normal visual motion)
 	     :keymaps 'override
@@ -2551,8 +2504,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  winum-mode-line-position 1
 	  winum-ignored-buffers '(" *which-key*" "*helm M-x*" "*helm find files*" "*helm mini*" "*Helm Swoop*")
 	  winum-scope 'frame-local
-	  winum-reverse-frame-list t)
-    (winum-mode))
+	  winum-reverse-frame-list t))
 #+END_SRC
 
 ** golden scroll screen
@@ -2699,7 +2651,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** helm describe modes
 #+BEGIN_SRC emacs-lisp
   (use-package helm-describe-modes
-    :defer t
     :after helm
     :init
     (global-set-key [remap describe-mode] #'helm-describe-modes))
@@ -2761,8 +2712,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** helm thmes
 #+BEGIN_SRC emacs-lisp
   (use-package helm-themes
-    :defer t
-    :init
+    :general
     (my/leader-keys
       "Ts" 'helm-themes))
 #+END_SRC
@@ -2901,7 +2851,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :general
     (my/leader-keys
       "bb" 'ivy-switch-buffer)
-    (my/normal-keys
+    (my/non-insert-keys
       "M-b" 'ivy-switch-buffer)
     (ivy-minibuffer-map
      "C-j" 'ivy-next-line
@@ -2939,7 +2889,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package counsel
     :general
     ("M-x" 'counsel-M-x)
-    (my/noninsert-keys
+    (my/non-insert-keys
       "M-f" 'counsel-find-file)
     (my/leader-keys
       ;; files
@@ -3026,16 +2976,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** counsel projectile
 #+BEGIN_SRC emacs-lisp
   (use-package counsel-projectile
-    :defer t
-    :commands (counsel-projectile
-	       counsel-projectile-find-file
-	       counsel-projectile-switch-to-buffer
-	       counsel-projectile-find-dir
-	       counsel-projectile-switch-project
-	       counsel-projectile-grep
-	       counsel-projectile-ag
-	       counsel-projectile-rg)
-    :init
+    :general
     (my/leader-keys
       "p SPC" 'counsel-projectile
       "pf" 'counsel-projectile-find-file
@@ -3168,14 +3109,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
-    :defer t
-    :commands (yas-global-mode yas-minor-mode yas-activate-extra-mode)
-    :diminish yas-minor-mode
-    :init
-    (progn
-      (dolist (hook '(prog-mode-hook org-mode-hook LaTeX-mode-hook))
-	(add-hook hook '(lambda ()
-			  (yas-minor-mode 1))))))
+    :ghook ('(prog-mode-hook
+	      org-mode-hook
+	      LaTeX-mode-hook)
+	    #'yas-minor-mode))
 #+END_SRC
 *** yasnippet-snippets
 #+BEGIN_SRC emacs-lisp
@@ -3195,15 +3132,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** auo yasnippet
 #+BEGIN_SRC emacs-lisp
   (use-package auto-yasnippet
-    :defer 5
-    :init
-    (progn
-      (my/leader-keys
-       "iSc" 'aya-create
-       "iSe" 'aya-expand
-       "iSw" 'aya-persist-snippet
-       ))
-    )
+    :general
+    (my/leader-keys
+      "iSc" 'aya-create
+      "iSe" 'aya-expand
+      "iSw" 'aya-persist-snippet))
 #+END_SRC
 *** hippie expand
 #+BEGIN_SRC emacs-lisp
@@ -3253,7 +3186,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** version control
 #+BEGIN_SRC emacs-lisp
   (use-package diff-hl
-    :defer t
     :commands (diff-hl-mode
 	       diff-hl-flydiff-mode
 	       diff-hl-margin-minor-mode)
@@ -3435,7 +3367,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package org
     :ensure org-plus-contrib
-    :defer t
     :mode ("\\.org\\'" . org-mode)
     :config
     (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
@@ -3787,13 +3718,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package evil-org
     :diminish evil-org-mode
-    :after org
+    :ghook ('org-mode-hook)
     :init
     (with-eval-after-load 'org-agenda
       (require 'evil-org-agenda)
       (evil-org-agenda-set-keys))
     :config
-    (add-hook 'org-mode-hook 'evil-org-mode)
     (add-hook 'evil-org-mode-hook
 	      (lambda ()
 		(evil-org-set-key-theme))))
@@ -3801,17 +3731,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** org-bullets
 #+BEGIN_SRC emacs-lisp
   (use-package org-bullets
-    :defer t
-    :commands org-bullets-mode
-    :init
-    (add-hook 'org-mode-hook 'org-bullets-mode)
+    :ghook ('org-mode-hook)
+    :config
     (setq org-bullets-bullet-list '("●" "◉" "⊙" "○" "◌")))
 #+END_SRC
 *** org-ref
 #+BEGIN_SRC emacs-lisp
   (use-package org-ref
-    :after org
-    :init
+    :ghook ('org-mode-hook)
+    :config
     (progn
       (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
       (setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref-notes.org")
@@ -3825,9 +3753,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package org-noter
     :load-path "~/Program/org-noter"
-    :defer t
-    :commands org-noter
-    :init
+    :general
     (my/leader-keys-major-mode
       :keymaps 'pdf-view-mode-map
       "n" 'org-noter
@@ -3851,34 +3777,32 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** org journal
 #+BEGIN_SRC emacs-lisp
   (use-package org-journal
-    :defer t
-    :commands (org-journal-new-entry org-journal-search-forever)
     :init
-    (progn
-      (setq org-journal-dir "~/Dropbox/document/org/journal"
-	    org-journal-file-type 'monthly)
-      (my/leader-keys
-	"aoj" '(:ignore t :wk "org-journal")
-	"aojj" 'org-journal-new-entry
-	"aojs" 'org-journal-search-forever)
-      (my/leader-keys-major-mode
-	:keymaps 'calendar-mode-map
-	"r" 'org-journal-read-entry
-	"i" 'org-journal-new-date-entry
-	"n" 'org-journal-next-entry
-	"p" 'org-journal-previous-entry
-	"s" 'org-journal-search-forever
-	"w" 'org-journal-search-calendar-week
-	"m" 'org-journal-search-calendar-month
-	"y" 'org-journal-search-calendar-year)
-      (my/normal-keys
-	:keymaps 'calendar-mode-map
-	"q" 'calendar-exit)
-      (my/leader-keys-major-mode
-	:keymaps 'org-journal-mode-map
-	"j" 'org-journal-new-entry
-	"n" 'org-journal-open-next-entry
-	"p" 'org-journal-open-previous-entry)))
+    (setq org-journal-dir "~/Dropbox/document/org/journal"
+	  org-journal-file-type 'monthly)
+    :general
+    (my/leader-keys
+      "aoj" '(:ignore t :wk "org-journal")
+      "aojj" 'org-journal-new-entry
+      "aojs" 'org-journal-search-forever)
+    (my/leader-keys-major-mode
+      :keymaps 'calendar-mode-map
+      "r" 'org-journal-read-entry
+      "i" 'org-journal-new-date-entry
+      "n" 'org-journal-next-entry
+      "p" 'org-journal-previous-entry
+      "s" 'org-journal-search-forever
+      "w" 'org-journal-search-calendar-week
+      "m" 'org-journal-search-calendar-month
+      "y" 'org-journal-search-calendar-year)
+    (my/normal-keys
+      :keymaps 'calendar-mode-map
+      "q" 'calendar-exit)
+    (my/leader-keys-major-mode
+      :keymaps 'org-journal-mode-map
+      "j" 'org-journal-new-entry
+      "n" 'org-journal-open-next-entry
+      "p" 'org-journal-open-previous-entry))
 #+END_SRC
 *** org projectile
 #+BEGIN_SRC emacs-lisp
@@ -3956,17 +3880,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** parinfer mode
 #+BEGIN_SRC emacs-lisp :tangle no
   (use-package parinfer
-    :ensure t
-    :init
-    (progn
-      (my/leader-keys
-	"tP" 'parinfer-toggle-mode)
-      (setq parinfer-extensions
-	    '(defaults       ; should be included.
-	      evil           ; If you use Evil.
-	      smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
-	      smart-yank))   ; Yank behavior depend on mode.
-      (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)))
+    :general
+    (my/leader-keys
+      "tP" 'parinfer-toggle-mode)
+    (setq parinfer-extensions
+	  '(defaults       ; should be included.
+	     evil           ; If you use Evil.
+	     smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
+	     smart-yank))   ; Yank behavior depend on mode.
+    (add-hook 'emacs-lisp-mode-hook #'parinfer-mode))
 #+END_SRC
 ** latex
 *** reftex
@@ -4000,7 +3922,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** auctex
 #+BEGIN_SRC emacs-lisp
   (use-package tex
-    :defer t
     :ensure auctex
     :mode (".tex\\'" . LaTeX-mode)
     :config
@@ -4104,21 +4025,20 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 ** lua
 #+BEGIN_SRC emacs-lisp
-(use-package lua-mode
-  :defer t
-  :mode ("\\.lua\\'" . lua-mode)
-  :interpreter ("lua" . lua-mode)
-  :init
-  (progn
-    (setq lua-indent-level 2
-	  lua-indent-string-contents t)
-    (my/leader-keys-major-mode
-      :keymaps 'lua-mode
-      "d" 'lua-search-documentation
-      "sb" 'lua-send-buffer
-      "sf" 'lua-send-defun
-      "sl" 'lua-send-current-line
-      "sr" 'lua-send-region)))
+  (use-package lua-mode
+    :mode ("\\.lua\\'" . lua-mode)
+    :interpreter ("lua" . lua-mode)
+    :init
+    (progn
+      (setq lua-indent-level 2
+	    lua-indent-string-contents t)
+      (my/leader-keys-major-mode
+	:keymaps 'lua-mode
+	"d" 'lua-search-documentation
+	"sb" 'lua-send-buffer
+	"sf" 'lua-send-defun
+	"sl" 'lua-send-current-line
+	"sr" 'lua-send-region)))
 #+END_SRC
 ** yaml
    
@@ -4136,7 +4056,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** python
 #+BEGIN_SRC emacs-lisp
   (use-package python
-    :defer t
     :mode (".py\\'" . python-mode)
     :config
     (progn
@@ -4222,19 +4141,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package yapfify
     :diminish yapf-mode
-    :defer t
-    :init
-    (progn
-      (my/leader-keys-major-mode
-       :keymaps 'python-mode-map
-       "f" 'yapfify-buffer)))
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'python-mode-map
+      "f" 'yapfify-buffer))
 #+END_SRC
 *** pyvenv
 #+BEGIN_SRC emacs-lisp
   (use-package pyvenv
-    :defer t
-    :after python
-    :init
+    :general
     (my/leader-keys-major-mode
       :keymaps 'python-mode-map
       "v" '(:ignore t :wk "virtualenv")
@@ -4266,15 +4181,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** importmagic
 #+BEGIN_SRC emacs-lisp :tangle yes
   (use-package importmagic
-    :defer t
-    :init
-    (progn
-      ;; (add-hook 'python-mode-hook 'importmagic-mode)
-      (my/leader-keys-major-mode
-	:keymaps 'python-mode-map
-	:major-modes t
-	"r" '(:ignore t :wk "refactor")
-	"rf" 'importmagic-fix-symbol-at-point)))
+    :general
+    ;; (add-hook python-mode-hook importmagic-mode)
+    (my/leader-keys-major-mode
+      :keymaps 'python-mode-map
+      :major-modes t
+      "r" '(:ignore t :wk "refactor")
+      "rf" 'importmagic-fix-symbol-at-point))
 #+END_SRC
 *** anaconda
    :PROPERTIES:
@@ -4315,37 +4228,36 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** sh script
 #+BEGIN_SRC emacs-lisp
   (use-package sh-script
-    :defer t
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'sh-mode-map
+      "\\" 'sh-backslash-region
+      "i" '(:ignore t :wk "insert")
+      "ic" 'sh-case
+      "ii" 'sh-if
+      "if" 'sh-function
+      "io" 'sh-for
+      "ie" 'sh-indexed-loop
+      "iw" 'sh-while
+      "ir" 'sh-repeat
+      "is" 'sh-select
+      "iu" 'sh-until
+      "ig" 'sh-while-getopts)
     :init
-    (progn
-      (my/leader-keys-major-mode
-	:keymaps 'sh-mode-map
-	"\\" 'sh-backslash-region
-	"i" '(:ignore t :wk "insert")
-	"ic" 'sh-case
-	"ii" 'sh-if
-	"if" 'sh-function
-	"io" 'sh-for
-	"ie" 'sh-indexed-loop
-	"iw" 'sh-while
-	"ir" 'sh-repeat
-	"is" 'sh-select
-	"iu" 'sh-until
-	"ig" 'sh-while-getopts)
-      ;; Use sh-mode when opening `.zsh' files, and when opening Prezto runcoms.
-      (dolist (pattern '("\\.zsh\\'"
-			 "zlogin\\'"
-			 "zlogout\\'"
-			 "zpreztorc\\'"
-			 "zprofile\\'"
-			 "zshenv\\'"
-			 "zshrc\\'"))
-	(add-to-list 'auto-mode-alist (cons pattern 'sh-mode)))
-      (defun spacemacs//setup-shell ()
-	(when (and buffer-file-name
-		   (string-match-p "\\.zsh\\'" buffer-file-name))
-	  (sh-set-shell "zsh")))
-      (add-hook 'sh-mode-hook 'spacemacs//setup-shell)))
+    ;; Use sh-mode when opening `.zsh' files, and when opening Prezto runcoms.
+    (dolist (pattern '("\\.zsh\\'"
+		       "zlogin\\'"
+		       "zlogout\\'"
+		       "zpreztorc\\'"
+		       "zprofile\\'"
+		       "zshenv\\'"
+		       "zshrc\\'"))
+      (add-to-list 'auto-mode-alist (cons pattern 'sh-mode)))
+    (defun spacemacs//setup-shell ()
+      (when (and buffer-file-name
+		 (string-match-p "\\.zsh\\'" buffer-file-name))
+	(sh-set-shell "zsh")))
+    (add-hook 'sh-mode-hook 'spacemacs//setup-shell))
 #+END_SRC
 ** lsp
 *** lsp mode
@@ -4441,28 +4353,22 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** academic phrases
 #+BEGIN_SRC emacs-lisp
   (use-package academic-phrases
-    :defer t
-    :commands (academic-phrases
-	       academic-phrases-by-section)
-    :init
-    (progn
-      (my/leader-keys-major-mode
-       :keymaps 'LaTeX-mode-map
-	"iP" 'academic-phrases
-	"iS" 'academic-phrases-by-section)
-      (my/leader-keys-major-mode
-       :keymaps 'org-mode-map
-	"iP" 'academic-phrases
-	"iS" 'academic-phrases-by-section)))
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'LaTeX-mode-map
+      "iP" 'academic-phrases
+      "iS" 'academic-phrases-by-section)
+    (my/leader-keys-major-mode
+      :keymaps 'org-mode-map
+      "iP" 'academic-phrases
+      "iS" 'academic-phrases-by-section))
 #+END_SRC
 ** artbollocks
 #+BEGIN_SRC emacs-lisp
   (use-package artbollocks-mode
     :diminish artbollocks-mode
-    :defer t
-    :init
-    (add-hook 'org-mode-hook 'artbollocks-mode)
-    (add-hook 'LaTeX-mode-hook 'artbollocks-mode)
+    :ghook ('(org-mode-hook
+	      LaTeX-mode-hook))
     :config
     (setq artbollocks-jargon nil
 	  artbollocks-passive-voice nil))
@@ -4493,15 +4399,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** wordnut
 #+BEGIN_SRC emacs-lisp
   (use-package wordnut
-    :defer t
-    :commands wordnut-search
-    :init
-    (progn
-      (my/leader-keys
-	"a M-w" 'wordnut-search)
-      (my/normal-keys
-	:keymaps 'wordnut-mode-map
-	"q" 'quit-window)))
+    :general
+    (my/leader-keys
+      "a M-w" 'wordnut-search)
+    (my/normal-keys
+      :keymaps 'wordnut-mode-map
+      "q" 'quit-window))
 #+END_SRC
 ** dict
 *** youdao dictionary
@@ -4552,7 +4455,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package pdf-tools
     :diminish pdf-view-midnight-minor-mode
-    :defer t
     :mode (("\\.pdf\\'" . pdf-view-mode))
     :config
     (progn
@@ -4649,7 +4551,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** keyfreq
 #+BEGIN_SRC emacs-lisp
   (use-package keyfreq
-    :defer 5
     :config
     (keyfreq-mode 1)
     (keyfreq-autosave-mode 1)
@@ -4869,7 +4770,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** elfeed
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed
-    :defer t
     :commands (elfeed elfeed-db-load)
     :init (my/leader-keys "af" 'my/elfeed-load-db-and-open)
     :config
@@ -4908,7 +4808,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** elfeed goodies
 #+BEGIN_SRC emacs-lisp
   (use-package elfeed-goodies
-      :defer t
       :commands elfeed-goodies/setup
       :config
       (progn
@@ -4980,51 +4879,47 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** shell
 *** eshell
 #+BEGIN_SRC emacs-lisp
-(use-package eshell
-  :defer t
-  :config
-  (progn
-    (setq eshell-cmpl-cycle-completions nil)
-    (add-hook 'eshell-mode-hook 'my/eshell-set-keys)
-    (add-hook 'eshell-after-prompt-hook 'my//protect-eshell-prompt)
-    (defun my/eshell-set-keys ()
-      (my/all-states-keys
-	:keymaps 'eshell-mode-map
-	"C-j" 'eshell-next-input
-	"C-k" 'eshell-previous-input))
-    (defun my//protect-eshell-prompt ()
-      "Protect Eshell's prompt like Comint's prompts.
-E.g. `evil-change-whole-line' won't wipe the prompt. This
-is achieved by adding the relevant text properties."
-      (let ((inhibit-field-text-motion t))
-	(add-text-properties
-	 (point-at-bol)
-	 (point)
-	 '(rear-nonsticky t
-			  inhibit-line-move-field-capture t
-			  field output
-			  read-only t
-			  front-sticky (field inhibit-line-move-field-capture)))))))
+  (use-package eshell
+    :commands eshell
+    :config
+    (progn
+      (setq eshell-cmpl-cycle-completions nil)
+      (add-hook 'eshell-mode-hook 'my/eshell-set-keys)
+      (add-hook 'eshell-after-prompt-hook 'my//protect-eshell-prompt)
+      (defun my/eshell-set-keys ()
+	(my/all-states-keys
+	  :keymaps 'eshell-mode-map
+	  "C-j" 'eshell-next-input
+	  "C-k" 'eshell-previous-input))
+      (defun my//protect-eshell-prompt ()
+	"Protect Eshell's prompt like Comint's prompts.
+  E.g. `evil-change-whole-line' won't wipe the prompt. This
+  is achieved by adding the relevant text properties."
+	(let ((inhibit-field-text-motion t))
+	  (add-text-properties
+	   (point-at-bol)
+	   (point)
+	   '(rear-nonsticky t
+			    inhibit-line-move-field-capture t
+			    field output
+			    read-only t
+			    front-sticky (field inhibit-line-move-field-capture)))))))
 #+END_SRC
 *** shell pop
 #+BEGIN_SRC emacs-lisp
-(use-package shell-pop
-  :defer t
-  :commands shell-pop
-  :init
-  (setq shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell))))
-	shell-pop-full-span t)
-  (my/leader-keys
-    "'" 'shell-pop
-    "as" 'eshell))
+  (use-package shell-pop
+    :general
+    (my/leader-keys
+      "'" 'shell-pop
+      "as" 'eshell)
+    :config
+    (setq shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell))))
+	  shell-pop-full-span t))
 #+END_SRC
 *** eshell z
 #+BEGIN_SRC emacs-lisp
-(use-package eshell-z
-  :defer t
-  :init
-  (with-eval-after-load 'eshell
-    (require 'eshell-z)))
+  (use-package eshell-z
+    :after eshell)
 #+END_SRC
 *** eshell prompt extras
 #+BEGIN_SRC emacs-lisp
@@ -5038,7 +4933,6 @@ is achieved by adding the relevant text properties."
 *** ledger
 #+BEGIN_SRC emacs-lisp
   (use-package ledger-mode
-    :defer t
     :mode ("\\.\\(ledger\\|ldg\\)\\'" . ledger-mode)
     :init
     (progn
@@ -5080,7 +4974,6 @@ is achieved by adding the relevant text properties."
 ** atomic chrome
 #+BEGIN_SRC emacs-lisp
   (use-package atomic-chrome
-    :defer 5
     :config
     (atomic-chrome-start-server))
 #+END_SRC
@@ -5117,7 +5010,6 @@ is achieved by adding the relevant text properties."
 ** neotree
 #+BEGIN_SRC emacs-lisp
   (use-package neotree
-    :defer t
     :commands neo-global--window-exists-p
     :init
     (progn
@@ -5237,7 +5129,6 @@ is achieved by adding the relevant text properties."
 ** nov
 #+BEGIN_SRC emacs-lisp
   (use-package nov
-    :defer t
     :mode ("\\.epub\\'" . nov-mode)
     :init
     (add-hook 'nov-mode-hook 'visual-line-mode)
@@ -5265,9 +5156,7 @@ is achieved by adding the relevant text properties."
 ** toc org
 #+BEGIN_SRC emacs-lisp
   (use-package toc-org
-    :defer t
-    :init
-    (add-hook 'org-mode-hook 'toc-org-mode))
+    :ghook ('org-mode-hook))
 #+END_SRC
 ** helpful
 #+BEGIN_SRC emacs-lisp :tangle yes
@@ -5343,7 +5232,6 @@ is achieved by adding the relevant text properties."
 *** pyim
 #+BEGIN_SRC emacs-lisp
   (use-package pyim
-    :defer t
     :commands (pyim-convert-string-at-point toggle-input-method)
     :init
     :general
