@@ -415,11 +415,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (general-create-definer my/all-states-keys
 	:states '(normal visual motion emacs insert)
 	:keymaps 'override)
-      (general-create-definer my/leader-keys-extra
-	:states '(normal visual motion emacs insert)
-	:keymaps 'override
-	:prefix ";"
-	:non-normal-prefix "M-;")))
+      ;; (general-create-definer my/leader-keys-extra
+      ;;   :states '(normal visual motion emacs insert)
+      ;;   :keymaps 'override
+      ;;   :prefix ";"
+      ;;   :non-normal-prefix "M-;")
+      ))
 
   ;;;###autoload
   (defun my/lisp-indent-function (indent-point state)
