@@ -4091,7 +4091,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  (python-shell-send-buffer)))
       (add-hook 'inferior-python-mode-hook
 		(lambda ()
-		  (add-to-list (make-local-variable 'company-backends) '(company-capf company-dabbrev-code))))))
+		  (add-to-list (make-local-variable 'company-backends) '(company-files company-capf company-dabbrev-code))))))
 
   ;;;###autoload
   (defun my/run-python (&optional cmd dedicated show)
