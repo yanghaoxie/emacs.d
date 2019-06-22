@@ -1009,10 +1009,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "q" 'quit-window))
   ;; key bindings
 
-  (my/leader-keys-extra
-    "a" 'beginning-of-defun
-    "e" 'end-of-defun)
-
   (my/all-states-keys
     "C-e" 'move-end-of-line)
 
