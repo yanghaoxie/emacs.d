@@ -3214,7 +3214,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** evil magit
 #+BEGIN_SRC emacs-lisp
   (use-package evil-magit
-      :after magit)
+    :after (evil magit))
 #+END_SRC
 *** magit todos
 #+BEGIN_SRC emacs-lisp
