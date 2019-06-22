@@ -3052,6 +3052,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 			       company-ispell
 			       company-yasnippet
 			       company-abbrev))
+      (push (apply-partially #'cl-remove-if
+			     (lambda (c)
+			       (or (string-match-p "[^\x00-\x7F]+" c)
+				   (string-match-p "[0-9]+" c)
+				   )))
+	    company-transformers)
       (defun ora-company-number ()
 	"Forward to `company-complete-number'.
   Unless the number is potentially part of the candidate.
