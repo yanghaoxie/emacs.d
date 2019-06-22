@@ -1637,11 +1637,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** sudo edit
 #+BEGIN_SRC emacs-lisp
   (use-package sudo-edit
-    :commands (sudo-edit)
-    :init
-    (progn
-      (my/leader-keys
-       "fe" 'sudo-edit)))
+    :general
+    (my/leader-keys
+      "fe" 'sudo-edit))
 #+END_SRC
 ** smartparens related
 *** smartparens
