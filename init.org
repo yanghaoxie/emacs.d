@@ -2430,10 +2430,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys-major-mode
       :keymaps 'org-mode-map
       "jj" 'avy-org-goto-heading-timer)
-    (my/leader-keys-extra
-      "w" 'avy-goto-word-1
-      "c" 'avy-goto-char
-      "l" 'avy-goto-line)
     (my/all-states-keys
       "M-e" 'avy-goto-word-1
       "M-r" 'avy-goto-char
