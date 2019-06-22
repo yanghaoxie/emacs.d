@@ -1597,14 +1597,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 * universal
 ** restart-emacs
-   
 #+BEGIN_SRC emacs-lisp
   (use-package restart-emacs
-      :init
-      (setq restart-emacs-restore-frame t)
-      :general
-      (my/leader-keys
-       "qr" 'restart-emacs))
+    :config
+    (setq restart-emacs-restore-frame t)
+    :general
+    (my/leader-keys
+      "qr" 'restart-emacs))
 #+END_SRC
 ** undo tree
 #+BEGIN_SRC emacs-lisp
