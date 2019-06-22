@@ -22,6 +22,21 @@ This is an Emacs configuration file written in org mode.
     - [[#hydra][hydra]]
   - [[#install-general][install general]]
   - [[#try][try]]
+- [[#vim][vim]]
+  - [[#evil][evil]]
+  - [[#evil-escape][evil escape]]
+  - [[#evil-anzu][evil anzu]]
+  - [[#evil-exchange][evil exchange]]
+  - [[#evil-nerd-commenter][evil nerd commenter]]
+  - [[#evil-matchit][evil matchit]]
+  - [[#evil-surround][evil surround]]
+  - [[#evil-snipe][evil snipe]]
+  - [[#evil-goggles][evil goggles]]
+  - [[#evil-indent-plus][evil indent plus]]
+  - [[#eivl-iedit-state][eivl iedit state]]
+  - [[#evil-numbers][evil numbers]]
+  - [[#evil-args][evil args]]
+  - [[#evil-mc][evil mc]]
 - [[#autoload][autoload]]
 - [[#defaults][defaults]]
   - [[#setting-related-in-build-in-features][setting related in build-in features]]
@@ -74,21 +89,6 @@ This is an Emacs configuration file written in org mode.
   - [[#wgrep][wgrep]]
 - [[#themes][themes]]
   - [[#gruvbox][gruvbox]]
-- [[#vim][vim]]
-  - [[#evil][evil]]
-  - [[#evil-escape][evil escape]]
-  - [[#evil-anzu][evil anzu]]
-  - [[#evil-exchange][evil exchange]]
-  - [[#evil-nerd-commenter][evil nerd commenter]]
-  - [[#evil-matchit][evil matchit]]
-  - [[#evil-surround][evil surround]]
-  - [[#evil-snipe][evil snipe]]
-  - [[#evil-goggles][evil goggles]]
-  - [[#evil-indent-plus][evil indent plus]]
-  - [[#eivl-iedit-state][eivl iedit state]]
-  - [[#evil-numbers][evil numbers]]
-  - [[#evil-args][evil args]]
-  - [[#evil-mc][evil mc]]
 - [[#workspaces][workspaces]]
   - [[#eyebrowse][eyebrowse]]
   - [[#persp-mode][persp mode]]
@@ -501,6 +501,232 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package try
     :commands try)
+#+END_SRC
+* vim
+** evil
+#+BEGIN_SRC emacs-lisp
+  (use-package evil
+    :general
+    (:keymaps 'override
+	      :states 'insert
+	      "C-j" 'evil-next-line
+	      "C-k" 'evil-previous-line
+	      "M-o" 'evil-open-below)
+    :config
+    (define-key evil-insert-state-map [remap evil-complete-previous] 'hippie-expand)
+    (my/normal-keys
+      "gD" 'xref-find-definitions-other-window)
+    (progn
+      (evil-set-initial-state 'pdf-view-mode 'normal)
+      (evil-set-initial-state 'pdf-outline-buffer-mode 'normal)
+      (evil-set-initial-state 'paradox-menu-mode 'normal)
+      (evil-set-initial-state 'calendar-mode 'normal)
+      (evil-set-initial-state 'process-menu-mode 'motion)
+      (evil-set-initial-state 'special-mode 'motion)
+      (evil-set-initial-state 'pdf-occur-buffer-mode 'normal)
+      (evil-set-initial-state 'imenu-list-major-mode 'normal)
+      (evil-set-initial-state 'neotree-mode 'normal)
+      (evil-set-initial-state 'youdao-dictionary-mode 'motion)
+      (evil-set-initial-state 'flycheck-error-list-mode 'normal)
+      (evil-set-initial-state 'nov-mode 'normal)
+      (evil-set-initial-state 'lsp-ui-imenu-mode 'normal)
+      (evil-set-initial-state 'helpful-mode 'normal)
+      (evil-set-initial-state 'Custom-mode 'normal)
+      (evil-set-initial-state 'occur-mode 'normal)
+      (setq evil-insert-state-cursor '(bar "LimeGreen")
+	    evil-normal-state-cursor '(box "darkorange")
+	    evil-visual-state-cursor '(box "LightGoldenrod")
+	    evil-emacs-state-cursor '(box "MediumPurple2")
+	    evil-echo-state nil)
+  ;;;###autoload
+      (defun my/end-of-buffer ()
+	"Go to beginning of last line in buffer.
+  If last line is empty, go to beginning of penultimate one
+  instead."
+	(interactive)
+	(goto-char (point-max))
+	(beginning-of-line (and (looking-at-p "^$") 0)))
+  ;;;###autoload
+      (evil-define-motion my/evil-goto-line (count)
+	"Go to the first non-blank character of line COUNT.
+  By default the last line."
+	:jump t
+	:type line
+	(if (null count)
+	    (with-no-warnings (my/end-of-buffer))
+	  (goto-char (point-min))
+	  (forward-line (1- count)))
+	(evil-first-non-blank))
+
+      (global-set-key [remap evil-goto-line] #'my/evil-goto-line)
+      (evil-mode 1)))
+#+END_SRC
+
+** evil escape
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-escape
+    :diminish evil-escape-mode
+    :init
+    (setq evil-escape-key-sequence "jk"
+	  evil-escape-unordered-key-sequence t)
+    :config
+    (evil-escape-mode))
+#+END_SRC
+** evil anzu
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-anzu
+    :ghook ('after-init-hook #'global-anzu-mode)
+    :general
+    (my/leader-keys
+      "rs" 'anzu-query-replace
+      "rr" 'anzu-query-replace-regexp)
+    :config
+    (global-set-key [remap query-replace] 'anzu-query-replace)
+    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
+#+END_SRC
+** evil exchange
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-exchange
+    :after evil
+    :init
+    (progn
+      (let ((evil-exchange-key (kbd "gx"))
+	    (evil-exchange-cancel-key (kbd "gX")))
+	(define-key evil-normal-state-map evil-exchange-key 'evil-exchange)
+	(define-key evil-visual-state-map evil-exchange-key 'evil-exchange)
+	(define-key evil-normal-state-map evil-exchange-cancel-key
+	  'evil-exchange-cancel)
+	(define-key evil-visual-state-map evil-exchange-cancel-key
+	  'evil-exchange-cancel))))
+#+END_SRC
+** evil nerd commenter
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-nerd-commenter
+    :commands (evilnc-comment-operator
+	       evilnc-comment-or-uncomment-lines
+	       evilnc-comment-or-uncomment-paragraphs)
+    :init
+    (my/leader-keys
+      ";" 'evilnc-comment-operator
+      "cl" 'evilnc-comment-or-uncomment-lines
+      "cp" 'evilnc-comment-or-uncomment-paragraphs))
+#+END_SRC
+** evil matchit
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-matchit
+    :general
+    (:keymaps 'override
+     :states '(normal visual)
+     "%" 'evilmi-jump-items)
+    :config
+    (setq evilmi-always-simple-jump t)
+    (global-evil-matchit-mode))
+#+END_SRC
+** evil surround
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-surround
+    :after evil
+    :config
+    (global-evil-surround-mode 1))
+#+END_SRC
+** evil snipe
+#+BEGIN_SRC emacs-lisp :tangle no
+  (use-package evil-snipe
+    :diminish evil-snipe-local-mode
+    :init
+    (setq evil-snipe-show-prompt nil)
+    :config
+    (evil-snipe-mode 1)
+    (evil-snipe-override-mode 1)
+    (my/normal-keys
+      "s" 'evil-snipe-s
+      "S" 'evil-snipe-S))
+#+END_SRC
+** evil goggles
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-goggles
+    :diminish evil-goggles-mode
+    :after evil
+    :config
+    (evil-goggles-mode))
+#+END_SRC
+** evil indent plus
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-indent-plus
+    :after evil
+    :config
+    (define-key evil-inner-text-objects-map "i" 'evil-indent-plus-i-indent)
+    (define-key evil-outer-text-objects-map "i" 'evil-indent-plus-a-indent)
+    (define-key evil-inner-text-objects-map "I" 'evil-indent-plus-i-indent-up)
+    (define-key evil-outer-text-objects-map "I" 'evil-indent-plus-a-indent-up)
+    (define-key evil-inner-text-objects-map "J"
+      'evil-indent-plus-i-indent-up-down)
+    (define-key evil-outer-text-objects-map "J"
+      'evil-indent-plus-a-indent-up-down))
+#+END_SRC
+** eivl iedit state
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-iedit-state
+    :general
+    (my/leader-keys "se" 'evil-iedit-state/iedit-mode)
+    :config
+    (setq iedit-current-symbol-default t
+	  iedit-only-at-symbol-boundaries t
+	  iedit-toggle-key-default nil))
+#+END_SRC
+** evil numbers
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-numbers
+    :general
+    (my/leader-keys
+      "n" '(:ignore t :wk "numbers")
+      "ni" 'evil-numbers/inc-at-pt
+      "nd" 'evil-numbers/dec-at-pt
+      "n." 'hydra-evil-numbers/body)
+    :config
+    (defhydra hydra-evil-numbers (:hint nil)
+      "
+  Evil Numbers: [_i_] increase [_d_] decrease [0..9] prefix [_q_] exit
+  "
+      ("i" evil-numbers/inc-at-pt)
+      ("d" evil-numbers/dec-at-pt)
+      ("q" nil :exit t)))
+#+END_SRC
+** evil args
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-args
+    :after evil
+    :general
+    (my/normal-keys
+      "gL" 'evil-forward-arg
+      "gh" 'evil-backward-arg
+      "gK" 'evil-jump-out-args)
+    :config
+    (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
+    (define-key evil-outer-text-objects-map "a" 'evil-outer-arg))
+#+END_SRC
+** evil mc
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-mc
+    :commands (evil-mc-make-cursor-here
+	       evil-mc-make-all-cursors
+	       evil-mc-undo-all-cursors evil-mc-pause-cursors
+	       evil-mc-resume-cursors evil-mc-make-and-goto-first-cursor
+	       evil-mc-make-and-goto-last-cursor
+	       evil-mc-make-cursor-move-next-line
+	       evil-mc-make-cursor-move-prev-line evil-mc-make-cursor-at-pos
+	       evil-mc-has-cursors-p evil-mc-make-and-goto-next-cursor
+	       evil-mc-skip-and-goto-next-cursor evil-mc-make-and-goto-prev-cursor
+	       evil-mc-skip-and-goto-prev-cursor evil-mc-make-and-goto-next-match
+	       evil-mc-skip-and-goto-next-match evil-mc-skip-and-goto-next-match
+	       evil-mc-make-and-goto-prev-match evil-mc-skip-and-goto-prev-match)
+    :init
+    (add-hook 'prog-mode-hook #'evil-mc-mode)
+    (add-hook 'text-mode-hook #'evil-mc-mode)
+    (my/normal-keys
+      "gr" '(:ignore t :wk "evil-mc"))
+    (setq evil-mc-incompatible-minor-modes
+	  '(evil-escape-mode aggressive-indent-mode flycheck-mode flyspell-mode haskell-indent-mode haskell-indentation-mode yas-minor-mode)))
 #+END_SRC
 * autoload
 
@@ -1919,232 +2145,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (my/leader-keys
     "Tn" 'my/switch-theme)
-#+END_SRC
-* vim
-** evil
-#+BEGIN_SRC emacs-lisp
-  (use-package evil
-    :general
-    (:keymaps 'override
-	      :states 'insert
-	      "C-j" 'evil-next-line
-	      "C-k" 'evil-previous-line
-	      "M-o" 'evil-open-below)
-    :config
-    (define-key evil-insert-state-map [remap evil-complete-previous] 'hippie-expand)
-    (my/normal-keys
-      "gD" 'xref-find-definitions-other-window)
-    (progn
-      (evil-set-initial-state 'pdf-view-mode 'normal)
-      (evil-set-initial-state 'pdf-outline-buffer-mode 'normal)
-      (evil-set-initial-state 'paradox-menu-mode 'normal)
-      (evil-set-initial-state 'calendar-mode 'normal)
-      (evil-set-initial-state 'process-menu-mode 'motion)
-      (evil-set-initial-state 'special-mode 'motion)
-      (evil-set-initial-state 'pdf-occur-buffer-mode 'normal)
-      (evil-set-initial-state 'imenu-list-major-mode 'normal)
-      (evil-set-initial-state 'neotree-mode 'normal)
-      (evil-set-initial-state 'youdao-dictionary-mode 'motion)
-      (evil-set-initial-state 'flycheck-error-list-mode 'normal)
-      (evil-set-initial-state 'nov-mode 'normal)
-      (evil-set-initial-state 'lsp-ui-imenu-mode 'normal)
-      (evil-set-initial-state 'helpful-mode 'normal)
-      (evil-set-initial-state 'Custom-mode 'normal)
-      (evil-set-initial-state 'occur-mode 'normal)
-      (setq evil-insert-state-cursor '(bar "LimeGreen")
-	    evil-normal-state-cursor '(box "darkorange")
-	    evil-visual-state-cursor '(box "LightGoldenrod")
-	    evil-emacs-state-cursor '(box "MediumPurple2")
-	    evil-echo-state nil)
-  ;;;###autoload
-      (defun my/end-of-buffer ()
-	"Go to beginning of last line in buffer.
-  If last line is empty, go to beginning of penultimate one
-  instead."
-	(interactive)
-	(goto-char (point-max))
-	(beginning-of-line (and (looking-at-p "^$") 0)))
-  ;;;###autoload
-      (evil-define-motion my/evil-goto-line (count)
-	"Go to the first non-blank character of line COUNT.
-  By default the last line."
-	:jump t
-	:type line
-	(if (null count)
-	    (with-no-warnings (my/end-of-buffer))
-	  (goto-char (point-min))
-	  (forward-line (1- count)))
-	(evil-first-non-blank))
-
-      (global-set-key [remap evil-goto-line] #'my/evil-goto-line)
-      (evil-mode 1)))
-#+END_SRC
-
-** evil escape
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-escape
-    :diminish evil-escape-mode
-    :init
-    (setq evil-escape-key-sequence "jk"
-	  evil-escape-unordered-key-sequence t)
-    :config
-    (evil-escape-mode))
-#+END_SRC
-** evil anzu
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-anzu
-    :ghook ('after-init-hook #'global-anzu-mode)
-    :general
-    (my/leader-keys
-      "rs" 'anzu-query-replace
-      "rr" 'anzu-query-replace-regexp)
-    :config
-    (global-set-key [remap query-replace] 'anzu-query-replace)
-    (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
-#+END_SRC
-** evil exchange
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-exchange
-    :after evil
-    :init
-    (progn
-      (let ((evil-exchange-key (kbd "gx"))
-	    (evil-exchange-cancel-key (kbd "gX")))
-	(define-key evil-normal-state-map evil-exchange-key 'evil-exchange)
-	(define-key evil-visual-state-map evil-exchange-key 'evil-exchange)
-	(define-key evil-normal-state-map evil-exchange-cancel-key
-	  'evil-exchange-cancel)
-	(define-key evil-visual-state-map evil-exchange-cancel-key
-	  'evil-exchange-cancel))))
-#+END_SRC
-** evil nerd commenter
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-nerd-commenter
-    :commands (evilnc-comment-operator
-	       evilnc-comment-or-uncomment-lines
-	       evilnc-comment-or-uncomment-paragraphs)
-    :init
-    (my/leader-keys
-      ";" 'evilnc-comment-operator
-      "cl" 'evilnc-comment-or-uncomment-lines
-      "cp" 'evilnc-comment-or-uncomment-paragraphs))
-#+END_SRC
-** evil matchit
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-matchit
-    :general
-    (:keymaps 'override
-     :states '(normal visual)
-     "%" 'evilmi-jump-items)
-    :config
-    (setq evilmi-always-simple-jump t)
-    (global-evil-matchit-mode))
-#+END_SRC
-** evil surround
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-surround
-    :after evil
-    :config
-    (global-evil-surround-mode 1))
-#+END_SRC
-** evil snipe
-#+BEGIN_SRC emacs-lisp :tangle no
-  (use-package evil-snipe
-    :diminish evil-snipe-local-mode
-    :init
-    (setq evil-snipe-show-prompt nil)
-    :config
-    (evil-snipe-mode 1)
-    (evil-snipe-override-mode 1)
-    (my/normal-keys
-      "s" 'evil-snipe-s
-      "S" 'evil-snipe-S))
-#+END_SRC
-** evil goggles
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-goggles
-    :diminish evil-goggles-mode
-    :after evil
-    :config
-    (evil-goggles-mode))
-#+END_SRC
-** evil indent plus
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-indent-plus
-    :after evil
-    :config
-    (define-key evil-inner-text-objects-map "i" 'evil-indent-plus-i-indent)
-    (define-key evil-outer-text-objects-map "i" 'evil-indent-plus-a-indent)
-    (define-key evil-inner-text-objects-map "I" 'evil-indent-plus-i-indent-up)
-    (define-key evil-outer-text-objects-map "I" 'evil-indent-plus-a-indent-up)
-    (define-key evil-inner-text-objects-map "J"
-      'evil-indent-plus-i-indent-up-down)
-    (define-key evil-outer-text-objects-map "J"
-      'evil-indent-plus-a-indent-up-down))
-#+END_SRC
-** eivl iedit state
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-iedit-state
-    :general
-    (my/leader-keys "se" 'evil-iedit-state/iedit-mode)
-    :config
-    (setq iedit-current-symbol-default t
-	  iedit-only-at-symbol-boundaries t
-	  iedit-toggle-key-default nil))
-#+END_SRC
-** evil numbers
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-numbers
-    :general
-    (my/leader-keys
-      "n" '(:ignore t :wk "numbers")
-      "ni" 'evil-numbers/inc-at-pt
-      "nd" 'evil-numbers/dec-at-pt
-      "n." 'hydra-evil-numbers/body)
-    :config
-    (defhydra hydra-evil-numbers (:hint nil)
-      "
-  Evil Numbers: [_i_] increase [_d_] decrease [0..9] prefix [_q_] exit
-  "
-      ("i" evil-numbers/inc-at-pt)
-      ("d" evil-numbers/dec-at-pt)
-      ("q" nil :exit t)))
-#+END_SRC
-** evil args
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-args
-    :after evil
-    :general
-    (my/normal-keys
-      "gL" 'evil-forward-arg
-      "gh" 'evil-backward-arg
-      "gK" 'evil-jump-out-args)
-    :config
-    (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
-    (define-key evil-outer-text-objects-map "a" 'evil-outer-arg))
-#+END_SRC
-** evil mc
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-mc
-    :commands (evil-mc-make-cursor-here
-	       evil-mc-make-all-cursors
-	       evil-mc-undo-all-cursors evil-mc-pause-cursors
-	       evil-mc-resume-cursors evil-mc-make-and-goto-first-cursor
-	       evil-mc-make-and-goto-last-cursor
-	       evil-mc-make-cursor-move-next-line
-	       evil-mc-make-cursor-move-prev-line evil-mc-make-cursor-at-pos
-	       evil-mc-has-cursors-p evil-mc-make-and-goto-next-cursor
-	       evil-mc-skip-and-goto-next-cursor evil-mc-make-and-goto-prev-cursor
-	       evil-mc-skip-and-goto-prev-cursor evil-mc-make-and-goto-next-match
-	       evil-mc-skip-and-goto-next-match evil-mc-skip-and-goto-next-match
-	       evil-mc-make-and-goto-prev-match evil-mc-skip-and-goto-prev-match)
-    :init
-    (add-hook 'prog-mode-hook #'evil-mc-mode)
-    (add-hook 'text-mode-hook #'evil-mc-mode)
-    (my/normal-keys
-      "gr" '(:ignore t :wk "evil-mc"))
-    (setq evil-mc-incompatible-minor-modes
-	  '(evil-escape-mode aggressive-indent-mode flycheck-mode flyspell-mode haskell-indent-mode haskell-indentation-mode yas-minor-mode)))
 #+END_SRC
 * workspaces
 ** eyebrowse
