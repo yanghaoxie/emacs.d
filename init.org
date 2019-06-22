@@ -2079,6 +2079,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil indent plus
 #+BEGIN_SRC emacs-lisp
   (use-package evil-indent-plus
+    :after evil
     :config
     (define-key evil-inner-text-objects-map "i" 'evil-indent-plus-i-indent)
     (define-key evil-outer-text-objects-map "i" 'evil-indent-plus-a-indent)
