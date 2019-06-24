@@ -2944,6 +2944,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       )
     :config
     (setq bibtex-completion-pdf-field "file"
+	  bibtex-completion-cite-prompt-for-optional-arguments nil
 	  bibtex-completion-find-additional-pdfs t
 	  bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
 	  bibtex-completion-notes-path "~/Dropbox/document/org/references/ref-notes.org"
