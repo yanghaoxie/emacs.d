@@ -898,7 +898,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;; font
   (set-frame-font "Hack 11" nil t)
   ;; scratch buffer message
-  (setq initial-scratch-message ";; Better to run than curse the road.")
+  (setq initial-scratch-message ";; Better to run than curse the road.\n")
   ;; scratch major mode
   (setq initial-major-mode 'emacs-lisp-mode)
   ;; save system clipboard contents to emacs kill ring
