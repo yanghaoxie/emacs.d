@@ -3940,7 +3940,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
       (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
       (add-hook 'LaTeX-mode-hook (lambda() (setq-local display-line-numbers-type 'relative))))
-    :init
+    :general
     ;; Key bindings for plain Tex
     (my/leader-keys-major-mode
       :major-modes '(latex-mode t)
