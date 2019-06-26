@@ -4446,7 +4446,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (progn
       (pdf-tools-install)
-      (add-hook 'pdf-view-mode-hook (lambda() (display-line-numbers-mode -1)))
+      (add-hook 'pdf-view-mode-hook (lambda()
+				      (display-line-numbers-mode -1)
+				      (set (make-local-variable 'evil-normal-state-cursor) (list nil))
+				      (set (make-local-variable 'evil-insert-state-cursor) (list nil))
+				      (set (make-local-variable 'evil-visual-state-cursor) (list nil))))
       (add-hook 'pdf-view-mode-hook (lambda() (pdf-view-midnight-minor-mode 1)))
       ;;turn off cua so copy works
       (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
