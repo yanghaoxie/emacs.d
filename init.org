@@ -3005,7 +3005,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (dolist (command '(swiper))
       (push `(,command . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist))
     (push '(t . ivy-posframe-display-at-frame-center) ivy-display-functions-alist)
-    (ivy-posframe-enable))
+    (ivy-posframe-mode))
 
   ;;;###autoload
   (defun my/ivy-bibtex ()
