@@ -898,7 +898,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;; font
   (set-frame-font "Hack 11" nil t)
   ;; scratch buffer message
-  (setq initial-scratch-message ";; Better to run than curse the road.")
+  (setq initial-scratch-message ";; Better to run than curse the road.\n")
   ;; scratch major mode
   (setq initial-major-mode 'emacs-lisp-mode)
   ;; save system clipboard contents to emacs kill ring
@@ -2932,30 +2932,27 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 *** ivy bibtex
 #+BEGIN_SRC emacs-lisp
-(use-package ivy-bibtex
-  :commands ivy-bibtex
-  :init
-  (progn
-    (my/leader-keys
-      "ib" 'ivy-bibtex)
-    ;; (my/leader-keys-minor-mode
-    ;;   :keymaps 'bibtex-completion-notes-mode-map
-    ;;   "s" 'bibtex-completion-exit-notes-buffer)
-    )
-  :config
-  (setq bibtex-completion-pdf-field "file"
-	bibtex-completion-find-additional-pdfs t
-	bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
-	bibtex-completion-notes-path "~/Dropbox/document/org/references/ref-notes.org"
-	bibtex-completion-notes-template-one-file
-	"\n** ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :NOTER_DOCUMENT: ${file}\n  :END:\n\n"
-	bibtex-completion-additional-search-fields '(eventtitle)
-	bibtex-completion-display-formats
-	'((article       . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${journal:40}")
-	  (inbook        . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")
-	  (incollection  . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
-	  (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}")
-	  (t             . "${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${year:4} ${author:36} ${title:*} ${eventtitle:40}"))))
+  (use-package ivy-bibtex
+    :commands ivy-bibtex
+    :init
+    (progn
+      (my/leader-keys
+	"ib" 'ivy-bibtex)
+      ;; (my/leader-keys-minor-mode
+      ;;   :keymaps 'bibtex-completion-notes-mode-map
+      ;;   "s" 'bibtex-completion-exit-notes-buffer)
+      )
+    :config
+    (setq bibtex-completion-pdf-field "file"
+	  bibtex-completion-cite-prompt-for-optional-arguments nil
+	  bibtex-completion-find-additional-pdfs t
+	  bibtex-completion-bibliography "~/Dropbox/software/Zotero/bibtex/main.bib"
+	  bibtex-completion-notes-path "~/Dropbox/document/org/references/ref-notes.org"
+	  bibtex-completion-notes-template-one-file
+	  "\n** ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :NOTER_DOCUMENT: ${file}\n  :END:\n\n"
+	  bibtex-completion-additional-search-fields '(eventtitle)
+	  bibtex-completion-display-formats
+	  '((t . "${=has-pdf=:1} ${=has-note=:1} ${=type=:3} ${year:4} ${author:25} ${title:100}"))))
 #+END_SRC
 *** counsel projectile
 #+BEGIN_SRC emacs-lisp
@@ -3939,7 +3936,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
       (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
       (add-hook 'LaTeX-mode-hook (lambda() (setq-local display-line-numbers-type 'relative))))
-    :init
+    :general
     ;; Key bindings for plain Tex
     (my/leader-keys-major-mode
       :major-modes '(latex-mode t)
@@ -4449,7 +4446,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (progn
       (pdf-tools-install)
-      (add-hook 'pdf-view-mode-hook (lambda() (display-line-numbers-mode -1)))
+      (add-hook 'pdf-view-mode-hook (lambda()
+				      (display-line-numbers-mode -1)
+				      (set (make-local-variable 'evil-normal-state-cursor) (list nil))
+				      (set (make-local-variable 'evil-insert-state-cursor) (list nil))
+				      (set (make-local-variable 'evil-visual-state-cursor) (list nil))))
       (add-hook 'pdf-view-mode-hook (lambda() (pdf-view-midnight-minor-mode 1)))
       ;;turn off cua so copy works
       (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
