@@ -2919,7 +2919,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** ivy-xref
 #+BEGIN_SRC emacs-lisp
   (use-package ivy-xref
-    :after xref
+    :after (ivy xref)
     :init
     (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
 #+END_SRC
