@@ -587,17 +587,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil exchange
 #+BEGIN_SRC emacs-lisp
   (use-package evil-exchange
-    :after evil
-    :init
-    (progn
-      (let ((evil-exchange-key (kbd "gx"))
-	    (evil-exchange-cancel-key (kbd "gX")))
-	(define-key evil-normal-state-map evil-exchange-key 'evil-exchange)
-	(define-key evil-visual-state-map evil-exchange-key 'evil-exchange)
-	(define-key evil-normal-state-map evil-exchange-cancel-key
-	  'evil-exchange-cancel)
-	(define-key evil-visual-state-map evil-exchange-cancel-key
-	  'evil-exchange-cancel))))
+    :general
+    (my/normal-keys
+      "gx" 'evil-exchange
+      "gX" 'evil-exchange-cancel))
 #+END_SRC
 ** evil nerd commenter
 #+BEGIN_SRC emacs-lisp
