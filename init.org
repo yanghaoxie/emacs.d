@@ -186,6 +186,7 @@ This is an Emacs configuration file written in org mode.
     - [[#pyvenv][pyvenv]]
     - [[#sphinx-doc][sphinx doc]]
     - [[#importmagic][importmagic]]
+    - [[#py-isort][py isort]]
     - [[#anaconda][anaconda]]
   - [[#shell-script][shell script]]
     - [[#sh-script][sh script]]
@@ -4154,6 +4155,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       :major-modes t
       "r" '(:ignore t :wk "refactor")
       "rf" 'importmagic-fix-symbol-at-point))
+#+END_SRC
+*** py isort
+#+BEGIN_SRC emacs-lisp
+  (use-package py-isort
+    :ghook ('before-save-hook #'py-isort-before-save)
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'python-mode-map
+      "ri" 'py-isort-buffer))
 #+END_SRC
 *** anaconda
    :PROPERTIES:
