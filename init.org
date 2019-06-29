@@ -4883,7 +4883,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "'" 'shell-pop
       "as" 'eshell)
-    :config
+    :init
     (setq shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell))))
 	  shell-pop-full-span t))
 #+END_SRC
