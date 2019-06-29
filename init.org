@@ -4894,11 +4894,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 *** eshell prompt extras
 #+BEGIN_SRC emacs-lisp
-(use-package eshell-prompt-extras
-  :commands epe-theme-lambda
-  :init
-  (setq eshell-highlight-prompt nil
-	eshell-prompt-function 'epe-theme-lambda))
+  (use-package eshell-prompt-extras
+    :commands epe-theme-lambda
+    :init
+    (setq eshell-highlight-prompt nil
+	  eshell-prompt-function 'epe-theme-lambda))
 #+END_SRC
 ** ledger related
 *** ledger
