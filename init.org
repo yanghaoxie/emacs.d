@@ -1830,6 +1830,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :general
     (my/leader-keys
       "au" 'undo-tree-visualize)
+    (my/normal-keys
+      "U" 'undo-tree-redo)
     :config
     (progn
       (setq undo-tree-visualizer-timestamps t
