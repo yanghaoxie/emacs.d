@@ -4895,7 +4895,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** eshell prompt extras
 #+BEGIN_SRC emacs-lisp
   (use-package eshell-prompt-extras
-    :commands epe-theme-lambda
+    :after eshell
     :init
     (setq eshell-highlight-prompt nil
 	  eshell-prompt-function 'epe-theme-lambda))
