@@ -3037,6 +3037,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 			     (lambda (c)
 			       (or (string-match-p "[^\x00-\x7F]+" c)
 				   (string-match-p "[0-9]+" c)
+				   (string-match-p "__.*__" c)
 				   )))
 	    company-transformers)
       (defun ora-company-number ()
