@@ -4313,6 +4313,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package lsp-python-ms
     :hook (python-mode . lsp)
+    :after (lsp python)
     :config
     ;; for dev build of language server
     (setq lsp-python-ms-dir
