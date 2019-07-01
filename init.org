@@ -1601,7 +1601,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-to-list 'purpose-user-mode-purposes '(python-mode . py))
     (add-to-list 'purpose-user-mode-purposes '(inferior-python-mode . py-repl))
     (global-set-key [remap ivy-switch-buffer] 'my/ivy-switch-buffer)
-    (purpose-compile-user-configuration))
+    (purpose-compile-user-configuration)
+    (defalias 'ranger-find-file-without-purpose
+      (without-purpose-command #'ranger-find-file))
+
+  (global-set-key [remap ranger-find-file] #'ranger-find-file-without-purpose))
 
   ;;;###autoload
   (defun my/ivy-switch-buffer ()
@@ -1614,11 +1618,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (without-purpose (ranger-close)))
 
   (global-set-key [remap ranger-close] 'my/ranger-close)
-
-  (defalias 'ranger-find-file-without-purpose
-    (without-purpose-command #'ranger-find-file))
-
-  (global-set-key [remap ranger-find-file] #'ranger-find-file-without-purpose)
 #+END_SRC
 *** spacemacs purpose popwin
 #+BEGIN_SRC emacs-lisp
