@@ -186,6 +186,7 @@ This is an Emacs configuration file written in org mode.
     - [[#pyvenv][pyvenv]]
     - [[#sphinx-doc][sphinx doc]]
     - [[#importmagic][importmagic]]
+    - [[#py-isort][py isort]]
     - [[#anaconda][anaconda]]
   - [[#shell-script][shell script]]
     - [[#sh-script][sh script]]
@@ -4160,6 +4161,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "r" '(:ignore t :wk "refactor")
       "rf" 'importmagic-fix-symbol-at-point))
 #+END_SRC
+*** py isort
+#+BEGIN_SRC emacs-lisp
+  (use-package py-isort
+    :ghook ('before-save-hook #'py-isort-before-save)
+    :general
+    (my/leader-keys-major-mode
+      :keymaps 'python-mode-map
+      "ri" 'py-isort-buffer))
+#+END_SRC
 *** anaconda
    :PROPERTIES:
    :header-args: :tangle no
@@ -4889,7 +4899,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "'" 'shell-pop
       "as" 'eshell)
-    :config
+    :init
     (setq shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell))))
 	  shell-pop-full-span t))
 #+END_SRC
@@ -4900,11 +4910,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 *** eshell prompt extras
 #+BEGIN_SRC emacs-lisp
-(use-package eshell-prompt-extras
-  :commands epe-theme-lambda
-  :init
-  (setq eshell-highlight-prompt nil
-	eshell-prompt-function 'epe-theme-lambda))
+  (use-package eshell-prompt-extras
+    :after eshell
+    :config
+    (setq eshell-highlight-prompt nil
+	  eshell-prompt-function 'epe-theme-pipeline)
+    (custom-set-faces '(epe-pipeline-delimiter-face ((t (:forground lazy-highlight))))))
 #+END_SRC
 ** ledger related
 *** ledger
