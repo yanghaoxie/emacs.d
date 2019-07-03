@@ -1505,6 +1505,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** which key posframe
 #+BEGIN_SRC emacs-lisp
   (use-package which-key-posframe
+    :if (and (window-system) (version<= "26.1" emacs-version))
     :after (which-key posframe)
     :load-path "~/Program/which-key-posframe/"
     :config
@@ -2816,6 +2817,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** helm posframe
 #+BEGIN_SRC emacs-lisp :tangle no
   (use-package helm-posframe
+    :if (and (window-system) (version<= "26.1" emacs-version))
     :init
     (add-hook 'helm-org-rifle-after-command-hook 'helm-posframe-cleanup)
     :config
@@ -2983,6 +2985,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** ivy posframe
 #+BEGIN_SRC emacs-lisp
   (use-package ivy-posframe
+    :if (and (window-system) (version<= "26.1" emacs-version))
     :after ivy
     :config
     (setq ivy-posframe-hide-minibuffer t
@@ -3147,6 +3150,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** company posframe
 #+BEGIN_SRC emacs-lisp
   (use-package company-posframe
+    :if (and (window-system) (version<= "26.1" emacs-version))
     :after company
     :config
     (require 'desktop)
@@ -3297,7 +3301,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** flychek posframe
 #+BEGIN_SRC emacs-lisp
   (use-package flycheck-posframe
-    :if (version<= "26.1" emacs-version)
+    :if (and (window-system) (version<= "26.1" emacs-version))
     :after flycheck
     :config
     (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode)
