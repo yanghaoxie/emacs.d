@@ -4304,7 +4304,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  lsp-ui-peek-always-show t
 	  lsp-ui-doc-use-childframe t
 	  lsp-enable-symbol-highlighting nil
-	  lsp-ui-sideline-enable nil
 	  lsp-ui-doc-enable nil
 	  lsp-ui-flycheck-live-reporting nil))
   ;;;###autoload
