@@ -4305,7 +4305,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  lsp-ui-doc-use-childframe t
 	  lsp-enable-symbol-highlighting nil
 	  lsp-ui-doc-enable nil
-	  lsp-ui-flycheck-enable t))
+	  lsp-ui-flycheck-enable t
+	  lsp-ui-sideline-show-hover nil))
   ;;;###autoload
   (defun my/toggle-lsp-ui-mode ()
     (interactive)
