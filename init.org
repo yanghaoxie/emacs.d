@@ -4300,7 +4300,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys-major-mode
       :keymaps 'python-mode-map
       "u" 'my/toggle-lsp-ui-mode)
-    (setq lsp-ui-sideline-delay 0.2
+    (setq lsp-ui-sideline-delay 0
 	  lsp-ui-peek-always-show t
 	  lsp-ui-doc-use-childframe t
 	  lsp-enable-symbol-highlighting nil
