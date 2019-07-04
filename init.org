@@ -4189,7 +4189,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       :keymaps 'python-mode-map
       :major-modes t
       "r" '(:ignore t :wk "refactor")
-      "rf" 'importmagic-fix-symbol-at-point))
+      "rf" 'importmagic-fix-imports))
 #+END_SRC
 *** py isort
 #+BEGIN_SRC emacs-lisp
