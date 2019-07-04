@@ -37,6 +37,7 @@ This is an Emacs configuration file written in org mode.
   - [[#evil-numbers][evil numbers]]
   - [[#evil-args][evil args]]
   - [[#evil-mc][evil mc]]
+  - [[#evil-lion][evil lion]]
 - [[#autoload][autoload]]
 - [[#defaults][defaults]]
   - [[#setting-related-in-build-in-features][setting related in build-in features]]
@@ -719,6 +720,17 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "gr" '(:ignore t :wk "evil-mc"))
     (setq evil-mc-incompatible-minor-modes
 	  '(evil-escape-mode aggressive-indent-mode flycheck-mode flyspell-mode haskell-indent-mode haskell-indentation-mode yas-minor-mode)))
+#+END_SRC
+** evil lion
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-lion
+    :general
+    (:states '(normal visual)
+      "ga" 'evil-lion-left
+      "gA" 'evil-lion-right)
+    :config
+    (setq evil-lion-left-align-key nil
+	  evil-lion-right-align-key nil))
 #+END_SRC
 * autoload
 
