@@ -520,7 +520,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (evil-set-initial-state 'pdf-view-mode 'normal)
       (evil-set-initial-state 'pdf-outline-buffer-mode 'normal)
-      (evil-set-initial-state 'paradox-menu-mode 'normal)
+      (evil-set-initial-state 'paradox-menu-mode 'motion)
       (evil-set-initial-state 'calendar-mode 'normal)
       (evil-set-initial-state 'process-menu-mode 'motion)
       (evil-set-initial-state 'special-mode 'motion)
@@ -4419,7 +4419,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq paradox-github-token t)
     (my/normal-keys
       :keymaps 'paradox-menu-mode-map
-      :states 'normal
+      :states 'motion
       "i" 'package-menu-mark-install
       "d" 'package-menu-mark-delete
       "U" 'package-menu-mark-upgrades
