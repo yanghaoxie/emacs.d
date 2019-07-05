@@ -4190,8 +4190,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** importmagic
 #+BEGIN_SRC emacs-lisp :tangle yes
   (use-package importmagic
+    :ghook ('python-mode-hook)
     :general
-    ;; (add-hook python-mode-hook importmagic-mode)
     (my/leader-keys-major-mode
       :keymaps 'python-mode-map
       :major-modes t
