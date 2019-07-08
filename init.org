@@ -3384,7 +3384,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		(add-to-list (make-local-variable 'company-backends) '(company-ispell company-capf))))
     (add-hook 'org-mode-hook 'turn-on-auto-fill)
     (setq org-src-tab-acts-natively t
-	  org-edit-src-auto-save-idle-delay 5)
+	  org-edit-src-auto-save-idle-delay 5
+	  org-src-ask-before-returning-to-edit-buffer nil)
     (setq org-directory "~/Dropbox/document/org")
     (setq org-agenda-files (apply 'append
 				  (mapcar
