@@ -974,7 +974,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package prettify-symbols-mode
     :ensure nil
     :ghook ('after-init-hook #'global-prettify-symbols-mode)
-    :config
+    :init
     (setq prettify-symbols-unprettify-at-point 'right-edge))
 
   (use-package recentf
