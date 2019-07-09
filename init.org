@@ -2203,7 +2203,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "g8" 'eyebrowse-switch-to-window-config-8
      "g9" 'eyebrowse-switch-to-window-config-9)
     (my/leader-keys
-      "w." 'hydra-eyebrowse/body)
+      "w." 'hydra-eyebrowse/body
+      "ww" 'eyebrowse-switch-to-window-config
+      "wr" 'eyebrowse-rename-window-config)
     :config
     (setq eyebrowse-mode-line-style 'current
 	  eyebrowse-new-workspace t)
