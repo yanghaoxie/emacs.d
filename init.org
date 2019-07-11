@@ -2268,6 +2268,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** persp
 #+BEGIN_SRC emacs-lisp
   (use-package persp-mode
+    :config
+    (setq persp-reset-windows-on-nil-window-conf t
+	  persp-set-last-persp-for-new-frames nil)
+    (persp-mode))
+#+END_SRC
+*** spacemacs persp extra
+#+BEGIN_SRC emacs-lisp
+  (use-package spacemacs-persp-extra
+    :ensure nil
+    :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
     :general
     (my/normal-keys
       "g M-0" 'spacemacs/persp-switch-to-0
@@ -2295,11 +2305,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      #'spacemacs/update-eyebrowse-for-perspective)
     (add-hook 'persp-after-load-state-functions
 	      #'spacemacs/load-eyebrowse-after-loading-layout)
+    (setq dotspacemacs-auto-generate-layout-names t
+	  dotspacemacs-default-layout-name 'none)
     :config
-    (setq persp-reset-windows-on-nil-window-conf t
-	  persp-set-last-persp-for-new-frames nil)
-    (persp-mode))
-
+    (defadvice persp-activate (before spacemacs//save-toggle-layout activate)
+      (setq spacemacs--last-selected-layout persp-last-persp-name))
+    (add-hook 'persp-mode-hook 'spacemacs//layout-autosave)
+    (add-hook 'persp-created-functions
+	      #'spacemacs//add-project-buffers-to-persp)
+    (advice-add 'persp-load-state-from-file :before 'spacemacs//layout-wait-for-modeline))
   (defhydra hydra-persp (:hint nil)
     "
    Go to^^^^^^                                  Actions^^
@@ -2365,23 +2379,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     ("x" spacemacs/layouts-ts-kill)
     ("X" spacemacs/layouts-ts-kill-other :exit t)
     ("q" nil))
-#+END_SRC
-*** spacemacs persp extra
-#+BEGIN_SRC emacs-lisp
-  (use-package spacemacs-persp-extra
-    :ensure nil
-    :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
-    :init
-    (setq dotspacemacs-auto-generate-layout-names t
-	  dotspacemacs-default-layout-name 'none)
-    :config
-    (defadvice persp-activate (before spacemacs//save-toggle-layout activate)
-      (setq spacemacs--last-selected-layout persp-last-persp-name))
-    (add-hook 'persp-mode-hook 'spacemacs//layout-autosave)
-    (add-hook 'persp-created-functions
-	      #'spacemacs//add-project-buffers-to-persp)
-    (advice-add 'persp-load-state-from-file :before 'spacemacs//layout-wait-for-modeline))
-
 #+END_SRC
 * project
 ** projectile
