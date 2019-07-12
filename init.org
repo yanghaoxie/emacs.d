@@ -4188,7 +4188,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "d" 'sphinx-doc))
 #+END_SRC
 *** importmagic
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package importmagic
     :ghook ('python-mode-hook)
     :general
