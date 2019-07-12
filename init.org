@@ -197,6 +197,7 @@ This is an Emacs configuration file written in org mode.
     - [[#company-lsp][company lsp]]
     - [[#lsp-ui][lsp ui]]
     - [[#lsp-python-ms][lsp python ms]]
+    - [[#lsp-latex][lsp latex]]
 - [[#writing][writing]]
   - [[#academic-phrases][academic phrases]]
   - [[#artbollocks][artbollocks]]
@@ -4380,6 +4381,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     ;; for executable of language server, if it's not symlinked on your PATH
     (setq lsp-python-ms-executable
 	  "~/Program/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer"))
+#+END_SRC
+*** lsp latex
+#+BEGIN_SRC emacs-lisp
+  (use-package lsp-latex
+    :load-path "~/Program/lsp-latex"
+    :config
+    (setq lsp-latex-texlab-executable "~/Program/texlab/texlab")
+    (add-to-list 'lsp-language-id-configuration '(latex-mode . "latex")))
 #+END_SRC
 * writing
 ** academic phrases
