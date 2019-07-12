@@ -976,7 +976,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package prettify-symbols-mode
     :ensure nil
     :ghook ('after-init-hook #'global-prettify-symbols-mode)
-    :config
+    :init
     (setq prettify-symbols-unprettify-at-point 'right-edge))
 
   (use-package recentf
@@ -2205,7 +2205,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "g8" 'eyebrowse-switch-to-window-config-8
      "g9" 'eyebrowse-switch-to-window-config-9)
     (my/leader-keys
-      "w." 'hydra-eyebrowse/body)
+      "w." 'hydra-eyebrowse/body
+      "ww" 'eyebrowse-switch-to-window-config
+      "wr" 'eyebrowse-rename-window-config)
     :config
     (setq eyebrowse-mode-line-style 'current
 	  eyebrowse-new-workspace t)
@@ -2268,6 +2270,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** persp
 #+BEGIN_SRC emacs-lisp
   (use-package persp-mode
+    :config
+    (setq persp-reset-windows-on-nil-window-conf t
+	  persp-set-last-persp-for-new-frames nil)
+    (persp-mode))
+#+END_SRC
+*** spacemacs persp extra
+#+BEGIN_SRC emacs-lisp
+  (use-package spacemacs-persp-extra
+    :ensure nil
+    :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
     :general
     (my/normal-keys
       "g M-0" 'spacemacs/persp-switch-to-0
@@ -2295,11 +2307,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      #'spacemacs/update-eyebrowse-for-perspective)
     (add-hook 'persp-after-load-state-functions
 	      #'spacemacs/load-eyebrowse-after-loading-layout)
+    (setq dotspacemacs-auto-generate-layout-names t
+	  dotspacemacs-default-layout-name 'none)
     :config
-    (setq persp-reset-windows-on-nil-window-conf t
-	  persp-set-last-persp-for-new-frames nil)
-    (persp-mode))
-
+    (defadvice persp-activate (before spacemacs//save-toggle-layout activate)
+      (setq spacemacs--last-selected-layout persp-last-persp-name))
+    (add-hook 'persp-mode-hook 'spacemacs//layout-autosave)
+    (add-hook 'persp-created-functions
+	      #'spacemacs//add-project-buffers-to-persp)
+    (advice-add 'persp-load-state-from-file :before 'spacemacs//layout-wait-for-modeline))
   (defhydra hydra-persp (:hint nil)
     "
    Go to^^^^^^                                  Actions^^
@@ -2365,23 +2381,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     ("x" spacemacs/layouts-ts-kill)
     ("X" spacemacs/layouts-ts-kill-other :exit t)
     ("q" nil))
-#+END_SRC
-*** spacemacs persp extra
-#+BEGIN_SRC emacs-lisp
-  (use-package spacemacs-persp-extra
-    :ensure nil
-    :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
-    :init
-    (setq dotspacemacs-auto-generate-layout-names t
-	  dotspacemacs-default-layout-name 'none)
-    :config
-    (defadvice persp-activate (before spacemacs//save-toggle-layout activate)
-      (setq spacemacs--last-selected-layout persp-last-persp-name))
-    (add-hook 'persp-mode-hook 'spacemacs//layout-autosave)
-    (add-hook 'persp-created-functions
-	      #'spacemacs//add-project-buffers-to-persp)
-    (advice-add 'persp-load-state-from-file :before 'spacemacs//layout-wait-for-modeline))
-
 #+END_SRC
 * project
 ** projectile
@@ -3395,7 +3394,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		(add-to-list (make-local-variable 'company-backends) '(company-ispell company-capf))))
     (add-hook 'org-mode-hook 'turn-on-auto-fill)
     (setq org-src-tab-acts-natively t
-	  org-edit-src-auto-save-idle-delay 5)
+	  org-edit-src-auto-save-idle-delay 5
+	  org-src-ask-before-returning-to-edit-buffer nil)
     (setq org-directory "~/Dropbox/document/org")
     (setq org-agenda-files (apply 'append
 				  (mapcar
