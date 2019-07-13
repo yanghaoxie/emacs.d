@@ -653,10 +653,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :general
     (:keymaps 'evil-inner-text-objects-map
      "i" 'evil-indent-plus-i-indent
-     "i" 'evil-indent-plus-a-indent
      "I" 'evil-indent-plus-i-indent-up
+     "J" 'evil-indent-plus-i-indent-up-down)
+    (:keymaps 'evil-outer-text-objects-map
+     "i" 'evil-indent-plus-a-indent
      "I" 'evil-indent-plus-a-indent-up
-     "J" 'evil-indent-plus-i-indent-up-down
      "J" 'evil-indent-plus-a-indent-up-down))
 #+END_SRC
 ** eivl iedit state
