@@ -615,6 +615,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (:keymaps 'override
      :states '(normal visual)
      "%" 'evilmi-jump-items)
+    (:keymaps 'evil-inner-text-objects-map
+     "%" 'evilmi-jump-items)
+    (:keymaps 'evil-outer-text-objects-map
+     "%" 'evilmi-jump-items)
     :config
     (setq evilmi-always-simple-jump t)
     (global-evil-matchit-mode))
