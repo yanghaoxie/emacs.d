@@ -3336,7 +3336,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :if (and (window-system) (version<= "26.1" emacs-version))
     :after flycheck
     :config
-    (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode)
+    (add-hook 'flycheck-mode-hook (lambda ()
+				    (if (not (bound-and-true-p lsp-ui-sideline-mode))
+					(flycheck-posframe-mode))))
     (flycheck-posframe-configure-pretty-defaults))
 #+END_SRC
 ** flyspell related
