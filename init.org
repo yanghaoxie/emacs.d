@@ -2280,6 +2280,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package spacemacs-persp-extra
     :ensure nil
     :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
+    :commands (spacemacs/update-eyebrowse-for-perspective
+	       spacemacs/save-eyebrowse-for-perspective
+	       spacemacs/load-eyebrowse-for-perspective
+	       spacemacs/load-eyebrowse-for-perspective)
     :general
     (my/normal-keys
       "g M-0" 'spacemacs/persp-switch-to-0
