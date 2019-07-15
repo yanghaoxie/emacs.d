@@ -2021,11 +2021,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;;;###autoload
   (defun my/sp-wrap-single-quote ()
     (interactive)
+    (setq current-prefix-arg 0)
     (sp-wrap-with-pair "'"))
 
   ;;;###autoload
   (defun my/sp-wrap-double-quote ()
     (interactive)
+    (setq current-prefix-arg 0)
     (sp-wrap-with-pair "\""))
 
   ;;;###autoload
