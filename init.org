@@ -2272,7 +2272,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
 ** persp mode
    :PROPERTIES:
-   :header-args: :tangle no
+   :header-args: :tangle yes
    :END:
 *** persp
 #+BEGIN_SRC emacs-lisp
@@ -2287,6 +2287,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package spacemacs-persp-extra
     :ensure nil
     :load-path "~/.emacs.d/site-lisp/spacemacs-persp-extra/"
+    :commands (spacemacs/update-eyebrowse-for-perspective
+	       spacemacs/save-eyebrowse-for-perspective
+	       spacemacs/load-eyebrowse-for-perspective
+	       spacemacs/load-eyebrowse-for-perspective)
     :general
     (my/normal-keys
       "g M-0" 'spacemacs/persp-switch-to-0
@@ -3247,6 +3251,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "gs"  'magit-status
       "gS"  'magit-stage-file
       "gU"  'magit-unstage-file)
+    (:keymaps 'magit-hunk-section-map
+     "RET" 'magit-diff-visit-file-other-window)
     :init
     (add-hook 'magit-popup-mode-hook (lambda () (display-line-numbers-mode -1)))
     (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1)))
@@ -4326,7 +4332,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (setq company-lsp-enable-recompletion t
 	    company-lsp-async t
-	    company-lsp-cache-candidates nil
+	    company-lsp-cache-candidates 'auto
 	    company-lsp-match-candidate-predicate 'company-lsp-match-candidate-prefix)))
 #+END_SRC
 *** lsp ui
