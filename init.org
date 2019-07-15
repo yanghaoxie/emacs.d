@@ -4325,7 +4325,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (setq company-lsp-enable-recompletion t
 	    company-lsp-async t
-	    company-lsp-cache-candidates nil
+	    company-lsp-cache-candidates 'auto
 	    company-lsp-match-candidate-predicate 'company-lsp-match-candidate-prefix)))
 #+END_SRC
 *** lsp ui
