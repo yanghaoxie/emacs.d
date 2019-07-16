@@ -3450,7 +3450,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq org-refile-targets (quote ((nil :maxlevel . 4)
 				     (org-agenda-files :maxlevel . 3))))
     (setq org-list-allow-alphabetical t
-	  org-log-done 'time)
+	  org-log-done 'time
+	  org-refile-use-outline-path t
+	  org-outline-path-complete-in-steps nil)
     :init
     ;; org-capture
     (with-eval-after-load 'org-capture
