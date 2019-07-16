@@ -3447,8 +3447,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 		  ("ar" "repeating appointments" entry (file "~/Dropbox/document/org/appts/appts_re.org")
 		   "* TODO %?")
 		  )))
-    (setq org-refile-targets (quote ((nil :maxlevel . 2)
-				     (org-agenda-files :maxlevel . 2))))
+    (setq org-refile-targets (quote ((nil :maxlevel . 4)
+				     (org-agenda-files :maxlevel . 3))))
     (setq org-list-allow-alphabetical t
 	  org-log-done 'time)
     :init
