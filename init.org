@@ -3465,7 +3465,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (with-eval-after-load 'org-src
       (my/leader-keys-major-mode
 	:keymaps 'org-src-mode-map
-	"q" 'org-edit-src-exit
+	"c" 'org-edit-src-exit
 	"a" 'org-edit-src-abort
 	"k" 'org-edit-src-abort))
     ;; https://github.com/noctuid/general.el/issues/61
