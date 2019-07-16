@@ -935,7 +935,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     "text-scale"
     ("i" text-scale-increase "in")
     ("o" text-scale-decrease "out")
-    ("0" (text-scale-set 0) "resert")
+    ("r" (text-scale-set 0) "resert")
     ("q" nil "quit"))
   (my/leader-keys
     "xz" 'hydra-text-scale/body)
