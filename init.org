@@ -4419,7 +4419,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "iS" 'academic-phrases-by-section))
 #+END_SRC
 ** artbollocks
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package artbollocks-mode
     :diminish artbollocks-mode
     :ghook ('(org-mode-hook
