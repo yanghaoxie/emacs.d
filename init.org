@@ -3460,6 +3460,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	"c" 'org-capture-finalize
 	"k" 'org-capture-kill
 	"r" 'org-capture-refile))
+    (add-hook 'org-capture-mode-hook #'evil-normalize-keymaps)
     ;; org-src
     (with-eval-after-load 'org-src
       (my/leader-keys-major-mode
