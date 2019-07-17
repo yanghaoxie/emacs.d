@@ -3076,8 +3076,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    company-tooltip-align-annotations t
 	    company-dabbrev-ignore-case nil
 	    company-dabbrev-downcase nil
-	    company-ispell-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
-	    ispell-alternate-dictionary (file-truename "~/.emacs.d/dict/english-words.txt")
+	    company-ispell-dictionary (file-truename "~/.emacs.d/dict/words_alpha.txt")
+	    ispell-alternate-dictionary (file-truename "~/.emacs.d/dict/words_alpha.txt")
 	    company-transformers '(company-sort-by-backend-importance)
 	    company-dabbrev-code-other-buffers 'code
 	    company-dabbrev-ignore-case nil
