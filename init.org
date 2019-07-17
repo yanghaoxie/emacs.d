@@ -1314,6 +1314,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;; frequently accessed files
   (defhydra hydra-frequently-accessed-files (:exit t)
     "files"
+    ("a" (lambda () (interactive) (find-file "~/Dropbox/document/org/appts/appts.org")) "appts.org")
     ("o" (lambda () (interactive) (find-file "~/Dropbox/document/org/main.org")) "main.org")
     ("n" (lambda () (interactive) (find-file "~/Dropbox/document/org/references/ref-notes.org")) "ref-noter.org")
     ("i" (lambda () (interactive) (find-file "~/.emacs.d/init.el")) "init.el")
