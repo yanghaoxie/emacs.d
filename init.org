@@ -1081,7 +1081,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (progn
       (setq ispell-program-name "aspell"
-	    ispell-silently-savep t)))
+	    ispell-silently-savep t
+	    ispell-look-command "/bin/grep"
+	    ispell-look-options "-Ei")))
 
   (use-package calendar
     :ensure nil
