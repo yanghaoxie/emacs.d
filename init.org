@@ -1085,6 +1085,77 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    ispell-look-command "/bin/grep"
 	    ispell-look-options "-Ei")))
 
+  (defun my/ispell-lookup-words (word &optional lookup-dict)
+    "Look up WORD in optional word-list dictionary LOOKUP-DICT.
+  A `*' serves as a wild card.  If no wild cards, `look' is used if it exists.
+  Otherwise the variable `ispell-grep-command' contains the command
+  \(usually \"grep\") used to search for the words.
+
+  Optional second argument contains the dictionary to use; the default is
+  `ispell-alternate-dictionary', overridden by `ispell-complete-word-dict'
+  if defined."
+    ;; We don't use the filter for this function, rather the result is written
+    ;; into a buffer.  Hence there is no need to save the filter values.
+    (if (null lookup-dict)
+	(setq lookup-dict (or ispell-complete-word-dict
+			      ispell-alternate-dictionary)))
+
+    (if lookup-dict
+	(unless (file-readable-p lookup-dict)
+	  (error "lookup-words error: Unreadable or missing plain word-list %s."
+		 lookup-dict))
+      (error (concat "lookup-words error: No plain word-list found at system"
+		     "default locations.  "
+		     "Customize `ispell-alternate-dictionary' to set yours.")))
+
+    (let* ((process-connection-type ispell-use-ptys-p)
+	   (wild-p (string-match "\\*" word))
+	   (look-p (and ispell-look-p	; Only use look for an exact match.
+			(or ispell-have-new-look (not wild-p))))
+	   (prog (if look-p ispell-look-command ispell-grep-command))
+	   (args (if look-p ispell-look-options ispell-grep-options))
+	   status results loc)
+      (with-temp-buffer
+	;; (message "Starting \"%s\" process..." (file-name-nondirectory prog))
+	(if look-p
+	    nil
+	  (insert "^" word)
+	  ;; When there are no wildcards, append one, for consistency
+	  ;; with `look' behavior.
+	  (unless wild-p (insert "*"))
+	  (insert "$")
+	  ;; Convert * to .*
+	  (while (search-backward "*" nil t) (insert "."))
+	  (setq word (buffer-string))
+	  (erase-buffer))
+	(setq status (apply 'ispell-call-process prog nil t nil
+			    (nconc (if (and args (> (length args) 0))
+				       (list args)
+				     (if look-p nil
+				       (list "-e")))
+				   (list word)
+				   (if lookup-dict (list lookup-dict)))))
+	;; `grep' returns status 1 and no output when word not found, which
+	;; is a perfectly normal thing.
+	(if (stringp status)
+	    (error "error: %s exited with signal %s"
+		   (file-name-nondirectory prog) status)
+	  ;; Else collect words into `results' in FIFO order.
+	  (goto-char (point-max))
+	  ;; Assure we've ended with \n.
+	  (or (bobp) (= (preceding-char) ?\n) (insert ?\n))
+	  (while (not (bobp))
+	    (setq loc (point))
+	    (forward-line -1)
+	    (push (buffer-substring-no-properties (point)
+						  (1- loc))
+		  results))))
+      (if (and results (string-match ".+: " (car results)))
+	  (error "%s error: %s" ispell-grep-command (car results)))
+      results))
+
+  (advice-add 'ispell-lookup-words :override #'my/ispell-lookup-words)
+
   (use-package calendar
     :ensure nil
     :commands calendar
