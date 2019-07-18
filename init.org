@@ -2956,7 +2956,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "bb" 'ivy-switch-buffer)
     (my/non-insert-keys
       "M-b" 'ivy-switch-buffer)
-    (ivy-minibuffer-map
+    (:keymaps 'ivy-minibuffer-map
      "C-j" 'ivy-next-line
      "C-k" 'ivy-previous-line
      "C-h" (kbd "DEL")
