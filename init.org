@@ -2961,6 +2961,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "C-k" 'ivy-previous-line
      "C-h" (kbd "DEL")
      "C-l" 'ivy-alt-done)
+    (:keymaps 'ivy-switch-buffer-map
+     "C-k" 'ivy-previous-line
+     "M-k" 'ivy-switch-buffer-kill)
     :config
     (setq ivy-use-virtual-buffers t
 	  ivy-re-builders-alist '((t . ivy--regex-ignore-order))
