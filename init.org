@@ -3127,6 +3127,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package counsel-dash
     :general
     (my/leader-keys
+      "d" '(:ignore t :wk "documents")
       "dh" 'counsel-dash)
     :config
     (setq counsel-dash-browser-func 'eww))
