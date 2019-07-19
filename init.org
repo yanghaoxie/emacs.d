@@ -2366,7 +2366,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	       spacemacs/load-eyebrowse-for-perspective
 	       spacemacs/load-eyebrowse-for-perspective)
     :general
-    (my/normal-keys
+    (:keymaps 'override
+     :states '(normal visual motion)
       "g M-0" 'spacemacs/persp-switch-to-0
       "g M-1" 'spacemacs/persp-switch-to-1
       "g M-2" 'spacemacs/persp-switch-to-2
