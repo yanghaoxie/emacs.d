@@ -4188,6 +4188,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	"s" '(:ignore t :which-key "REPL")
 	"sb" 'my/python-shell-send-buffer-after-save-buffer
 	"sf" 'python-shell-send-defun
+	"sl" 'my/python-shell-send-line
 	"sr" 'python-shell-send-region
 	"ss" 'python-shell-send-string
 	"sz" 'python-shell-switch-to-shell
@@ -4253,6 +4254,19 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (get-buffer-process buffer)))
 
   (advice-add 'run-python :override 'my/run-python)
+
+  ;;;###autoload
+  (defun my/python-shell-send-line ()
+    "Send the current line to inferior Python process."
+    (interactive)
+    (save-excursion
+      (python-shell-send-region
+       (progn
+	 (beginning-of-line 1)
+	 (point-marker))
+       (progn
+	 (end-of-line 1)
+	 (point-marker)))))
 #+END_SRC
 *** yapfify
 #+BEGIN_SRC emacs-lisp
