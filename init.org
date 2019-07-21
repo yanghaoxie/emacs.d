@@ -619,6 +619,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "%" 'evilmi-jump-items)
     (:keymaps 'evil-outer-text-objects-map
      "%" 'evilmi-jump-items)
+    (:keymaps 'evil-operator-state-map
+     "%" 'evilmi-jump-items)
     :config
     (setq evilmi-always-simple-jump t)
     (global-evil-matchit-mode))
@@ -4081,6 +4083,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "l"   'TeX-recenter-output-buffer                  ;; C-c C-l
       "m"   'TeX-insert-macro                            ;; C-c C-m
       "v"   'TeX-view                                    ;; C-c C-v
+      "w" 'tex-count-words
       ;; TeX-doc is a very slow function
       "h"   '(:ignore t :which-key "help")
       "hd"  'TeX-doc)
