@@ -2111,6 +2111,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     "Kill inside of sexp."
     (interactive)
     (sp-kill-sexp 0))
+
+  (advice-add 'sp-change-inner :after #'evil-insert-state)
 #+END_SRC
 *** evil smartparens
 #+BEGIN_SRC emacs-lisp
