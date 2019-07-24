@@ -1561,8 +1561,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :diminish which-key-mode
     :config
     (progn
-      (setq which-key-idle-delay 0.4
-	    which-key-idle-secondary-delay 0
+      (setq which-key-idle-secondary-delay 0
 	    which-key-sort-order 'which-key-key-order-alpha)
       (my/leader-keys
        "a" '(:ignore t :which-key "applications")
@@ -2112,6 +2111,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     "Kill inside of sexp."
     (interactive)
     (sp-kill-sexp 0))
+
+  (advice-add 'sp-change-inner :after #'evil-insert-state)
 #+END_SRC
 *** evil smartparens
 #+BEGIN_SRC emacs-lisp
