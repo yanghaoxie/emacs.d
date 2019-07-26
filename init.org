@@ -4026,7 +4026,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       :keymaps 'LaTeX-mode-map
       "r" '(:ignore t :wk "reftex")
       "rc"    'reftex-citation
-      "rg"    'reftex-grep-document
+      "rg"    'reftex-goto-label
+      "rG"    'reftex-grep-document
       "ri"    'reftex-index-selection-or-word
       "rI"    'reftex-display-index
       "r TAB" 'reftex-index
