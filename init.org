@@ -3102,11 +3102,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** flyspell correct ivy
 #+BEGIN_SRC emacs-lisp
   (use-package flyspell-correct-ivy
-    :commands (flyspell-correct-ivy)
     :general
-    (:keymaps 'override
-	      "C-;" 'flyspell-correct-wrapper)
-    :config
+    (my/all-states-keys
+      "C-;" 'flyspell-correct-wrapper)
+    :init
     (setq flyspell-correct-interface #'flyspell-correct-ivy))
 #+END_SRC
 *** ivy posframe
