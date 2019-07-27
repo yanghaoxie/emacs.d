@@ -924,7 +924,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (add-to-list 'desktop-globals-to-save 'register-alist)
     (setq desktop-lazy-verbose nil
-	  desktop-modes-not-to-save '(tags-table-mode emacs-lisp-mode)
 	  desktop-restore-eager 15)
     (desktop-save-mode 1))
 
