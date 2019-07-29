@@ -4702,8 +4702,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "m" 'pdf-view-midnight-minor-mode)
     (my/normal-keys
       :keymaps 'pdf-occur-buffer-mode-map
-      "RET" 'pdf-occur-view-occurrence
-      "M-RET" 'pdf-occur-goto-occurrence
+      "d" 'pdf-occur-view-occurrence
+      "RET" 'pdf-occur-goto-occurrence
       "q" 'tablist-quit)
     (my/leader-keys-major-mode
       :keymaps 'LaTeX-mode-map
