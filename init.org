@@ -210,6 +210,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#paradox][paradox]]
   - [[#ranger][ranger]]
   - [[#pdf-tools][pdf tools]]
+  - [[#org-pdfview][org pdfview]]
   - [[#keyfreq][keyfreq]]
   - [[#elfeed-related][elfeed related]]
     - [[#elfeed][elfeed]]
@@ -4706,6 +4707,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       :keymaps 'LaTeX-mode-map
       "M-f" 'pdf-sync-forward-search))
 #+END_SRC
+** org pdfview
+#+begin_src emacs-lisp
+  (use-package org-pdfview
+    :after org)
+#+end_src
 ** keyfreq
 #+BEGIN_SRC emacs-lisp
   (use-package keyfreq
