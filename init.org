@@ -5401,6 +5401,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     :general
     ("M-j" 'pyim-convert-string-at-point)
+    (:keymaps 'pyim-mode-map
+     "," 'pyim-page-previous-page
+     "." 'pyim-page-next-page)
     :config
     (setq pyim-fuzzy-pinyin-alist '(("s" "sh")
 				    ("c" "ch")
