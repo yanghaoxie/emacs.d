@@ -1689,6 +1689,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "rd" 'purpose-toggle-window-purpose-dedicated
       "r M-d" 'purpose-toggle-window-buffer-dedicated
       "rD" 'purpose-delete-non-dedicated-windows
+      "rl" 'purpose-load-window-layout
       "rp" 'purpose-switch-buffer-with-some-purpose
       "rP" 'purpose-set-window-purpose
       "rf" 'purpose-load-window-layout-file)
