@@ -1006,11 +1006,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (use-package server
     :ensure nil
-    :commands server-running-p
-    :config
-    (server-mode 1)
-    (unless (server-running-p)
-      (server-start)))
+    :ghook ('after-init-hook #'server-start))
 
   (use-package winner
     :ensure nil
