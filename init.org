@@ -81,6 +81,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#easy-text][easy text]]
   - [[#zop-to-char][zop to char]]
   - [[#imenu-list][imenu list]]
+  - [[#imenu-anywhere][imenu anywhere]]
   - [[#string-inflection][string inflection]]
   - [[#unfill][unfill]]
   - [[#visual-fill-column][visual fill column]]
@@ -2173,6 +2174,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(lsp-ui-imenu)
       (imenu-list-smart-toggle)))
 #+END_SRC
+** imenu anywhere
+#+begin_src emacs-lisp
+  (use-package imenu-anywhere
+    :general
+    (my/leader-keys
+      "jI" 'ivy-imenu-anywhere))
+#+end_src
 ** string inflection
 #+BEGIN_SRC emacs-lisp
   (use-package string-inflection
