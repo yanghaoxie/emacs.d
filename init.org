@@ -4275,7 +4275,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :general
     (my/leader-keys-major-mode
       :keymaps 'python-mode-map
-      "f" 'yapfify-buffer))
+      "f" '(:ignore t :wk "format")
+      "fb" 'yapfify-buffer
+      "fr" 'yapfify-region))
 #+END_SRC
 *** pyvenv
 #+BEGIN_SRC emacs-lisp
