@@ -3354,13 +3354,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package magit-todos
     :after magit
+    :ghook ('magit-mode-hook)
     :general
     (:keymaps 'magit-todos-section-map
 	      "j" 'evil-next-visual-line)
     (:keymaps 'magit-status-mode-map
-	      "gT" 'magit-todos-jump-to-todos)
-    :config
-    (magit-todos-mode 1))
+	      "gT" 'magit-todos-jump-to-todos))
 #+END_SRC
 * checkers
 ** flycheck
