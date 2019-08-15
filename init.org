@@ -607,6 +607,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :init
     (my/leader-keys
       ";" 'evilnc-comment-operator
+      "M-;" 'evilnc-copy-and-comment-operator
       "cl" 'evilnc-comment-or-uncomment-lines
       "cp" 'evilnc-comment-or-uncomment-paragraphs))
 #+END_SRC
