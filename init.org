@@ -3335,7 +3335,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "gS"  'magit-stage-file
       "gU"  'magit-unstage-file)
     (:keymaps 'magit-hunk-section-map
-     "RET" 'magit-diff-visit-file-other-window)
+     "RET" 'magit-diff-visit-worktree-file-other-window)
     :init
     (add-hook 'magit-popup-mode-hook (lambda () (display-line-numbers-mode -1)))
     (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1)))
