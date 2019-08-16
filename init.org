@@ -601,10 +601,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil nerd commenter
 #+BEGIN_SRC emacs-lisp
   (use-package evil-nerd-commenter
-    :commands (evilnc-comment-operator
-	       evilnc-comment-or-uncomment-lines
-	       evilnc-comment-or-uncomment-paragraphs)
-    :init
+    :general
     (my/leader-keys
       ";" 'evilnc-comment-operator
       "M-;" 'evilnc-copy-and-comment-operator
