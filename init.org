@@ -4429,7 +4429,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    lsp-prefer-flymake nil
 	    lsp-restart 'ignore
 	    lsp-eldoc-hook nil
-	    lsp-eldoc-enable-hover nil)))
+	    lsp-eldoc-enable-hover nil
+	    lsp-auto-configure nil)))
 #+END_SRC
 *** company lsp
 #+BEGIN_SRC emacs-lisp
