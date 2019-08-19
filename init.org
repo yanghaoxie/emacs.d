@@ -3544,7 +3544,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq org-list-allow-alphabetical t
 	  org-log-done 'time
 	  org-refile-use-outline-path t
-	  org-outline-path-complete-in-steps nil)
+	  org-outline-path-complete-in-steps nil
+	  org-imenu-depth 5)
     :init
     ;; org-capture
     (with-eval-after-load 'org-capture
