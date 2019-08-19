@@ -521,7 +521,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (define-key evil-insert-state-map [remap evil-complete-previous] 'hippie-expand)
     (my/normal-keys
-      "gD" 'xref-find-definitions-other-window)
+      "gD" 'xref-find-definitions-other-window
+      "gd" 'xref-find-definitions)
     (progn
       (evil-set-initial-state 'pdf-view-mode 'normal)
       (evil-set-initial-state 'pdf-outline-buffer-mode 'normal)
