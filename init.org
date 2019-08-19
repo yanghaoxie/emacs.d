@@ -5448,7 +5448,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :after pyim
     :load-path "~/Program/liberime/build/"
     :config
-    (liberime-start "/usr/share/rime-data" "~/.emacs.d/pyim/rime")
+    (liberime-start (expand-file-name "/usr/share/rime-data")
+		    (expand-file-name "~/.emacs.d/pyim/rime"))
     (liberime-select-schema "luna_pinyin_simp")
     (setq pyim-default-scheme 'rime-quanpin))
 #+END_SRC
