@@ -3356,9 +3356,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :ghook ('magit-mode-hook)
     :general
     (:keymaps 'magit-todos-section-map
-	      "j" 'evil-next-visual-line)
+     "j" 'evil-next-visual-line)
     (:keymaps 'magit-status-mode-map
-	      "gT" 'magit-todos-jump-to-todos))
+     "gT" 'magit-todos-jump-to-todos))
 #+END_SRC
 * checkers
 ** flycheck
