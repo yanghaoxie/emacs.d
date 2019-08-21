@@ -38,6 +38,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#evil-args][evil args]]
   - [[#evil-mc][evil mc]]
   - [[#evil-lion][evil lion]]
+  - [[#evil-owl][evil owl]]
 - [[#autoload][autoload]]
 - [[#defaults][defaults]]
   - [[#setting-related-in-build-in-features][setting related in build-in features]]
@@ -740,6 +741,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq evil-lion-left-align-key nil
 	  evil-lion-right-align-key nil))
 #+END_SRC
+** evil owl
+#+begin_src emacs-lisp
+  (use-package evil-owl
+    :after evil
+    :config
+    (setq evil-owl-register-char-limit 40
+	  evil-owl-display-method 'posframe
+	  evil-owl-extra-posframe-args '(:internal-border-color "gray50"
+					 :internal-border-width 2
+					 :width 80))
+    (evil-owl-mode))
+#+end_src
 * autoload
 
 #+BEGIN_SRC emacs-lisp
