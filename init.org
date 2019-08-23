@@ -224,6 +224,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
     - [[#shell-pop][shell pop]]
     - [[#eshell-z][eshell z]]
     - [[#eshell-prompt-extras][eshell prompt extras]]
+    - [[#emacs-libvterm][emacs libvterm]]
   - [[#ledger-related][ledger related]]
     - [[#ledger][ledger]]
     - [[#evil-ledger][evil ledger]]
@@ -5125,6 +5126,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq eshell-highlight-prompt nil
 	  eshell-prompt-function 'epe-theme-pipeline)
     (custom-set-faces '(epe-pipeline-delimiter-face ((t (:forground lazy-highlight))))))
+#+END_SRC
+*** emacs libvterm
+#+BEGIN_SRC emacs-lisp
+  (use-package vterm
+    :init
+    (add-hook 'vterm-mode-hook
+	      (lambda () (display-line-numbers-mode -1))))
 #+END_SRC
 ** ledger related
 *** ledger
