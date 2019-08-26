@@ -3755,6 +3755,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys-major-mode
       :keymaps 'org-mode-map
       "op" 'org-open-at-point)
+    (:keymaps 'org-mode-map
+     :states '(normal visual motion)
+     "RET" 'org-open-at-point)
     (my/all-states-keys
       :keymaps 'org-read-date-minibuffer-local-map
       "M-h" 'calendar-backward-day
