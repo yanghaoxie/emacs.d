@@ -4453,7 +4453,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    lsp-restart 'ignore
 	    lsp-eldoc-hook nil
 	    lsp-eldoc-enable-hover nil
-	    lsp-auto-configure nil)))
+	    lsp-auto-configure nil
+	    lsp-enable-symbol-highlighting nil)))
 #+END_SRC
 *** company lsp
 #+BEGIN_SRC emacs-lisp
@@ -4502,7 +4503,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq lsp-ui-sideline-delay 0
 	  lsp-ui-peek-always-show t
 	  lsp-ui-doc-use-childframe t
-	  lsp-enable-symbol-highlighting nil
 	  lsp-ui-doc-enable nil
 	  lsp-ui-flycheck-enable t
 	  lsp-ui-sideline-show-hover nil))
