@@ -5126,7 +5126,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "'" 'shell-pop
       "as" 'eshell)
     :init
-    (setq shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell))))
+    (setq shell-pop-shell-type (quote ("vterm" "*vterm*" (lambda nil (vterm))))
 	  shell-pop-full-span t))
 #+END_SRC
 *** eshell z
