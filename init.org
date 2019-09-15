@@ -4187,7 +4187,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'org-mode-hook 'turn-on-cdlatex)
     :config
     (setq cdlatex-simplify-sub-super-scripts nil
-	  cdlatex-paired-parens "$[{(<"
+	  cdlatex-paired-parens "$[{("
 	  cdlatex-sub-super-scripts-outside-math-mode nil))
 #+END_SRC
 ** lua
