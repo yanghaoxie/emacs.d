@@ -4537,7 +4537,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package lsp-python-ms
     :after (lsp python)
     :init
-    (add-hook 'python-mode-hook (lambda () (lsp)))
+    (add-hook 'python-mode-hook (lambda () (lsp-deferred)))
     :config
     ;; for dev build of language server
     (setq lsp-python-ms-dir
