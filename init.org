@@ -2178,7 +2178,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       :keymaps 'imenu-list-major-mode-map
       "d" 'imenu-list-display-entry
       "r" 'imenu-list-refresh
-      "q" 'imenu-list-quit-window))
+      "q" 'imenu-list-quit-window
+      "RET" 'imenu-list-goto-entry))
 
   ;;;###autoload
   (defun my/imenu-list ()
