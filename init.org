@@ -4110,7 +4110,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    ;; Synctex support
 	    TeX-source-correlate-start-server nil
 	    ;; Don't insert line-break at inline math
-	    LaTeX-fill-break-at-separators nil)
+	    LaTeX-fill-break-at-separators nil
+	    TeX-outline-extra '(("\\\\begin\{abstract\}$" 2)))
       (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
       (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
       (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
