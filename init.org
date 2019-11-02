@@ -1344,7 +1344,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (my/leader-keys
     ;; "au" 'undo-tree-visualize
     "ac" 'calendar
-    "at" 'my/show-current-time)
+    "at" 'my/show-current-time
+    "aP" 'list-processes)
   ;; buffer --------------------------------------------------------------------
   (my/leader-keys
     "bd" 'my/kill-this-buffer
