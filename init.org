@@ -3579,6 +3579,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  org-outline-path-complete-in-steps nil
 	  org-imenu-depth 5
 	  org-src-window-setup 'split-window-below)
+    (add-to-list 'org-file-apps '("\\.pdf\\'" . emacs))
     :init
     ;; org-capture
     (with-eval-after-load 'org-capture
