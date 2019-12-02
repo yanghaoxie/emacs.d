@@ -4195,7 +4195,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq cdlatex-simplify-sub-super-scripts nil
 	  cdlatex-paired-parens "$[{("
-	  cdlatex-sub-super-scripts-outside-math-mode nil))
+	  cdlatex-sub-super-scripts-outside-math-mode nil
+	  cdlatex-insert-auto-labels-in-env-templates nil))
 #+END_SRC
 ** lua
 #+BEGIN_SRC emacs-lisp
