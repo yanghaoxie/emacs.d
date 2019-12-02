@@ -4464,7 +4464,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package lsp-mode
     :commands lsp
     :diminish lsp-mode
-    :ghook ('python-mode-hook)
+    :init
+    (add-hook 'python-mode-hook (lambda () (lsp-deferred)))
     :config
     (progn
       (require 'lsp-clients)
