@@ -4466,6 +4466,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :diminish lsp-mode
     :init
     (add-hook 'python-mode-hook (lambda () (lsp-deferred)))
+    :general
+    (my/leader-keys-minor-mode
+      :keymaps 'lsp-mode-map
+      "=b" 'lsp-format-buffer
+      "=r" 'lsp-format-region)
     :config
     (progn
       (require 'lsp-clients)
