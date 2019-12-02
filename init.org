@@ -2301,6 +2301,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package eyebrowse
     :init
     (add-hook 'after-init-hook 'eyebrowse-mode)
+    (add-to-list 'window-persistent-parameters '(quit-restore . writable))
     :general
     (:keymaps 'override
      :states '(normal visual motion)
