@@ -3036,6 +3036,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       ;; files
       "ff" 'counsel-find-file
       "fl" 'counsel-locate
+      "fr" 'counsel-recoll
       ;; help
       "?"   'counsel-descbinds
       "hda" 'counsel-apropos
