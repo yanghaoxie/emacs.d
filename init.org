@@ -1858,6 +1858,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     ("Basic"
      (("n" display-line-numbers-mode "line number" :toggle t)
       ("N" my/toggle-line-numbers-type "line number type")
+      ("L" linum-mode "Exact line number" :toggle t)
       ("w" whitespace-mode "whitespace" :toggle t)
       ("r" rainbow-mode "rainbow" :toggle t))
      "Highlight"
