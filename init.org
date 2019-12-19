@@ -5240,7 +5240,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;;;###autoload
   (defun my/open-with-evince (&optional x)
     (interactive)
-    (call-process "evince" nil 0 nil (or x buffer-file-name)))
+    (call-process "okular" nil 0 nil (or x buffer-file-name)))
 
   ;;;###autoload
   (defun my/find-user-init-org-file ()
