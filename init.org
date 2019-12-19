@@ -3622,7 +3622,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "dt" 'org-time-stamp
       "dT" 'org-time-stamp-inactive
       "ee" 'org-export-dispatch
-      "ep" 'org-latex-export-to-pdf
+      "ep" (lambda () (interactive) (org-latex-export-to-pdf 'async))
       "eb" 'org-beamer-export-to-pdf
       "fi" 'org-feed-goto-inbox
       "fu" 'org-feed-update-all
