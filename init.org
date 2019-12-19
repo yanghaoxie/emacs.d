@@ -1733,7 +1733,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package spacemacs-purpose-popwin
     :ensure nil
-    :load-path "~/.emacs.d/site-lisp/spacemacs-purpose-popwin/"
+    :load-path "site-lisp/spacemacs-purpose-popwin/"
     :after window-purpose
     :config
     (pupo-mode))
