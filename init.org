@@ -319,7 +319,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    
 #+BEGIN_SRC emacs-lisp
   (setq custom-file (concat user-emacs-directory "custom.el"))
-  (if (file-exists-p "~/.custom.el") (load-file "~/.custom.el"))
+  (if (file-exists-p (concat user-emacs-directory "custom.el"))
+      (load-file (concat user-emacs-directory "custom.el")))
 #+END_SRC
 
 * package related
