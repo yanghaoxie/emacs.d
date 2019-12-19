@@ -4552,7 +4552,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(message "Lsp ui sideline/doc mode enabled in current buffer"))))
 #+END_SRC
 *** lsp python ms
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package lsp-python-ms
     :after (lsp python)
     :init
