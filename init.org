@@ -4487,8 +4487,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    lsp-restart 'ignore
 	    lsp-eldoc-hook nil
 	    lsp-eldoc-enable-hover nil
-	    lsp-enable-symbol-highlighting nil)))
 	    lsp-auto-configure t
+	    lsp-enable-symbol-highlighting nil
+	    lsp-pyls-plugins-preload-modules ["numpy", "networkx", "cplex"]
+	    lsp-pyls-plugins-pydocstyle-enabled t
+	    lsp-pyls-plugins-pydocstyle-convention "numpy"
+	    lsp-pyls-plugins-rope-completion-enabled t
+	    lsp-pyls-plugins-pylint-enabled t
+	    lsp-pyls-plugins-flake8-enabled t
+	    lsp-pyls-plugins-mccabe-enabled nil
+	    lsp-pyls-plugins-yapf-enabled nil)))
 #+END_SRC
 *** company lsp
 #+BEGIN_SRC emacs-lisp
