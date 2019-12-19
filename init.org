@@ -3031,6 +3031,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** counsel
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
+    :after (ivy swiper)
     :general
     ("M-x" 'counsel-M-x)
     (my/non-insert-keys
