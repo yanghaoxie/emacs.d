@@ -4496,7 +4496,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    lsp-pyls-plugins-pylint-enabled t
 	    lsp-pyls-plugins-flake8-enabled t
 	    lsp-pyls-plugins-mccabe-enabled nil
-	    lsp-pyls-plugins-yapf-enabled nil)))
+	    lsp-pyls-plugins-yapf-enabled nil
+	    lsp-signature-render-documentation nil)))
 #+END_SRC
 *** company lsp
 #+BEGIN_SRC emacs-lisp
