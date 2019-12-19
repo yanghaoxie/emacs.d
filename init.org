@@ -1707,6 +1707,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "rP"    'purpose-set-window-purpose
       "rf"    'purpose-load-window-layout-file)
     :config
+    (setq purpose-default-layout-file (concat user-emacs-directory "layouts"))
     (add-to-list 'purpose-user-mode-purposes '(python-mode . py))
     (add-to-list 'purpose-user-mode-purposes '(inferior-python-mode . py-repl))
     (global-set-key [remap ivy-switch-buffer] 'my/ivy-switch-buffer)
