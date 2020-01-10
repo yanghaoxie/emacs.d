@@ -3306,6 +3306,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (require 'desktop)
     (push '(company-posframe-mode . nil)
 	  desktop-minor-mode-table)
+    (setq company-posframe-show-indicator nil
+	  company-posframe-show-metadata nil)
     (company-posframe-mode 1))
 #+END_SRC
 * source control
