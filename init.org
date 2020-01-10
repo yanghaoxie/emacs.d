@@ -13,7 +13,6 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#lexical-binding][lexical binding]]
   - [[#setting-up-auto-tangle][setting up auto tangle]]
   - [[#start-time][start time]]
-  - [[#dont-gc-during-startup-to-save-time][don't GC during startup to save time]]
   - [[#setting-custom-file][setting custom file]]
 - [[#package-related][package related]]
   - [[#package][package]]
@@ -304,16 +303,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** start time
 #+BEGIN_SRC emacs-lisp
   (setq emacs-load-start-time (current-time))
-#+END_SRC
-
-** don't GC during startup to save time
-   
-#+BEGIN_SRC emacs-lisp
-  ;; stolen from doom-emacs
-  (defvar my--file-name-handler-alist file-name-handler-alist)
-  (setq gc-cons-threshold most-positive-fixnum
-	gc-cons-percentage 0.6
-	file-name-handler-alist nil)
 #+END_SRC
 ** setting custom file
    
@@ -1483,16 +1472,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   ;; Show a marker in the left fringe for lines not in the buffer
   (setq-default indicate-empty-lines t)
-
-  ;; NO tool bar
-  (if (fboundp 'tool-bar-mode)
-    (tool-bar-mode -1))
-  ;; no scroll bar
-  (if (fboundp 'set-scroll-bar-mode)
-    (set-scroll-bar-mode nil))
-  ;; no menu bar
-  (if (fboundp 'menu-bar-mode)
-    (menu-bar-mode -1))
 #+END_SRC
 
 ** beacon
