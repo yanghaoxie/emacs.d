@@ -6,3 +6,4 @@
 (require 'cl)
 (setq org-export-async-debug t)
 (require 'org-pdfview)
+(require 'org-ref)
