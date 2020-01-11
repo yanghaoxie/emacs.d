@@ -2537,7 +2537,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "pv" 'projectile-vc)
     :config
     (progn
-      (setq projectile-indexing-method 'alien)
+      (setq projectile-indexing-method 'hybrid)
       (add-to-list 'projectile-other-file-alist '("tex" . ("pdf")))
       (add-to-list 'projectile-other-file-alist '("pdf" . ("tex")))
       (projectile-mode)))
