@@ -1591,7 +1591,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package which-key-posframe
     :if (and (window-system) (version<= "26.1" emacs-version))
     :after (which-key posframe)
-    :load-path "~/Program/which-key-posframe/"
     :config
     (setq which-key-posframe-border-width 2)
     (which-key-posframe-mode))
