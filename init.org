@@ -9,6 +9,7 @@
 This is an Emacs configuration file written in org mode. It is strongly inspired by [[https://github.com/syl20bnr/spacemacs][spacemacs]], [[https://github.com/hlissner/doom-emacs][doom-emacs]] and many other great Emacs configurations I found on Internet.
 * Table of Contents                                                   :TOC_3:
 - [[#about][About]]
+- [[#early-init][early init]]
 - [[#initial][initial]]
   - [[#lexical-binding][lexical binding]]
   - [[#setting-up-auto-tangle][setting up auto tangle]]
@@ -250,6 +251,26 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#message-startup-time][message startup time]]
   - [[#set-best-garbage-collection-threshold][set best garbage collection threshold]]
 
+* early init
+#+BEGIN_SRC emacs-lisp :tangle ./early-init.el
+    ;;; -*- lexical-binding: t; -*-
+
+  (defvar my--file-name-handler-alist file-name-handler-alist)
+  (setq gc-cons-threshold most-positive-fixnum
+	gc-cons-percentage 0.6
+	file-name-handler-alist nil)
+
+  (if (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
+  (if (fboundp 'set-scroll-bar-mode)
+    (set-scroll-bar-mode nil))
+  (if (fboundp 'menu-bar-mode)
+    (menu-bar-mode -1))
+
+  (setq package-enable-at-startup nil)
+
+  (set-face-attribute 'default nil  :family "Hack" :height 110 :weight 'normal)
+#+END_SRC
 * initial
 ** lexical binding
 #+BEGIN_SRC emacs-lisp
