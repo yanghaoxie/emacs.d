@@ -347,7 +347,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 			   ("gnu" . "~/elpa/gnu/")
 			   ("org" . "~/elpa/org/")
 			   ("emacswiki" . "~/elpa/emacswiki/")))
-  (setq package-enable-at-startup nil)
   (package-initialize)
 #+END_SRC
 ** bootstrap straight
@@ -933,8 +932,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	backup-by-copying t
 	vc-make-backup-files t)
   (setq delete-by-moving-to-trash t)
-  ;; font
-  (set-frame-font "Hack 11" nil t)
   ;; scratch buffer message
   (setq initial-scratch-message ";; Better to run than curse the road.\n")
   ;; scratch major mode
