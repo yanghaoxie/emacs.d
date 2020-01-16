@@ -4587,7 +4587,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  "~/Program/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer"))
 #+END_SRC
 *** lsp latex
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package lsp-latex
     :load-path "~/Program/lsp-latex"
     :config
