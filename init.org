@@ -1637,7 +1637,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(push '("*grep*"                 :dedicated t :position bottom :stick t :noselect nil            ) popwin:special-display-config)
 	(push '("*nosetests*"            :dedicated t :position bottom :stick t :noselect nil            ) popwin:special-display-config)
 	(push '("^\*WoMan.+\*$" :regexp t             :position bottom                                   ) popwin:special-display-config)
-	(push '("*Google Translate*"     :dedicated t :position bottom :stick t :noselect t   :height 0.4) popwin:special-display-config)
+	(push '("*Google Translate*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
 	(push '("*frequencies*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
 	(push '("*Synonyms List*"     :dedicated t :position bottom :stick t :noselect nil   :height 0.4) popwin:special-display-config)
 	(push '("*Ledger Report*"     :dedicated t :position right :stick t :noselect nil   :width 0.6) popwin:special-display-config)
