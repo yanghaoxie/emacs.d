@@ -5551,7 +5551,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package liberime
     :after pyim
-    :load-path "~/Program/liberime/build/"
+    :load-path "~/Program/liberime"
     :config
     (liberime-start (expand-file-name "/usr/share/rime-data")
 		    (expand-file-name "~/.emacs.d/pyim/rime"))
