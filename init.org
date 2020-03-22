@@ -3602,6 +3602,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  org-export-async-init-file (concat user-emacs-directory "init-org-async.el")
 	  org-modules '(ol-w3m ol-bbdb ol-bibtex ol-docview ol-gnus ol-info ol-irc ol-mhe ol-rmail ol-eww org-special-blocks))
     (add-to-list 'org-file-apps '("\\.pdf\\'" . emacs))
+    (advice-add 'org-export-to-file
+		:before #'(lambda (backend file &optional async subtreep visible-only body-only ext-plist
+				      post-process) (save-buffer ())))
     :init
     ;; org-capture
     (with-eval-after-load 'org-capture
