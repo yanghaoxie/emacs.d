@@ -1708,6 +1708,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq purpose-default-layout-file (concat user-emacs-directory "layouts"))
     (add-to-list 'purpose-user-mode-purposes '(python-mode . py))
     (add-to-list 'purpose-user-mode-purposes '(inferior-python-mode . py-repl))
+    (add-to-list 'purpose-user-mode-purposes '(org-mode . org))
+    (add-to-list 'purpose-user-mode-purposes '(pdf-view-mode . pdf))
     (global-set-key [remap ivy-switch-buffer] 'my/ivy-switch-buffer)
     (purpose-compile-user-configuration)
     (defalias 'ranger-find-file-without-purpose
