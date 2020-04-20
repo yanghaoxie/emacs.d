@@ -3013,7 +3013,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** ivy prescient
 #+BEGIN_SRC emacs-lisp
   (use-package ivy-prescient
-    :after ivy
+    :after (ivy counsel)
     :config
     (ivy-prescient-mode)
     (prescient-persist-mode))
