@@ -5543,9 +5543,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	       (< (- (float-time) last-event-time) 0.2))
 	  (set (make-local-variable 'temp-evil-escape-mode) t)
 	(set (make-local-variable 'temp-evil-escape-mode) nil))
-      (if (and temp-evil-escape-mode
-	       (equal (pyim-entered-get) "j")
-	       (equal last-command-event ?k))
+      (if (or (and temp-evil-escape-mode
+		   (equal (pyim-entered-get) "j")
+		   (equal last-command-event ?k))
+	      (and temp-evil-escape-mode
+		   (equal (pyim-entered-get) "k")
+		   (equal last-command-event ?j)))
 	  (progn
 	    (push last-command-event unread-command-events)
 	    (pyim-outcome-handle 'pyim-entered)
