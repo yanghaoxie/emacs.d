@@ -3039,6 +3039,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-f" 'counsel-find-file)
     (my/leader-keys
       ;; files
+      "fb" 'counsel-bookmark
       "ff" 'counsel-find-file
       "fl" 'counsel-locate
       "fr" 'counsel-recoll
