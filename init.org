@@ -4223,7 +4223,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq cdlatex-simplify-sub-super-scripts nil
 	  cdlatex-paired-parens "$[{("
 	  cdlatex-sub-super-scripts-outside-math-mode nil
-	  cdlatex-insert-auto-labels-in-env-templates nil))
 	  cdlatex-insert-auto-labels-in-env-templates nil)
     (defun my-indent-for-tab-command ()
       (indent-for-tab-command)
