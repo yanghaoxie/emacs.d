@@ -3086,7 +3086,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package ivy-xref
     :after (ivy xref)
     :init
-    (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
+    (when (>= emacs-major-version 27)
+      (setq xref-show-definitions-function #'ivy-xref-show-defs))
+    ;; Necessary in Emacs <27. In Emacs 27 it will affect all xref-based
+    ;; commands other than xref-find-definitions (e.g. project-find-regexp)
+    ;; as well
+    (setq xref-show-xrefs-function #'ivy-xref-show-xrefs
+	  ivy-xref-remove-text-properties t))
 #+END_SRC
 *** amx
 #+BEGIN_SRC emacs-lisp
