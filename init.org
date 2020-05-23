@@ -4224,6 +4224,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  cdlatex-paired-parens "$[{("
 	  cdlatex-sub-super-scripts-outside-math-mode nil
 	  cdlatex-insert-auto-labels-in-env-templates nil))
+	  cdlatex-insert-auto-labels-in-env-templates nil)
+    (defun my-indent-for-tab-command ()
+      (indent-for-tab-command)
+      t)
+    (add-hook 'cdlatex-tab-hook #'my-indent-for-tab-command))
+#+END_SRC
 #+END_SRC
 ** lua
 #+BEGIN_SRC emacs-lisp
