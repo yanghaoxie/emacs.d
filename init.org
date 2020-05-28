@@ -1546,7 +1546,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :diminish highlight-symbol-mode
     :general
     (my/leader-keys
-      "tha" 'my/toggle-highlight-symbol)
+      "tha" 'my/toggle-highlight-symbol
+      "sh" 'highlight-symbol-at-point
+      "sr" 'highlight-symbol-remove-all)
     (:states '(normal visual motion)
      "M-]" 'highlight-symbol-next
      "M-[" 'highlight-symbol-prev
