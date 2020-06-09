@@ -91,6 +91,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#secret-information][secret information]]
   - [[#wgrep][wgrep]]
   - [[#parrot][parrot]]
+  - [[#keychain-environment][keychain environment]]
 - [[#themes][themes]]
   - [[#gruvbox][gruvbox]]
 - [[#workspaces][workspaces]]
@@ -2274,6 +2275,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "]r" 'parrot-rotate-next-word-at-point)
     :config
     (parrot-mode))
+#+end_src
+** keychain environment
+#+begin_src emacs-lisp
+  (use-package keychain-environment
+    :config
+    (keychain-refresh-environment))
 #+end_src
 * themes
 ** gruvbox
