@@ -2176,9 +2176,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (setq imenu-list-focus-after-activation t
 	    imenu-list-auto-resize t)
       (my/leader-keys
-	"bi" 'imenu-list-smart-toggle
-	;; "bi" 'my/imenu-list
-	))
+	;; "bi" 'imenu-list-smart-toggle
+	"bi" 'my/imenu-list))
     :config
     (setq imenu-list-mode-line-format '("%e" (:eval (spaceline-ml-main))))
     (my/normal-keys
