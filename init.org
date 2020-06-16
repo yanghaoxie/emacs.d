@@ -950,10 +950,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  desktop-restore-eager 15)
     (desktop-save-mode 1))
 
-  (use-package hl-line
-    :init
-    (add-hook 'prog-mode-hook (lambda () (hl-line-mode t)))
-    (add-hook 'text-mode-hook (lambda () (hl-line-mode t))))
+  ;; (use-package hl-line
+  ;;   :init
+  ;;   (add-hook 'prog-mode-hook (lambda () (hl-line-mode t)))
+  ;;   (add-hook 'text-mode-hook (lambda () (hl-line-mode t))))
   ;; text-scale
   (defhydra hydra-text-scale ()
     "text-scale"
