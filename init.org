@@ -3621,7 +3621,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  org-src-window-setup 'split-window-below
 	  org-export-in-background t
 	  org-export-async-init-file (concat user-emacs-directory "init-org-async.el")
-	  org-modules '(ol-w3m ol-bbdb ol-bibtex ol-docview ol-gnus ol-info ol-irc ol-mhe ol-rmail ol-eww org-special-blocks))
+	  org-modules '(ol-w3m ol-bbdb ol-bibtex ol-docview ol-gnus ol-info ol-irc ol-mhe ol-rmail ol-eww org-special-blocks)
+	  org-todo-keywords '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
     (add-to-list 'org-file-apps '("\\.pdf\\'" . emacs))
     (advice-add 'org-export-to-file
 		:before #'(lambda (backend file &optional async subtreep visible-only body-only ext-plist
