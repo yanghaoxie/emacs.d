@@ -3311,7 +3311,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "iSc" 'aya-create
       "iSe" 'aya-expand
-      "iSw" 'aya-persist-snippet))
+      "iSw" 'aya-persist-snippet)
+    :config
+    (setq aya-trim-one-line t))
 #+END_SRC
 *** hippie expand
 #+BEGIN_SRC emacs-lisp
