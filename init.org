@@ -127,6 +127,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
     - [[#helm-posframe][helm posframe]]
   - [[#ivy-related][ivy related]]
     - [[#ivy][ivy]]
+    - [[#ivy-avy][ivy avy]]
     - [[#ivy-prescient][ivy prescient]]
     - [[#ivy-rich][ivy-rich]]
     - [[#ivy-hydra][ivy hydra]]
@@ -3014,10 +3015,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq ivy-use-virtual-buffers t
 	  ivy-re-builders-alist '((t . ivy--regex-ignore-order))
 	  ivy-initial-inputs-alist nil
-	  ivy-count-format "(%d/%d) "
-	  ivy-avy-style 'at-full)
+	  ivy-count-format "(%d/%d) ")
     (ivy-mode))
 #+END_SRC
+*** ivy avy
+#+begin_src emacs-lisp
+  (use-package ivy-avy
+    :after (ivy avy)
+    :config
+    (setq ivy-avy-style 'at-full))
+#+end_src
 *** ivy prescient
 #+BEGIN_SRC emacs-lisp
   (use-package ivy-prescient
