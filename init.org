@@ -4755,6 +4755,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (add-hook 'pdf-view-mode-hook (lambda() (pdf-view-midnight-minor-mode 1)))
       ;;turn off cua so copy works
       (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
+      (add-hook 'pdf-view-mode-hook #'pdf-tools-enable-minor-modes)
       (defhydra hydra-zoom-pdf ()
 	"zoom-pdf"
 	("i" pdf-view-enlarge "in")
