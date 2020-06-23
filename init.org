@@ -215,7 +215,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#paradox][paradox]]
   - [[#ranger][ranger]]
   - [[#pdf-tools][pdf tools]]
-  - [[#org-pdfview][org pdfview]]
+  - [[#org-pdftools][org pdftools]]
   - [[#keyfreq][keyfreq]]
   - [[#elfeed-related][elfeed related]]
     - [[#elfeed][elfeed]]
