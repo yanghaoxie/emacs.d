@@ -1719,7 +1719,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "rP"    'purpose-set-window-purpose
       "rf"    'purpose-load-window-layout-file)
     :config
-    (setq purpose-default-layout-file (concat user-emacs-directory "layouts"))
+    (setq purpose-default-layout-file (concat user-emacs-directory "layouts")
+	  default-file-purpose 'general)
     (add-to-list 'purpose-user-mode-purposes '(python-mode . py))
     (add-to-list 'purpose-user-mode-purposes '(inferior-python-mode . py-repl))
     (add-to-list 'purpose-user-mode-purposes '(org-mode . org))
