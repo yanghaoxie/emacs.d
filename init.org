@@ -3439,11 +3439,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package magit-todos
     :after magit
-    :general
-    (:keymaps 'magit-todos-section-map
-     "j" 'evil-next-visual-line)
-    (:keymaps 'magit-status-mode-map
-     "gT" 'magit-todos-jump-to-todos)
     :config
     (setq magit-todos-exclude-globs '("*.pdf"))
     (magit-todos-mode))
