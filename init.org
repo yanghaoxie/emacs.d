@@ -534,6 +534,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	      "C-j" 'evil-next-line
 	      "C-k" 'evil-previous-line
 	      "M-o" 'evil-open-below)
+    :init
+    (setq evil-want-keybinding nil)
     :config
     (define-key evil-insert-state-map [remap evil-complete-previous] 'hippie-expand)
     (my/normal-keys
