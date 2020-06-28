@@ -39,6 +39,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#evil-mc][evil mc]]
   - [[#evil-lion][evil lion]]
   - [[#evil-owl][evil owl]]
+  - [[#evil-collection][evil collection]]
 - [[#autoload][autoload]]
 - [[#defaults][defaults]]
   - [[#setting-related-in-build-in-features][setting related in build-in features]]
@@ -766,6 +767,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 					 :internal-border-width 2
 					 :width 80))
     (evil-owl-mode))
+#+end_src
+** evil collection
+#+begin_src emacs-lisp
+  (use-package evil-collection
+    :config
+    (with-eval-after-load 'reftex (evil-collection-reftex-setup))
+    (with-eval-after-load 'magit (evil-collection-magit-todos-setup)))
 #+end_src
 * autoload
 
