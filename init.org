@@ -763,7 +763,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package evil-owl
     :after evil
     :config
-    (setq evil-owl-register-char-limit 40
+    (setq evil-owl-register-char-limit 100
 	  evil-owl-display-method 'posframe
 	  evil-owl-extra-posframe-args '(:internal-border-color "gray50"
 					 :internal-border-width 2
