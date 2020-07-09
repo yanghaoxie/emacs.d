@@ -1266,7 +1266,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :mode (".jpg\\'" . image-mode)
     :config
     (progn
-      (add-hook 'image-minor-mode-hook (lambda() (display-line-numbers-mode -1)))
+      (add-hook 'image-mode-hook (lambda() (display-line-numbers-mode -1)))
       (setq image-animate-loop t)
       (my/leader-keys-major-mode
 	:keymaps 'image-mode-map
