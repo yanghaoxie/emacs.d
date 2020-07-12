@@ -93,6 +93,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#wgrep][wgrep]]
   - [[#parrot][parrot]]
   - [[#keychain-environment][keychain environment]]
+  - [[#comint][comint]]
 - [[#themes][themes]]
   - [[#gruvbox][gruvbox]]
 - [[#workspaces][workspaces]]
@@ -2292,6 +2293,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package keychain-environment
     :config
     (keychain-refresh-environment))
+#+end_src
+** comint
+#+begin_src emacs-lisp
+  (use-package comint
+    :ensure nil
+    :config
+    (setq comint-input-ignoredups t
+	  comint-input-ring-size 1000))
 #+end_src
 * themes
 ** gruvbox
