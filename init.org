@@ -3977,11 +3977,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package org-ref
     :after org
+    :init
+    (setq org-ref-show-citation-on-enter nil)
     :config
     (progn
       (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
       (setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref-notes.org")
-      (setq org-ref-show-citation-on-enter nil)
       (my/leader-keys-major-mode
 	:keymaps 'org-mode-map
 	"oo" 'my/org-ref-open-pdf-at-point
