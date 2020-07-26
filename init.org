@@ -4553,6 +4553,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       :keymaps 'lsp-mode-map
       "=b" 'lsp-format-buffer
       "=r" 'lsp-format-region)
+    (my/leader-keys-minor-mode
+      :keymaps 'lsp-mode-map
+      "ss" 'lsp
+      "=b" 'lsp-format-buffer
+      "=r" 'lsp-format-region
+      "gd" 'lsp-find-definition
+      "gr" 'lsp-find-references)
     :config
     (progn
       (require 'lsp-clients)
