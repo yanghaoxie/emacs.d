@@ -4011,9 +4011,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    org-noter-doc-split-percentage '(0.7 . 0.7)
 	    org-noter-always-create-frame nil
 	    org-noter-insert-note-no-questions t
-	    ;; org-noter-notes-window-location 'vertical-split
-	    org-noter-notes-window-location 'horizontal-split
-	    org-noter-open-note-file-after-kill-session t)))
+	    org-noter-notes-window-location 'horizontal-split)))
 #+END_SRC
 *** org journal
 #+BEGIN_SRC emacs-lisp
