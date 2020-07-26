@@ -3987,7 +3987,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	:keymaps 'org-mode-map
 	"oo" 'my/org-ref-open-pdf-at-point
 	"C-j" 'org-ref-next-key
-	"C-k" 'org-ref-previous-key)))
+	"C-k" 'org-ref-previous-key
+	"nN" 'org-ref-open-notes-at-point)))
 #+END_SRC
 *** org-noter
 #+BEGIN_SRC emacs-lisp
