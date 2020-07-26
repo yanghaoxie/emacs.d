@@ -2591,6 +2591,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (setq projectile-indexing-method 'hybrid)
       (add-to-list 'projectile-other-file-alist '("tex" . ("pdf")))
       (add-to-list 'projectile-other-file-alist '("pdf" . ("tex")))
+      (setq projectile-project-root-files-functions
+      '(projectile-root-top-down projectile-root-local
+      projectile-root-bottom-up
+      projectile-root-top-down-recurring))
+      (setq projectile-project-root-files #'(".projectile"))
       (projectile-mode)))
 #+END_SRC
 * navigation
