@@ -3230,6 +3230,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (add-hook 'after-init-hook 'global-company-mode))
     :config
+    (add-hook 'evil-normal-state-entry-hook
+	      (lambda ()
+		(when (or (company-tooltip-visible-p) (my/company-posframe-visible-p company-posframe-buffer))
+		  (company-cancel))))
     (progn
       (let ((map company-active-map))
 	(define-key map (kbd "C-j") 'company-select-next)
