@@ -3395,7 +3395,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq company-posframe-show-indicator nil
 	  company-posframe-show-metadata nil
 	  company-posframe-quickhelp-delay nil)
-    (company-posframe-mode 1))
+    (company-posframe-mode 1)
+    (defun my/company-posframe-visible-p (buffer-or-name)
+      "Return whether company posframe buffer called BUFFER-OR-NAME is visible.."
+      (cl-dolist (frame (frame-list))
+	(let ((buffer-info (frame-parameter frame 'posframe-buffer)))
+	  (when (or (equal buffer-or-name (car buffer-info))
+		    (equal buffer-or-name (cdr buffer-info)))
+	    (when (frame-visible-p frame)
+	      (cl-return t)))))))
 #+END_SRC
 * source control
 ** version control
