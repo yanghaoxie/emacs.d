@@ -3470,7 +3470,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package magit-todos
     :after magit
     :config
-    (setq magit-todos-exclude-globs '("*.pdf"))
+    (setq magit-todos-exclude-globs '("*.pdf")
+	  magit-todos-update 600)
     (magit-todos-mode))
 #+END_SRC
 * checkers
