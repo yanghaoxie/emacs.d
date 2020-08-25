@@ -5675,3 +5675,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	gc-cons-percentage 0.1
 	file-name-handler-alist my--file-name-handler-alist)
 #+END_SRC
+
+# Local Variables:
+# org-src-fontify-natively: nil
+# End:
