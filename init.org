@@ -4578,7 +4578,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "bs" #'lsp-workspace-shutdown)
     :config
     (progn
-      (require 'lsp-clients)
       (setq lsp-message-project-root-warning t
 	    lsp-prefer-flymake nil
 	    lsp-restart 'ignore
