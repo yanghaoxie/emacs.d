@@ -204,6 +204,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
     - [[#company-lsp][company lsp]]
     - [[#lsp-ui][lsp ui]]
     - [[#lsp-python-ms][lsp python ms]]
+    - [[#lsp-pyright][lsp pyright]]
     - [[#lsp-latex][lsp latex]]
 - [[#writing][writing]]
   - [[#academic-phrases][academic phrases]]
@@ -4674,6 +4675,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq lsp-python-ms-executable
 	  "~/Program/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer"))
 #+END_SRC
+*** lsp pyright
+#+begin_src emacs-lisp
+  (use-package lsp-pyright
+    :hook (python-mode . (lambda ()
+			    (require 'lsp-pyright)
+			    (lsp-deferred)))
+    :config
+    (setq lsp-pyright-multi-root nil))
+#+end_src
 *** lsp latex
 #+BEGIN_SRC emacs-lisp :tangle no
   (use-package lsp-latex
