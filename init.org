@@ -4887,7 +4887,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-f" 'pdf-sync-forward-search))
 #+END_SRC
 ** org pdftools
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (use-package org-pdftools
     :hook (org-load . org-pdftools-setup-link))
 #+end_src
