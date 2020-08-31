@@ -2299,8 +2299,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package comint
     :ensure nil
     :config
-    (setq comint-input-ignoredups t
-	  comint-input-ring-size 1000))
+    (setq comint-input-ring-size 1000))
 #+end_src
 * themes
 ** gruvbox
