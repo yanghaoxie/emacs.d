@@ -3469,7 +3469,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package magit-todos
     :after magit
     :config
-    (setq magit-todos-exclude-globs '("*.pdf"))
+    (setq magit-todos-exclude-globs '("*.pdf" "*.eps")
+	  magit-todos-update 600)
     (magit-todos-mode))
 #+END_SRC
 * checkers
@@ -5673,3 +5674,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	gc-cons-percentage 0.1
 	file-name-handler-alist my--file-name-handler-alist)
 #+END_SRC
+
+# Local Variables:
+# org-src-fontify-natively: nil
+# End:
