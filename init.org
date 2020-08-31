@@ -3047,8 +3047,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** ivy avy
 #+begin_src emacs-lisp
   (use-package ivy-avy
-    :after (ivy avy)
-    :init
+    :config
     (setq ivy-avy-style 'at-full))
 #+end_src
 *** ivy prescient
@@ -4579,7 +4578,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "bs" #'lsp-workspace-shutdown)
     :config
     (progn
-      (require 'lsp-clients)
       (setq lsp-message-project-root-warning t
 	    lsp-prefer-flymake nil
 	    lsp-restart 'ignore
@@ -4897,7 +4895,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "M-f" 'pdf-sync-forward-search))
 #+END_SRC
 ** org pdftools
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (use-package org-pdftools
     :hook (org-load . org-pdftools-setup-link))
 #+end_src
