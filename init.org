@@ -4597,7 +4597,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    lsp-signature-render-documentation nil)))
 #+END_SRC
 *** company lsp
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package company-lsp
     :commands company-lsp
     :init
