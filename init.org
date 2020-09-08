@@ -3999,7 +3999,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (progn
       (setq org-ref-default-bibliography '("~/Dropbox/software/Zotero/bibtex/main.bib"))
-      (setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref-notes.org")
+      (setq org-ref-bibliography-notes "~/Dropbox/document/org/references/ref-notes.org"
+	    org-ref-default-ref-type "cref")
       (my/leader-keys-major-mode
 	:keymaps 'org-mode-map
 	"oo" 'my/org-ref-open-pdf-at-point
