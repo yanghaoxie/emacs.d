@@ -594,6 +594,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package evil-escape
     :diminish evil-escape-mode
     :init
+    (with-eval-after-load 'company
+	(add-hook 'evil-normal-state-entry-hook #'company-cancel))
     (setq evil-escape-key-sequence "jk"
 	  evil-escape-unordered-key-sequence t)
     :config
