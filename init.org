@@ -246,6 +246,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#terminal-here][terminal here]]
   - [[#deft][deft]]
   - [[#proxy-mode][proxy mode]]
+  - [[#spotify][spotify]]
 - [[#chinese][Chinese]]
   - [[#pyim][pyim]]
     - [[#pyim-1][pyim]]
@@ -5589,6 +5590,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq url-gateway-local-host-regexp
 	  (concat "\\`" (regexp-opt '("localhost" "127.0.0.1")) "\\'")))
 #+END_SRC
+** spotify
+#+begin_src emacs-lisp
+  (use-package spotify
+    :general
+    (my/leader-keys
+      "amp" 'spotify-playpause
+      "amn" 'spotify-next
+      "amN" 'spotify-previous))
+#+end_src
 * Chinese
 ** pyim
 *** pyim
