@@ -2179,7 +2179,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :commands zop-to-char
     :general
     (my/all-states-keys
-      "M-z" 'zop-to-char)
+      "M-C-z" 'zop-to-char
+      "M-z" 'zop-up-to-char)
     :config
     (progn
       (setq zop-to-char-prec-keys '(left ?\M-b)
