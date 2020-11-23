@@ -251,6 +251,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#pyim][pyim]]
     - [[#pyim-1][pyim]]
     - [[#liberime][liberime]]
+  - [[#emacs-rime][emacs rime]]
   - [[#cal-china-x][cal china x]]
   - [[#ace-pinyin][ace pinyin]]
 - [[#finishing-work][finishing work]]
@@ -5668,6 +5669,19 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (liberime-select-schema "luna_pinyin_simp")
     (setq pyim-default-scheme 'rime-quanpin))
 #+END_SRC
+** emacs rime
+#+begin_src emacs-lisp
+  (use-package rime
+    :config
+    (setq default-input-method "rime"
+	  rime-user-data-dir "~/.config/fcitx/rime"
+	  rime-show-candidate 'posframe
+	  rime-posframe-style 'horizontal
+	  rime-posframe-properties (list :internal-border-width 1)
+	  rime-disable-predicates '(rime-predicate-evil-mode-p
+				    rime-predicate-after-alphabet-char-p
+				    rime-predicate-prog-in-code-p)))
+#+end_src
 ** cal china x
 #+BEGIN_SRC emacs-lisp
   (use-package cal-china-x
