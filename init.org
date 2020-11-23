@@ -5605,7 +5605,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 * Chinese
 ** pyim
 *** pyim
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package pyim
     :commands (pyim-convert-string-at-point toggle-input-method)
     :init
@@ -5661,7 +5661,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (advice-add 'pyim-self-insert-command :around #'my-pyim-self-insert-command))
 #+END_SRC
 *** liberime
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package liberime
     :after pyim
     :load-path "~/Program/liberime"
