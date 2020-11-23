@@ -4767,7 +4767,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
 * tools
 ** paradox
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package paradox
     :commands (paradox-list-packages)
     :init
