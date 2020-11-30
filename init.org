@@ -74,6 +74,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
 - [[#universal][universal]]
   - [[#restart-emacs][restart-emacs]]
   - [[#undo-tree][undo tree]]
+  - [[#undo-fu][undo fu]]
   - [[#expand-tree][expand tree]]
   - [[#sudo-edit][sudo edit]]
   - [[#smartparens-related][smartparens related]]
@@ -1981,6 +1982,21 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(setq undo-tree-visualizer-diff t))
       (advice-add 'undo-tree-visualizer-quit :after #'spacemacs/undo-tree-restore-default)))
 #+END_SRC
+** undo fu
+#+begin_src emacs-lisp
+  (use-package undo-fu
+    :general
+    (my/normal-keys
+      "u" 'undo-fu-only-undo
+      "U" 'undo-fu-only-redo)
+    :config
+    (global-undo-tree-mode -1))
+
+  (use-package undo-fu-session
+    :config
+    (setq undo-fu-session-incompatible-files '("/COMMIT_EDITMSG\\'" "/git-rebase-todo\\'"))
+    (global-undo-fu-session-mode))
+#+end_src
 ** expand tree
 #+BEGIN_SRC emacs-lisp
   (use-package expand-region
