@@ -186,6 +186,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#latex][latex]]
     - [[#reftex][reftex]]
     - [[#auctex][auctex]]
+    - [[#auctex-latexmk][auctex latexmk]]
     - [[#company-auctex][company-auctex]]
     - [[#cdlatex][cdlatex]]
   - [[#lua][lua]]
@@ -4279,6 +4280,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "pr"  'preview-region
       "ps"  'preview-section))
 #+END_SRC
+*** auctex latexmk
+#+begin_src emacs-lisp
+  (use-package auctex-latexmk
+    :config
+    (auctex-latexmk-setup))
+#+end_src
 *** company-auctex
 #+BEGIN_SRC emacs-lisp
   (use-package company-auctex
