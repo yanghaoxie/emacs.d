@@ -3263,10 +3263,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	(define-key map (kbd "C-j") 'company-select-next)
 	(define-key map (kbd "C-k") 'company-select-previous)
 	(define-key map (kbd "C-l") 'company-complete-selection))
-      (setq company-idle-delay 0
+      (setq company-idle-delay 0.0
 	    company-show-numbers t
-	    company-tooltip-idle-delay 0
-	    company-echo-delay 0
+	    company-tooltip-idle-delay 0.0
+	    company-echo-delay 0.0
 	    company-minimum-prefix-length 1
 	    company-tooltip-align-annotations t
 	    company-dabbrev-ignore-case nil
