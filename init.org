@@ -1963,7 +1963,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "qr" 'restart-emacs))
 #+END_SRC
 ** undo tree
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package undo-tree
     :ghook ('after-init-hook #'global-undo-tree-mode)
     :diminish undo-tree-mode
