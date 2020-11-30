@@ -1075,6 +1075,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    "*Youdao Dictionary*"
 	    "*PDF-Occur*"
 	    "*Google Translate*"
+	    "*magit.*"
 	    ))
     (winner-mode))
 
