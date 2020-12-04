@@ -3074,7 +3074,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 *** ivy avy
 #+begin_src emacs-lisp
   (use-package ivy-avy
-    :config
+    :init
     (setq ivy-avy-style 'at-full))
 #+end_src
 *** ivy prescient
