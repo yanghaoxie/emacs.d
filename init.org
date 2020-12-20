@@ -4975,7 +4975,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "TAB" 'pdf-outline-toggle-subtree
      "q" 'pdf-outline-quit)
     (my/leader-keys-major-mode
-      :states 'normal
+      ;; :states 'normal
       :keymaps 'pdf-view-mode-map
       :major-modes t
       ;; Slicing image
