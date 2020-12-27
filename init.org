@@ -160,6 +160,8 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
     - [[#magit][magit]]
     - [[#evil-magit][evil magit]]
     - [[#magit-todos][magit todos]]
+  - [[#github][github]]
+    - [[#grip-mode][grip mode]]
 - [[#checkers][checkers]]
   - [[#flycheck][flycheck]]
     - [[#flychek][flychek]]
@@ -3501,6 +3503,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  magit-todos-update 600)
     (magit-todos-mode))
 #+END_SRC
+** github
+*** grip mode
+#+begin_src emacs-lisp
+  (use-package grip-mode
+    :commands grip-mode)
+#+end_src
 * checkers
 ** flycheck
 *** flychek   
