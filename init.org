@@ -21,6 +21,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#install-use-package-and-related-packages][install use-package and related packages]]
     - [[#hydra][hydra]]
   - [[#install-general][install general]]
+  - [[#comp][comp]]
   - [[#try][try]]
 - [[#vim][vim]]
   - [[#evil][evil]]
@@ -531,7 +532,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (with-eval-after-load 'lisp-mode
     (setq lisp-indent-function 'my/lisp-indent-function))
 #+END_SRC
-
+** comp
+#+begin_src emacs-lisp
+  (use-package comp
+    :ensure nil
+    :config
+    (setq comp-async-report-warnings-errors nil
+	  comp-deferred-compilation nil
+	  package-native-compile t))
+#+end_src
 ** try
 #+BEGIN_SRC emacs-lisp
   (use-package try
