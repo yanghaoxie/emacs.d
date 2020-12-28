@@ -645,14 +645,18 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** evil matchit
 #+BEGIN_SRC emacs-lisp
   (use-package evil-matchit
-    :general
-    (:keymaps 'override
-     :states '(normal visual)
-     "%" 'evilmi-jump-items)
-    (:keymaps 'evil-inner-text-objects-map
-     "%" 'evilmi-jump-items)
-    (:keymaps 'evil-outer-text-objects-map
-     "%" 'evilmi-jump-items)
+    :after evil
+    ;; :general
+    ;; (:keymaps 'override
+    ;;  :states 'normal
+    ;;  "%" 'evilmi-jump-items)
+    ;; (:keymaps 'override
+    ;;  :states 'visual
+    ;;  "%" 'evilmi-select-items)
+    ;; (:keymaps 'evil-inner-text-objects-map
+    ;;  "%" 'evilmi-jump-items)
+    ;; (:keymaps 'evil-outer-text-objects-map
+    ;;  "%" 'evilmi-jump-items)
     :config
     (setq evilmi-always-simple-jump t)
     (global-evil-matchit-mode))
