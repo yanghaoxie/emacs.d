@@ -1490,7 +1490,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq gc-cons-threshold most-positive-fixnum))
 
   (defun my/restore-garbage-collection ()
-    (setq gc-cons-threshold 800000))
+    (setq gc-cons-threshold 100000000))
 
   (add-hook 'minibuffer-setup-hook #'my/defer-garbage-collection)
   (add-hook 'minibuffer-exit-hook #'my/restore-garbage-collection)
@@ -4732,7 +4732,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    lsp-pyls-plugins-yapf-enabled nil
 	    lsp-signature-render-documentation nil
 	    lsp-headerline-breadcrumb-enable-symbol-numbers t
-	    lsp-headerline-breadcrumb-enable-diagnostics nil)))
+	    lsp-headerline-breadcrumb-enable-diagnostics nil))
+    (setq read-process-output-max (* 1024 1024)))
 #+END_SRC
 *** company lsp
 #+BEGIN_SRC emacs-lisp :tangle no
@@ -5843,7 +5844,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 ** set best garbage collection threshold
 #+BEGIN_SRC emacs-lisp
-  (setq gc-cons-threshold 800000
+  (setq gc-cons-threshold 100000000
 	gc-cons-percentage 0.1
 	file-name-handler-alist my--file-name-handler-alist)
 #+END_SRC
