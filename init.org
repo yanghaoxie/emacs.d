@@ -3209,7 +3209,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  "\n** ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :NOTER_DOCUMENT: ${file}\n  :END:"
 	  bibtex-completion-additional-search-fields '(eventtitle)
 	  bibtex-completion-display-formats
-	  '((t . "${=has-pdf=:1} ${=has-note=:1} ${=type=:3} ${year:4} ${author:25} ${title:100}"))))
+	  '((t . "${=has-pdf=:1} ${=has-note=:1} ${=type=:3} ${year:4} ${author:25} ${title:100}"))
+	  bibtex-completion-cite-default-command nil)
+    (add-to-list 'bibtex-completion-cite-commands "citet"))
 #+END_SRC
 *** counsel projectile
 #+BEGIN_SRC emacs-lisp
