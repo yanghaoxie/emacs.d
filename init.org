@@ -4940,6 +4940,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (progn
       (require 'pdf-occur)
       (require 'pdf-sync)
+      (require 'pdf-history)
+      (require 'pdf-outline)
       (pdf-tools-install :no-query)
 
       (defhydra hydra-zoom-pdf ()
@@ -4961,7 +4963,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     ;;turn off cua so copy works
     (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
     (add-hook 'pdf-view-mode-hook #'pdf-tools-enable-minor-modes)
-    :init
+    :general
     (my/normal-keys
       ;; :states '(normal)
       :keymaps 'pdf-view-mode-map
@@ -4991,7 +4993,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "O"   'pdf-outline
       "zr"  'pdf-view-scale-reset
       "C-s" 'isearch-forward)
-    :general
     (:states '(normal visual)
      :keymaps 'pdf-outline-buffer-mode-map
      "RET" 'pdf-outline-follow-link
