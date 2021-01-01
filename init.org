@@ -4854,13 +4854,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package synosaurus
     :commands (synosaurus-lookup synosaurus-choose-and-replace)
-    :init
+    :general
     (my/leader-keys
       "xSl" 'synosaurus-lookup
       "xSr" 'synosaurus-choose-and-replace)
     :config
+    (require 'synosaurus-wordnet)
     (setq synosaurus-backend 'synosaurus-backend-wordnet
-	  synosaurus-choose-method 'ivy-read))
+	  synosaurus-choose-method 'ivy-read)
+    (synosaurus-mode))
 #+END_SRC
 ** langtool
 #+BEGIN_SRC emacs-lisp
