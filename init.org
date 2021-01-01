@@ -4168,16 +4168,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :defer nil
     :init
     (my/leader-keys
-     "aordy" 'org-roam-dailies-yesterday
-     "aordt" 'org-roam-dailies-today
-     "aordT" 'org-roam-dailies-tomorrow
-     "aorf" 'org-roam-find-file
-     "aorg" 'org-roam-graph
-     "aori" 'org-roam-insert
-     "aorI" 'org-roam-insert-immediate
-     "aorl" 'org-roam
-     "aorta" 'org-roam-tag-add
-     "aortd" 'org-roam-tag-delete)
+      "aordy" 'org-roam-dailies-yesterday
+      "aordt" 'org-roam-dailies-today
+      "aordT" 'org-roam-dailies-tomorrow
+      "aorf" 'org-roam-find-file
+      "aorg" 'org-roam-graph
+      "aori" 'org-roam-insert
+      "aorI" 'org-roam-insert-immediate
+      "aorl" 'org-roam
+      "aorta" 'org-roam-tag-add
+      "aortd" 'org-roam-tag-delete)
     (my/leader-keys-major-mode
       :keymmaps 'org-mode
       "rb" 'org-roam-switch-to-buffer
