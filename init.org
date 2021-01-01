@@ -3456,17 +3456,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** version control
 #+BEGIN_SRC emacs-lisp
   (use-package diff-hl
-    :commands (diff-hl-mode
-	       diff-hl-flydiff-mode
-	       diff-hl-margin-minor-mode)
     :init
     (progn
       (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
-      (add-hook 'emacs-lisp-mode-hook (lambda ()
-					(diff-hl-mode 1)
-					(diff-hl-flydiff-mode 1)
-					;; (diff-hl-margin-minor-mode 1)
-					))))
+      (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh))
+    :config
+    (global-diff-hl-mode))
 #+END_SRC
 ** git
 *** magit   
