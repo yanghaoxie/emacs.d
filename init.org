@@ -4730,7 +4730,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    lsp-pyls-plugins-pyflakes-enabled nil
 	    lsp-pyls-plugins-mccabe-enabled nil
 	    lsp-pyls-plugins-yapf-enabled nil
-	    lsp-signature-render-documentation nil)))
+	    lsp-signature-render-documentation nil
+	    lsp-headerline-breadcrumb-enable-symbol-numbers t
+	    lsp-headerline-breadcrumb-enable-diagnostics nil)))
 #+END_SRC
 *** company lsp
 #+BEGIN_SRC emacs-lisp :tangle no
