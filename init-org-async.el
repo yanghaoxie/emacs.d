@@ -10,9 +10,6 @@
   :ensure org-plus-contrib
   :config
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
-  (add-hook 'org-mode-hook
-	    (lambda ()
-	      (add-to-list (make-local-variable 'company-backends) '(company-ispell company-capf))))
   (add-hook 'org-mode-hook 'turn-on-auto-fill)
   (setq org-src-tab-acts-natively t
 	org-edit-src-auto-save-idle-delay 5
