@@ -4816,7 +4816,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 			    (require 'lsp-pyright)
 			    (lsp-deferred)))
     :config
-    (setq lsp-pyright-multi-root nil))
+    (setq lsp-pyright-multi-root nil
+	  lsp-pyright-auto-import-completions nil))
 #+end_src
 *** lsp latex
 #+BEGIN_SRC emacs-lisp :tangle no
