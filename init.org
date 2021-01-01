@@ -4164,6 +4164,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 **** org roam
 #+begin_src emacs-lisp
   (use-package org-roam
+    :hook (after-init . org-roam-mode)
     :defer nil
     :init
     (my/leader-keys
