@@ -3532,7 +3532,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "ts" 'my/toggle-syntax-checking)
     :config
-    (setq flycheck-display-errors-delay 0.2)
+    (setq flycheck-display-errors-delay 0.2
+	  flycheck-emacs-lisp-load-path 'inherit)
     (flycheck-add-next-checker 'python-flake8 'python-pylint)
     (my/leader-keys
       "eb" 'flycheck-buffer
