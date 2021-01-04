@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: chinese acronym
+# key: acc
+# --
+\newacronym[description=${1:description}]{${2:label}}{${2:$(upcase yas-text)}}{${3:Name}}
