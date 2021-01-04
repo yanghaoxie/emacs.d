@@ -3371,7 +3371,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :ghook ('(prog-mode-hook
 	      org-mode-hook
 	      LaTeX-mode-hook)
-	    #'yas-minor-mode))
+	    #'yas-minor-mode)
+    :init
+    (add-hook 'yas-minor-mode-hook
+	      (lambda () (yas-load-directory yas--default-user-snippets-dir))))
 #+END_SRC
 *** yasnippet-snippets
 #+BEGIN_SRC emacs-lisp
