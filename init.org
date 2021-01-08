@@ -2007,9 +2007,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package undo-fu
     :general
     (my/normal-keys
-      "U" 'undo-fu-only-redo)
-    :config
-    (global-undo-tree-mode -1))
+      "U" 'undo-fu-only-redo))
 
   (use-package undo-fu-session
     :config
