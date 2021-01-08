@@ -159,6 +159,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#version-control][version control]]
   - [[#git][git]]
     - [[#magit][magit]]
+    - [[#transient-posframe][transient posframe]]
     - [[#evil-magit][evil magit]]
     - [[#magit-todos][magit todos]]
   - [[#github][github]]
@@ -3503,6 +3504,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  magit-completing-read-function #'ivy-completing-read
 	  magit-diff-refine-hunk 'all))
 #+END_SRC
+*** transient posframe
+#+begin_src emacs-lisp
+  (use-package transient-posframe
+    :load-path "~/Program/transient-posframe"
+    :after (transient magit)
+    :config
+    (setq transient-posframe-border-width 2)
+    (transient-posframe-mode))
+#+end_src
 *** evil magit
 #+BEGIN_SRC emacs-lisp
   (use-package evil-magit
