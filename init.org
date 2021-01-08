@@ -5413,7 +5413,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "as" 'eshell)
     :init
     (setq shell-pop-shell-type (quote ("vterm" "*vterm*" (lambda nil (vterm))))
-	  shell-pop-full-span t))
+	  shell-pop-full-span t)
+    :config
+    (with-eval-after-load 'window-purpose
+      (purpose-set-extension-configuration
+       :vterm
+       (purpose-conf "vterm"
+		     :mode-purposes
+		     '((vterm-mode . terminal))))))
 #+END_SRC
 *** eshell z
 #+BEGIN_SRC emacs-lisp
