@@ -4937,6 +4937,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (require 'pdf-sync)
       (require 'pdf-history)
       (require 'pdf-outline)
+      (require 'pdf-annot)
       (pdf-tools-install :no-query)
 
       (defhydra hydra-zoom-pdf ()
