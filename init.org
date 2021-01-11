@@ -159,6 +159,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#version-control][version control]]
   - [[#git][git]]
     - [[#magit][magit]]
+    - [[#transient-posframe][transient posframe]]
     - [[#evil-magit][evil magit]]
     - [[#magit-todos][magit todos]]
   - [[#github][github]]
@@ -2007,9 +2008,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package undo-fu
     :general
     (my/normal-keys
-      "U" 'undo-fu-only-redo)
-    :config
-    (global-undo-tree-mode -1))
+      "U" 'undo-fu-only-redo))
 
   (use-package undo-fu-session
     :config
@@ -3505,6 +3504,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  magit-completing-read-function #'ivy-completing-read
 	  magit-diff-refine-hunk 'all))
 #+END_SRC
+*** transient posframe
+#+begin_src emacs-lisp
+  (use-package transient-posframe
+    :load-path "~/Program/transient-posframe"
+    :after (transient magit)
+    :config
+    (setq transient-posframe-border-width 2)
+    (transient-posframe-mode))
+#+end_src
 *** evil magit
 #+BEGIN_SRC emacs-lisp
   (use-package evil-magit
@@ -4948,6 +4956,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (require 'pdf-sync)
       (require 'pdf-history)
       (require 'pdf-outline)
+      (require 'pdf-annot)
       (pdf-tools-install :no-query)
 
       (defhydra hydra-zoom-pdf ()
@@ -4965,7 +4974,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 				    (set (make-local-variable 'evil-normal-state-cursor) (list nil))
 				    (set (make-local-variable 'evil-insert-state-cursor) (list nil))
 				    (set (make-local-variable 'evil-visual-state-cursor) (list nil))))
-    (add-hook 'pdf-view-mode-hook (lambda() (pdf-view-midnight-minor-mode 1)))
     ;;turn off cua so copy works
     (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
     (add-hook 'pdf-view-mode-hook #'pdf-tools-enable-minor-modes)
