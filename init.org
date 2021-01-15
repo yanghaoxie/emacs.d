@@ -3161,9 +3161,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package swiper
     :general
-    ("C-s" 'swiper)
+    ("C-s" 'swiper-isearch)
     (my/leader-keys
-     "ss" 'swiper))
+     "ss" 'swiper-isearch))
 #+END_SRC
 *** ivy-xref
 #+BEGIN_SRC emacs-lisp
@@ -3252,6 +3252,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  ivy-posframe-height nil)
     (setq ivy-posframe-display-functions-alist
 	  '((swiper . ivy-posframe-display-at-window-bottom-left)
+	    (swiper-isearch . ivy-posframe-display-at-window-bottom-left)
 	    (t . ivy-posframe-display-at-frame-center)
 	    ))
     (ivy-posframe-mode 1))
