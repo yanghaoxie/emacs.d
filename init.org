@@ -3176,9 +3176,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package swiper
     :general
-    ("C-s" 'swiper)
+    ("C-s" 'swiper-isearch)
     (my/leader-keys
-     "ss" 'swiper))
+     "ss" 'swiper-isearch))
 #+END_SRC
 *** ivy-xref
 #+BEGIN_SRC emacs-lisp
@@ -3267,6 +3267,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  ivy-posframe-height nil)
     (setq ivy-posframe-display-functions-alist
 	  '((swiper . ivy-posframe-display-at-window-bottom-left)
+	    (swiper-isearch . ivy-posframe-display-at-window-bottom-left)
 	    (t . ivy-posframe-display-at-frame-center)
 	    ))
     (ivy-posframe-mode 1))
@@ -4378,6 +4379,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "."   'LaTeX-mark-environment  ;; C-c .
       "/"   'TeX-command-master
       "c"   'LaTeX-close-environment ;; C-c ]
+      "M-c" 'my/run-latexmk-in-project-root
       ;; "e"   'LaTeX-environment       ;; C-c C-e
       "e"   'cdlatex-environment
       "M-e" 'TeX-next-error
@@ -4398,6 +4400,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "pp"  'preview-at-point
       "pr"  'preview-region
       "ps"  'preview-section))
+
+  ;;;###autoload
+  (defun my/run-latexmk-in-project-root ()
+    "Run latexmk in project root."
+    (interactive)
+    (projectile-with-default-dir (projectile-acquire-root)
+      (async-shell-command "latexmk")))
+
+  (add-to-list 'display-buffer-alist
+	       `(,shell-command-buffer-name-async . display-buffer-no-window))
 #+END_SRC
 *** auctex latexmk
 #+begin_src emacs-lisp
