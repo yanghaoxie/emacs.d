@@ -194,6 +194,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
     - [[#auctex-latexmk][auctex latexmk]]
     - [[#company-auctex][company-auctex]]
     - [[#cdlatex][cdlatex]]
+    - [[#ospl-mode][ospl mode]]
   - [[#lua][lua]]
   - [[#yaml][yaml]]
   - [[#python-related][python related]]
@@ -4449,6 +4450,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'cdlatex-tab-hook #'my-indent-for-tab-command))
 #+END_SRC
 #+END_SRC
+*** ospl mode
+#+begin_src emacs-lisp
+  (use-package ospl-mode
+    :load-path "~/Program/ospl-mode")
+#+end_src
 ** lua
 #+BEGIN_SRC emacs-lisp
   (use-package lua-mode
