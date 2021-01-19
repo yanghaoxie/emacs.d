@@ -937,6 +937,20 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (when filename
 	(kill-new filename)
 	(message "Copied buffer file name '%s' to the clipboard." filename))))
+
+  ;;;###autoload
+  (defun my/find-next-file (&optional backward)
+    "Find the next file (by name) in the current directory.
+
+  With prefix arg, find the previous file."
+    (interactive "P")
+    (when buffer-file-name
+      (let* ((file (expand-file-name buffer-file-name))
+	     (files (cl-remove-if (lambda (file) (cl-first (file-attributes file)))
+				  (sort (directory-files (file-name-directory file) t nil t) 'string<)))
+	     (pos (mod (+ (cl-position file files :test 'equal) (if backward -1 1))
+		       (length files))))
+	(find-file (nth pos files)))))
 #+END_SRC
 * defaults
 ** setting related in build-in features
@@ -1413,7 +1427,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   ;; file ----------------------------------------------------------------------
   (my/leader-keys
     "fs" 'save-buffer
-    "fn" 'my/copy-file-name-to-clipboard)
+    "fN" 'my/copy-file-name-to-clipboard
+    "fn" 'my/find-next-file)
   ;; frame
   (my/leader-keys
     "Fd" 'delete-frame
@@ -3265,7 +3280,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  ivy-posframe-height nil)
     (setq ivy-posframe-display-functions-alist
 	  '((swiper . ivy-posframe-display-at-window-bottom-left)
-	    (swiper-isearch . ivy-posframe-display-at-window-bottom-left)
+	    (swiper-isearch . ivy-display-function-fallback)
 	    (t . ivy-posframe-display-at-frame-center)
 	    ))
     (ivy-posframe-mode 1))
