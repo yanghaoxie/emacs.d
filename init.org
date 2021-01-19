@@ -5894,7 +5894,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  rime-posframe-properties (list :internal-border-width 1)
 	  rime-disable-predicates '(rime-predicate-evil-mode-p
 				    rime-predicate-after-alphabet-char-p
-				    rime-predicate-prog-in-code-p)))
+				    rime-predicate-prog-in-code-p
+				    rime-predicate-after-ascii-char-p
+				    rime-predicate-current-uppercase-letter-p)))
 #+end_src
 ** cal china x
 #+BEGIN_SRC emacs-lisp
