@@ -1591,7 +1591,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "tha" 'my/toggle-highlight-symbol
       "sh" 'highlight-symbol-at-point
-      "sr" 'highlight-symbol-remove-all)
+      "sr" 'highlight-symbol-remove-all
+      "s." 'hydra-highlight-symbol/body)
     (:states '(normal visual motion)
      "M-]" 'highlight-symbol-next
      "M-[" 'highlight-symbol-prev
@@ -1599,6 +1600,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq highlight-symbol-idle-delay 0.5
 	  highlight-symbol-occurrence-message '(explicit nivigation temporary)))
+
+  ;;;###autoload
+  (defhydra hydra-highlight-symbol ()
+    "Hydra for highlight symbol"
+    ("." highlight-symbol-at-point "highlight")
+    ("n" highlight-symbol-next "next")
+    ("p" highlight-symbol-prev "prev")
+    ("N" highlight-symbol-next-in-defun "next in defun")
+    ("P" highlight-symbol-prev-in-defun "prev in defun")
+    ("q" nil "quit"))
 #+END_SRC
 ** color identifiers mode
 #+BEGIN_SRC emacs-lisp
