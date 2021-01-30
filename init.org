@@ -4430,6 +4430,21 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 			       company-auctex-macros
 			       company-auctex-symbols
 			       company-auctex-environments)))))
+  ;; Support comma separated list of references
+  ;; https://github.com/alexeyr/company-auctex/issues/34
+  ;;;###autoload
+  (defun my/company-auctex-labels (command &optional arg &rest ignored)
+    "company-auctex-labels backend"
+    (interactive (list 'interactive))
+    (cl-case command
+      (interactive (company-begin-backend 'company-auctex-labels))
+      (prefix (let ((prefixes (company-auctex-prefix "\\\\[^[{]*\\(?:\\[[^]]*\\]\\)?{\\([^}]*\\)\\=")))
+		(if prefixes
+		    (last (split-string prefixes "," t))
+		  nil)))
+      (candidates (company-auctex-label-candidates arg))))
+
+  (advice-add 'company-auctex-labels :override #'my/company-auctex-labels)
 #+END_SRC
 *** cdlatex
 #+BEGIN_SRC emacs-lisp
