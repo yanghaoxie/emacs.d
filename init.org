@@ -194,6 +194,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
     - [[#auctex-latexmk][auctex latexmk]]
     - [[#company-auctex][company-auctex]]
     - [[#cdlatex][cdlatex]]
+    - [[#ospl-mode][ospl mode]]
   - [[#lua][lua]]
   - [[#yaml][yaml]]
   - [[#python-related][python related]]
@@ -238,6 +239,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
     - [[#eshell-z][eshell z]]
     - [[#eshell-prompt-extras][eshell prompt extras]]
     - [[#emacs-libvterm][emacs libvterm]]
+    - [[#multi-vterm][multi vterm]]
   - [[#ledger-related][ledger related]]
     - [[#ledger][ledger]]
     - [[#evil-ledger][evil ledger]]
@@ -1606,7 +1608,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys
       "tha" 'my/toggle-highlight-symbol
       "sh" 'highlight-symbol-at-point
-      "sr" 'highlight-symbol-remove-all)
+      "sr" 'highlight-symbol-remove-all
+      "s." 'hydra-highlight-symbol/body)
     (:states '(normal visual motion)
      "M-]" 'highlight-symbol-next
      "M-[" 'highlight-symbol-prev
@@ -1614,6 +1617,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq highlight-symbol-idle-delay 0.5
 	  highlight-symbol-occurrence-message '(explicit nivigation temporary)))
+
+  ;;;###autoload
+  (defhydra hydra-highlight-symbol ()
+    "Hydra for highlight symbol"
+    ("." highlight-symbol-at-point "highlight")
+    ("n" highlight-symbol-next "next")
+    ("p" highlight-symbol-prev "prev")
+    ("N" highlight-symbol-next-in-defun "next in defun")
+    ("P" highlight-symbol-prev-in-defun "prev in defun")
+    ("q" nil "quit"))
 #+END_SRC
 ** color identifiers mode
 #+BEGIN_SRC emacs-lisp
@@ -3512,13 +3525,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (:keymaps 'magit-file-section-map
      "RET" 'magit-diff-visit-worktree-file-other-window)
     :init
-    (add-hook 'magit-popup-mode-hook (lambda () (display-line-numbers-mode -1)))
-    (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1)))
-    (add-hook 'magit-revision-mode-hook (lambda () (display-line-numbers-mode 1)))
+    (add-hook 'magit-refresh-buffer-hook 'visual-line-mode)
     :config
     (setq transient-display-buffer-action '(display-buffer-below-selected)
 	  magit-completing-read-function #'ivy-completing-read
-	  magit-diff-refine-hunk 'all))
+	  magit-diff-refine-hunk 'all
+	  magit-section-disable-line-numbers nil))
 #+END_SRC
 *** transient posframe
 #+begin_src emacs-lisp
@@ -4328,8 +4340,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :mode (".tex\\'" . LaTeX-mode)
     :config
     (progn
-      (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
-      ;; (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+      ;; (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+      (add-hook 'LaTeX-mode-hook 'visual-line-mode)
       (setq TeX-save-query nil)
       (setq TeX-view-program-selection
 	    (quote
@@ -4466,6 +4478,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'cdlatex-tab-hook #'my-indent-for-tab-command))
 #+END_SRC
 #+END_SRC
+*** ospl mode
+#+begin_src emacs-lisp
+  (use-package ospl-mode
+    :load-path "~/Program/ospl-mode")
+#+end_src
 ** lua
 #+BEGIN_SRC emacs-lisp
   (use-package lua-mode
@@ -5485,6 +5502,45 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (add-hook 'vterm-mode-hook
 	      (lambda () (display-line-numbers-mode -1))))
 #+END_SRC
+*** multi vterm
+#+begin_src emacs-lisp
+  (use-package multi-vterm
+    :general
+    (my/leader-keys
+       "pt" 'multi-vterm-project)
+    :config
+    (add-hook 'vterm-mode-hook
+	      (lambda ()
+		(evil-insert-state)))
+    (define-key vterm-mode-map [return]                      #'vterm-send-return)
+
+    (setq vterm-keymap-exceptions nil)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-e")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-f")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-a")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-v")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-b")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-w")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-u")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-d")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-n")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-m")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-p")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-j")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-k")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-r")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-t")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-g")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-c")      #'vterm--self-insert)
+    (evil-define-key 'insert vterm-mode-map (kbd "C-SPC")    #'vterm--self-insert)
+    (evil-define-key 'normal vterm-mode-map (kbd "C-d")      #'vterm--self-insert)
+    (evil-define-key 'normal vterm-mode-map (kbd ",c")       #'multi-vterm)
+    (evil-define-key 'normal vterm-mode-map (kbd ",n")       #'multi-vterm-next)
+    (evil-define-key 'normal vterm-mode-map (kbd ",p")       #'multi-vterm-prev)
+    (evil-define-key 'normal vterm-mode-map (kbd "i")        #'evil-insert-resume)
+    (evil-define-key 'normal vterm-mode-map (kbd "o")        #'evil-insert-resume)
+    (evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
+#+end_src
 ** ledger related
 *** ledger
 #+BEGIN_SRC emacs-lisp
@@ -5660,8 +5716,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    
 #+BEGIN_SRC emacs-lisp
   (use-package pomodoro
-    :ensure nil
-    :load-path "~/Program/pomodoro.el"
     :commands pomodoro-start
     :init
     (my/leader-keys
@@ -5872,7 +5926,38 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  rime-posframe-properties (list :internal-border-width 1)
 	  rime-disable-predicates '(rime-predicate-evil-mode-p
 				    rime-predicate-after-alphabet-char-p
-				    rime-predicate-prog-in-code-p)))
+				    rime-predicate-prog-in-code-p
+				    rime-predicate-after-ascii-char-p
+				    rime-predicate-current-uppercase-letter-p
+				    rime-predicate-auto-english-p
+				    rime-predicate-punctuation-line-begin-p))
+    (defun rime-evil-escape-advice (orig-fun key)
+      "advice for `rime-input-method' to make it work together with `evil-escape'.
+	  Mainly modified from `evil-escape-pre-command-hook'"
+      (if rime--preedit-overlay
+	  ;; if `rime--preedit-overlay' is non-nil, then we are editing something, do not abort
+	  (apply orig-fun (list key))
+	(when (featurep 'evil-escape)
+	  (let* (
+		 (fkey (elt evil-escape-key-sequence 0))
+		 (skey (elt evil-escape-key-sequence 1))
+		 (evt (read-event nil nil evil-escape-delay))
+		 )
+	    (cond
+	     ((and (characterp evt)
+		   (or (and (char-equal key fkey) (char-equal evt skey))
+		       (and evil-escape-unordered-key-sequence
+			    (char-equal key skey) (char-equal evt fkey))))
+	      (evil-repeat-stop)
+	      (evil-normal-state))
+	     ((null evt) (apply orig-fun (list key)))
+	     (t
+	      (apply orig-fun (list key))
+	      (if (numberp evt)
+		  (apply orig-fun (list evt))
+		(setq unread-command-events (append unread-command-events (list evt))))))))))
+
+    (advice-add 'rime-input-method :around #'rime-evil-escape-advice))
 #+end_src
 ** cal china x
 #+BEGIN_SRC emacs-lisp
