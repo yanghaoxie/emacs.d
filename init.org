@@ -5703,8 +5703,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
    
 #+BEGIN_SRC emacs-lisp
   (use-package pomodoro
-    :ensure nil
-    :load-path "~/Program/pomodoro.el"
     :commands pomodoro-start
     :init
     (my/leader-keys
