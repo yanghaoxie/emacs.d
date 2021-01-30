@@ -5915,7 +5915,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 				    rime-predicate-after-alphabet-char-p
 				    rime-predicate-prog-in-code-p
 				    rime-predicate-after-ascii-char-p
-				    rime-predicate-current-uppercase-letter-p))
+				    rime-predicate-current-uppercase-letter-p
+				    rime-predicate-auto-english-p
+				    rime-predicate-punctuation-line-begin-p))
     (defun rime-evil-escape-advice (orig-fun key)
       "advice for `rime-input-method' to make it work together with `evil-escape'.
 	  Mainly modified from `evil-escape-pre-command-hook'"
