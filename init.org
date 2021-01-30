@@ -3525,14 +3525,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (:keymaps 'magit-file-section-map
      "RET" 'magit-diff-visit-worktree-file-other-window)
     :init
-    (add-hook 'magit-popup-mode-hook (lambda () (display-line-numbers-mode -1)))
-    (add-hook 'magit-status-mode-hook (lambda () (display-line-numbers-mode 1)))
-    (add-hook 'magit-revision-mode-hook (lambda () (display-line-numbers-mode 1)))
     (add-hook 'magit-refresh-buffer-hook 'visual-line-mode)
     :config
     (setq transient-display-buffer-action '(display-buffer-below-selected)
 	  magit-completing-read-function #'ivy-completing-read
-	  magit-diff-refine-hunk 'all))
+	  magit-diff-refine-hunk 'all
+	  magit-section-disable-line-numbers nil))
 #+END_SRC
 *** transient posframe
 #+begin_src emacs-lisp
