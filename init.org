@@ -5002,6 +5002,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** pdf tools
 #+BEGIN_SRC emacs-lisp
   (use-package pdf-tools
+    :ensure nil
+    :quelpa (pdf-tools
+	     :fetcher github
+	     :repo "flatwhatson/pdf-tools"
+	     :branch "fix-macros"
+	     :files ("lisp/*.el"
+		     "README"
+		     ("build" "Makefile")
+		     ("build" "server")
+		     (:exclude "lisp/tablist.el" "lisp/tablist-filter.el")))
     :diminish pdf-view-midnight-minor-mode
     :mode (("\\.pdf\\'" . pdf-view-mode))
     :config
