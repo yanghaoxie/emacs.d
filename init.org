@@ -401,6 +401,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package diminish)
   (require 'diminish)
   (setq use-package-verbose t)
+
+  (use-package quelpa
+    :config
+    (setq quelpa-update-melpa-p nil))
+
+  (use-package quelpa-use-package)
 #+END_SRC
 *** hydra
 #+BEGIN_SRC emacs-lisp :tangle yes
