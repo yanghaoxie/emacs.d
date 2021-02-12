@@ -4777,27 +4777,26 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "br" #'lsp-workspace-restart
       "bs" #'lsp-workspace-shutdown)
     :config
-    (progn
-      (setq lsp-message-project-root-warning t
-	    lsp-prefer-flymake nil
-	    lsp-restart 'ignore
-	    lsp-eldoc-hook nil
-	    lsp-eldoc-enable-hover nil
-	    lsp-auto-configure t
-	    lsp-enable-symbol-highlighting nil
-	    lsp-enable-file-watchers nil
-	    lsp-pyls-plugins-preload-modules ["numpy", "networkx", "cplex"]
-	    lsp-pyls-plugins-pydocstyle-enabled t
-	    lsp-pyls-plugins-pydocstyle-convention "numpy"
-	    lsp-pyls-plugins-rope-completion-enabled t
-	    lsp-pyls-plugins-pylint-enabled t
-	    lsp-pyls-plugins-flake8-enabled nil
-	    lsp-pyls-plugins-pyflakes-enabled nil
-	    lsp-pyls-plugins-mccabe-enabled nil
-	    lsp-pyls-plugins-yapf-enabled nil
-	    lsp-signature-render-documentation nil
-	    lsp-headerline-breadcrumb-enable-symbol-numbers t
-	    lsp-headerline-breadcrumb-enable-diagnostics nil))
+    (setq lsp-message-project-root-warning t
+	  lsp-prefer-flymake nil
+	  lsp-restart 'ignore
+	  lsp-eldoc-hook nil
+	  lsp-eldoc-enable-hover nil
+	  lsp-auto-configure t
+	  lsp-enable-symbol-highlighting nil
+	  lsp-enable-file-watchers nil
+	  lsp-signature-render-documentation nil
+	  lsp-headerline-breadcrumb-enable-symbol-numbers t
+	  lsp-headerline-breadcrumb-enable-diagnostics nil)
+    (setq lsp-pyls-plugins-preload-modules ["numpy", "networkx", "cplex"]
+	  lsp-pyls-plugins-pydocstyle-enabled t
+	  lsp-pyls-plugins-pydocstyle-convention "numpy"
+	  lsp-pyls-plugins-rope-completion-enabled t
+	  lsp-pyls-plugins-pylint-enabled t
+	  lsp-pyls-plugins-flake8-enabled nil
+	  lsp-pyls-plugins-pyflakes-enabled nil
+	  lsp-pyls-plugins-mccabe-enabled nil
+	  lsp-pyls-plugins-yapf-enabled nil)
     (setq read-process-output-max (* 1024 1024)))
 #+END_SRC
 *** company lsp
