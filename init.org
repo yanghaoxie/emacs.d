@@ -5033,6 +5033,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (my/leader-keys-major-mode
 	:keymaps 'pdf-view-mode-map
 	"z" 'hydra-zoom-pdf/body))
+    :init
     (add-hook 'pdf-view-mode-hook (lambda()
 				    (display-line-numbers-mode -1)
 				    (set (make-local-variable 'evil-normal-state-cursor) (list nil))
