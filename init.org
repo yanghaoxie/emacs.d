@@ -3261,6 +3261,10 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "pss" 'counsel-projectile-ag
       "psr" 'counsel-projectile-rg)
     :config
+    (setq counsel-projectile-sort-projects t
+	  counsel-projectile-sort-directories t
+	  counsel-projectile-sort-files t
+	  counsel-projectile-sort-buffers t)
     (counsel-projectile-mode))
 #+END_SRC
 *** flyspell correct ivy
