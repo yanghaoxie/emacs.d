@@ -2075,6 +2075,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package smartparens
     :diminish smartparens-mode
     :config
+    (require 'smartparens-config)
     (smartparens-global-mode t)
     (smartparens-global-strict-mode t)
     ;; :init
