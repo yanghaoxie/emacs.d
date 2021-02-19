@@ -2134,7 +2134,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "k" 'sp-kill-sexp
       "K" 'sp-backward-kill-sexp
       "M-k" 'my/sp-kill-inside-sexp
-      "w" 'sp-copy-sexp)
+      "w" 'sp-copy-sexp
+      "W" 'my/sp-copy-inner)
     (defun my/toggle-smartparens ()
       (interactive)
       (if (bound-and-true-p smartparens-mode)
@@ -2220,6 +2221,14 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     "Kill inside of sexp."
     (interactive)
     (sp-kill-sexp 0))
+
+  ;;;###autoload
+  (defun my/sp-copy-inner ()
+    (interactive)
+    (-when-let (ok (sp-get-sexp))
+      (sp-get ok
+	(copy-region-as-kill :beg-in :end-in t)
+	(goto-char :beg-in))))
 
   (advice-add 'sp-change-inner :after #'evil-insert-state)
 #+END_SRC
