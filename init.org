@@ -6031,6 +6031,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 ** emacs rime
 #+begin_src emacs-lisp
   (use-package rime
+    :commands (rime-force-enable toggle-input-method)
+    :general
+    (my/all-states-keys
+      :keymaps 'override
+      "M-j" 'rime-force-enable)
     :config
     (setq default-input-method "rime"
 	  rime-show-candidate 'posframe
