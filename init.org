@@ -4517,7 +4517,33 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (defun my-indent-for-tab-command ()
       (indent-for-tab-command)
       t)
-    (add-hook 'cdlatex-tab-hook #'my-indent-for-tab-command))
+    (add-hook 'cdlatex-tab-hook #'my-indent-for-tab-command)
+    (setq cdlatex-env-alist '(
+  ( "quote"
+  "\\begin{quote}
+  ?
+  \\end{quote}"
+  nil
+  )
+  ( "response"
+  "\\begin{response}
+  ?
+  \\end{response}"
+  nil
+  )
+  ( "action"
+  "\\begin{action}
+  ?
+  \\end{action}"
+  nil
+  )
+  ( "revcomment"
+  "\\begin{revcomment}
+  ?
+  \\end{revcomment}"
+  nil
+  )
+  )))
 #+END_SRC
 #+END_SRC
 *** ospl mode
