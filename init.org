@@ -4850,6 +4850,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  lsp-signature-render-documentation nil
 	  lsp-headerline-breadcrumb-enable-symbol-numbers t
 	  lsp-headerline-breadcrumb-enable-diagnostics nil
+	  lsp-headerline-breadcrumb-segments '(file symbols)
 	  lsp-modeline-code-actions-enable nil
 	  lsp-modeline-workspace-status-enable nil
 	  lsp-modeline-diagnostics-enable nil
