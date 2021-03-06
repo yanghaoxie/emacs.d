@@ -2234,8 +2234,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (interactive)
     (-when-let (ok (sp-get-sexp))
       (sp-get ok
-	(copy-region-as-kill :beg-in :end-in t)
-	(goto-char :beg-in))))
+	(kill-ring-save :beg-in :end-in))))
 
   (advice-add 'sp-change-inner :after #'evil-insert-state)
 #+END_SRC
