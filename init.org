@@ -4961,12 +4961,24 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  lsp-pyright-auto-import-completions nil))
 #+end_src
 *** lsp latex
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
   (use-package lsp-latex
-    :load-path "~/Program/lsp-latex"
+    :init
+    (add-hook 'LaTeX-mode-hook (lambda () (lsp-deferred)))
     :config
-    (setq lsp-latex-texlab-executable "~/Program/texlab/texlab")
-    (add-to-list 'lsp-language-id-configuration '(latex-mode . "latex")))
+    (require 'lsp-latex)
+    (setq lsp-latex-forward-search-executable "emacsclient"
+	  lsp-latex-forward-search-args
+	  '("--eval"
+	    "(lsp-latex-forward-search-with-pdf-tools \"%f\" \"%p\" \"%l\")"))
+    (advice-add
+     'lsp-latex-build
+     :before
+      (lambda (&rest r) (when (buffer-modified-p) (save-buffer)))
+      '((name . "save-buffer-if-modified")))
+    (my/leader-keys-major-mode
+      "M-f" 'lsp-latex-forward-search
+      "a" 'lsp-latex-build))
 #+END_SRC
 * writing
 ** academic phrases
