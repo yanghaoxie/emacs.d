@@ -5132,6 +5132,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "w" 'pdf-view-fit-width-to-window
       "H" 'pdf-view-fit-height-to-window
       "p" 'pdf-view-fit-page-to-window
+      "P" 'my/pdf-view-fit-page-to-window-all-windows
       ;; Search
       "/" 'isearch-forward
       "?" 'isearch-backward
@@ -5186,6 +5187,16 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys-major-mode
       :keymaps 'LaTeX-mode-map
       "M-f" 'pdf-sync-forward-search))
+
+  (require 'cl-lib)
+  ;;;###autoload
+  (defun my/pdf-view-fit-page-to-window-all-windows ()
+    "Fit pdf in all windows using `pdf-view-fit-page-to-window'"
+    (interactive)
+    (cl-loop for wind in (window-list)
+	     do (with-selected-window wind
+		  (if (equal major-mode 'pdf-view-mode)
+		      (pdf-view-fit-page-to-window)))))
 #+END_SRC
 ** org pdftools
 #+begin_src emacs-lisp :tangle no
