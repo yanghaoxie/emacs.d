@@ -1405,6 +1405,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       :keymaps 'occur-mode-map
       "RET" 'occur-mode-goto-occurrence-other-window
       "q" 'quit-window))
+
+  (use-package files
+    :ensure nil
+    :config
+    (setq large-file-warning-threshold 20000000))
   ;; key bindings
 
   (my/all-states-keys
