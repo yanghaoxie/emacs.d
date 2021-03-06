@@ -4551,7 +4551,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 #+END_SRC
 *** ospl mode
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (use-package ospl-mode
     :load-path "~/Program/ospl-mode")
 #+end_src
