@@ -6033,7 +6033,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package rime
     :config
     (setq default-input-method "rime"
-	  rime-user-data-dir "~/.config/fcitx/rime"
 	  rime-show-candidate 'posframe
 	  rime-posframe-style 'horizontal
 	  rime-posframe-properties (list :internal-border-width 1)
