@@ -4477,7 +4477,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (auctex-latexmk-setup))
 #+end_src
 *** company-auctex
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package company-auctex
     :mode (".tex\\'" . LaTeX-mode)
     :init
