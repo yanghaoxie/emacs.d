@@ -6018,15 +6018,20 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (advice-add 'pyim-self-insert-command :around #'my-pyim-self-insert-command))
 #+END_SRC
 *** liberime
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
   (use-package liberime
     :after pyim
     :load-path "~/Program/liberime"
+    :init
+    (setq liberime-user-data-dir "/home/yhxie/.emacs.d/pyim/rime"
+	  liberime-shared-data-dir "/usr/share/rime-data")
     :config
     (liberime-start (expand-file-name "/usr/share/rime-data")
-		    (expand-file-name "~/.emacs.d/pyim/rime"))
-    (liberime-select-schema "luna_pinyin_simp")
-    (setq pyim-default-scheme 'rime-quanpin))
+		    (expand-file-name "/home/yhxie/.emacs.d/pyim/rime"))
+    (liberime-select-schema "double_pinyin_flypy")
+    (setq pyim-default-scheme 'rime
+	  default-input-method "pyim")
+    )
 #+END_SRC
 ** emacs rime
 #+begin_src emacs-lisp
