@@ -5972,14 +5972,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "," 'pyim-page-previous-page
      "." 'pyim-page-next-page)
     :config
+    (require 'pyim-liberime)
     (setq pyim-fuzzy-pinyin-alist '(("s" "sh")
 				    ("c" "ch")
 				    ("z" "zh")
 				    ("in" "ing")
 				    ("en" "eng")
 				    ("l" "n")))
-    (setq default-input-method "pyim")
-    (setq pyim-default-scheme 'quanpin)
     (setq-default pyim-english-input-switch-functions
 		  '(pyim-probe-dynamic-english
 		    pyim-probe-isearch-mode
