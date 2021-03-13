@@ -5962,7 +5962,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 * Chinese
 ** pyim
 *** pyim
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
   (use-package pyim
     :commands (pyim-convert-string-at-point toggle-input-method)
     :init
@@ -6033,7 +6033,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     )
 #+END_SRC
 ** emacs rime
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (use-package rime
     :commands (rime-force-enable toggle-input-method)
     :general
