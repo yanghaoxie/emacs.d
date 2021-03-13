@@ -3159,6 +3159,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package ivy-prescient
     :after (ivy counsel)
     :config
+    (setq ivy-prescient-enable-filtering nil)
     (ivy-prescient-mode)
     (prescient-persist-mode))
 #+END_SRC
