@@ -2698,7 +2698,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       projectile-root-bottom-up
       projectile-root-top-down-recurring))
       (setq projectile-project-root-files #'(".projectile")
-	    projectile-globally-ignored-file-suffixes '("eps" "npy"))
+	    projectile-globally-ignored-file-suffixes '("npy"))
       (projectile-mode)))
 #+END_SRC
 * navigation
