@@ -3787,7 +3787,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  org-refile-use-outline-path t
 	  org-outline-path-complete-in-steps nil
 	  org-imenu-depth 5
-	  org-src-window-setup 'split-window-below
+	  org-src-window-setup 'current-window
 	  org-export-in-background t
 	  org-export-async-init-file (concat user-emacs-directory "init-org-async.el")
 	  org-modules '(ol-w3m ol-bbdb ol-bibtex ol-docview ol-gnus ol-info ol-irc ol-mhe ol-rmail ol-eww org-special-blocks)
