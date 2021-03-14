@@ -1370,6 +1370,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package midnight
     :init
     (add-hook 'midnight-hook #'recentf-cleanup)
+    (add-hook 'midnight-hook #'clean-buffer-list)
     :config
     (setq clean-buffer-list-kill-regexps '("^.*")
 	  midnight-period 7200
