@@ -5946,7 +5946,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "r" 'deft-rename-file))
 #+END_SRC
 ** proxy mode
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package proxy-mode
     :commands proxy-mode
     :config
