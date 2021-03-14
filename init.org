@@ -3292,7 +3292,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq counsel-projectile-sort-projects t
 	  counsel-projectile-sort-directories t
 	  counsel-projectile-sort-files t
-	  counsel-projectile-sort-buffers t)
+	  counsel-projectile-sort-buffers t
+	  counsel-projectile-find-file-matcher 'counsel--find-file-matcher)
     (counsel-projectile-mode))
 #+END_SRC
 *** flyspell correct ivy
