@@ -65,6 +65,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
     - [[#spacemacs-purpose-popwin][spacemacs purpose popwin]]
   - [[#spaceline][spaceline]]
   - [[#my-modeline][my modeline]]
+  - [[#doom-modeline][doom modeline]]
   - [[#ranbow-mode][ranbow mode]]
   - [[#pretty-hydra][pretty hydra]]
   - [[#all-the-icons-related][all the icons related]]
@@ -1828,7 +1829,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 ** spaceline
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package spaceline-config
     :ensure spaceline
     :init
@@ -1927,6 +1928,15 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 
   (add-hook 'buffer-list-update-hook 'my--update-all)
 #+END_SRC
+** doom modeline
+#+begin_src emacs-lisp :tangle yes
+  (use-package doom-modeline
+    :hook (after-init . doom-modeline-mode)
+    :config
+    (setq doom-modeline-height 15
+	  doom-modeline-icon nil
+	  doom-modeline-buffer-encoding nil))
+#+end_src
 ** ranbow mode
 #+BEGIN_SRC emacs-lisp
   (use-package rainbow-mode
