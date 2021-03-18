@@ -815,7 +815,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package evil-collection
     :config
     (with-eval-after-load 'reftex (evil-collection-reftex-setup))
-    (with-eval-after-load 'magit (evil-collection-magit-todos-setup)))
+    (with-eval-after-load 'magit (evil-collection-magit-setup)))
 #+end_src
 * autoload
 
@@ -3581,7 +3581,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (transient-posframe-mode))
 #+end_src
 *** evil magit
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tagne no
   (use-package evil-magit
     :after (evil magit))
 #+END_SRC
