@@ -1009,6 +1009,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (setq frame-title-format
 	'("" invocation-name ": " (:eval (replace-regexp-in-string
 					  "^ +" "" (buffer-name)))))
+  (setq-default fill-column 79)
+
   (use-package desktop
     :config
     (add-to-list 'desktop-globals-to-save 'register-alist)
