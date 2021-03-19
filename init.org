@@ -3591,7 +3591,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (transient-posframe-mode))
 #+end_src
 *** evil magit
-#+BEGIN_SRC emacs-lisp :tagne no
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package evil-magit
     :after (evil magit))
 #+END_SRC
