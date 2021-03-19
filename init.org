@@ -815,8 +815,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+begin_src emacs-lisp
   (use-package evil-collection
     :config
-    (with-eval-after-load 'reftex (evil-collection-reftex-setup))
-    (with-eval-after-load 'magit (evil-collection-magit-setup)))
+    (evil-collection-init '(reftex magit)))
 #+end_src
 * autoload
 
