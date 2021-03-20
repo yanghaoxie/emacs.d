@@ -4267,7 +4267,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package org-roam
     :hook (after-init . org-roam-mode)
     :defer nil
-    :init
+    :general
     (my/leader-keys
       "aordy" 'org-roam-dailies-yesterday
       "aordt" 'org-roam-dailies-today
@@ -4280,7 +4280,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "aorta" 'org-roam-tag-add
       "aortd" 'org-roam-tag-delete)
     (my/leader-keys-major-mode
-      :keymmaps 'org-mode
+      :keymaps 'org-mode-map
       "rb" 'org-roam-switch-to-buffer
       "rdy" 'org-roam-dailies-yesterday
       "rdt" 'org-roam-dailies-today
