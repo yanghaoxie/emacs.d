@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: page-column-paragraph
+# key: pcp
+# --
+Page $1, column $2, paragraph $3 (Section $0).
