@@ -1086,12 +1086,12 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	    recentf-exclude '("/.emacs.d/pyim/" "/.elfeed/"))
       (recentf-mode 1)))
 
-  (use-package autorevert
-    :ensure nil
-    :diminish auto-revert-mode
-    :config
-    (setq auto-revert-interval 0.5)
-    (global-auto-revert-mode))
+  ;; (use-package autorevert
+  ;;   :ensure nil
+  ;;   :diminish auto-revert-mode
+  ;;   :config
+  ;;   (setq auto-revert-interval 0.5)
+  ;;   (global-auto-revert-mode))
 
   (use-package server
     :ensure nil
