@@ -3158,6 +3158,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
      "C-k" 'ivy-previous-line
      "M-k" 'ivy-switch-buffer-kill)
     :config
+    (add-to-list 'ivy-more-chars-alist '(counsel-ag . 2))
     (setq ivy-use-virtual-buffers t
 	  ivy-re-builders-alist '((t . ivy--regex-ignore-order))
 	  ivy-initial-inputs-alist nil
