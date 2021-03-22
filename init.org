@@ -4427,6 +4427,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
       (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
       (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
+      (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
       (add-hook 'LaTeX-mode-hook (lambda() (setq-local display-line-numbers-type 'relative))))
     :general
     ;; Key bindings for plain Tex
