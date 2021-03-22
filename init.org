@@ -4998,6 +4998,21 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (my/leader-keys-major-mode
       "M-f" 'lsp-latex-forward-search
       "a" 'lsp-latex-build))
+
+  (defcustom my/latex-output-file nil
+    "Latex master file."
+    :group 'lsp-latex
+    :type 'string)
+
+  ;;;###autoload
+  (defun my/revert-pdf (result)
+    "Revert compiled pdf file."
+    (TeX-revert-document-buffer
+     (or my/latex-output-file
+	 (expand-file-name
+	  (TeX-active-master (TeX-output-extension))))))
+
+  (advice-add 'lsp-latex--message-result-build :after #'my/revert-pdf)
 #+END_SRC
 * writing
 ** academic phrases
