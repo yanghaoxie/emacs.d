@@ -815,7 +815,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+begin_src emacs-lisp
   (use-package evil-collection
     :config
-    (evil-collection-init '(reftex magit magit-todos calendar)))
+    (evil-collection-init '(reftex magit magit-todos calendar occur debugger)))
 #+end_src
 * autoload
 
