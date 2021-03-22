@@ -1934,7 +1934,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq doom-modeline-height 15
 	  doom-modeline-icon nil
-	  doom-modeline-buffer-encoding nil))
+	  doom-modeline-buffer-encoding nil)
+    (doom-modeline-def-modeline 'pdf
+      '(bar workspace-name window-number modals matches buffer-info pdf-pages)
+      '(misc-info major-mode process vcs))
+    (doom-modeline-def-modeline 'org-src
+      '(bar workspace-name window-number modals matches buffer-info-simple buffer-position word-count parrot selection-info)
+      '(objed-state misc-info debug lsp minor-modes input-method indent-info buffer-encoding major-mode process checker)))
 #+end_src
 ** ranbow mode
 #+BEGIN_SRC emacs-lisp
