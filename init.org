@@ -548,7 +548,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+begin_src emacs-lisp
   (use-package comp
     :ensure nil
-    :if (boundp 'comp)
+    :if (featurep 'comp)
     :config
     (setq comp-async-report-warnings-errors nil
 	  comp-deferred-compilation nil
