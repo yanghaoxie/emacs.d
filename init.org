@@ -548,7 +548,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+begin_src emacs-lisp
   (use-package comp
     :ensure nil
-    :if (boundp 'comp)
+    :if (featurep 'comp)
     :config
     (setq comp-async-report-warnings-errors nil
 	  comp-deferred-compilation nil
@@ -1008,6 +1008,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (setq frame-title-format
 	'("" invocation-name ": " (:eval (replace-regexp-in-string
 					  "^ +" "" (buffer-name)))))
+  (setq-default fill-column 79)
+
   (use-package desktop
     :config
     (add-to-list 'desktop-globals-to-save 'register-alist)
