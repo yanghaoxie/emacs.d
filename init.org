@@ -1930,7 +1930,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (add-hook 'buffer-list-update-hook 'my--update-all)
 #+END_SRC
 ** doom modeline
-#+begin_src emacs-lisp :tangle yes
+#+begin_src emacs-lisp :tangle no
   (use-package doom-modeline
     :hook (after-init . doom-modeline-mode)
     :config
