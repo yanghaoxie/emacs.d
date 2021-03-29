@@ -1830,7 +1830,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+END_SRC
 
 ** spaceline
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package spaceline-config
     :ensure spaceline
     :init
