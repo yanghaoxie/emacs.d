@@ -1376,7 +1376,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :config
     (setq clean-buffer-list-kill-regexps '("^.*")
 	  midnight-period 7200
-	  clean-buffer-list-delay-special 259200)
+	  clean-buffer-list-delay-special (* 2 24 60 60))
     (midnight-mode 1))
 
   (use-package find-file
