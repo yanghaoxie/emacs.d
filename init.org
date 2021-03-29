@@ -1937,7 +1937,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq doom-modeline-height 15
 	  doom-modeline-icon nil
 	  doom-modeline-buffer-encoding nil
-	  doom-modeline-buffer-file-name-style 'truncate-with-project)
+	  doom-modeline-buffer-file-name-style 'truncate-with-project
+	  doom-modeline-lsp nil)
     (doom-modeline-def-modeline 'pdf
       '(bar workspace-name window-number modals matches buffer-info pdf-pages)
       '(misc-info major-mode process vcs))
