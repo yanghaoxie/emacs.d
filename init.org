@@ -4885,7 +4885,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  lsp-signature-auto-activate nil
 	  lsp-diagnostics-provider :none
 	  lsp-diagnostics-disabled-modes '(python-mode)
-	  lsp-progress-prefix "")
+	  lsp-progress-prefix ""
+	  lsp-completion-provider :none)
     (setq lsp-pyls-plugins-preload-modules ["numpy", "networkx", "cplex"]
 	  lsp-pyls-plugins-pydocstyle-enabled t
 	  lsp-pyls-plugins-pydocstyle-convention "numpy"
