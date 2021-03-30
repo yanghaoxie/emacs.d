@@ -4990,6 +4990,9 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package lsp-latex
     :init
     (add-hook 'LaTeX-mode-hook (lambda () (lsp-deferred)))
+    (add-hook 'LaTeX-mode-hook
+	      (lambda ()
+		(set (make-local-variable 'company-backends) '((company-capf :with company-ispell)))))
     :config
     (require 'lsp-latex)
     (setq lsp-latex-forward-search-executable "emacsclient"
