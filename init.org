@@ -5013,7 +5013,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (setq lsp-latex-forward-search-executable "emacsclient"
 	  lsp-latex-forward-search-args
 	  '("--eval"
-	    "(lsp-latex-forward-search-with-pdf-tools \"%f\" \"%p\" \"%l\")"))
+	    "(lsp-latex-forward-search-with-pdf-tools \"%f\" \"%p\" \"%l\")")
+	  lsp-latex-texlab-executable "~/.cargo/bin/texlab")
     (advice-add
      'lsp-latex-build
      :before
