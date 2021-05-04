@@ -3224,7 +3224,6 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "rm"  'counsel-mark-ring
       ;; search
       "sa" 'counsel-ag
-      "sp" 'counsel-projectile-ag
       ;; themes
       "Ts"  'counsel-load-theme
       ;; insert color
