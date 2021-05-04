@@ -1224,7 +1224,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 				       (list args)
 				     (if look-p nil
 				       (list "-e")))
-				   (list word)
+				   (list (concat "^" word))
 				   (if lookup-dict (list lookup-dict)))))
 	;; `grep' returns status 1 and no output when word not found, which
 	;; is a perfectly normal thing.
