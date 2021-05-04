@@ -4960,7 +4960,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  lsp-ui-doc-use-childframe t
 	  lsp-ui-doc-enable nil
 	  lsp-ui-flycheck-enable t
-	  lsp-ui-sideline-show-hover nil))
+	  lsp-ui-sideline-show-hover nil
+	  lsp-ui-imenu-window-width 80))
   ;;;###autoload
   (defun my/toggle-lsp-ui-mode ()
     (interactive)
