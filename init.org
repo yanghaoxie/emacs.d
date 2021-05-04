@@ -3302,7 +3302,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 	  bibtex-completion-display-formats
 	  '((t . "${=has-pdf=:1} ${=has-note=:1} ${=type=:3} ${year:4} ${author:25} ${title:100}"))
 	  bibtex-completion-cite-default-command nil)
-    (add-to-list 'bibtex-completion-cite-commands "citet"))
+    (add-to-list 'bibtex-completion-cite-commands "citet")
+    (add-to-list 'bibtex-completion-cite-commands "citing"))
 #+END_SRC
 *** counsel projectile
 #+BEGIN_SRC emacs-lisp
