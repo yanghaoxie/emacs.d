@@ -98,6 +98,7 @@ This is an Emacs configuration file written in org mode. It is strongly inspired
   - [[#keychain-environment][keychain environment]]
   - [[#comint][comint]]
   - [[#persistent-scratch][persistent scratch]]
+  - [[#request][request]]
 - [[#themes][themes]]
   - [[#gruvbox][gruvbox]]
 - [[#workspaces][workspaces]]
@@ -2423,6 +2424,13 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package persistent-scratch
     :config
     (persistent-scratch-setup-default))
+#+end_src
+** request
+#+begin_src emacs-lisp
+  (use-package request
+    :config
+    (setq request-curl-options
+	  (nconc '("--proxy" "socks5://127.0.0.1:10808"))))
 #+end_src
 * themes
 ** gruvbox
