@@ -5147,8 +5147,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :ensure nil
     :quelpa (pdf-tools
 	     :fetcher github
-	     :repo "flatwhatson/pdf-tools"
-	     :branch "fix-macros"
+	     :repo "vedang/pdf-tools"
+	     :branch "master"
 	     :files ("lisp/*.el"
 		     "README"
 		     ("build" "Makefile")
