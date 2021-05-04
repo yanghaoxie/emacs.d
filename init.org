@@ -1783,6 +1783,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
 #+BEGIN_SRC emacs-lisp
   (use-package window-purpose
     :ghook ('after-init-hook #'purpose-mode)
+    :commands (without-purpose)
     :general
     (my/leader-keys
       "rb"    'purpose-switch-buffer-with-purpose
