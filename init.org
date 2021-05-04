@@ -3622,7 +3622,8 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     :after magit
     :config
     (setq magit-todos-exclude-globs '("*.pdf" "*.eps")
-	  magit-todos-update 600)
+	  magit-todos-update t
+	  magit-todos-depth 3)
     (magit-todos-mode))
 #+END_SRC
 ** github
