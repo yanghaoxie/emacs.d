@@ -4252,7 +4252,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
     (idle-org-agenda-mode))
 #+END_SRC
 *** org gcal
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
   (use-package oauth2)
   (use-package org-gcal
     :commands (org-gcal-sync
