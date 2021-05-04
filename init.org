@@ -1174,7 +1174,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       (setq ispell-program-name "aspell"
 	    ispell-silently-savep t
 	    ispell-look-command "/bin/grep"
-	    ispell-look-options "-Ei")))
+	    ispell-look-options "-Eim 2000")))
 
   (defun my/ispell-lookup-words (word &optional lookup-dict)
     "Look up WORD in optional word-list dictionary LOOKUP-DICT.
