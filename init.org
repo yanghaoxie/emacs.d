@@ -3310,6 +3310,7 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
   (use-package counsel-projectile
     :general
     (my/leader-keys
+      "sp" 'counsel-projectile-rg
       "p SPC" 'counsel-projectile
       "pf" 'counsel-projectile-find-file
       "pb" 'counsel-projectile-switch-to-buffer
