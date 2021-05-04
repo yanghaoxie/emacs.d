@@ -4295,11 +4295,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "aordy" 'org-roam-dailies-yesterday
       "aordt" 'org-roam-dailies-today
       "aordT" 'org-roam-dailies-tomorrow
-      "aorf" 'org-roam-find-file
+      "aorf" 'org-roam-node-find
       "aorg" 'org-roam-graph
-      "aori" 'org-roam-insert
+      "aori" 'org-roam-node-find
       "aorI" 'org-roam-insert-immediate
-      "aorl" 'org-roam
+      "aorl" 'org-roam-buffer-toggle
       "aorta" 'org-roam-tag-add
       "aortd" 'org-roam-tag-delete)
     (my/leader-keys-major-mode
@@ -4308,11 +4308,11 @@ the =after-save-hook= ensuring to always tangle and byte-compile the
       "rdy" 'org-roam-dailies-yesterday
       "rdt" 'org-roam-dailies-today
       "rdT" 'org-roam-dailies-tomorrow
-      "rf" 'org-roam-find-file
+      "rf" 'org-roam-node-find
       "rg" 'org-roam-graph
-      "ri" 'org-roam-insert
+      "ri" 'org-roam-node-insert
       "rI" 'org-roam-insert-immediate
-      "rl" 'org-roam
+      "rl" 'org-roam-buffer-toggle
       "rta" 'org-roam-tag-add
       "rtd" 'org-roam-tag-delete))
 #+end_src
